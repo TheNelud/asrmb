@@ -8,16 +8,18 @@
     <link rel="stylesheet" href="{% static 'journal/css/header.css'  %}" type="text/css">
     <link rel="stylesheet" href="{% static 'journal/css/sidebar.css'  %}" type="text/css">
     <link rel="stylesheet" href="{% static 'journal/css/content.css'  %}" type="text/css">
+    <script type="text/javascript" src="{% static 'journal/js/jquery-3.6.1.min.js'%}"></script>
+    <script type="text/javascript" src="{% static 'journal/js/sidebar_update.js'%}"></script>
 </head>
 <body>
     <section class="header">
         <div class="header_container">
             <ul class="header_menu">
                 <li>
-                    <a href="#">Определение компонентного состава</a>
+                    <a href="#" onclick="showDiv('oksSidebar')">Определение компонентного состава</a>
                 </li>
                 <li>
-                    <a href="#">Расчет технологических потерь природного газа на УКПГ Киринское</a>
+                    <a href="#" onclick="showDiv('rtp_sidebar')">Расчет технологических потерь</a>
                 </li>
                 <li>
                     <a href="#">Расчет массы</a>
@@ -28,7 +30,6 @@
                 <li>
                     <a href="#">Коэффициенты сверживаемости</a>
                 </li>
-
                 <li>
                     <a href="#">Потери газового конденсата через неплотности</a>
                 </li>
@@ -38,6 +39,70 @@
     </section>
 
     <section class="sidebar">
+        <div class="side_tree">
+            <div id="oksSidebar" style="display:none;">
+                <ul>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">Приложение №1
+<!--                        <img class="treePlusIcon" src="{% static 'journal/images/plus.png'%}">-->
+                        </a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">Приложение №2
+<!--                        <img class="treePlusIcon" src="{% static 'journal/images/plus.png'%}">-->
+                        </a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">Приложение №3
+<!--                        <img class="treePlusIcon" src="{% static 'journal/images/plus.png'%}">-->
+                        </a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">Приложение №4
+<!--                        <img class="treePlusIcon" src="{% static 'journal/images/plus.png'%}">-->
+                        </a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">Приложение №5
+<!--                        <img class="treePlusIcon" src="{% static 'journal/images/plus.png'%}">-->
+                        </a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">Приложение №6
+<!--                        <img class="treePlusIcon" src="{% static 'journal/images/plus.png'%}">-->
+                        </a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">Приложение №7
+<!--                        <img class="treePlusIcon" src="{% static 'journal/images/plus.png'%}">-->
+                        </a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">Приложение №8
+<!--                        <img class="treePlusIcon" src="{% static 'journal/images/plus.png'%}">-->
+                        </a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">Приложение №9
+<!--                        <img class="treePlusIcon" src="{% static 'journal/images/plus.png'%}">-->
+                        </a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">Приложение №10
+<!--                        <img class="treePlusIcon" src="{% static 'journal/images/plus.png'%}">-->
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div id="rtp_sidebar" style="display:none;">
+                <ul>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">1. Технологические потери природного газа по итогам опорожнения технологического оборудования и трубопроводов перед проведением ремонтных работ, м3 (п.4.2.)</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
 
     </section>
 

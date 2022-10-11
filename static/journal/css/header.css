@@ -15,12 +15,27 @@
     width: 90%;
 }
 
-.header .header_menu {
-    float: left;
-    list-style: none;
-    padding-left: 0;
-    margin: 10px 0 0;
-    height: 35px;
+.header_container:after {
+    clear: both;
+}
+
+.header_container:before, .header_container:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+
+.header .header_menu{
+    float:left;
+    list-style: none; /*убираем маркеры списка*/
+    margin: 0; /*убираем отступы*/
+    padding-left: 0; /*убираем отступы*/
+    margin-top:10px; /*делаем отступ сверху*/
+    height: 35px; /*задаем высоту*/
+}
+
+.header .header_menu > li {
+    float:left; /*Размещаем список горизонтально для реализации меню*/
 }
 
 ul {
@@ -33,9 +48,7 @@ ul {
     padding-inline-start: 40px;
 }
 
-.header .header_menu > li {
-    float: left;
-}
+
 
 .header .header_menu a {
     text-decoration: none;
@@ -46,4 +59,12 @@ ul {
     -moz-transition: all 0.3s 0.01s ease;
     -o-transition: all 0.3s 0.01s ease;
     -webkit-transition: all 0.3s 0.01s ease;
+}
+
+.header .header_menu a:hover{
+    color: lightgray;
+}
+
+.header .header_logo{
+    text-align:center;width:75px;float: left; margin-top: -5px
 }
