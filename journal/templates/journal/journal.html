@@ -16,19 +16,19 @@
         <div class="header_container">
             <ul class="header_menu">
                 <li>
-                    <a href="#" onclick="showDiv('oksSidebar')">Определение компонентного состава</a>
+                    <a href="#" onclick="showDiv('oks_sidebar'); return false;">Определение компонентного состава</a>
                 </li>
                 <li>
-                    <a href="#" onclick="showDiv('rtp_sidebar')">Расчет технологических потерь</a>
+                    <a href="#" onclick="showDiv('rtp_sidebar'); return false;">Расчет технологических потерь</a>
                 </li>
                 <li>
-                    <a href="#">Расчет массы</a>
+                    <a href="#" onclick="showDiv('rmo_sidebar'); return false;">Расчет массы</a>
                 </li>
                 <li>
-                    <a href="#">Коэффициенты</a>
+                    <a href="#" onclick="showDiv('koff_sidebar'); return false;">Коэффициенты</a>
                 </li>
                 <li>
-                    <a href="#">Коэффициенты сверживаемости</a>
+                    <a href="#" onclick="showDiv('koff_s_sidebar'); return false;">Коэффициенты сверживаемости</a>
                 </li>
                 <li>
                     <a href="#">Потери газового конденсата через неплотности</a>
@@ -40,7 +40,7 @@
 
     <section class="sidebar">
         <div class="side_tree">
-            <div id="oksSidebar" style="display:none;">
+            <div class="block-of-text" id="oks_sidebar" style="display:none;">
                 <ul>
                     <li>
                         <a class="tableItem choiced" href="" onclick="">Приложение №1
@@ -94,10 +94,132 @@
                     </li>
                 </ul>
             </div>
-            <div id="rtp_sidebar" style="display:none;">
+            <div class="block-of-text" id="rtp_sidebar" style="display:none;">
+
                 <ul>
+                    <a> Расчет технологических потерь при Добыче*</a>
                     <li>
                         <a class="tableItem choiced" href="" onclick="">1. Технологические потери природного газа по итогам опорожнения технологического оборудования и трубопроводов перед проведением ремонтных работ, м3 (п.4.2.)</a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">2. Технологические потери природного газа при регенерации технических жидкостей (МЭГа), м3 (п. 4.3.2)</a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">3. Технологические потери природного газа при отборе проб, м3 (п. 4.5)</a>
+                    </li>
+
+                    <a> Расчет потерь при Переработке**</a>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">1. Потери природного газа через неплотности соединений и уплотнений ЗРА, м3. (п.5.1.3)</a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">2. Потери природного газа через неплотности соединений теплообменной апаратуры на расчетный период, м3. (п.5.1.3)</a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">3. Потери природного газа на технологическом объекте при отборе проб для аналитического контроля Qан, м3. (п.5.3.2)</a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">4. Потери природного газа при проведении индивидуальных испытаний оборудования Qисп, в случае сброса требующегося для испытания природного газа на факел или на свеч м3. (п.5.3.4)</a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">5. Потери природного газа при опорожнении технологического оборудования перед проведением ремонтных работ на расчетный период Qоп, м3. (п.5.2.3)</a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">6. Потери природного газа при продувке технологического оборудования инетрным газом Qп, м3. (п.5.2.4)</a>
+                    </li>
+
+                    <h3> Конденсат Газовый нестабильный</h3>
+                    <a>  Расчет технологических потерь при Добыче*</a>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">1. Технологические потери газового конденсата по итогам опорожнения технологического оборудования и трубопроводов перед проведением ремонтных работ, т. (п. 5.2)</a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">2. Технологические потери газового конденсата при отборе проб, т (п. 5.3)</a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">3. Технологические потери газового конденсата при уносе с жидкостью, м3 (п. 5.4)</a>
+                    </li>
+
+                    <h3> Расчет потерь при Переработке**</h3>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">1. Потери газового конденсата со сточными водами товарного парка, т (п.6.1.3.2)</a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">2. Потери газового конденсата от испарения при хранении в резервуарах от "малых дыханий", т (п.6.2.3)</a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">3. Потери газового конденсата от испарения при хранении в резервуарах от "больших дыханий", т (п.6.2.4)</a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">4. Потери газового конденсата при отборе проб для аналитического контроля, т(п.6.3)</a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">5. Потери газового конденсата через неплотности соединений и уплотнений ЗРА, т (п.6.4.3)</a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">6. Потери газового конденсата через неплотности соединений аппарата на расчетный период Па.ж. (если в аппарате преобладает жидкая фаза), т (п.6.4.6)</a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">7. Потери газового конденсата через неплотности соединений теплообменной аппаратуры на расчетный период, т (п.6.4.7)</a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">8. Потери газового конденсата при ремонте трубопроводов, т (п.6.5.3</a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">9. Потери газового конденсата при остановке объектов на планово-предупредительный ремонт, т (п.6.6.1)</a>
+                    </li>
+
+
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">Расчёт потерь конденсата газового стабильного при Переработке **</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="block-of-text" id="rmo_sidebar" style="display: none;">
+                <ul>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">Приложение №5</a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">Приложение №6</a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">Газ стабилизации</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="block-of-text" id="koff_sidebar" style="display: none;">
+                <ul>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">Значение коэффициента Ка в зависимости от средней температуры кипения жидкого продукта tср.кип, C и средней температуры в аппрате tср.ап, C</a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">Потери от единицы теплообменной аппратуры П() кг/ч, в зависимости от типа аппаратуры и вида продукта или средней темпиратуры кипения жидкости tср, C</a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">Значение молярной массы паров углеводородов в зависимости от температуры начала кипения</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="block-of-text" id="koff_s_sidebar" style="display: none;">
+                <ul>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">Приложение №2</a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">Приложение №3</a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">Приложение №4</a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">Приложение №5</a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">Приложение №6</a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="" onclick="">Приложение №7</a>
                     </li>
                 </ul>
             </div>

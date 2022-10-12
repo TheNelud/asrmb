@@ -1,8 +1,11 @@
-function showDiv(Div) {
-    var x = document.getElementById(Div);
-    if(x.style.display=="none") {
-        x.style.display = "block";
+function showDiv(id) {
+  var all = document.querySelectorAll(".block-of-text");
+  for (var i = 0; i < all.length; i++) {
+    if (all[i].id === id) {
+      all[i].style.display = (all[i].style.display === 'none')? 'block' : 'none';
     } else {
-        x.style.display = "none";
+      all[i].style.display = 'none';
     }
+  }
 }
+
