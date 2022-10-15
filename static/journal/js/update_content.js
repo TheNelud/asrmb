@@ -10,7 +10,7 @@ function showDiv(id) {
 }
 
 function showDivContent(id_content){
-  var all = document.querySelectorAll(".oks_content_text");
+  var all = document.querySelectorAll(".content_text");
   for (var i = 0; i < all.length; i++) {
     if (all[i].id === id_content) {
       all[i].style.display = (all[i].style.display === 'none')? 'block' : 'none';
