@@ -1,0 +1,95 @@
+#tableDiv{
+
+    height: calc(100% - 150px);
+}
+
+#tableDiv table{
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    max-height: 100%;
+
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+}
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+.itemInfoTable thead tr th:first-child, .table tbody tr td:first-child {
+    border-left: none;
+}
+
+.itemInfoTable thead th {
+    font-weight: bold;
+    text-align: left;
+    border: none;
+    padding: 10px 15px;
+    background: #d8d8d8;
+    font-size: 14px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    width: 100%;
+    position: sticky;
+    top: 0;
+}
+.objCell {
+    min-width: 150px;
+    width: 100%;
+}
+th h4 {
+    margin-right: 15px;
+}
+
+h4 {
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.itemInfoTable tbody td {
+    text-align: left;
+    font-size: 14px;
+    min-width: 80px;
+    border: 1px solid #ddd;
+}
+
+td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+.itemInfoTable span {
+    line-height: 22px;
+    display: inline-block;
+    padding: 10px 15px;
+    vertical-align: top;
+    width: calc(100% - 30px);
+    text-align: right;
+}
+
