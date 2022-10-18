@@ -8,7 +8,13 @@
     <link rel="stylesheet" href="{% static 'journal/css/header.css'  %}" type="text/css">
     <link rel="stylesheet" href="{% static 'journal/css/sidebar.css'  %}" type="text/css">
     <link rel="stylesheet" href="{% static 'journal/css/content.css'  %}" type="text/css">
+
     <link rel="stylesheet" href="{% static 'journal/css/table.css'  %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'journal/css/tables/coefficients/coef.css'  %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'journal/css/tables/coefficients/losses.css'  %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'journal/css/tables/coefficients/mol_mass.css'  %}" type="text/css">
+
+
     <script type="text/javascript" src="{% static 'journal/js/jquery-3.6.1.min.js'%}"></script>
     <script type="text/javascript" src="{% static 'journal/js/update_content.js'%}"></script>
 </head>
@@ -884,55 +890,56 @@
                     <h3>Значение коэффициента Ка в зависимости от средней температуры кипения жидкого продукта tср.кип, C и средней температуры в аппрате tср.ап, C</h3>
                 </div>
 
-                <div id="tableDiv">
-                    <table id="itemInfoTable" class="itemInfoTable" style="width:100%; float:left">
+                <div class="tableDivCoef">
+                    <table id="itemInfoTableCoef" class="itemInfoTableCoef" style="width:100%; float:left">
                         <thead>
                             <tr>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>tср.ап ,<>br°С</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>менее 20</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>20 - 52</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>53 - 84</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>85 - 112</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>113 - 138</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>139 - 162</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>163 - 185</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>186 - 206</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>207 - 226</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>227 - 244</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>245 - 262</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>263 - 278</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>279 - 294</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>295 - 310</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>311 - 324</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>325 - 350</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>более 350</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>tср.ап ,°С</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>менее 20</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>20 - 52</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>53 - 84</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>85 - 112</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>113 - 138</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>139 - 162</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>163 - 185</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>186 - 206</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>207 - 226</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>227 - 244</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>245 - 262</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>263 - 278</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>279 - 294</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>295 - 310</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>311 - 324</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>325 - 350</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>более 350</h4></th>
                             </tr>
                         </thead>
                         <tbody>
                             {% for item in coef %}
                             <tr>
+
                                 <td><span>{{item.temperature}}</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
+                                <td><span>{{item.less_20}}</span></td>
+                                <td><span>{{item.t_20_52}}</span></td>
+                                <td><span>{{item.t_53_84}}</span></td>
+                                <td><span>{{item.t_85_112}}</span></td>
+                                <td><span>{{item.t_113_138}}</span></td>
+                                <td><span>{{item.t_139_162}}</span></td>
+                                <td><span>{{item.t_163_185}}</span></td>
+                                <td><span>{{item.t_186_206}}</span></td>
+                                <td><span>{{item.t_207_226}}</span></td>
+                                <td><span>{{item.t_227_244}}</span></td>
+                                <td><span>{{item.t_245_262}}</span></td>
+                                <td><span>{{item.t_263_278}}</span></td>
+                                <td><span>{{item.t_279_294}}</span></td>
+                                <td><span>{{item.t_295_310}}</span></td>
+                                <td><span>{{item.t_311_324}}</span></td>
+                                <td><span>{{item.t_325_350}}</span></td>
+                                <td><span>{{item.more_than_350}}</span></td>
 
                             </tr>
-                            {% endfor%}
-                            <tr>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
+                            {% endfor %}
 
-                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -955,51 +962,34 @@
                     </div>
                 </div>
 
-                <div id="content-header">
-                    <h3>Потери газового конденсата через неплотности соединений аппарата на расчетный период Па.ж. (если в аппарате преобладает жидкая фаза), т (п.6.4.6)</h3>
+                <div class="content-header">
+                    <h3>Потери от единицы теплообменной аппратуры П() кг/ч, в зависимости от типа аппаратуры и вида продукта или средней темпиратуры кипения жидкости tср, C</h3>
                 </div>
 
-                <div id="tableDiv">
-                    <table id="itemInfoTable"  class="itemInfoTable" style="width:100%; float:left">
+                <div class="tableDivLosses">
+                    <table id="itemInfoTableLosses"  class="itemInfoTableLosses" style="width:100%; float:left">
                         <thead>
                             <tr>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Аппарат</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Pап</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>tап</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Vап</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>τр</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Кд</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>nап</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Па.ж</h4></th>
+                                <th class="objCellLosses" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Наименование<br> аппаратуры</h4></th>
+                                <th class="objCellLosses" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Газы, бензины и жидкости<br> с tср < 120 C</h4></th>
+                                <th class="objCellLosses" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Керосины, дизельное<br> топливо и жидкости <br>с tср = 120 % 300 C </h4></th>
+                                <th class="objCellLosses" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Нефть, мазуты и жидкости с с tср > 300 C</h4></th>
                             </tr>
                         </thead>
                         <tbody>
+                            {% for item in losses%}
                             <tr>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
+                                <td><span>{{item.name_of_device}}</span></td>
+                                <td><span>{{item.gas_gasoline}}</span></td>
+                                <td><span>{{item.kerosene_diesel}}</span></td>
+                                <td><span>{{item.oil_masut}}</span></td>
 
                             </tr>
-                            <tr>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-
-                            </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>
-                <a>Потери от единицы теплообменной аппратуры П() кг/ч, в зависимости от типа аппаратуры и вида продукта или средней темпиратуры кипения жидкости tср, C</a>
+                <a></a>
              </div>
              <div class="content_text" id="id_koff_content_mm" style="display: none">
                   <div style="display: inline-flex; width: 100%">
@@ -1018,51 +1008,51 @@
                     </div>
                 </div>
 
-                <div id="content-header">
-                    <h3>Потери газового конденсата через неплотности соединений аппарата на расчетный период Па.ж. (если в аппарате преобладает жидкая фаза), т (п.6.4.6)</h3>
+                <div class="content-header">
+                    <h3>Значение молярной массы паров углеводородов в зависимости от температуры начала кипения</h3>
                 </div>
 
-                <div id="tableDiv">
-                    <table id="itemInfoTable"  class="itemInfoTable" style="width:100%; float:left">
+                <div class="tableDivMollMass">
+                    <table id="itemInfoTableMolMass"  class="itemInfoTableMolMass" style="width:100%; float:left">
                         <thead>
                             <tr>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Аппарат</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Pап</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>tап</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Vап</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>τр</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Кд</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>nап</h4></th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Па.ж</h4></th>
+                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>t н.п/н.кд, C</h4></th>
+                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>М н.п, кг/кмоль</h4></th>
+                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>t н.п/н.кд, C</h4></th>
+                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>М н.п, кг/кмоль</h4></th>
+                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>t н.п/н.кд, C</h4></th>
+                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>М н.п, кг/кмоль</h4></th>
+                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>t н.п/н.кд, C</h4></th>
+                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>М н.п, кг/кмоль</h4></th>
+                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>t н.п/н.кд, C</h4></th>
+                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>М н.п, кг/кмоль</h4></th>
+                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>t н.п/н.кд, C</h4></th>
+                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>М н.п, кг/кмоль</h4></th>
                             </tr>
                         </thead>
                         <tbody>
+                            {% for item in mol_mass %}
                             <tr>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
+                                <td><span>{{item.t_10_43}}</span></td>
+                                <td><span>{{item.m_50_70}}</span></td>
+                                <td><span>{{item.t_44_77}}</span></td>
+                                <td><span>{{item.m_71_91}}</span></td>
+                                <td><span>{{item.t_78_132}}</span></td>
+                                <td><span>{{item.m_92_118}}</span></td>
+                                <td><span>{{item.t_134_200}}</span></td>
+                                <td><span>{{item.m_119_159}}</span></td>
+                                <td><span>{{item.t_202_350}}</span></td>
+                                <td><span>{{item.m_160_290}}</span></td>
+                                <td><span>{{item.t_355_500}}</span></td>
+                                <td><span>{{item.m_285_510}}</span></td>
 
                             </tr>
-                            <tr>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
-                                <td><span>...</span></td>
+                            {% endfor %}
 
-                            </tr>
                         </tbody>
                     </table>
                 </div>
-                <a>Значение молярной массы паров углеводородов в зависимости от температуры начала кипения</a>
+
              </div>
         </div>
         <div class="koff_s_content">

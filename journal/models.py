@@ -7,26 +7,28 @@ class Coef(models.Model):
     id = models.SmallAutoField(primary_key=True)
     temperature = models.CharField(max_length=255)
     less_20 = models.FloatField()
-    _20_52 = models.FloatField()
-    _53_84 = models.FloatField()
-    _85_112 = models.FloatField()
-    _113_138 = models.FloatField()
-    _139_162 = models.FloatField()
-    _163_185 = models.FloatField()
-    _186_206 = models.FloatField()
-    _207_226 = models.FloatField()
-    _227_244 = models.FloatField()
-    _245_262 = models.FloatField()
-    _263_278 = models.FloatField()
-    _279_294 = models.FloatField()
-    _295_310 = models.FloatField()
-    _311_324 = models.FloatField()
-    _325_350 = models.FloatField()
+    t_20_52 = models.FloatField()
+    t_53_84 = models.FloatField()
+    t_85_112 = models.FloatField()
+    t_113_138 = models.FloatField()
+    t_139_162 = models.FloatField()
+    t_163_185 = models.FloatField()
+    t_186_206 = models.FloatField()
+    t_207_226 = models.FloatField()
+    t_227_244 = models.FloatField()
+    t_245_262 = models.FloatField()
+    t_263_278 = models.FloatField()
+    t_279_294 = models.FloatField()
+    t_295_310 = models.FloatField()
+    t_311_324 = models.FloatField()
+    t_325_350 = models.FloatField()
     more_than_350 = models.FloatField()
 
     class Meta:
-        managed = False
+        ordering = ['id']
+        managed = True
         db_table = 'coef'
+
 
 
 class Losses(models.Model):

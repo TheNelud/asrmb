@@ -77,7 +77,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'OPTIONS': {
-            'options': '-c search_path=django,public'
+            'options': '-c search_path=django'
         },
         'NAME': 'metrological',
         'USER': 'postgres',
@@ -88,7 +88,7 @@ DATABASES = {
     'coefficients': {
         'ENGINE': 'django.db.backends.postgresql',
         'OPTIONS': {
-            'options': '-c search_path=coefficients,public'
+            'options': '-c search_path=coefficients'
         },
         'NAME': 'metrological',
         'USER': 'postgres',
@@ -96,75 +96,75 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '5432',
     },
-    'compress': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'OPTIONS': {
-            'options': '-c search_path=compress,public'
-        },
-        'NAME': 'metrological',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    },
-    'condensatecalc': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'OPTIONS': {
-            'options': '-c search_path=condensatecalc,public'
-        },
-        'NAME': 'metrological',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    },
-    'gascalc': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'OPTIONS': {
-            'options': '-c search_path=gascalc,public'
-        },
-        'NAME': 'metrological',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    },
-    'information_schema': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'OPTIONS': {
-            'options': '-c search_path=information_schema,public'
-        },
-        'NAME': 'metrological',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    },
-    'period': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'OPTIONS': {
-            'options': '-c search_path=period,public'
-        },
-        'NAME': 'metrological',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    },
-    'public': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'OPTIONS': {
-            'options': '-c search_path=public,public'
-        },
-        'NAME': 'metrological',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+    # 'compress': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'OPTIONS': {
+    #         'options': '-c search_path=compress,public'
+    #     },
+    #     'NAME': 'metrological',
+    #     'USER': 'postgres',
+    #     'PASSWORD': 'postgres',
+    #     'HOST': 'localhost',
+    #     'PORT': '5432',
+    # },
+    # 'condensatecalc': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'OPTIONS': {
+    #         'options': '-c search_path=condensatecalc,public'
+    #     },
+    #     'NAME': 'metrological',
+    #     'USER': 'postgres',
+    #     'PASSWORD': 'postgres',
+    #     'HOST': 'localhost',
+    #     'PORT': '5432',
+    # },
+    # 'gascalc': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'OPTIONS': {
+    #         'options': '-c search_path=gascalc,public'
+    #     },
+    #     'NAME': 'metrological',
+    #     'USER': 'postgres',
+    #     'PASSWORD': 'postgres',
+    #     'HOST': 'localhost',
+    #     'PORT': '5432',
+    # },
+    # 'information_schema': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'OPTIONS': {
+    #         'options': '-c search_path=information_schema,public'
+    #     },
+    #     'NAME': 'metrological',
+    #     'USER': 'postgres',
+    #     'PASSWORD': 'postgres',
+    #     'HOST': 'localhost',
+    #     'PORT': '5432',
+    # },
+    # 'period': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'OPTIONS': {
+    #         'options': '-c search_path=period,public'
+    #     },
+    #     'NAME': 'metrological',
+    #     'USER': 'postgres',
+    #     'PASSWORD': 'postgres',
+    #     'HOST': 'localhost',
+    #     'PORT': '5432',
+    # },
+    # 'public': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'OPTIONS': {
+    #         'options': '-c search_path=public,public'
+    #     },
+    #     'NAME': 'metrological',
+    #     'USER': 'postgres',
+    #     'PASSWORD': 'postgres',
+    #     'HOST': 'localhost',
+    #     'PORT': '5432',
+    # }
 }
 
-DATABASE_ROUTERS = ('journal.db_router.MyDBRouter',)
+DATABASE_ROUTERS = ('journal.db_router.Coefficients_db_router',)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
