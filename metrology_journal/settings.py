@@ -151,20 +151,21 @@ DATABASES = {
     #     'HOST': 'localhost',
     #     'PORT': '5432',
     # },
-    # 'public': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'OPTIONS': {
-    #         'options': '-c search_path=public,public'
-    #     },
-    #     'NAME': 'metrological',
-    #     'USER': 'postgres',
-    #     'PASSWORD': 'postgres',
-    #     'HOST': 'localhost',
-    #     'PORT': '5432',
-    # }
+    'public': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'OPTIONS': {
+            'options': '-c search_path=public'
+        },
+        'NAME': 'metrological',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
 }
 
-DATABASE_ROUTERS = ('journal.db_router.Coefficients_db_router',)
+DATABASE_ROUTERS = ('journal.db_router.Coefficients_db_router',
+                    'journal.db_router.Public_db_router',)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
