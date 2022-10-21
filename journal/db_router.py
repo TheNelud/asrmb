@@ -12,6 +12,21 @@ ROUTED_MODELS_PUBLIC = [P1ComponentCompositionOfUnstableCondensate,
                         P9ComponentOfTheSeparationGas,
                         P10ProtokolKGN]
 
+ROUTED_MODELS_CONDENSATECALC=[CondensateprodOne,
+                              CondensateprodThree1,
+                              CondensateprodThree2,
+                              CondensateprodTwo,
+                              CondrecyclingEight,
+                              CondrecyclingFive,
+                              CondrecyclingFour,
+                              CondrecyclingNine,
+                              CondrecyclingOne,
+                              CondrecyclingSeven,
+                              CondrecyclingThree,
+                              CondrecyclingTwo,
+                              CondrecyclingTwoDop,
+                              CondrecyclingTwoDop2]
+
 
 class Coefficients_db_router(object):
 
@@ -34,4 +49,15 @@ class Public_db_router(object):
     def db_for_write(self, model, **hints):
         if model in ROUTED_MODELS_PUBLIC:
             return 'public'
+        return None
+
+class Condensatecalc_db_router(object):
+    def db_for_read(self, model, **hints):
+        if model in ROUTED_MODELS_PUBLIC:
+            return 'condensatecalc'
+        return None
+
+    def db_for_write(self, model, **hints):
+        if model in ROUTED_MODELS_PUBLIC:
+            return 'condensatecalc'
         return None

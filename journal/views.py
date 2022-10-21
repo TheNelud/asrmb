@@ -22,6 +22,7 @@ def index(request):
         'coef': data_coef,
         'losses': data_losses,
         'mol_mass': data_mol_mass,
+
         'oks_p1': data_p1,
         'oks_p2': data_p2,
         'oks_p3': data_p3,

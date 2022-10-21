@@ -1,0 +1,868 @@
+<div class="oks_content">
+            <div class="content_text" id="id_oks_content_p1" style="display: none">
+                <div style="display: inline-flex; width: 100%">
+                    <div class="date_div">
+                        <div class="date-input-group">
+                            <input type="date" id="table_date_start" class="date_input" required="" onkeydown="return false" max="2022-10-15">
+                            <label for="table_date_start" class="table_date_label">Дата</label>
+                        </div>
+
+                        <div class="date-input-group" id="stop-date-div" style="display: none;">
+                            <input type="date" id="table_date_stop" class="date_input" required="" onkeydown="return false" max="2022-10-15" min="2022-10-15">
+                            <label for="table_date_stop" class="table_date_label">Конец</label>
+                        </div>
+
+                        <input type="hidden" value="date" id="date-type">
+                    </div>
+                </div>
+
+                <div class="content-header">
+                    <h3>Определение компонентного состава конденсата нестабильного<br>10Р-2№2 Протокол анализа №09-2021 PVT(К) от 25.02.2021</h3>
+                </div>
+
+                <div class="tableDivOKS">
+                    <table class="itemInfoTableOKS"  style="width:100%; float:left">
+                        <thead>
+                            <tr>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> </h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>мольное содержание компонентов, %</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Молярная масса компо-нента</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Молярная масса общая, гр/моль</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>масс, % (хрома-тограф)</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>масс, % (расчетная)</h4></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in oks_p1%}
+                            <tr>
+                                <td><span>{{item.name}}</span></td>
+                                <td><span>{{item.molar_components}}</span></td>
+                                <td><span>{{item.molar_mass_of_the_component}}</span></td>
+                                <td><span>{{item.total_molar_mass}}</span></td>
+                                <td><span>{{item.chromatograph_mass}}</span></td>
+                                <td><span>{{item.calculated_mass}}</span></td>
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="content_text" id="id_oks_content_p2" style="display: none">
+
+                <div style="display: inline-flex; width: 100%">
+                    <div class="date_div">
+                        <div class="date-input-group">
+                            <input type="date" id="table_date_start" class="date_input" required="" onkeydown="return false" max="2022-10-15">
+                            <label for="table_date_start" class="table_date_label">Дата</label>
+                        </div>
+
+                        <div class="date-input-group" id="stop-date-div" style="display: none;">
+                            <input type="date" id="table_date_stop" class="date_input" required="" onkeydown="return false" max="2022-10-15" min="2022-10-15">
+                            <label for="table_date_stop" class="table_date_label">Конец</label>
+                        </div>
+
+                        <input type="hidden" value="date" id="date-type">
+                    </div>
+                </div>
+
+                <div class="content-header">
+                    <h3>Определение компонентного состава газа по ГОСТ 31371<br>10С-1№2  протокол № 05 - PVT(Г) от 25.02.2021</h3>
+                </div>
+
+                <div class="tableDivOKS">
+                    <table class="itemInfoTableOKS"  style="width:100%; float:left">
+                        <thead>
+                            <tr>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> </h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>мольное содержание компонентов, %</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Молярная масса компо-нента</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Молярная масса общая, гр/моль</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>масс, % (хрома-тограф)</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>масс, % (расчетная)</h4></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in oks_p2%}
+                            <tr>
+                                <td><span>{{item.name}}</span></td>
+                                <td><span>{{item.molar_components}}</span></td>
+                                <td><span>{{item.molar_mass_of_the_component}}</span></td>
+                                <td><span>{{item.total_molar_mass}}</span></td>
+                                <td><span>{{item.chromatograph_mass}}</span></td>
+                                <td><span>{{item.calculated_mass}}</span></td>
+
+                            </tr>
+                            {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div class="content_text" id="id_oks_content_p3" style="display: none">
+                <div style="display: inline-flex; width: 100%">
+                    <div class="date_div">
+                        <div class="date-input-group">
+                            <input type="date" id="table_date_start" class="date_input" required="" onkeydown="return false" max="2022-10-15">
+                            <label for="table_date_start" class="table_date_label">Дата</label>
+                        </div>
+
+                        <div class="date-input-group" id="stop-date-div" style="display: none;">
+                            <input type="date" id="table_date_stop" class="date_input" required="" onkeydown="return false" max="2022-10-15" min="2022-10-15">
+                            <label for="table_date_stop" class="table_date_label">Конец</label>
+                        </div>
+
+                        <input type="hidden" value="date" id="date-type">
+                    </div>
+                </div>
+
+                <div class="content-header">
+                    <h3>Определение компонентного состава газа по ГОСТ 31371<br>п.34 паспорт качества  №3 от 01.04.2021г.</h3>
+                </div>
+
+                <div class="tableDivOKS">
+                    <table class="itemInfoTableOKS"  style="width:100%; float:left">
+                        <thead>
+                            <tr>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> </h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>мольное содержание компонентов, %</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Молярная масса компо-нента</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Молярная масса общая, гр/моль</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>масс, % (хрома-тограф)</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>масс, % (расчетная)</h4></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in oks_p3%}
+                            <tr>
+                                <td><span>{{item.name}}</span></td>
+                                <td><span>{{item.molar_components}}</span></td>
+                                <td><span>{{item.molar_mass_of_the_component}}</span></td>
+                                <td><span>{{item.total_molar_mass}}</span></td>
+                                <td><span>{{item.chromatograph_mass}}</span></td>
+                                <td><span>{{item.calculated_mass}}</span></td>
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="content_text" id="id_oks_content_p4" style="display: none">
+                <div style="display: inline-flex; width: 100%">
+                    <div class="date_div">
+                        <div class="date-input-group">
+                            <input type="date" id="table_date_start" class="date_input" required="" onkeydown="return false" max="2022-10-15">
+                            <label for="table_date_start" class="table_date_label">Дата</label>
+                        </div>
+
+                        <div class="date-input-group" id="stop-date-div" style="display: none;">
+                            <input type="date" id="table_date_stop" class="date_input" required="" onkeydown="return false" max="2022-10-15" min="2022-10-15">
+                            <label for="table_date_stop" class="table_date_label">Конец</label>
+                        </div>
+
+                        <input type="hidden" value="date" id="date-type">
+                    </div>
+                </div>
+
+                <div class="content-header">
+                    <h3>Определение компонентного состава газа по ГОСТ 31371<br> 30Р-1 протокол № 07-PVT(Г) от 25.02.2021</h3>
+                </div>
+
+                <div class="tableDivOKS">
+                    <table class="itemInfoTableOKS"  style="width:100%; float:left">
+                        <thead>
+                            <tr>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> </h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>мольное содержание<br> компонентов, %</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Молярная масса<br> компо-нента</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Молярная масса общая,<br> гр/моль</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>масс,<br> % (хрома-тограф)</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>масс,<br> % (расчетная)</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Содержание <br>компонента в  газе, кг/м3</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Доля компонента<br> в 1м3 газа</h4></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in oks_p4%}
+                            <tr>
+                                <td><span>{{item.name}}</span></td>
+                                <td><span>{{item.molar_components}}</span></td>
+                                <td><span>{{item.molar_mass_of_the_component}}</span></td>
+                                <td><span>{{item.total_molar_mass}}</span></td>
+                                <td><span>{{item.chromatograph_mass}}</span></td>
+                                <td><span>{{item.calculated_mass}}</span></td>
+                                <td><span>{{item.content_of_the_component}}</span></td>
+                                <td><span>{{item.proportion_of_the_component}}</span></td>
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div class="content_text" id="id_oks_content_p5" style="display: none">
+                <div style="display: inline-flex; width: 100%">
+                    <div class="date_div">
+                        <div class="date-input-group">
+                            <input type="date" id="table_date_start" class="date_input" required="" onkeydown="return false" max="2022-10-15">
+                            <label for="table_date_start" class="table_date_label">Дата</label>
+                        </div>
+
+                        <div class="date-input-group" id="stop-date-div" style="display: none;">
+                            <input type="date" id="table_date_stop" class="date_input" required="" onkeydown="return false" max="2022-10-15" min="2022-10-15">
+                            <label for="table_date_stop" class="table_date_label">Конец</label>
+                        </div>
+
+                        <input type="hidden" value="date" id="date-type">
+                    </div>
+                </div>
+
+                <div class="content-header">
+                    <h3>Определение компонентного состава газа по ГОСТ 31371<br>20Е-1№3  протокол № 06 - PVT(Г) от 25.02.2021</h3>
+                </div>
+
+                <div class="tableDivOKS">
+                    <table class="itemInfoTableOKS"  style="width:100%; float:left">
+                        <thead>
+                            <tr>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> </h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>мольное содержание компонентов, %</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Молярная масса компо-нента</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Молярная масса общая, гр/моль</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>масс, % (хрома-тограф)</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>масс, % (расчетная)</h4></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in oks_p5%}
+                            <tr>
+                                <td><span>{{item.name}}</span></td>
+                                <td><span>{{item.molar_components}}</span></td>
+                                <td><span>{{item.molar_mass_of_the_component}}</span></td>
+                                <td><span>{{item.total_molar_mass}}</span></td>
+                                <td><span>{{item.chromatograph_mass}}</span></td>
+                                <td><span>{{item.calculated_mass}}</span></td>
+
+                            </tr>
+                            {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div class="content_text" id="id_oks_content_p6" style="display: none">
+                <div style="display: inline-flex; width: 100%">
+                    <div class="date_div">
+                        <div class="date-input-group">
+                            <input type="date" id="table_date_start" class="date_input" required="" onkeydown="return false" max="2022-10-15">
+                            <label for="table_date_start" class="table_date_label">Дата</label>
+                        </div>
+
+                        <div class="date-input-group" id="stop-date-div" style="display: none;">
+                            <input type="date" id="table_date_stop" class="date_input" required="" onkeydown="return false" max="2022-10-15" min="2022-10-15">
+                            <label for="table_date_stop" class="table_date_label">Конец</label>
+                        </div>
+
+                        <input type="hidden" value="date" id="date-type">
+                    </div>
+                </div>
+
+                <div class="content-header">
+                    <h3>Определение компонентного состава газа по ГОСТ 31371<br>выход газа п.35 ПРОТОКОЛ №08 - PVT(Г) от 25.02.2021</h3>
+                </div>
+
+                <div class="tableDivOKS">
+                    <table class="itemInfoTableOKS"  style="width:100%; float:left">
+                        <thead>
+                            <tr>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> </h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>мольное содержание компонентов, %</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Молярная масса компо-нента</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Молярная масса общая, гр/моль</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>масс, % (хрома-тограф)</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>масс, % (расчетная)</h4></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in oks_p6%}
+                            <tr>
+                                <td><span>{{item.name}}</span></td>
+                                <td><span>{{item.molar_components}}</span></td>
+                                <td><span>{{item.molar_mass_of_the_component}}</span></td>
+                                <td><span>{{item.total_molar_mass}}</span></td>
+                                <td><span>{{item.chromatograph_mass}}</span></td>
+                                <td><span>{{item.calculated_mass}}</span></td>
+
+                            </tr>
+                            {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div class="content_text" id="id_oks_content_p7" style="display: none">
+                <div style="display: inline-flex; width: 100%">
+                    <div class="date_div">
+                        <div class="date-input-group">
+                            <input type="date" id="table_date_start" class="date_input" required="" onkeydown="return false" max="2022-10-15">
+                            <label for="table_date_start" class="table_date_label">Дата</label>
+                        </div>
+
+                        <div class="date-input-group" id="stop-date-div" style="display: none;">
+                            <input type="date" id="table_date_stop" class="date_input" required="" onkeydown="return false" max="2022-10-15" min="2022-10-15">
+                            <label for="table_date_stop" class="table_date_label">Конец</label>
+                        </div>
+
+                        <input type="hidden" value="date" id="date-type">
+                    </div>
+                </div>
+
+                <div class="content-header">
+                    <h3>Определение компонентного состава газа по ГОСТ 31371<br>10С-4№2</h3>
+                </div>
+
+                <div class="tableDivOKS">
+                    <table class="itemInfoTableOKS"  style="width:100%; float:left">
+                        <thead>
+                            <tr>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> </h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>мольное содержание компонентов, %</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Молярная масса компо-нента</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Молярная масса общая, гр/моль</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>масс, % (хрома-тограф)</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>масс, % (расчетная)</h4></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           {% for item in oks_p7%}
+                            <tr>
+                                <td><span>{{item.name}}</span></td>
+                                <td><span>{{item.molar_components}}</span></td>
+                                <td><span>{{item.molar_mass_of_the_component}}</span></td>
+                                <td><span>{{item.total_molar_mass}}</span></td>
+                                <td><span>{{item.chromatograph_mass}}</span></td>
+                                <td><span>{{item.calculated_mass}}</span></td>
+
+                            </tr>
+                            {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div class="content_text" id="id_oks_content_p8" style="display: none">
+                <div style="display: inline-flex; width: 100%">
+                    <div class="date_div">
+                        <div class="date-input-group">
+                            <input type="date" id="table_date_start" class="date_input" required="" onkeydown="return false" max="2022-10-15">
+                            <label for="table_date_start" class="table_date_label">Дата</label>
+                        </div>
+
+                        <div class="date-input-group" id="stop-date-div" style="display: none;">
+                            <input type="date" id="table_date_stop" class="date_input" required="" onkeydown="return false" max="2022-10-15" min="2022-10-15">
+                            <label for="table_date_stop" class="table_date_label">Конец</label>
+                        </div>
+
+                        <input type="hidden" value="date" id="date-type">
+                    </div>
+                </div>
+
+                <div class="content-header">
+                    <h3>Таблица 5.3 Состав конденсата скв Р5.</h3>
+                </div>
+
+                <div class="tableDiv">
+                    <table class="itemInfoTableOKS"  style="width:100%; float:left">
+                        <thead>
+                            <tr>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> </h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>баллон 1506 </h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>баллон 1641</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>среднее</h4></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {%for item in oks_p8%}
+                            <tr>
+                                <td><span>{{item.name}}</span></td>
+                                <td><span>{{item.cylinder_1506}}</span></td>
+                                <td><span>{{item.cylinder_1641}}</span></td>
+                                <td><span>{{item.average_value}}</span></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div class="content_text" id="id_oks_content_p9" style="display: none">
+                <div style="display: inline-flex; width: 100%">
+                    <div class="date_div">
+                        <div class="date-input-group">
+                            <input type="date" id="table_date_start" class="date_input" required="" onkeydown="return false" max="2022-10-15">
+                            <label for="table_date_start" class="table_date_label">Дата</label>
+                        </div>
+
+                        <div class="date-input-group" id="stop-date-div" style="display: none;">
+                            <input type="date" id="table_date_stop" class="date_input" required="" onkeydown="return false" max="2022-10-15" min="2022-10-15">
+                            <label for="table_date_stop" class="table_date_label">Конец</label>
+                        </div>
+
+                        <input type="hidden" value="date" id="date-type">
+                    </div>
+                </div>
+
+                <div class="content-header">
+                    <h3>Определение компонентного состава газа сепарации<br>скв.Р5  проба 2119 (из отчета по договору №ГДШ 777/1.08.12)</h3>
+                </div>
+
+                <div class="tableDivOKS">
+                    <table class="itemInfoTableOKS"  style="width:100%; float:left">
+                        <thead>
+                            <tr>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> </h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>мольное содержание компонентов, %</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Молярная масса компо-нента</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Молярная масса общая, гр/моль</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>масс, % (хрома-тограф)</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>масс, % (расчетная)</h4></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for item in oks_p9%}
+                            <tr>
+                                <td><span>{{item.name}}</span></td>
+                                <td><span>{{item.molar_components}}</span></td>
+                                <td><span>{{item.molar_mass_of_the_component}}</span></td>
+                                <td><span>{{item.total_molar_mass}}</span></td>
+                                <td><span>{{item.chromatograph_mass}}</span></td>
+                                <td><span>{{item.calculated_mass}}</span></td>
+
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div class="content_text" id="id_oks_content_p10" style="display: none">
+                <div style="display: inline-flex; width: 100%">
+                    <div class="date_div">
+                        <div class="date-input-group">
+                            <input type="date" id="table_date_start" class="date_input" required="" onkeydown="return false" max="2022-10-15">
+                            <label for="table_date_start" class="table_date_label">Дата</label>
+                        </div>
+
+                        <div class="date-input-group" id="stop-date-div" style="display: none;">
+                            <input type="date" id="table_date_stop" class="date_input" required="" onkeydown="return false" max="2022-10-15" min="2022-10-15">
+                            <label for="table_date_stop" class="table_date_label">Конец</label>
+                        </div>
+
+                        <input type="hidden" value="date" id="date-type">
+                    </div>
+                </div>
+
+                <div class="content-header">
+                    <h3>10Р-2№2 КГН  Протокол 09-2021 PVT (К) от 25.02.2021</h3>
+                </div>
+
+                <div class="tableDivOKS">
+                    <table class="itemInfoTableOKS"  style="width:100%; float:left">
+                        <thead>
+                            <tr>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> </h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Состав</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Молярная масса компо-нента</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>масс, % (хрома-тограф)</h4></th>
+                                <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> </h4></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in oks_p10%}
+                            <tr>
+                                <td><span>{{item.name}}</span></td>
+                                <td><span>{{item.соmposition}}</span></td>
+                                <td><span>{{item.molar_mass_of_the_component}}</span></td>
+                                <td><span>{{item.chromatograph_mass}}</span></td>
+                                <td><span>{{item.proportion}}</span></td>
+
+
+                            </tr>
+                           {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <a></a>
+            </div>
+        </div>
+<div class="rtp_content">
+    <div class="content_text" id="id_rtp_content_rtp1" style="display: none">
+        <a>1. Технологические потери природного газа по итогам опорожнения технологического оборудования и трубопроводов перед проведением ремонтных работ, м3 (п.4.2.)</a>
+    </div>
+    <div class="content_text" id="id_rtp_content_rtp2" style="display: none">
+        <a>2. Технологические потери природного газа при регенерации технических жидкостей (МЭГа), м3 (п. 4.3.2)</a>
+    </div>
+    <div class="content_text" id="id_rtp_content_rtp3" style="display: none">
+        <a>3. Технологические потери природного газа при отборе проб, м3 (п. 4.5)</a>
+    </div>
+
+
+
+
+    <div class="content_text" id="id_rtp_content_rppp1" style="display: none">
+        <a>1. Потери природного газа через неплотности соединений и уплотнений ЗРА, м3. (п.5.1.3)</a>
+    </div>
+    <div class="content_text" id="id_rtp_content_rppp2" style="display: none">
+        <a>2. Потери природного газа через неплотности соединений теплообменной апаратуры на расчетный период, м3. (п.5.1.3)</a>
+    </div>
+    <div class="content_text" id="id_rtp_content_rppp3" style="display: none">
+        <a>3. Потери природного газа на технологическом объекте при отборе проб для аналитического контроля Qан, м3. (п.5.3.2)</a>
+    </div>
+    <div class="content_text" id="id_rtp_content_rppp4" style="display: none">
+        <a>4. Потери природного газа при проведении индивидуальных испытаний оборудования Qисп, в случае сброса требующегося для испытания природного газа на факел или на свеч м3. (п.5.3.4)</a>
+    </div>
+    <div class="content_text" id="id_rtp_content_rppp5" style="display: none">
+        <a>5. Потери природного газа при опорожнении технологического оборудования перед проведением ремонтных работ на расчетный период Qоп, м3. (п.5.2.3)</a>
+    </div>
+    <div class="content_text" id="id_rtp_content_rppp6" style="display: none">
+        <a>6. Потери природного газа при продувке технологического оборудования инетрным газом Qп, м3. (п.5.2.4)</a>
+    </div>
+
+
+
+    <div class="content_text" id="id_rtp_content_nrtp1" style="display: none">
+        <a>1. Технологические потери газового конденсата по итогам опорожнения технологического оборудования и трубопроводов перед проведением ремонтных работ, т. (п. 5.2)</a>
+    </div>
+    <div class="content_text" id="id_rtp_content_nrtp2" style="display: none">
+        <a>2. Технологические потери газового конденсата при отборе проб, т (п. 5.3)</a>
+    </div>
+    <div class="content_text" id="id_rtp_content_nrtp3" style="display: none">
+        <a>3. Технологические потери газового конденсата при уносе с жидкостью, м3 (п. 5.4)</a>
+    </div>
+
+
+
+    <div class="content_text" id="id_rtp_content_nrppp1" style="display: none">
+        <a>1. Потери газового конденсата со сточными водами товарного парка, т (п.6.1.3.2)</a>
+    </div>
+    <div class="content_text" id="id_rtp_content_nrppp2" style="display: none">
+        <a>2. Потери газового конденсата от испарения при хранении в резервуарах от "малых дыханий", т (п.6.2.3)</a>
+    </div>
+    <div class="content_text" id="id_rtp_content_nrppp3" style="display: none">
+        <a>3. Потери газового конденсата от испарения при хранении в резервуарах от "больших дыханий", т (п.6.2.4)</a>
+    </div>
+    <div class="content_text" id="id_rtp_content_nrppp4" style="display: none">
+        <a>4. Потери газового конденсата при отборе проб для аналитического контроля, т(п.6.3)</a>
+    </div>
+    <div class="content_text" id="id_rtp_content_nrppp5" style="display: none">
+        <a>5. Потери газового конденсата через неплотности соединений и уплотнений ЗРА, т (п.6.4.3)</a>
+    </div>
+    <div class="content_text" id="id_rtp_content_nrppp6" style="display: none">
+        <a>6. Потери газового конденсата через неплотности соединений аппарата на расчетный период Па.ж. (если в аппарате преобладает жидкая фаза), т (п.6.4.6)</a>
+    </div>
+    <div class="content_text" id="id_rtp_content_nrppp7" style="display: none">
+        <a>7. Потери газового конденсата через неплотности соединений теплообменной аппаратуры на расчетный период, т (п.6.4.7))</a>
+    </div>
+    <div class="content_text" id="id_rtp_content_nrppp8" style="display: none">
+        <a>8. Потери газового конденсата при ремонте трубопроводов, т (п.6.5.3)</a>
+    </div>
+    <div class="content_text" id="id_rtp_content_nrppp9" style="display: none">
+        <a>9. Потери газового конденсата при остановке объектов на планово-предупредительный ремонт, т (п.6.6.1)</a>
+    </div>
+
+    <div class="content_text" id="id_rtp_content_srppp1" style="display: none">
+        <a>Расчёт потерь конденсата газового стабильного при Переработке</a>
+    </div>
+</div>
+<div class="rmo_content">
+    <div class="content_text" id="id_rmo_content_p5" style="display: none">
+        <a>Определение компонентного состава газа по ГОСТ 31371<br>20Е-1№3  протокол № 06 - PVT(Г) от 25.02.2021</a>
+    </div>
+    <div class="content_text" id="id_rmo_content_p6" style="display: none">
+        <a>Определение компонентного состава газа по ГОСТ 31371<br>выход газа п.35 ПРОТОКОЛ №08 - PVT(Г) от 25.02.2021</a>
+    </div>
+    <div class="content_text" id="id_rmo_content_gs" style="display: none">
+        <a>Газ стабилизации из 20Е-1 в УКЦ<br>Газ стабилизации из  УКЦ в МГ<br>КГН из  УКЦ в 10Е-1</a>
+    </div>
+</div>
+<div class="koff_content">
+     <div class="content_text" id="id_koff_content_ka" style="display: none">
+          <div style="display: inline-flex; width: 100%">
+            <div class="date_div">
+                <div class="date-input-group">
+                    <input type="date" id="table_date_start" class="date_input" required="" onkeydown="return false" max="2022-10-15">
+                    <label for="table_date_start" class="table_date_label">Дата</label>
+                </div>
+
+                <div class="date-input-group" id="stop-date-div" style="display: none;">
+                    <input type="date" id="table_date_stop" class="date_input" required="" onkeydown="return false" max="2022-10-15" min="2022-10-15">
+                    <label for="table_date_stop" class="table_date_label">Конец</label>
+                </div>
+
+                <input type="hidden" value="date" id="date-type">
+            </div>
+        </div>
+
+        <div class="content-header">
+            <h3>Значение коэффициента Ка в зависимости от средней температуры кипения жидкого продукта tср.кип, C и средней температуры в аппрате tср.ап, C</h3>
+        </div>
+
+        <div class="tableDivCoef">
+            <table id="itemInfoTableCoef" class="itemInfoTableCoef" style="width:100%; float:left">
+                <thead>
+                    <tr>
+                        <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>tср.ап ,°С</h4></th>
+                        <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>менее 20</h4></th>
+                        <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>20 - 52</h4></th>
+                        <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>53 - 84</h4></th>
+                        <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>85 - 112</h4></th>
+                        <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>113 - 138</h4></th>
+                        <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>139 - 162</h4></th>
+                        <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>163 - 185</h4></th>
+                        <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>186 - 206</h4></th>
+                        <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>207 - 226</h4></th>
+                        <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>227 - 244</h4></th>
+                        <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>245 - 262</h4></th>
+                        <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>263 - 278</h4></th>
+                        <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>279 - 294</h4></th>
+                        <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>295 - 310</h4></th>
+                        <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>311 - 324</h4></th>
+                        <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>325 - 350</h4></th>
+                        <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>более 350</h4></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in coef %}
+                    <tr>
+
+                        <td><span>{{item.temperature}}</span></td>
+                        <td><span>{{item.less_20}}</span></td>
+                        <td><span>{{item.t_20_52}}</span></td>
+                        <td><span>{{item.t_53_84}}</span></td>
+                        <td><span>{{item.t_85_112}}</span></td>
+                        <td><span>{{item.t_113_138}}</span></td>
+                        <td><span>{{item.t_139_162}}</span></td>
+                        <td><span>{{item.t_163_185}}</span></td>
+                        <td><span>{{item.t_186_206}}</span></td>
+                        <td><span>{{item.t_207_226}}</span></td>
+                        <td><span>{{item.t_227_244}}</span></td>
+                        <td><span>{{item.t_245_262}}</span></td>
+                        <td><span>{{item.t_263_278}}</span></td>
+                        <td><span>{{item.t_279_294}}</span></td>
+                        <td><span>{{item.t_295_310}}</span></td>
+                        <td><span>{{item.t_311_324}}</span></td>
+                        <td><span>{{item.t_325_350}}</span></td>
+                        <td><span>{{item.more_than_350}}</span></td>
+
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+        <a></a>
+     </div>
+     <div class="content_text" id="id_koff_content_pe" style="display: none">
+          <div style="display: inline-flex; width: 100%">
+            <div class="date_div">
+                <div class="date-input-group">
+                    <input type="date" id="table_date_start" class="date_input" required="" onkeydown="return false" max="2022-10-15">
+                    <label for="table_date_start" class="table_date_label">Дата</label>
+                </div>
+
+                <div class="date-input-group" id="stop-date-div" style="display: none;">
+                    <input type="date" id="table_date_stop" class="date_input" required="" onkeydown="return false" max="2022-10-15" min="2022-10-15">
+                    <label for="table_date_stop" class="table_date_label">Конец</label>
+                </div>
+
+                <input type="hidden" value="date" id="date-type">
+            </div>
+        </div>
+
+        <div class="content-header">
+            <h3>Потери от единицы теплообменной аппратуры П() кг/ч, в зависимости от типа аппаратуры и вида продукта или средней темпиратуры кипения жидкости tср, C</h3>
+        </div>
+
+        <div class="tableDivLosses">
+            <table id="itemInfoTableLosses"  class="itemInfoTableLosses" style="width:100%; float:left">
+                <thead>
+                    <tr>
+                        <th class="objCellLosses" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Наименование<br> аппаратуры</h4></th>
+                        <th class="objCellLosses" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Газы, бензины и жидкости<br> с tср < 120 C</h4></th>
+                        <th class="objCellLosses" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Керосины, дизельное<br> топливо и жидкости <br>с tср = 120 % 300 C </h4></th>
+                        <th class="objCellLosses" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Нефть, мазуты и жидкости с с tср > 300 C</h4></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in losses%}
+                    <tr>
+                        <td><span>{{item.name_of_device}}</span></td>
+                        <td><span>{{item.gas_gasoline}}</span></td>
+                        <td><span>{{item.kerosene_diesel}}</span></td>
+                        <td><span>{{item.oil_masut}}</span></td>
+
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <a></a>
+     </div>
+     <div class="content_text" id="id_koff_content_mm" style="display: none">
+          <div style="display: inline-flex; width: 100%">
+            <div class="date_div">
+                <div class="date-input-group">
+                    <input type="date" id="table_date_start" class="date_input" required="" onkeydown="return false" max="2022-10-15">
+                    <label for="table_date_start" class="table_date_label">Дата</label>
+                </div>
+
+                <div class="date-input-group" id="stop-date-div" style="display: none;">
+                    <input type="date" id="table_date_stop" class="date_input" required="" onkeydown="return false" max="2022-10-15" min="2022-10-15">
+                    <label for="table_date_stop" class="table_date_label">Конец</label>
+                </div>
+
+                <input type="hidden" value="date" id="date-type">
+            </div>
+        </div>
+
+        <div class="content-header">
+            <h3>Значение молярной массы паров углеводородов в зависимости от температуры начала кипения</h3>
+        </div>
+
+        <div class="tableDivMollMass">
+            <table id="itemInfoTableMolMass"  class="itemInfoTableMolMass" style="width:100%; float:left">
+                <thead>
+                    <tr>
+                        <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>t н.п/н.кд, C</h4></th>
+                        <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>М н.п, кг/кмоль</h4></th>
+                        <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>t н.п/н.кд, C</h4></th>
+                        <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>М н.п, кг/кмоль</h4></th>
+                        <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>t н.п/н.кд, C</h4></th>
+                        <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>М н.п, кг/кмоль</h4></th>
+                        <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>t н.п/н.кд, C</h4></th>
+                        <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>М н.п, кг/кмоль</h4></th>
+                        <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>t н.п/н.кд, C</h4></th>
+                        <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>М н.п, кг/кмоль</h4></th>
+                        <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>t н.п/н.кд, C</h4></th>
+                        <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>М н.п, кг/кмоль</h4></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in mol_mass %}
+                    <tr>
+                        <td><span>{{item.t_10_43}}</span></td>
+                        <td><span>{{item.m_50_70}}</span></td>
+                        <td><span>{{item.t_44_77}}</span></td>
+                        <td><span>{{item.m_71_91}}</span></td>
+                        <td><span>{{item.t_78_132}}</span></td>
+                        <td><span>{{item.m_92_118}}</span></td>
+                        <td><span>{{item.t_134_200}}</span></td>
+                        <td><span>{{item.m_119_159}}</span></td>
+                        <td><span>{{item.t_202_350}}</span></td>
+                        <td><span>{{item.m_160_290}}</span></td>
+                        <td><span>{{item.t_355_500}}</span></td>
+                        <td><span>{{item.m_285_510}}</span></td>
+
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+
+     </div>
+</div>
+<div class="koff_s_content">
+    <div class="content_text" id="id_koff_s_content_p2" style="display: none">
+        <a>10С-1<br>10С-1№2  протокол № 05 - PVT(Г) от 25.02.2021</a>
+    </div>
+    <div class="content_text" id="id_koff_s_content_p3" style="display: none">
+        <a>п.34<br>п.34 паспорт качества  №3 от 01.04.2021г.</a>
+    </div>
+    <div class="content_text" id="id_koff_s_content_p4" style="display: none">
+        <a>30Р-1№2<br> 30Р-1 протокол № 07-PVT(Г) от 25.02.2021</a>
+    </div>
+    <div class="content_text" id="id_koff_s_content_p5" style="display: none">
+        <a>20Е-1<br>20Е-1№3  протокол № 06 - PVT(Г) от 25.02.2021</a>
+    </div>
+    <div class="content_text" id="id_koff_s_content_p6" style="display: none">
+        <a>п.35 Выход<br>выход газа п.35 ПРОТОКОЛ №08 - PVT(Г) от 25.02.2021</a>
+    </div>
+    <div class="content_text" id="id_koff_s_content_p7" style="display: none">
+        <a>10С-4<br>10С-4№2 </a>
+    </div>
+</div>
+<div class="pgk_content">
+    <div class="content_text" id="id_pgk_content" style="display: none">
+        <div style="display: inline-flex; width: 100%">
+            <div class="date_div">
+                <div class="date-input-group">
+                    <input type="date" id="table_date_start" class="date_input" required="" onkeydown="return false" max="2022-10-15">
+                    <label for="table_date_start" class="table_date_label">Дата</label>
+                </div>
+
+                <div class="date-input-group" id="stop-date-div" style="display: none;">
+                    <input type="date" id="table_date_stop" class="date_input" required="" onkeydown="return false" max="2022-10-15" min="2022-10-15">
+                    <label for="table_date_stop" class="table_date_label">Конец</label>
+                </div>
+
+                <input type="hidden" value="date" id="date-type">
+            </div>
+        </div>
+
+        <div id="content-header">
+            <h3>Потери газового конденсата через неплотности соединений аппарата на расчетный период Па.ж. (если в аппарате преобладает жидкая фаза), т (п.6.4.6)</h3>
+        </div>
+
+        <div id="tableDiv">
+            <table id="itemInfoTable"  class="itemInfoTable" style="width:100%; float:left">
+                <thead>
+                    <tr>
+                        <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Аппарат</h4></th>
+                        <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Pап</h4></th>
+                        <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>tап</h4></th>
+                        <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Vап</h4></th>
+                        <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>τр</h4></th>
+                        <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Кд</h4></th>
+                        <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>nап</h4></th>
+                        <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Па.ж</h4></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span>...</span></td>
+                        <td><span>...</span></td>
+                        <td><span>...</span></td>
+                        <td><span>...</span></td>
+                        <td><span>...</span></td>
+                        <td><span>...</span></td>
+                        <td><span>...</span></td>
+                        <td><span>...</span></td>
+
+                    </tr>
+                    <tr>
+                        <td><span>...</span></td>
+                        <td><span>...</span></td>
+                        <td><span>...</span></td>
+                        <td><span>...</span></td>
+                        <td><span>...</span></td>
+                        <td><span>...</span></td>
+                        <td><span>...</span></td>
+                        <td><span>...</span></td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+</div>
