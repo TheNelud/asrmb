@@ -77,7 +77,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'OPTIONS': {
-            'options': '-c search_path=django'
+            'options': '-c search_path=django,public'
         },
         'NAME': 'metrological',
         'USER': 'postgres',
@@ -88,7 +88,7 @@ DATABASES = {
     'coefficients': {
         'ENGINE': 'django.db.backends.postgresql',
         'OPTIONS': {
-            'options': '-c search_path=coefficients'
+            'options': '-c search_path=coefficients,public'
         },
         'NAME': 'metrological',
         'USER': 'postgres',
@@ -110,7 +110,7 @@ DATABASES = {
     'condensatecalc': {
         'ENGINE': 'django.db.backends.postgresql',
         'OPTIONS': {
-            'options': '-c search_path=condensatecalc'
+            'options': '-c search_path=condensatecalc,public'
         },
         'NAME': 'metrological',
         'USER': 'postgres',
@@ -154,7 +154,7 @@ DATABASES = {
     'public': {
         'ENGINE': 'django.db.backends.postgresql',
         'OPTIONS': {
-            'options': '-c search_path=public'
+            'options': '-c search_path=public,public'
         },
         'NAME': 'metrological',
         'USER': 'postgres',
