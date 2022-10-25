@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{% static 'journal/css/tables/coefficients/losses.css'  %}" type="text/css">
     <link rel="stylesheet" href="{% static 'journal/css/tables/coefficients/mol_mass.css'  %}" type="text/css">
     <link rel="stylesheet" href="{% static 'journal/css/tables/public/oks_content.css'  %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'journal/css/tables/gascalc/rtp.css'  %}" type="text/css">
 
 
     <script type="text/javascript" src="{% static 'journal/js/jquery-3.6.1.min.js'%}"></script>
@@ -725,41 +726,529 @@
         </div>
         <div class="rtp_content">
             <div class="content_text" id="id_rtp_content_rtp1" style="display: none">
-                <a>1. Технологические потери природного газа по итогам опорожнения технологического оборудования и трубопроводов перед проведением ремонтных работ, м3 (п.4.2.)</a>
+
+                <div style="display: inline-flex; width: 100%">
+                    <div class="date_div">
+                        <div class="date-input-group">
+                            <input type="date" id="table_date_start" class="date_input" required="" onkeydown="return false" max="2022-10-15">
+                            <label for="table_date_start" class="table_date_label">Дата</label>
+                        </div>
+
+                        <div class="date-input-group" id="stop-date-div" style="display: none;">
+                            <input type="date" id="table_date_stop" class="date_input" required="" onkeydown="return false" max="2022-10-15" min="2022-10-15">
+                            <label for="table_date_stop" class="table_date_label">Конец</label>
+                        </div>
+
+                        <input type="hidden" value="date" id="date-type">
+                    </div>
+                </div>
+
+                <div class="content-header">
+                    <h3>1. Технологические потери природного газа по итогам опорожнения технологического оборудования и трубопроводов перед проведением ремонтных работ, м3 (п.4.2.)</h3>
+                </div>
+
+                <div class="tableDivRTP">
+                    <table class="itemInfoTableRTP"  style="width:100%; float:left">
+                        <thead>
+                            <tr>
+
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Дата </h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Об-ние<br>Труб-д</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>V</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Рн</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Тн</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Zн</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Рк</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Тк</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Zк</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Vоп</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>nг.прод</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>nг.пл</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Xг.прод</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>N</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Пг.оп</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Мольная доля <br>С1-С4  % <br>согласно справкам ХАЛ</h4></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in rtp1%}
+                            <tr>
+                                <td><span>{{item.data}}</span></td>
+                                <td><span>{{item.name}}</span></td>
+                                <td><span>{{item.v}}</span></td>
+                                <td><span>{{item.pn}}</span></td>
+                                <td><span>{{item.tn}}</span></td>
+                                <td><span>{{item.zn}}</span></td>
+                                <td><span>{{item.press_pk}}</span></td>
+                                <td><span>{{item.tk}}</span></td>
+                                <td><span>{{item.zk}}</span></td>
+                                <td><span>{{item.v_op}}</span></td>
+                                <td><span>{{item.ng_prod}}</span></td>
+                                <td><span>{{item.ng_nl}}</span></td>
+                                <td><span>{{item.xg_prod}}</span></td>
+                                <td><span>{{item.n}}</span></td>
+                                <td><span>{{item.pn_op}}</span></td>
+                                <td><span>{{item.mol}}</span></td>
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+
             </div>
             <div class="content_text" id="id_rtp_content_rtp2" style="display: none">
-                <a>2. Технологические потери природного газа при регенерации технических жидкостей (МЭГа), м3 (п. 4.3.2)</a>
+                <div class="content-header">
+                    <h3>2. Технологические потери природного газа при регенерации технических жидкостей (МЭГа), м3 (п. 4.3.2)</h3>
+                </div>
+
+                <div class="tableDivRTP">
+                    <table class="itemInfoTableRTP"  style="width:100%; float:left">
+                        <thead>
+                            <tr>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> </h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Qг.р.ж.</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>nг.прод</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>nг.пл</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Xг.прод</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Пг.р.ж.</h4></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in rtp2%}
+                            <tr>
+                                <td><span>{{item.name}}</span></td>
+                                <td><span>{{item.qgr_sh}}</span></td>
+                                <td><span>{{item.ng_prod}}</span></td>
+                                <td><span>{{item.ng_pl}}</span></td>
+                                <td><span>{{item.xg_prod}}</span></td>
+                                <td><span>{{item.pgr_sh}}</span></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div class="content_text" id="id_rtp_content_rtp3" style="display: none">
-                <a>3. Технологические потери природного газа при отборе проб, м3 (п. 4.5)</a>
-            </div>
+                <div class="content-header">
+                    <h3>3. Технологические потери природного газа при отборе проб, м3 (п. 4.5)</h3>
+                </div>
 
+                <div class="tableDivRTP">
+                    <table class="itemInfoTableRTP"  style="width:100%; float:left">
+                        <thead>
+                            <tr>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>вид анализа </h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Vпр</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Рпр</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Tпр</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Zпр</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>b</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>ni</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Xг.прод</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Пг.оп</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Прибор</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Vр</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>τ</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Xг.прод</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>N</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Пг.пот</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Пг.пр</h4></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in rtp3%}
+                            <tr>
+                                <td><span>{{item.name}}</span></td>
+                                <td><span>{{item.v_pr}}</span></td>
+                                <td><span>{{item.p_pr}}</span></td>
+                                <td><span>{{item.t_pr}}</span></td>
+                                <td><span>{{item.z_pr}}</span></td>
+                                <td><span>{{item.b}}</span></td>
+                                <td><span>{{item.ni}}</span></td>
+                                <td><span>{{item.xr_prod}}</span></td>
+                                <td><span>{{item.pr_op}}</span></td>
+                                <td><span>{{item.device}}</span></td>
+                                <td><span>{{item.v_p}}</span></td>
+                                <td><span>{{item.tau}}</span></td>
+                                <td><span>{{item.xrr_prod}}</span></td>
+                                <td><span>{{item.n}}</span></td>
+                                <td><span>{{item.pr_pot}}</span></td>
+                                <td><span>{{item.pr_pr}}</span></td>
+                                                 </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
 
 
 
             <div class="content_text" id="id_rtp_content_rppp1" style="display: none">
-                <a>1. Потери природного газа через неплотности соединений и уплотнений ЗРА, м3. (п.5.1.3)</a>
+                <div class="content-header">
+                    <h3>1. Потери природного газа через неплотности соединений и уплотнений ЗРА, м3. (п.5.1.3)</h3>
+                </div>
+
+                <div class="tableDivRTP">
+                    <table class="itemInfoTableRTP"  style="width:100%; float:left">
+                        <thead>
+                            <tr>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> Тип </h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Аij</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>bij</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>τij</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>аij</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Мj</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Qуп</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> Тип </h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Аij</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>bij</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>τij</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>аij</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Мj</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Qуп</h4></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in rppp1%}
+                            <tr>
+                                <td><span>{{item.type}}</span></td>
+                                <td><span>{{item.aij}}</span></td>
+                                <td><span>{{item.bij}}</span></td>
+                                <td><span>{{item.tauij}}</span></td>
+                                <td><span>{{item.a_ij}}</span></td>
+                                <td><span>{{item.mi}}</span></td>
+                                <td><span>{{item.q_yp}}</span></td>
+                                <td><span>{{item.t_type}}</span></td>
+                                <td><span>{{item.t_aij}}</span></td>
+                                <td><span>{{item.t_bij}}</span></td>
+                                <td><span>{{item.t_tauij}}</span></td>
+                                <td><span>{{item.t_a_ij}}</span></td>
+                                <td><span>{{item.t_mi}}</span></td>
+                                <td><span>{{item.t_q_yp}}</span></td>
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
             <div class="content_text" id="id_rtp_content_rppp2" style="display: none">
-                <a>2. Потери природного газа через неплотности соединений теплообменной апаратуры на расчетный период, м3. (п.5.1.3)</a>
+                <div class="content-header">
+                    <h3>2. Потери природного газа через неплотности соединений теплообменной апаратуры на расчетный период, м3. (п.5.1.3)</h3>
+                </div>
+
+                <div class="tableDivRTP">
+                    <table class="itemInfoTableRTP"  style="width:100%; float:left">
+                        <thead>
+                            <tr>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> Тепл-к </h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Мп</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>pп</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Qед</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>nт.о</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>τр</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>П.т.о.</h4></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in rppp2%}
+                            <tr>
+                                <td><span>{{item.name}}</span></td>
+                                <td><span>{{item.m_p}}</span></td>
+                                <td><span>{{item.p_p}}</span></td>
+                                <td><span>{{item.q_ed}}</span></td>
+                                <td><span>{{item.nt_o}}</span></td>
+                                <td><span>{{item.tau_p}}</span></td>
+                                <td><span>{{item.p_t_o}}</span></td>
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div class="content_text" id="id_rtp_content_rppp3" style="display: none">
-                <a>3. Потери природного газа на технологическом объекте при отборе проб для аналитического контроля Qан, м3. (п.5.3.2)</a>
+
+                <div class="content-header">
+                    <h3>3. Потери природного газа на технологическом объекте при отборе проб для аналитического контроля Qан, м3. (п.5.3.2)</h3>
+                </div>
+
+                <div class="tableDivRTP">
+                    <table class="itemInfoTableRTP"  style="width:100%; float:left">
+                        <thead>
+                            <tr>
+
+
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> вид анализа </h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Vп.о.i</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Рп.о.i</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Tп.о.i</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Zп.о.i</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>bi</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>nан.i</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Qо.п.i</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Прибор</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Vр.п.i</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>τр.п.i</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Qпот.i</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Qуп</h4></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in rppp3%}
+                            <tr>
+                                <td><span>{{item.name}}</span></td>
+                                <td><span>{{item.vp_o_i}}</span></td>
+                                <td><span>{{item.pp_o_i}}</span></td>
+                                <td><span>{{item.tp_o_i}}</span></td>
+                                <td><span>{{item.zp_o_i}}</span></td>
+                                <td><span>{{item.bi}}</span></td>
+                                <td><span>{{item.nan_i}}</span></td>
+                                <td><span>{{item.qo_p_i}}</span></td>
+                                <td><span>{{item.device}}</span></td>
+                                <td><span>{{item.vp_p_i}}</span></td>
+                                <td><span>{{item.tau_p_i}}</span></td>
+                                <td><span>{{item.qpot_i}}</span></td>
+                                <td><span>{{item.qyp}}</span></td>
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
             <div class="content_text" id="id_rtp_content_rppp4" style="display: none">
-                <a>4. Потери природного газа при проведении индивидуальных испытаний оборудования Qисп, в случае сброса требующегося для испытания природного газа на факел или на свеч м3. (п.5.3.4)</a>
+                <div class="content-header">
+                    <h3>4. Потери природного газа при проведении индивидуальных испытаний оборудования Qисп, в случае сброса требующегося для испытания природного газа на факел или на свеч м3. (п.5.3.4)</h3>
+                </div>
+
+                <div class="tableDivRTP">
+                    <table class="itemInfoTableRTP"  style="width:100%; float:left">
+                        <thead>
+                            <tr>
+
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> Испытание </h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Vисп</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>τисп</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Qисп</h4></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in rppp4%}
+                            <tr>
+                                <td><span>{{item.test}}</span></td>
+                                <td><span>{{item.v_isp}}</span></td>
+                                <td><span>{{item.tau_isp}}</span></td>
+                                <td><span>{{item.q_isp}}</span></td>
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
             <div class="content_text" id="id_rtp_content_rppp5" style="display: none">
-                <a>5. Потери природного газа при опорожнении технологического оборудования перед проведением ремонтных работ на расчетный период Qоп, м3. (п.5.2.3)</a>
+
+                 <div class="content-header">
+                    <h3>5. Потери природного газа при опорожнении технологического оборудования перед проведением ремонтных работ на расчетный период Qоп, м3. (п.5.2.3)</h3>
+                </div>
+
+                <h3> Участок от УИТ ГС до точки его смешения ГГПиГС, подлежит учету в составе технологических потерь ГС при переработке'</h3>
+
+                <div class="tableDivRTP">
+                    <table class="itemInfoTableRTP"  style="width:100%; float:left">
+                        <thead>
+                            <tr>
+
+
+
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> Дата </h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> Оборуд </h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>V</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Рн</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Тн</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Zн</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Рк</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Тк</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Zк</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>n</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Пб.д.</h4></th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in rppp5_1%}
+                            <tr>
+                                <td><span>{{item.date}}</span></td>
+                                <td><span>{{item.device}}</span></td>
+                                <td><span>{{item.v}}</span></td>
+                                <td><span>{{item.pn}}</span></td>
+                                <td><span>{{item.tn}}</span></td>
+                                <td><span>{{item.zn}}</span></td>
+                                <td><span>{{item.press_pk}}</span></td>
+                                <td><span>{{item.tk}}</span></td>
+                                <td><span>{{item.zk}}</span></td>
+                                <td><span>{{item.n}}</span></td>
+                                <td><span>{{item.pb_d}}</span></td>
+
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>  Данный вид технологических потерь образовался на участке от УИХ КГН до УКУ ГКС и подлежит учету в составе технологических потерь КГН при переработке (п.9 настоящего расчета потерь КГН при переработке)';</h3>
+
+                <div class="tableDivRTP">
+                    <table class="itemInfoTableRTP"  style="width:100%; float:left">
+                        <thead>
+                            <tr>
+
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> Дата </h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> Оборуд </h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>V</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Рн</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Тн</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Zн</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Рк</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Тк</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Zк</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>n</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Пб.д.</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>p согласно акта</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>m</h4></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in rppp5_2%}
+                            <tr>
+                                <td><span>{{item.date}}</span></td>
+                                <td><span>{{item.device}}</span></td>
+                                <td><span>{{item.v}}</span></td>
+                                <td><span>{{item.pn}}</span></td>
+                                <td><span>{{item.tn}}</span></td>
+                                <td><span>{{item.zn}}</span></td>
+                                <td><span>{{item.press_pk}}</span></td>
+                                <td><span>{{item.tk}}</span></td>
+                                <td><span>{{item.zk}}</span></td>
+                                <td><span>{{item.n}}</span></td>
+                                <td><span>{{item.pb_d}}</span></td>
+                                <td><span>{{item.p_act}}</span></td>
+                                <td><span>{{item.m}}</span></td>
+
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
             <div class="content_text" id="id_rtp_content_rppp6" style="display: none">
-                <a>6. Потери природного газа при продувке технологического оборудования инетрным газом Qп, м3. (п.5.2.4)</a>
+
+                <div class="content-header">
+                    <h3>6. Потери природного газа при продувке технологического оборудования инетрным газом Qп, м3. (п.5.2.4)</h3>
+                </div>
+
+                <div class="tableDivRTP">
+                    <table class="itemInfoTableRTP"  style="width:100%; float:left">
+                        <thead>
+                            <tr>
+
+
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> Обор-ние </h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>V</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Р</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Т</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Z</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>b</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>nв</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Qоп</h4></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in rppp6%}
+                            <tr>
+                                <td><span>{{item.device}}</span></td>
+                                <td><span>{{item.v}}</span></td>
+                                <td><span>{{item.p}}</span></td>
+                                <td><span>{{item.t}}</span></td>
+                                <td><span>{{item.z}}</span></td>
+                                <td><span>{{item.b}}</span></td>
+                                <td><span>{{item.nv}}</span></td>
+                                <td><span>{{item.q_op}}</span></td>
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <a></a>
             </div>
 
 
 
             <div class="content_text" id="id_rtp_content_nrtp1" style="display: none">
-                <a>1. Технологические потери газового конденсата по итогам опорожнения технологического оборудования и трубопроводов перед проведением ремонтных работ, т. (п. 5.2)</a>
+                <div class="content-header">
+                    <h3>1. Технологические потери газового конденсата по итогам опорожнения технологического оборудования и трубопроводов перед проведением ремонтных работ, т. (п. 5.2)</h3>
+                </div>
+
+                <div class="tableDivRTP">
+                    <table class="itemInfoTableRTP"  style="width:100%; float:left">
+                        <thead>
+                            <tr>
+
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> Дата </h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> Тип </h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Vоп</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Мк.i-С5</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Xк.прод.i-С5</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Мк.n-С5</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Xк.прод.n-С5</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Мк.С6+</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Xк.прод.С6+</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Vк.ст.у.</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Пк.оп.</h4></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Приложение </h4></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in nrtp1%}
+                            <tr>
+                                <td><span>{{item.data}}</span></td>
+                                <td><span>{{item.type}}</span></td>
+                                <td><span>{{item.v_op}}</span></td>
+                                <td><span>{{item.mk_ic5}}</span></td>
+                                <td><span>{{item.xkprod_ic5}}</span></td>
+                                <td><span>{{item.mk_nc5}}</span></td>
+                                <td><span>{{item.xkprod_nc5}}</span></td>
+                                <td><span>{{item.mk_c6}}</span></td>
+                                <td><span>{{item.xkprod_c6}}</span></td>
+                                <td><span>{{item.vk_st_y}}</span></td>
+                                <td><span>{{item.pk_op}}</span></td>
+                                <td><span>{{item.application}}</span></td>
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
             <div class="content_text" id="id_rtp_content_nrtp2" style="display: none">
                 <a>2. Технологические потери газового конденсата при отборе проб, т (п. 5.3)</a>

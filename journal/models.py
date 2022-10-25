@@ -215,7 +215,7 @@ class P10ProtokolKGN(models.Model):
 # 1. Технологические потери газового конденсата по итогам опорожнения технологического оборудования и трубопроводов перед проведением ремонтных работ, т. (п. 5.2)';
 class CondensateprodOne(models.Model):
     id = models.SmallAutoField(primary_key=True)
-    date = models.DateField()
+    data = models.DateField()
     type = models.CharField(max_length=255)
     v_op = models.FloatField()
     mk_ic5 = models.FloatField()
@@ -458,4 +458,418 @@ class CondrecyclingTwoDop2(models.Model):
         managed = False
         db_table = 'condrecycling_two_dop2'
 
+
 # -------------------------------------------------------------------------------------------------------------------->
+# For schema gascalc
+
+# 5. Потери природного газа при опорожнении технологического оборудования перед проведением ремонтных работ на расчетный период Qоп, м3. (п.5.2.3)
+# Участок от УИТ ГС до точки его смешения ГГПиГС, подлежит учету в составе технологических потерь ГС при переработке'
+class RecyclingcalcFive1(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    date = models.DateField()
+    device = models.CharField(max_length=255)
+    v = models.FloatField()
+    pn = models.FloatField()
+    tn = models.FloatField()
+    zn = models.FloatField()
+    press_pk = models.FloatField()
+    tk = models.FloatField()
+    zk = models.FloatField()
+    n = models.FloatField()
+    pb_d = models.FloatField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'recyclingcalc_five1'
+
+
+# '5. Потери природного газа при опорожнении технологического оборудования перед проведением ремонтных работ на расчетный период Qоп, м3. (п.5.2.3)
+# Данный вид технологических потерь образовался на участке от УИХ КГН до УКУ ГКС и подлежит учету в составе технологических потерь КГН при переработке (п.9 настоящего расчета потерь КГН при переработке)*';
+
+class RecyclingcalcFive2(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    date = models.DateField()
+    device = models.CharField(max_length=255)
+    v = models.FloatField()
+    pn = models.FloatField()
+    tn = models.FloatField()
+    zn = models.FloatField()
+    press_pk = models.FloatField()
+    tk = models.FloatField()
+    zk = models.FloatField()
+    n = models.FloatField()
+    pb_d = models.FloatField()
+    p_act = models.FloatField()
+    m = models.FloatField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'recyclingcalc_five2'
+
+
+# '4. Потери природного газа при проведении индивидуальных испытаний оборудования Qисп, в случае сброса требующегося для испытания природного газа на факел или на свеч м3. (п.5.3.4)';
+
+class RecyclingcalcFour(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    test = models.CharField(max_length=255)
+    v_isp = models.FloatField()
+    tau_isp = models.FloatField()
+    q_isp = models.FloatField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'recyclingcalc_four'
+
+
+# 'Расчет потерь при Переработке**
+# 1. Потери природного газа через неплотности соединений и уплотнений ЗРА, м3. (п.5.1.3)';
+
+class RecyclingcalcOne(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    type = models.CharField(max_length=255)
+    aij = models.FloatField()
+    bij = models.FloatField()
+    tauij = models.FloatField()
+    a_ij = models.FloatField()
+    mi = models.FloatField()
+    q_yp = models.FloatField()
+    t_type = models.CharField(max_length=255)
+    t_aij = models.FloatField()
+    t_bij = models.FloatField()
+    t_tauij = models.FloatField()
+    t_a_ij = models.FloatField()
+    t_mi = models.FloatField()
+    t_q_yp = models.FloatField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'recyclingcalc_one'
+
+
+class RecyclingcalcSix(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    device = models.CharField(max_length=255)
+    v = models.FloatField()
+    p = models.FloatField()
+    t = models.FloatField()
+    z = models.FloatField()
+    b = models.FloatField()
+    nv = models.FloatField()
+    q_op = models.FloatField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'recyclingcalc_six'
+
+
+# '3. Потери природного газа на технологическом объекте при отборе проб для аналитического контроля Qан, м3. (п.5.3.2)';
+
+class RecyclingcalcThree(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    vp_o_i = models.FloatField()
+    pp_o_i = models.FloatField()
+    tp_o_i = models.FloatField()
+    zp_o_i = models.FloatField()
+    bi = models.FloatField()
+    nan_i = models.FloatField()
+    qo_p_i = models.FloatField()
+    device = models.CharField(max_length=255)
+    vp_p_i = models.FloatField()
+    tau_p_i = models.FloatField()
+    qpot_i = models.FloatField()
+    qyp = models.FloatField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'recyclingcalc_three'
+
+
+# Часы работы (нахождения под давлением) за месяц, час';
+
+class RecyclingcalcTime(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    timing = models.FloatField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'recyclingcalc_time'
+
+# 2. Потери природного газа через неплотности соединений теплообменной апаратуры на расчетный период, м3. (п.5.1.3)
+class RecyclingcalcTwo(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    m_p = models.FloatField()
+    p_p = models.FloatField()
+    q_ed = models.FloatField()
+    nt_o = models.FloatField()
+    tau_p = models.FloatField()
+    p_t_o = models.FloatField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'recyclingcalc_two'
+
+
+# значения с распечатки показаний технологических расходомеров
+# показания счетчиков 30Р-1
+# для таблицы teclosses two'
+
+class Teclosses2dop(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    data = models.DateField()
+    num_one = models.FloatField()
+    num_two = models.FloatField()
+    difference = models.FloatField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'teclosses_2dop'
+
+
+# '1. Технологические потери природного газа по итогам опорожнения технологического оборудования и трубопроводов перед проведением ремонтных работ, м3 (п.4.2.)';
+class TeclossesOne(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    data = models.DateField()
+    name = models.CharField(max_length=255)
+    v = models.FloatField()
+    pn = models.FloatField()
+    tn = models.FloatField()
+    zn = models.FloatField()
+    press_pk = models.FloatField()
+    tk = models.FloatField()
+    zk = models.FloatField()
+    v_op = models.FloatField()
+    ng_prod = models.FloatField()
+    ng_nl = models.FloatField()
+    xg_prod = models.FloatField()
+    n = models.FloatField()
+    pn_op = models.FloatField()
+    mol = models.FloatField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'teclosses_one'
+
+
+# Расчет технологических потерь при Добыче*
+# 3. Технологические потери природного газа при отборе проб, м3 (п. 4.5)';
+
+class TeclossesTree(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    v_pr = models.FloatField()
+    p_pr = models.FloatField()
+    t_pr = models.FloatField()
+    z_pr = models.FloatField()
+    b = models.FloatField()
+    ni = models.FloatField()
+    xr_prod = models.FloatField()
+    pr_op = models.FloatField()
+    device = models.CharField(max_length=255)
+    v_p = models.FloatField()
+    tau = models.FloatField()
+    xrr_prod = models.FloatField()
+    n = models.FloatField()
+    pr_pot = models.FloatField()
+    pr_pr = models.FloatField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'teclosses_three'
+
+
+# 'Приложения № 2,3,4,7
+# Необходимо для расчета xrr_prod';
+class TeclossesTreeDop(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    nr_prod = models.FloatField()
+    nr_pl = models.FloatField()
+    xr_prod = models.FloatField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'teclosses_three_dop'
+
+
+# 'Расчет технологических потерь при Добыче*
+# 2. Технологические потери природного газа при регенерации технических жидкостей (МЭГа), м3 (п. 4.3.2)';
+
+class TeclossesTwo(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    qgr_sh = models.FloatField()
+    ng_prod = models.FloatField()
+    ng_pl = models.FloatField()
+    xg_prod = models.FloatField()
+    pgr_sh = models.FloatField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'teclosses_two'
+
+
+# -------------------------------------------------------------________________________________________________---------->
+# for schema compress ---->
+
+class CoefPTM(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    p = models.FloatField()
+    t = models.FloatField()
+    m = models.FloatField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'coef_p_t_m'
+
+
+class P2Calc(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    d_e = models.FloatField()
+    molar = models.FloatField()
+    p = models.FloatField()
+    t = models.FloatField()
+    m = models.FloatField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'p2_calc'
+
+class P3Calc(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    d_e = models.FloatField()
+    molar = models.FloatField()
+    p = models.FloatField()
+    t = models.FloatField()
+    m = models.FloatField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'p3_calc'
+
+class P4Calc(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    d_e = models.FloatField()
+    molar = models.FloatField()
+    p = models.FloatField()
+    t = models.FloatField()
+    m = models.FloatField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'p4_calc'
+
+class P5Calc(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    d_e = models.FloatField()
+    molar = models.FloatField()
+    p = models.FloatField()
+    t = models.FloatField()
+    m = models.FloatField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'p5_calc'
+
+class P6Calc(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    d_e = models.FloatField()
+    molar = models.FloatField()
+    p = models.FloatField()
+    t = models.FloatField()
+    m = models.FloatField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'p6_calc'
+
+class P7Calc(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    d_e = models.FloatField()
+    molar = models.FloatField()
+    p = models.FloatField()
+    t = models.FloatField()
+    m = models.FloatField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'p7_calc'
+
+class TabCoefAll(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    pressure = models.FloatField()
+    temperature = models.FloatField()
+    p_pl = models.FloatField()
+    t_pl = models.FloatField()
+    p_kr = models.FloatField()
+    t_kr = models.FloatField()
+    p_pl_sm = models.FloatField()
+    p_pr = models.FloatField()
+    t_pr = models.FloatField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'tab_coef_all'
+
+class TabSumAll(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    sum_d_e = models.FloatField()
+    sum_mol = models.FloatField()
+    sum_p = models.FloatField()
+    sum_t = models.FloatField()
+    sum_m = models.FloatField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'tab_sum_all'
+
+
+class TotalCalc(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    scalc_one  = models.FloatField()
+    calc_two  = models.FloatField()
+    calc_thre = models.FloatField()
+    calc_four = models.FloatField()
+    zn      = models.FloatField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'total_calc'
+
+

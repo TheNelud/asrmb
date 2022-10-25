@@ -96,17 +96,17 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '5432',
     },
-    # 'compress': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'OPTIONS': {
-    #         'options': '-c search_path=compress,public'
-    #     },
-    #     'NAME': 'metrological',
-    #     'USER': 'postgres',
-    #     'PASSWORD': 'postgres',
-    #     'HOST': 'localhost',
-    #     'PORT': '5432',
-    # },
+    'compress': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'OPTIONS': {
+            'options': '-c search_path=compress,public'
+        },
+        'NAME': 'metrological',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    },
     'condensatecalc': {
         'ENGINE': 'django.db.backends.postgresql',
         'OPTIONS': {
@@ -118,17 +118,17 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '5432',
     },
-    # 'gascalc': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'OPTIONS': {
-    #         'options': '-c search_path=gascalc,public'
-    #     },
-    #     'NAME': 'metrological',
-    #     'USER': 'postgres',
-    #     'PASSWORD': 'postgres',
-    #     'HOST': 'localhost',
-    #     'PORT': '5432',
-    # },
+    'gascalc': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'OPTIONS': {
+            'options': '-c search_path=gascalc,public'
+        },
+        'NAME': 'metrological',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    },
     # 'information_schema': {
     #     'ENGINE': 'django.db.backends.postgresql',
     #     'OPTIONS': {
@@ -166,7 +166,9 @@ DATABASES = {
 
 DATABASE_ROUTERS = ('journal.db_router.Coefficients_db_router',
                     'journal.db_router.Public_db_router',
-                    'journal.db_router.Condensatecalc_db_router',)
+                    'journal.db_router.Condensatecalc_db_router',
+                    'journal.db_router.Gascalc_db_router',
+                    'journal.db_router.Compress_db_router',)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
