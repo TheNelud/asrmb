@@ -1,0 +1,210 @@
+{%extends 'journal/main.html' %}
+{% block content %}
+<section class="sidebar">
+        <div class="side_tree">
+                <div class="sidebar-of-text" id="koff_sidebar">
+                <ul>
+                    <li>
+                        <a class="tableItem choiced" href="#" onclick="updateDivContent('#id_koff_content_ka')">Значение коэффициента Ка в зависимости от средней температуры кипения жидкого продукта tср.кип, C и средней температуры в аппрате tср.ап, C</a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="#" onclick="updateDivContent('#id_koff_content_pe')">Потери от единицы теплообменной аппратуры П() кг/ч, в зависимости от типа аппаратуры и вида продукта или средней темпиратуры кипения жидкости tср, C</a>
+                    </li>
+                    <li>
+                        <a class="tableItem choiced" href="#" onclick="updateDivContent('#id_koff_content_mm')">Значение молярной массы паров углеводородов в зависимости от температуры начала кипения</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+</section>
+
+<section class="content">
+        <div class="koff_content">
+             <div class="content_text" id="id_koff_content_ka" style="display: none">
+                  <div style="display: inline-flex; width: 100%">
+                    <div class="date_div">
+                        <div class="date-input-group">
+                            <input type="date" id="table_date_start" class="date_input" required="" onkeydown="return false" max="2022-10-15">
+                            <label for="table_date_start" class="table_date_label">Дата</label>
+                        </div>
+
+                        <div class="date-input-group" id="stop-date-div" style="display: none;">
+                            <input type="date" id="table_date_stop" class="date_input" required="" onkeydown="return false" max="2022-10-15" min="2022-10-15">
+                            <label for="table_date_stop" class="table_date_label">Конец</label>
+                        </div>
+
+                        <input type="hidden" value="date" id="date-type">
+                    </div>
+                </div>
+
+                <div class="content-header">
+                    <h3>Значение коэффициента Ка в зависимости от средней температуры кипения жидкого продукта tср.кип, C и средней температуры в аппрате tср.ап, C</h3>
+                </div>
+
+                <div class="tableDivCoef">
+                    <table id="itemInfoTableCoef" class="itemInfoTableCoef" style="width:100%; float:left">
+                        <thead>
+                            <tr>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>tср.ап ,°С</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>менее 20</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>20 - 52</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>53 - 84</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>85 - 112</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>113 - 138</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>139 - 162</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>163 - 185</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>186 - 206</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>207 - 226</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>227 - 244</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>245 - 262</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>263 - 278</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>279 - 294</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>295 - 310</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>311 - 324</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>325 - 350</h4></th>
+                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>более 350</h4></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in coef %}
+                            <tr>
+
+                                <td><span>{{item.temperature}}</span></td>
+                                <td><span>{{item.less_20}}</span></td>
+                                <td><span>{{item.t_20_52}}</span></td>
+                                <td><span>{{item.t_53_84}}</span></td>
+                                <td><span>{{item.t_85_112}}</span></td>
+                                <td><span>{{item.t_113_138}}</span></td>
+                                <td><span>{{item.t_139_162}}</span></td>
+                                <td><span>{{item.t_163_185}}</span></td>
+                                <td><span>{{item.t_186_206}}</span></td>
+                                <td><span>{{item.t_207_226}}</span></td>
+                                <td><span>{{item.t_227_244}}</span></td>
+                                <td><span>{{item.t_245_262}}</span></td>
+                                <td><span>{{item.t_263_278}}</span></td>
+                                <td><span>{{item.t_279_294}}</span></td>
+                                <td><span>{{item.t_295_310}}</span></td>
+                                <td><span>{{item.t_311_324}}</span></td>
+                                <td><span>{{item.t_325_350}}</span></td>
+                                <td><span>{{item.more_than_350}}</span></td>
+
+                            </tr>
+                            {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+                <a></a>
+             </div>
+             <div class="content_text" id="id_koff_content_pe" style="display: none">
+                  <div style="display: inline-flex; width: 100%">
+                    <div class="date_div">
+                        <div class="date-input-group">
+                            <input type="date" id="table_date_start" class="date_input" required="" onkeydown="return false" max="2022-10-15">
+                            <label for="table_date_start" class="table_date_label">Дата</label>
+                        </div>
+
+                        <div class="date-input-group" id="stop-date-div" style="display: none;">
+                            <input type="date" id="table_date_stop" class="date_input" required="" onkeydown="return false" max="2022-10-15" min="2022-10-15">
+                            <label for="table_date_stop" class="table_date_label">Конец</label>
+                        </div>
+
+                        <input type="hidden" value="date" id="date-type">
+                    </div>
+                </div>
+
+                <div class="content-header">
+                    <h3>Потери от единицы теплообменной аппратуры П() кг/ч, в зависимости от типа аппаратуры и вида продукта или средней темпиратуры кипения жидкости tср, C</h3>
+                </div>
+
+                <div class="tableDivLosses">
+                    <table id="itemInfoTableLosses"  class="itemInfoTableLosses" style="width:100%; float:left">
+                        <thead>
+                            <tr>
+                                <th class="objCellLosses" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Наименование<br> аппаратуры</h4></th>
+                                <th class="objCellLosses" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Газы, бензины и жидкости<br> с tср < 120 C</h4></th>
+                                <th class="objCellLosses" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Керосины, дизельное<br> топливо и жидкости <br>с tср = 120 % 300 C </h4></th>
+                                <th class="objCellLosses" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Нефть, мазуты и жидкости с с tср > 300 C</h4></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in losses%}
+                            <tr>
+                                <td><span>{{item.name_of_device}}</span></td>
+                                <td><span>{{item.gas_gasoline}}</span></td>
+                                <td><span>{{item.kerosene_diesel}}</span></td>
+                                <td><span>{{item.oil_masut}}</span></td>
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <a></a>
+             </div>
+             <div class="content_text" id="id_koff_content_mm" style="display: none">
+                  <div style="display: inline-flex; width: 100%">
+                    <div class="date_div">
+                        <div class="date-input-group">
+                            <input type="date" id="table_date_start" class="date_input" required="" onkeydown="return false" max="2022-10-15">
+                            <label for="table_date_start" class="table_date_label">Дата</label>
+                        </div>
+
+                        <div class="date-input-group" id="stop-date-div" style="display: none;">
+                            <input type="date" id="table_date_stop" class="date_input" required="" onkeydown="return false" max="2022-10-15" min="2022-10-15">
+                            <label for="table_date_stop" class="table_date_label">Конец</label>
+                        </div>
+
+                        <input type="hidden" value="date" id="date-type">
+                    </div>
+                </div>
+
+                <div class="content-header">
+                    <h3>Значение молярной массы паров углеводородов в зависимости от температуры начала кипения</h3>
+                </div>
+
+                <div class="tableDivMollMass">
+                    <table id="itemInfoTableMolMass"  class="itemInfoTableMolMass" style="width:100%; float:left">
+                        <thead>
+                            <tr>
+                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>t н.п/н.кд, C</h4></th>
+                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>М н.п, кг/кмоль</h4></th>
+                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>t н.п/н.кд, C</h4></th>
+                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>М н.п, кг/кмоль</h4></th>
+                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>t н.п/н.кд, C</h4></th>
+                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>М н.п, кг/кмоль</h4></th>
+                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>t н.п/н.кд, C</h4></th>
+                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>М н.п, кг/кмоль</h4></th>
+                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>t н.п/н.кд, C</h4></th>
+                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>М н.п, кг/кмоль</h4></th>
+                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>t н.п/н.кд, C</h4></th>
+                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>М н.п, кг/кмоль</h4></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in mol_mass %}
+                            <tr>
+                                <td><span>{{item.t_10_43}}</span></td>
+                                <td><span>{{item.m_50_70}}</span></td>
+                                <td><span>{{item.t_44_77}}</span></td>
+                                <td><span>{{item.m_71_91}}</span></td>
+                                <td><span>{{item.t_78_132}}</span></td>
+                                <td><span>{{item.m_92_118}}</span></td>
+                                <td><span>{{item.t_134_200}}</span></td>
+                                <td><span>{{item.m_119_159}}</span></td>
+                                <td><span>{{item.t_202_350}}</span></td>
+                                <td><span>{{item.m_160_290}}</span></td>
+                                <td><span>{{item.t_355_500}}</span></td>
+                                <td><span>{{item.m_285_510}}</span></td>
+
+                            </tr>
+                            {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+
+             </div>
+        </div>
+</section>
+{% endblock %}

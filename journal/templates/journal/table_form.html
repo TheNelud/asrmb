@@ -1,0 +1,17 @@
+{%extends 'journal/main.html' %}
+{% load static%}
+{%block content%}
+<section class="content">
+
+
+
+    <form action="" method="POST">
+        {%csrf_token%}
+        {{form}}
+        <input type="submit" name="Submit">
+    </form>
+
+</section>
+
+
+{%endblock%}

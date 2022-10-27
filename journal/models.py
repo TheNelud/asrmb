@@ -70,6 +70,10 @@ class P1ComponentCompositionOfUnstableCondensate(models.Model):
     total_molar_mass = models.FloatField()
     chromatograph_mass = models.FloatField()
     calculated_mass = models.FloatField()
+    time = models.DateTimeField()
+
+    def __str__(self):
+        return self.name
 
     class Meta:
         ordering = ['id']
@@ -85,6 +89,7 @@ class P2ComponentCompositionOfGas(models.Model):
     total_molar_mass = models.FloatField()
     chromatograph_mass = models.FloatField()
     calculated_mass = models.FloatField()
+    time = models.DateTimeField()
 
     class Meta:
         ordering = ['id']
@@ -100,6 +105,7 @@ class P3DeterminationOfTheComponentOfGas(models.Model):
     total_molar_mass = models.FloatField()
     chromatograph_mass = models.FloatField()
     calculated_mass = models.FloatField()
+    time = models.DateTimeField()
 
     class Meta:
         ordering = ['id']
@@ -117,6 +123,7 @@ class P4GasCompositionToTheProtocol(models.Model):
     calculated_mass = models.FloatField()
     content_of_the_component = models.FloatField()
     proportion_of_the_component = models.FloatField()
+    time = models.DateTimeField()
 
     class Meta:
         ordering = ['id']
@@ -132,6 +139,7 @@ class P5DeterminationOfTheComponentComposition(models.Model):
     total_molar_mass = models.FloatField()
     chromatograph_mass = models.FloatField()
     calculated_mass = models.FloatField()
+    time = models.DateTimeField()
 
     class Meta:
         ordering = ['id']
@@ -147,6 +155,7 @@ class P6CompositionOfGasOutput(models.Model):
     total_molar_mass = models.FloatField()
     chromatograph_mass = models.FloatField()
     calculated_mass = models.FloatField()
+    time = models.DateTimeField()
 
     class Meta:
         ordering = ['id']
@@ -162,6 +171,7 @@ class P7CompositionOfGas10c(models.Model):
     total_molar_mass = models.FloatField()
     chromatograph_mass = models.FloatField()
     calculated_mass = models.FloatField()
+    time = models.DateTimeField()
 
     class Meta:
         ordering = ['id']
@@ -175,6 +185,7 @@ class P8CompositionOfTheCondensate(models.Model):
     cylinder_1506 = models.FloatField()
     cylinder_1641 = models.FloatField()
     average_value = models.FloatField()
+    time = models.DateTimeField()
 
     class Meta:
         ordering = ['id']
@@ -190,6 +201,7 @@ class P9ComponentOfTheSeparationGas(models.Model):
     total_molar_mass = models.FloatField()
     chromatograph_mass = models.FloatField()
     calculated_mass = models.FloatField()
+    time = models.DateTimeField()
 
     class Meta:
         ordering = ['id']
@@ -204,11 +216,87 @@ class P10ProtokolKGN(models.Model):
     molar_mass_of_the_component = models.FloatField()
     chromatograph_mass = models.FloatField()
     proportion = models.FloatField()
+    time = models.DateTimeField()
 
     class Meta:
         ordering = ['id']
         managed = False
         db_table = 'p10_protocol_kgn'
+
+
+class AllTableCal(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    sum_first = models.FloatField()
+    sum_second = models.FloatField()
+    xg_prod = models.FloatField()
+    xk_prod = models.FloatField()
+    c5_sum = models.FloatField()
+    calc_density = models.FloatField()
+    time = models.DateTimeField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'all_table_cal'
+
+
+class DenProtokol(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    num = models.FloatField()
+    comment = models.CharField(max_length=255)
+    time = models.DateTimeField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'den_protocol'
+
+
+class P2SumTable(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    c6plus = models.FloatField()
+    time = models.DateTimeField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'p2_sum_table'
+
+
+class P4SumTable(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    c6plus = models.FloatField()
+    time = models.DateTimeField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'p4_sum_table'
+
+
+class P6SumTable(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    c6plus = models.FloatField()
+    time = models.DateTimeField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'p6_sum_table'
+
+
+class P10Calc(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    name = models.FloatField()
+    calculation = models.FloatField()
+    time = models.DateTimeField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'p10_calc'
 
 
 # For schema codensatecalc ------------------------------------------------------------------------------------------->
@@ -603,6 +691,7 @@ class RecyclingcalcTime(models.Model):
         managed = False
         db_table = 'recyclingcalc_time'
 
+
 # 2. Потери природного газа через неплотности соединений теплообменной апаратуры на расчетный период, м3. (п.5.1.3)
 class RecyclingcalcTwo(models.Model):
     id = models.SmallAutoField(primary_key=True)
@@ -755,6 +844,7 @@ class P2Calc(models.Model):
         managed = False
         db_table = 'p2_calc'
 
+
 class P3Calc(models.Model):
     id = models.SmallAutoField(primary_key=True)
     name = models.CharField(max_length=255)
@@ -768,6 +858,7 @@ class P3Calc(models.Model):
         ordering = ['id']
         managed = False
         db_table = 'p3_calc'
+
 
 class P4Calc(models.Model):
     id = models.SmallAutoField(primary_key=True)
@@ -783,6 +874,7 @@ class P4Calc(models.Model):
         managed = False
         db_table = 'p4_calc'
 
+
 class P5Calc(models.Model):
     id = models.SmallAutoField(primary_key=True)
     name = models.CharField(max_length=255)
@@ -796,6 +888,7 @@ class P5Calc(models.Model):
         ordering = ['id']
         managed = False
         db_table = 'p5_calc'
+
 
 class P6Calc(models.Model):
     id = models.SmallAutoField(primary_key=True)
@@ -811,6 +904,7 @@ class P6Calc(models.Model):
         managed = False
         db_table = 'p6_calc'
 
+
 class P7Calc(models.Model):
     id = models.SmallAutoField(primary_key=True)
     name = models.CharField(max_length=255)
@@ -824,6 +918,7 @@ class P7Calc(models.Model):
         ordering = ['id']
         managed = False
         db_table = 'p7_calc'
+
 
 class TabCoefAll(models.Model):
     id = models.SmallAutoField(primary_key=True)
@@ -843,6 +938,7 @@ class TabCoefAll(models.Model):
         managed = False
         db_table = 'tab_coef_all'
 
+
 class TabSumAll(models.Model):
     id = models.SmallAutoField(primary_key=True)
     name = models.CharField(max_length=255)
@@ -861,15 +957,13 @@ class TabSumAll(models.Model):
 class TotalCalc(models.Model):
     id = models.SmallAutoField(primary_key=True)
     name = models.CharField(max_length=255)
-    scalc_one  = models.FloatField()
-    calc_two  = models.FloatField()
-    calc_thre = models.FloatField()
+    scalc_one = models.FloatField()
+    calc_two = models.FloatField()
+    calc_threе = models.FloatField()
     calc_four = models.FloatField()
-    zn      = models.FloatField()
+    zn = models.FloatField()
 
     class Meta:
         ordering = ['id']
         managed = False
         db_table = 'total_calc'
-
-

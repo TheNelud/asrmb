@@ -1,3 +1,4 @@
+{% load static%}
 .tableDivOKS{
 
     height: calc(100% - 150px);
@@ -55,5 +56,38 @@
     font-size: 14px;
     border: 1px solid #ddd;
     text-align: center;
+
+}
+
+.btn{
+    display: inline-block;
+    font-weight: normal;
+    line-height: 0.75;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+}
+
+.btn-info{
+    /*background: url({% static 'journal/images/update.png' %});*/
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #5bc0de;
+
+}
+
+.btn-danger{
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d9534f;
 
 }
