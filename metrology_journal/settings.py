@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'journal.apps.JournalConfig',
+    'journal_oks.apps.JournalOksConfig',
 ]
 
 MIDDLEWARE = [
@@ -165,7 +166,7 @@ DATABASES = {
 }
 
 DATABASE_ROUTERS = ('journal.db_router.Coefficients_db_router',
-                    'journal.db_router.Public_db_router',
+                    'journal_oks.db_router.Public_db_router',
                     'journal.db_router.Condensatecalc_db_router',
                     'journal.db_router.Gascalc_db_router',
                     'journal.db_router.Compress_db_router',)

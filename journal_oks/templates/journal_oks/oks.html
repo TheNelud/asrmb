@@ -61,8 +61,6 @@
 
                 <div class="content-header">
                     <h3>Определение компонентного состава конденсата нестабильного<br>10Р-2№2 Протокол анализа №09-2021 PVT(К) от 25.02.2021</h3>
-                    <a class="btn btn-info" href="{% url 'create_oks'%}">Добавить</a>
-
                 </div>
 
 
@@ -95,13 +93,12 @@
                                 <td><span>{{item.chromatograph_mass}}</span></td>
                                 <td><span>{{item.calculated_mass}}</span></td>
                                 <td><span>{{item.time}}</span></td>
-
-
                             </tr>
                             {% endfor %}
                         </tbody>
                     </table>
                 </div>
+                <a class="btn btn-info" href="{% url 'create_oks'%}"><img src="{% static 'journal/images/plus.png' %}" alt="Добавить" title="Добавить" height="32" width="32"></a>
             </div>
             <div class="content_text" id="id_oks_content_p2" style="display: none">
 
@@ -123,12 +120,15 @@
 
                 <div class="content-header">
                     <h3>Определение компонентного состава газа по ГОСТ 31371<br>10С-1№2  протокол № 05 - PVT(Г) от 25.02.2021</h3>
+                    <a class="btn btn-info" href="{% url 'create_oks'%}"><img src="{% static 'journal/images/plus.png' %}" alt="Добавить" title="Добавить" height="32" width="32"></a>
                 </div>
 
                 <div class="tableDivOKS">
                     <table class="itemInfoTableOKS"  style="width:100%; float:left">
                         <thead>
                             <tr>
+                                <th class="objCellOKS"style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
+                                <th class="objCellOKS"style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
                                 <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> </h4></th>
                                 <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>мольное содержание компонентов, %</h4></th>
                                 <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Молярная масса компо-нента</h4></th>
@@ -140,6 +140,8 @@
                         <tbody>
                             {% for item in oks_p2%}
                             <tr>
+                                <td><a href="{% url 'update_oks' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
+                                <td><a href="{% url 'delete_oks' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
                                 <td><span>{{item.name}}</span></td>
                                 <td><span>{{item.molar_components}}</span></td>
                                 <td><span>{{item.molar_mass_of_the_component}}</span></td>
@@ -174,12 +176,15 @@
 
                 <div class="content-header">
                     <h3>Определение компонентного состава газа по ГОСТ 31371<br>п.34 паспорт качества  №3 от 01.04.2021г.</h3>
+                    <a class="btn btn-info" href="{% url 'create_oks'%}"><img src="{% static 'journal/images/plus.png' %}" alt="Добавить" title="Добавить" height="32" width="32"></a>
                 </div>
 
                 <div class="tableDivOKS">
                     <table class="itemInfoTableOKS"  style="width:100%; float:left">
                         <thead>
                             <tr>
+                                <th class="objCellOKS"style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
+                                <th class="objCellOKS"style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
                                 <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> </h4></th>
                                 <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>мольное содержание компонентов, %</h4></th>
                                 <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Молярная масса компо-нента</h4></th>
@@ -191,6 +196,8 @@
                         <tbody>
                             {% for item in oks_p3%}
                             <tr>
+                                <td><a href="{% url 'update_oks' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
+                                <td><a href="{% url 'delete_oks' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
                                 <td><span>{{item.name}}</span></td>
                                 <td><span>{{item.molar_components}}</span></td>
                                 <td><span>{{item.molar_mass_of_the_component}}</span></td>
@@ -223,12 +230,15 @@
 
                 <div class="content-header">
                     <h3>Определение компонентного состава газа по ГОСТ 31371<br> 30Р-1 протокол № 07-PVT(Г) от 25.02.2021</h3>
+                    <a class="btn btn-info" href="{% url 'create_oks'%}"><img src="{% static 'journal/images/plus.png' %}" alt="Добавить" title="Добавить" height="32" width="32"></a>
                 </div>
 
                 <div class="tableDivOKS">
                     <table class="itemInfoTableOKS"  style="width:100%; float:left">
                         <thead>
                             <tr>
+                                <th class="objCellOKS"style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
+                                <th class="objCellOKS"style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
                                 <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> </h4></th>
                                 <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>мольное содержание<br> компонентов, %</h4></th>
                                 <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Молярная масса<br> компо-нента</h4></th>
@@ -242,6 +252,8 @@
                         <tbody>
                             {% for item in oks_p4%}
                             <tr>
+                                <td><a href="{% url 'update_oks' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
+                                <td><a href="{% url 'delete_oks' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
                                 <td><span>{{item.name}}</span></td>
                                 <td><span>{{item.molar_components}}</span></td>
                                 <td><span>{{item.molar_mass_of_the_component}}</span></td>
@@ -277,12 +289,15 @@
 
                 <div class="content-header">
                     <h3>Определение компонентного состава газа по ГОСТ 31371<br>20Е-1№3  протокол № 06 - PVT(Г) от 25.02.2021</h3>
+                    <a class="btn btn-info" href="{% url 'create_oks'%}"><img src="{% static 'journal/images/plus.png' %}" alt="Добавить" title="Добавить" height="32" width="32"></a>
                 </div>
 
                 <div class="tableDivOKS">
                     <table class="itemInfoTableOKS"  style="width:100%; float:left">
                         <thead>
                             <tr>
+                                <th class="objCellOKS"style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
+                                <th class="objCellOKS"style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
                                 <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> </h4></th>
                                 <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>мольное содержание компонентов, %</h4></th>
                                 <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Молярная масса компо-нента</h4></th>
@@ -294,6 +309,8 @@
                         <tbody>
                             {% for item in oks_p5%}
                             <tr>
+                                <td><a href="{% url 'update_oks' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
+                                <td><a href="{% url 'delete_oks' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
                                 <td><span>{{item.name}}</span></td>
                                 <td><span>{{item.molar_components}}</span></td>
                                 <td><span>{{item.molar_mass_of_the_component}}</span></td>
@@ -328,12 +345,15 @@
 
                 <div class="content-header">
                     <h3>Определение компонентного состава газа по ГОСТ 31371<br>выход газа п.35 ПРОТОКОЛ №08 - PVT(Г) от 25.02.2021</h3>
+                    <a class="btn btn-info" href="{% url 'create_oks'%}">Добавить</a>
                 </div>
 
                 <div class="tableDivOKS">
                     <table class="itemInfoTableOKS"  style="width:100%; float:left">
                         <thead>
                             <tr>
+                                <th class="objCellOKS"style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
+                                <th class="objCellOKS"style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
                                 <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> </h4></th>
                                 <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>мольное содержание компонентов, %</h4></th>
                                 <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Молярная масса компо-нента</h4></th>
@@ -345,6 +365,8 @@
                         <tbody>
                             {% for item in oks_p6%}
                             <tr>
+                                <td><a href="{% url 'update_oks' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
+                                <td><a href="{% url 'delete_oks' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
                                 <td><span>{{item.name}}</span></td>
                                 <td><span>{{item.molar_components}}</span></td>
                                 <td><span>{{item.molar_mass_of_the_component}}</span></td>
@@ -379,12 +401,15 @@
 
                 <div class="content-header">
                     <h3>Определение компонентного состава газа по ГОСТ 31371<br>10С-4№2</h3>
+                    <a class="btn btn-info" href="{% url 'create_oks'%}"><img src="{% static 'journal/images/plus.png' %}" alt="Добавить" title="Добавить" height="32" width="32"></a>
                 </div>
 
                 <div class="tableDivOKS">
                     <table class="itemInfoTableOKS"  style="width:100%; float:left">
                         <thead>
                             <tr>
+                                <th class="objCellOKS"style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
+                                <th class="objCellOKS"style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
                                 <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> </h4></th>
                                 <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>мольное содержание компонентов, %</h4></th>
                                 <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Молярная масса компо-нента</h4></th>
@@ -396,6 +421,8 @@
                         <tbody>
                            {% for item in oks_p7%}
                             <tr>
+                                <td><a href="{% url 'update_oks' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
+                                <td><a href="{% url 'delete_oks' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
                                 <td><span>{{item.name}}</span></td>
                                 <td><span>{{item.molar_components}}</span></td>
                                 <td><span>{{item.molar_mass_of_the_component}}</span></td>
@@ -430,12 +457,15 @@
 
                 <div class="content-header">
                     <h3>Таблица 5.3 Состав конденсата скв Р5.</h3>
+                    <a class="btn btn-info" href="{% url 'create_oks'%}"><img src="{% static 'journal/images/plus.png' %}" alt="Добавить" title="Добавить" height="32" width="32"></a>
                 </div>
 
                 <div class="tableDiv">
                     <table class="itemInfoTableOKS"  style="width:100%; float:left">
                         <thead>
                             <tr>
+                                <th class="objCellOKS"style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
+                                <th class="objCellOKS"style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
                                 <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> </h4></th>
                                 <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>баллон 1506 </h4></th>
                                 <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>баллон 1641</h4></th>
@@ -446,6 +476,8 @@
                         <tbody>
                         {%for item in oks_p8%}
                             <tr>
+                                <td><a href="{% url 'update_oks' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
+                                <td><a href="{% url 'delete_oks' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
                                 <td><span>{{item.name}}</span></td>
                                 <td><span>{{item.cylinder_1506}}</span></td>
                                 <td><span>{{item.cylinder_1641}}</span></td>
@@ -476,12 +508,15 @@
 
                 <div class="content-header">
                     <h3>Определение компонентного состава газа сепарации<br>скв.Р5  проба 2119 (из отчета по договору №ГДШ 777/1.08.12)</h3>
+                    <a class="btn btn-info" href="{% url 'create_oks'%}"><img src="{% static 'journal/images/plus.png' %}" alt="Добавить" title="Добавить" height="32" width="32"></a>
                 </div>
 
                 <div class="tableDivOKS">
                     <table class="itemInfoTableOKS"  style="width:100%; float:left">
                         <thead>
                             <tr>
+                                <th class="objCellOKS"style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
+                                <th class="objCellOKS"style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
                                 <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> </h4></th>
                                 <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>мольное содержание компонентов, %</h4></th>
                                 <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Молярная масса компо-нента</h4></th>
@@ -493,6 +528,8 @@
                         <tbody>
                         {% for item in oks_p9%}
                             <tr>
+                                <td><a href="{% url 'update_oks' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
+                                <td><a href="{% url 'delete_oks' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
                                 <td><span>{{item.name}}</span></td>
                                 <td><span>{{item.molar_components}}</span></td>
                                 <td><span>{{item.molar_mass_of_the_component}}</span></td>
@@ -526,12 +563,15 @@
 
                 <div class="content-header">
                     <h3>10Р-2№2 КГН  Протокол 09-2021 PVT (К) от 25.02.2021</h3>
+                    <a class="btn btn-info" href="{% url 'create_oks'%}"><img src="{% static 'journal/images/plus.png' %}" alt="Добавить" title="Добавить" height="32" width="32"></a>
                 </div>
 
                 <div class="tableDivOKS">
                     <table class="itemInfoTableOKS"  style="width:100%; float:left">
                         <thead>
                             <tr>
+                                <th class="objCellOKS"style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
+                                <th class="objCellOKS"style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
                                 <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> </h4></th>
                                 <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Состав</h4></th>
                                 <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Молярная масса компо-нента</h4></th>
@@ -543,6 +583,8 @@
                         <tbody>
                             {% for item in oks_p10%}
                             <tr>
+                                <td><a href="{% url 'update_oks' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
+                                <td><a href="{% url 'delete_oks' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
                                 <td><span>{{item.name}}</span></td>
                                 <td><span>{{item.соmposition}}</span></td>
                                 <td><span>{{item.molar_mass_of_the_component}}</span></td>
