@@ -365,7 +365,7 @@ def create_oks_p10(request):
 
 
 def update_oks_p10(request, pk):
-    oks_p10 = P10ProtokolKGNForm.objects.get(id=pk)
+    oks_p10 = P10ProtokolKGN.objects.get(id=pk)
     form = P10ProtokolKGNForm(instance=oks_p10)
     if request.method == 'POST':
         form = P10ProtokolKGNForm(request.POST, instance=oks_p10)

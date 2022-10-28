@@ -11,7 +11,7 @@ urlpatterns = [
     # path('delete_oks/<str:pk>', views.deleteOKS, name='delete_oks'),
 
 
-    path('rtp/', views.rtp, name='rtp'),
+    # path('rtp/', views.rtp, name='rtp'),
     path('rmo/', views.rmo, name='rmo'),
     path('koff/', views.koff, name='koff'),
     path('koff_s/', views.koff_s, name='koff_s'),

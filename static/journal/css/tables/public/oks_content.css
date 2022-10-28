@@ -83,7 +83,7 @@
 }
 
 .btn-info{
-    /*background: url({% static 'journal/images/update.png' %});*/
+
     color: #fff;
     background-color: #5bc0de;
     border-color: #5bc0de;
@@ -94,5 +94,4 @@
     color: #fff;
     background-color: #d9534f;
     border-color: #d9534f;
-
 }

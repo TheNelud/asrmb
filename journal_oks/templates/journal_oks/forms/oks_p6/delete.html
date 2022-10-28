@@ -5,7 +5,7 @@
 <section class="content">
   <p>Вы уверены что хотите удалить "{{item}}"</p>
 
-  <form action="{% url 'delete_oks_p1' item.id %}" method="POST">
+  <form action="{% url 'delete_oks_p6' item.id %}" method="POST">
     {%csrf_token%}
 
     <a href="{% url 'oks'%}">Отменить</a>
