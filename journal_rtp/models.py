@@ -1,6 +1,104 @@
 from django.db import models
 
 # Create your models here.
+# '1. Технологические потери природного газа по итогам опорожнения технологического оборудования и трубопроводов перед проведением ремонтных работ, м3 (п.4.2.)';
+class TeclossesOne(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    data = models.DateField()
+    name = models.CharField(max_length=255)
+    v = models.FloatField()
+    pn = models.FloatField()
+    tn = models.FloatField()
+    zn = models.FloatField()
+    press_pk = models.FloatField()
+    tk = models.FloatField()
+    zk = models.FloatField()
+    v_op = models.FloatField()
+    ng_prod = models.FloatField()
+    ng_nl = models.FloatField()
+    xg_prod = models.FloatField()
+    n = models.FloatField()
+    pn_op = models.FloatField()
+    mol = models.FloatField()
+    time = models.DateTimeField()
+
+    def __str__(self):
+        return self.name
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'teclosses_one'
+
+# 2. Технологические потери природного газа при регенерации технических жидкостей (МЭГа), м3 (п. 4.3.2)';
+
+class TeclossesTwo(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    qgr_sh = models.FloatField()
+    ng_prod = models.FloatField()
+    ng_pl = models.FloatField()
+    xg_prod = models.FloatField()
+    pgr_sh = models.FloatField()
+    time = models.DateTimeField()
+
+    def __str__(self):
+        return self.name
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'teclosses_two'
+
+
+
+# Расчет технологических потерь при Добыче*
+# 3. Технологические потери природного газа при отборе проб, м3 (п. 4.5)';
+
+class TeclossesTree(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    v_pr = models.FloatField()
+    p_pr = models.FloatField()
+    t_pr = models.FloatField()
+    z_pr = models.FloatField()
+    b = models.FloatField()
+    ni = models.FloatField()
+    xr_prod = models.FloatField()
+    pr_op = models.FloatField()
+    device = models.CharField(max_length=255)
+    v_p = models.FloatField()
+    tau = models.FloatField()
+    xrr_prod = models.FloatField()
+    n = models.FloatField()
+    pr_pot = models.FloatField()
+    pr_pr = models.FloatField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'teclosses_three'
+
+
+# 'Приложения № 2,3,4,7
+# Необходимо для расчета xrr_prod';
+class TeclossesTreeDop(models.Model):
+    id = models.SmallAutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+    nr_prod = models.FloatField()
+    nr_pl = models.FloatField()
+    xr_prod = models.FloatField()
+
+    class Meta:
+        ordering = ['id']
+        managed = False
+        db_table = 'teclosses_three_dop'
+
+
+# 'Расчет технологических потерь при Добыче*
+
+
+# -------------------------------------------------------------________________________________________________---------->
+
+
 
 # For schema codensatecalc ------------------------------------------------------------------------------------------->
 # 1. Технологические потери газового конденсата по итогам опорожнения технологического оборудования и трубопроводов перед проведением ремонтных работ, т. (п. 5.2)';
@@ -430,94 +528,7 @@ class Teclosses2dop(models.Model):
         db_table = 'teclosses_2dop'
 
 
-# '1. Технологические потери природного газа по итогам опорожнения технологического оборудования и трубопроводов перед проведением ремонтных работ, м3 (п.4.2.)';
-class TeclossesOne(models.Model):
-    id = models.SmallAutoField(primary_key=True)
-    data = models.DateField()
-    name = models.CharField(max_length=255)
-    v = models.FloatField()
-    pn = models.FloatField()
-    tn = models.FloatField()
-    zn = models.FloatField()
-    press_pk = models.FloatField()
-    tk = models.FloatField()
-    zk = models.FloatField()
-    v_op = models.FloatField()
-    ng_prod = models.FloatField()
-    ng_nl = models.FloatField()
-    xg_prod = models.FloatField()
-    n = models.FloatField()
-    pn_op = models.FloatField()
-    mol = models.FloatField()
 
-    class Meta:
-        ordering = ['id']
-        managed = False
-        db_table = 'teclosses_one'
-
-
-# Расчет технологических потерь при Добыче*
-# 3. Технологические потери природного газа при отборе проб, м3 (п. 4.5)';
-
-class TeclossesTree(models.Model):
-    id = models.SmallAutoField(primary_key=True)
-    name = models.CharField(max_length=255)
-    v_pr = models.FloatField()
-    p_pr = models.FloatField()
-    t_pr = models.FloatField()
-    z_pr = models.FloatField()
-    b = models.FloatField()
-    ni = models.FloatField()
-    xr_prod = models.FloatField()
-    pr_op = models.FloatField()
-    device = models.CharField(max_length=255)
-    v_p = models.FloatField()
-    tau = models.FloatField()
-    xrr_prod = models.FloatField()
-    n = models.FloatField()
-    pr_pot = models.FloatField()
-    pr_pr = models.FloatField()
-
-    class Meta:
-        ordering = ['id']
-        managed = False
-        db_table = 'teclosses_three'
-
-
-# 'Приложения № 2,3,4,7
-# Необходимо для расчета xrr_prod';
-class TeclossesTreeDop(models.Model):
-    id = models.SmallAutoField(primary_key=True)
-    name = models.CharField(max_length=255)
-    nr_prod = models.FloatField()
-    nr_pl = models.FloatField()
-    xr_prod = models.FloatField()
-
-    class Meta:
-        ordering = ['id']
-        managed = False
-        db_table = 'teclosses_three_dop'
-
-
-# 'Расчет технологических потерь при Добыче*
-# 2. Технологические потери природного газа при регенерации технических жидкостей (МЭГа), м3 (п. 4.3.2)';
-
-class TeclossesTwo(models.Model):
-    id = models.SmallAutoField(primary_key=True)
-    name = models.CharField(max_length=255)
-    qgr_sh = models.FloatField()
-    ng_prod = models.FloatField()
-    ng_pl = models.FloatField()
-    xg_prod = models.FloatField()
-    pgr_sh = models.FloatField()
-
-    class Meta:
-        ordering = ['id']
-        managed = False
-        db_table = 'teclosses_two'
-
-
-# -------------------------------------------------------------________________________________________________---------->
 # for schema compress ---->
 
 class CoefPTM(models.Model):

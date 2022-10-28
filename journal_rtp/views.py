@@ -43,3 +43,70 @@ def rtp(request):
     }
 
     return render(request, 'journal_rtp/rtp.html', context)
+
+def create_rtp_1(request):
+    form = TeclossesOneForm()
+    if request.method == 'POST':
+        # print('Печать сообщения: ', request.POST)
+        form = TeclossesOneForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+
+    context = {'form': form}
+    return render(request, 'journal_rtp/forms/rtp_1/table_form.html', context)
+
+
+def update_rtp_1(request, pk):
+    rtp_1 = TeclossesOne.objects.get(id=pk)
+    form = TeclossesOneForm(instance=rtp_1)
+    if request.method == 'POST':
+        form = TeclossesOneForm(request.POST, instance=rtp_1)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+    context = {'form': form}
+    return render(request, 'journal_rtp/forms/rtp_1/table_form.html', context)
+
+
+def delete_rtp_1(request, pk):
+    rtp_1 = TeclossesOne.objects.get(id=pk)
+    if request.method == 'POST':
+        rtp_1.delete()
+        return redirect('/')
+    context = {'item': rtp_1}
+    return render(request, 'journal_rtp/forms/rtp_1/delete.html', context)
+
+
+def create_rtp_2(request):
+    form = TeclossesTwoForm()
+    if request.method == 'POST':
+        # print('Печать сообщения: ', request.POST)
+        form = TeclossesTwoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+
+    context = {'form': form}
+    return render(request, 'journal_rtp/forms/rtp_2/table_form.html', context)
+
+
+def update_rtp_2(request, pk):
+    rtp_2 = TeclossesTwo.objects.get(id=pk)
+    form = TeclossesTwoForm(instance=rtp_2)
+    if request.method == 'POST':
+        form = TeclossesTwoForm(request.POST, instance=rtp_2)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+    context = {'form': form}
+    return render(request, 'journal_rtp/forms/rtp_2/table_form.html', context)
+
+
+def delete_rtp_2(request, pk):
+    rtp_2 = TeclossesTwo.objects.get(id=pk)
+    if request.method == 'POST':
+        rtp_2.delete()
+        return redirect('/')
+    context = {'item': rtp_2}
+    return render(request, 'journal_rtp/forms/rtp_2/delete.html', context)

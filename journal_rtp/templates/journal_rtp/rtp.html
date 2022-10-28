@@ -1,4 +1,5 @@
 {%extends 'journal/main.html' %}
+{% load static%}
 {% block content %}
 <section class="sidebar">
         <div class="side_tree">
@@ -109,6 +110,7 @@
 
                 <div class="content-header">
                     <h3>1. Технологические потери природного газа по итогам опорожнения технологического оборудования и трубопроводов перед проведением ремонтных работ, м3 (п.4.2.)</h3>
+                    <a class="btn btn-info" href="{% url 'create_rtp_1'%}"><img src="{% static 'journal/images/plus.png' %}" alt="Добавить" title="Добавить" height="32" width="32"></a>
                 </div>
 
                 <div class="tableDivRTP">
@@ -116,6 +118,8 @@
                         <thead>
                             <tr>
 
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
                                 <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Дата </h4></th>
                                 <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Об-ние<br>Труб-д</h4></th>
                                 <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>V</h4></th>
@@ -137,6 +141,8 @@
                         <tbody>
                             {% for item in rtp1%}
                             <tr>
+                                <td><a href="{% url 'update_rtp_1' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
+                                <td><a href="{% url 'delete_rtp_1' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
                                 <td><span>{{item.data}}</span></td>
                                 <td><span>{{item.name}}</span></td>
                                 <td><span>{{item.v}}</span></td>
@@ -165,12 +171,15 @@
             <div class="content_text" id="id_rtp_content_rtp2" style="display: none">
                 <div class="content-header">
                     <h3>2. Технологические потери природного газа при регенерации технических жидкостей (МЭГа), м3 (п. 4.3.2)</h3>
+                    <a class="btn btn-info" href="{% url 'create_rtp_2'%}"><img src="{% static 'journal/images/plus.png' %}" alt="Добавить" title="Добавить" height="32" width="32"></a>
                 </div>
 
                 <div class="tableDivRTP">
                     <table class="itemInfoTableRTP"  style="width:100%; float:left">
                         <thead>
                             <tr>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
+                                <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
                                 <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4> </h4></th>
                                 <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Qг.р.ж.</h4></th>
                                 <th class="objCellRTP" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>nг.прод</h4></th>
@@ -183,6 +192,8 @@
                         <tbody>
                             {% for item in rtp2%}
                             <tr>
+                                <td><a href="{% url 'update_rtp_2' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
+                                <td><a href="{% url 'delete_rtp_2' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
                                 <td><span>{{item.name}}</span></td>
                                 <td><span>{{item.qgr_sh}}</span></td>
                                 <td><span>{{item.ng_prod}}</span></td>
