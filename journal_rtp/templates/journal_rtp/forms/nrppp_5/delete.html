@@ -1,0 +1,18 @@
+{%extends 'journal/main.html' %}
+{% load static %}
+{% block content %}
+
+<section class="content">
+  <p>Вы уверены что хотите удалить "{{item}}"</p>
+
+  <form action="{% url 'delete_nrppp_5' item.id %}" method="POST">
+    {%csrf_token%}
+
+    <a href="{% url 'rtp'%}">Отменить</a>
+
+    <input type="submit" name="Подтвердить">
+  </form>
+
+</section>
+
+{%endblock%}
