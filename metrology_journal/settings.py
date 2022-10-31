@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'journal.apps.JournalConfig',
     'journal_oks.apps.JournalOksConfig',
     'journal_rtp.apps.JournalRtpConfig',
+    'journal_rmo.apps.JournalRmoConfig',
 ]
 
 MIDDLEWARE = [
@@ -163,14 +164,29 @@ DATABASES = {
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
         'PORT': '5432',
+    },
+
+    'gas_massa': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'OPTIONS': {
+            'options': '-c search_path=gas_massa,public'
+        },
+        'NAME': 'metrological',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
+
 }
 
 DATABASE_ROUTERS = ('journal.db_router.Coefficients_db_router',
                     'journal_oks.db_router.Public_db_router',
                     'journal_rtp.db_router.Condensatecalc_db_router',
                     'journal_rtp.db_router.Gascalc_db_router',
-                    'journal_rtp.db_router.Compress_db_router',)
+                    'journal_rtp.db_router.Compress_db_router',
+                    'journal_rmo.db_router.Gas_massa_db_router',
+                    )
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

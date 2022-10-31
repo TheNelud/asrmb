@@ -1,0 +1,18 @@
+{%extends 'journal/main.html' %}
+{% load static %}
+{% block content %}
+
+<section class="content">
+  <p>Вы уверены что хотите удалить "{{item}}"</p>
+
+  <form action="{% url 'delete_rmo_p6' item.id %}" method="POST">
+    {%csrf_token%}
+
+    <a href="{% url 'rmo'%}">Отменить</a>
+
+    <input type="submit" name="Подтвердить">
+  </form>
+
+</section>
+
+{%endblock%}
