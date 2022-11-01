@@ -15,20 +15,19 @@ def index(request):
 
 
 
-def koff(request):
-    data_coef = Coef.objects.all()
-    data_losses = Losses.objects.all()
-    data_mol_mass = MolMass.objects.all()
-    context = {
-        'coef': data_coef,
-        'losses': data_losses,
-        'mol_mass': data_mol_mass,
-    }
-    return render(request, 'journal/koff.html', context)
+# def koff(request):
+#     data_coef = Coef.objects.all()
+#     data_losses = Losses.objects.all()
+#     data_mol_mass = MolMass.objects.all()
+#     context = {
+#         'coef': data_coef,
+#         'losses': data_losses,
+#         'mol_mass': data_mol_mass,
+#     }
+#     return render(request, 'journal/koff.html', context)
 
 
-def koff_s(request):
-    return render(request, 'journal/koff_s.html')
+
 
 
 def pgk(request):
