@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'journal_oks.apps.JournalOksConfig',
     'journal_rtp.apps.JournalRtpConfig',
     'journal_rmo.apps.JournalRmoConfig',
+    'journal_koff.apps.JournalKoffConfig',
 ]
 
 MIDDLEWARE = [
@@ -180,7 +181,7 @@ DATABASES = {
 
 }
 
-DATABASE_ROUTERS = ('journal.db_router.Coefficients_db_router',
+DATABASE_ROUTERS = ('journal_koff.db_router.Coefficients_db_router',
                     'journal_oks.db_router.Public_db_router',
                     'journal_rtp.db_router.Condensatecalc_db_router',
                     'journal_rtp.db_router.Gascalc_db_router',

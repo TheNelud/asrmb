@@ -21,5 +21,6 @@ urlpatterns = [
     path('', include('journal_oks.urls')),
     path('', include('journal_rtp.urls')),
     path('', include('journal_rmo.urls')),
+    path('', include('journal_koff.urls')),
     # path('admin/', admin.site.urls),
 ]
