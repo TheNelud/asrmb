@@ -1,8 +1,9 @@
 {%extends 'journal/main.html' %}
+{% load static%}
 {% block content %}
 <section class="content">
         <div class="pgk_content">
-    <div class="content_text" id="id_pgk_content" style="display: none">
+    <div class="content_text" id="id_pgk_content" style="display: block">
         <div style="display: inline-flex; width: 100%">
             <div class="date_div">
                 <div class="date-input-group">
@@ -21,13 +22,18 @@
 
         <div id="content-header">
             <h3>Потери газового конденсата через неплотности соединений аппарата на расчетный период Па.ж. (если в аппарате преобладает жидкая фаза), т (п.6.4.6)</h3>
+            <a class="btn btn-info" href="{% url 'create_pgk'%}"><img src="{% static 'journal/images/plus.png' %}" alt="Добавить" title="Добавить" height="32" width="32"></a>
         </div>
 
         <div id="tableDiv">
             <table id="itemInfoTable"  class="itemInfoTable" style="width:100%; float:left">
                 <thead>
                     <tr>
+
+                        <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
+                        <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
                         <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Аппарат</h4></th>
+                        <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Дата</h4></th>
                         <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Pап</h4></th>
                         <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>tап</h4></th>
                         <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Vап</h4></th>
@@ -38,28 +44,24 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% for item in data_losses_gas_apparatus%}
                     <tr>
-                        <td><span>...</span></td>
-                        <td><span>...</span></td>
-                        <td><span>...</span></td>
-                        <td><span>...</span></td>
-                        <td><span>...</span></td>
-                        <td><span>...</span></td>
-                        <td><span>...</span></td>
-                        <td><span>...</span></td>
+                        <td><a href="{% url 'update_pgk' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
+                        <td><a href="{% url 'delete_pgk' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
+                        <td><span>{{item.date}}</span></td>
+                        <td><span>{{item.device}}</span></td>
+                        <td><span>{{item.p_ap}}</span></td>
+                        <td><span>{{item.t_ap}}</span></td>
+                        <td><span>{{item.v_ap}}</span></td>
+                        <td><span>{{item.tay_ap}}</span></td>
+                        <td><span>{{item.k_d}}</span></td>
+                        <td><span>{{item.n_ap}}</span></td>
+                        <td><span>{{item.pa_sh}}</span></td>
+
 
                     </tr>
-                    <tr>
-                        <td><span>...</span></td>
-                        <td><span>...</span></td>
-                        <td><span>...</span></td>
-                        <td><span>...</span></td>
-                        <td><span>...</span></td>
-                        <td><span>...</span></td>
-                        <td><span>...</span></td>
-                        <td><span>...</span></td>
+                    {% endfor %}
 
-                    </tr>
                 </tbody>
             </table>
         </div>

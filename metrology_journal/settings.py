@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'journal_rmo.apps.JournalRmoConfig',
     'journal_koff.apps.JournalKoffConfig',
     'journal_koff_s.apps.JournalKoffSConfig',
+    'journal_pgk.apps.JournalPgkConfig',
 ]
 
 MIDDLEWARE = [
@@ -145,17 +146,17 @@ DATABASES = {
     #     'HOST': 'localhost',
     #     'PORT': '5432',
     # },
-    # 'period': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'OPTIONS': {
-    #         'options': '-c search_path=period,public'
-    #     },
-    #     'NAME': 'metrological',
-    #     'USER': 'postgres',
-    #     'PASSWORD': 'postgres',
-    #     'HOST': 'localhost',
-    #     'PORT': '5432',
-    # },
+    'period': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'OPTIONS': {
+            'options': '-c search_path=period,public'
+        },
+        'NAME': 'metrological',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    },
     'public': {
         'ENGINE': 'django.db.backends.postgresql',
         'OPTIONS': {
@@ -188,6 +189,7 @@ DATABASE_ROUTERS = ('journal_koff.db_router.Coefficients_db_router',
                     'journal_rtp.db_router.Gascalc_db_router',
                     'journal_koff_s.db_router.Compress_db_router',
                     'journal_rmo.db_router.Gas_massa_db_router',
+                    'journal_pgk.db_router.Period_db_router',
                     )
 
 # Password validation

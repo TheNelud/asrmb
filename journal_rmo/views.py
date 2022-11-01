@@ -13,7 +13,7 @@ def rmo(request):
     data_rmo_const = Const.objects.all()
 
     context = {
-        'koff_s_p2calc': data_rmo_p5,
+        'rmo_p5': data_rmo_p5,
         'rmo_p6': data_rmo_p6,
         'rmo_ps': data_rmo_ps,
         'rmo_gs': data_rmo_gs,
