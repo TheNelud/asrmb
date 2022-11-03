@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'django_filters',
+
     'journal.apps.JournalConfig',
     'journal_oks.apps.JournalOksConfig',
     'journal_rtp.apps.JournalRtpConfig',
@@ -85,7 +87,7 @@ DATABASES = {
         'OPTIONS': {
             'options': '-c search_path=django,public'
         },
-        'NAME': 'metrological',
+        'NAME': 'metrological_2',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
@@ -96,7 +98,7 @@ DATABASES = {
         'OPTIONS': {
             'options': '-c search_path=coefficients,public'
         },
-        'NAME': 'metrological',
+        'NAME': 'metrological_2',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
@@ -107,7 +109,7 @@ DATABASES = {
         'OPTIONS': {
             'options': '-c search_path=compress,public'
         },
-        'NAME': 'metrological',
+        'NAME': 'metrological_2',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
@@ -118,7 +120,7 @@ DATABASES = {
         'OPTIONS': {
             'options': '-c search_path=condensatecalc,public'
         },
-        'NAME': 'metrological',
+        'NAME': 'metrological_2',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
@@ -129,7 +131,7 @@ DATABASES = {
         'OPTIONS': {
             'options': '-c search_path=gascalc,public'
         },
-        'NAME': 'metrological',
+        'NAME': 'metrological_2',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
@@ -151,7 +153,7 @@ DATABASES = {
         'OPTIONS': {
             'options': '-c search_path=period,public'
         },
-        'NAME': 'metrological',
+        'NAME': 'metrological_2',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
@@ -162,7 +164,7 @@ DATABASES = {
         'OPTIONS': {
             'options': '-c search_path=public,public'
         },
-        'NAME': 'metrological',
+        'NAME': 'metrological_2',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
@@ -174,7 +176,7 @@ DATABASES = {
         'OPTIONS': {
             'options': '-c search_path=gas_massa,public'
         },
-        'NAME': 'metrological',
+        'NAME': 'metrological_2',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',

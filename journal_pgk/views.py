@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from . models import *
 from . forms import *
+from  .filters import *
 
 # Create your views here.
 
@@ -10,9 +11,14 @@ def pgk(request):
     data_losses_gas_apparatus = Losses_gas_apparatus.objects.all()
 
 
+    filterDate = Losses_gas_apparatusFilter()
+
+
     context = {
         'data_calc_losses': data_calc_losses,
         'data_losses_gas_apparatus': data_losses_gas_apparatus,
+
+        'filterDate': filterDate,
     }
 
 
@@ -51,3 +57,5 @@ def delete_pgk(request, pk):
         return redirect('/')
     context = {'item': rmo}
     return render(request, 'journal_pgk/forms/pgk/delete.html', context)
+
+

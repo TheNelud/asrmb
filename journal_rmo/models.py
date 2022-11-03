@@ -3,42 +3,69 @@ from django.db import models
 
 # Create your models here.
 
-class P5_app(models.Model):
+# class P5_app(models.Model):
+#     id = models.SmallAutoField(primary_key=True)
+#     name = models.CharField(max_length=255)
+#     molar_components = models.FloatField()
+#     molar_mass_of_the_component = models.FloatField()
+#     total_molar_mass = models.FloatField()
+#     chromatograph_mass = models.FloatField()
+#     calculated_mass = models.FloatField()
+#     update_time = models.DateTimeField()
+#
+#     def __str__(self):
+#         return self.name
+#
+#     class Meta:
+#         ordering = ['id']
+#         managed = False
+#         db_table = 'p5_app'
+#
+#
+# class P6_app(models.Model):
+#     id = models.SmallAutoField(primary_key=True)
+#     name = models.CharField(max_length=255)
+#     molar_components = models.FloatField()
+#     molar_mass_of_the_component = models.FloatField()
+#     total_molar_mass = models.FloatField()
+#     chromatograph_mass = models.FloatField()
+#     calculated_mass = models.FloatField()
+#     update_time = models.DateTimeField()
+#
+#     def __str__(self):
+#         return self.name
+#
+#     class Meta:
+#         ordering = ['id']
+#         managed = False
+#         db_table = 'p6_app'
+class Losses_gas(models.Model):
     id = models.SmallAutoField(primary_key=True)
-    name = models.CharField(max_length=255)
-    molar_components = models.FloatField()
-    molar_mass_of_the_component = models.FloatField()
-    total_molar_mass = models.FloatField()
-    chromatograph_mass = models.FloatField()
-    calculated_mass = models.FloatField()
-    update_time = models.DateTimeField()
+    update_date = models.DateTimeField()
+    fakel = models.FloatField()
+    recicling = models.FloatField()
 
-    def __str__(self):
-        return self.name
+    # def __str__(self):
+    #     return self.
 
     class Meta:
         ordering = ['id']
         managed = False
-        db_table = 'p5_app'
+        db_table = 'losses_gas'
 
 
-class P6_app(models.Model):
+class Meters_data_20e_1(models.Model):
     id = models.SmallAutoField(primary_key=True)
-    name = models.CharField(max_length=255)
-    molar_components = models.FloatField()
-    molar_mass_of_the_component = models.FloatField()
-    total_molar_mass = models.FloatField()
-    chromatograph_mass = models.FloatField()
-    calculated_mass = models.FloatField()
-    update_time = models.DateTimeField()
-
-    def __str__(self):
-        return self.name
+    update_date = models.DateTimeField()
+    v_20e_1_1 = models.FloatField()
+    v_20e_1_2 = models.FloatField()
+    v_20e_1_3 = models.FloatField()
+    itog = models.FloatField()
 
     class Meta:
         ordering = ['id']
         managed = False
-        db_table = 'p6_app'
+        db_table = 'meters_data_20e_1'
 
 
 class Perehod_stabilizacii(models.Model):

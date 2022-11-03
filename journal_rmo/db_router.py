@@ -1,7 +1,9 @@
 from .models import *
 
-ROUTED_MODELS_GAS_MASSA = [P5_app,
-                           P6_app,
+ROUTED_MODELS_GAS_MASSA = [Losses_gas,
+                           Meters_data_20e_1,
+                           # P5_app,
+                           # P6_app,
                            Const,
                            Perehod_stabilizacii,
                            Data_gas_stabilization]
