@@ -84,13 +84,13 @@
                             <tr>
                                 <td><a href="{% url 'update_oks_p1' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_oks_p1' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.name}}</span></td>
-                                <td><span>{{item.molar_components}}</span></td>
-                                <td><span>{{item.molar_mass_of_the_component}}</span></td>
-                                <td><span>{{item.total_molar_mass}}</span></td>
-                                <td><span>{{item.chromatograph_mass}}</span></td>
-                                <td><span>{{item.calculated_mass}}</span></td>
-                                <td><span>{{item.time}}</span></td>
+                                <td><span>{{item.name|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.molar_components|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.molar_mass_of_the_component|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.total_molar_mass|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.chromatograph_mass|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.calculated_mass|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.time|default_if_none:"-"}}</span></td>
                             </tr>
                             {% endfor %}
                         </tbody>
@@ -140,12 +140,12 @@
                             <tr>
                                 <td><a href="{% url 'update_oks_p2' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_oks_p2' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.name}}</span></td>
-                                <td><span>{{item.molar_components}}</span></td>
-                                <td><span>{{item.molar_mass_of_the_component}}</span></td>
-                                <td><span>{{item.total_molar_mass}}</span></td>
-                                <td><span>{{item.chromatograph_mass}}</span></td>
-                                <td><span>{{item.calculated_mass}}</span></td>
+                                <td><span>{{item.name|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.molar_components|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.molar_mass_of_the_component|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.total_molar_mass|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.chromatograph_mass|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.calculated_mass|default_if_none:"-"}}</span></td>
 
                             </tr>
                             {% endfor %}
@@ -196,12 +196,12 @@
                             <tr>
                                 <td><a href="{% url 'update_oks_p3' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_oks_p3' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.name}}</span></td>
-                                <td><span>{{item.molar_components}}</span></td>
-                                <td><span>{{item.molar_mass_of_the_component}}</span></td>
-                                <td><span>{{item.total_molar_mass}}</span></td>
-                                <td><span>{{item.chromatograph_mass}}</span></td>
-                                <td><span>{{item.calculated_mass}}</span></td>
+                                <td><span>{{item.name|default_if_none:"-"|}</span></td>
+                                <td><span>{{item.molar_components|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.molar_mass_of_the_component|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.total_molar_mass|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.chromatograph_mass|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.calculated_mass|default_if_none:"-"}}</span></td>
 
                             </tr>
                             {% endfor %}
@@ -252,14 +252,14 @@
                             <tr>
                                 <td><a href="{% url 'update_oks_p4' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_oks_p4' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.name}}</span></td>
-                                <td><span>{{item.molar_components}}</span></td>
-                                <td><span>{{item.molar_mass_of_the_component}}</span></td>
-                                <td><span>{{item.total_molar_mass}}</span></td>
-                                <td><span>{{item.chromatograph_mass}}</span></td>
-                                <td><span>{{item.calculated_mass}}</span></td>
-                                <td><span>{{item.content_of_the_component}}</span></td>
-                                <td><span>{{item.proportion_of_the_component}}</span></td>
+                                <td><span>{{item.name|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.molar_components|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.molar_mass_of_the_component|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.total_molar_mass|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.chromatograph_mass|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.calculated_mass|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.content_of_the_component|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.proportion_of_the_component|default_if_none:"-"}}</span></td>
 
                             </tr>
                             {% endfor %}
@@ -309,12 +309,12 @@
                             <tr>
                                 <td><a href="{% url 'update_oks_p5' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_oks_p5' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.name}}</span></td>
-                                <td><span>{{item.molar_components}}</span></td>
-                                <td><span>{{item.molar_mass_of_the_component}}</span></td>
-                                <td><span>{{item.total_molar_mass}}</span></td>
-                                <td><span>{{item.chromatograph_mass}}</span></td>
-                                <td><span>{{item.calculated_mass}}</span></td>
+                                <td><span>{{item.name|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.molar_components|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.molar_mass_of_the_component|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.total_molar_mass|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.chromatograph_mass|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.calculated_mass|default_if_none:"-"}}</span></td>
 
                             </tr>
                             {% endfor %}
@@ -343,7 +343,7 @@
 
                 <div class="content-header">
                     <h3>Определение компонентного состава газа по ГОСТ 31371<br>выход газа п.35 ПРОТОКОЛ №08 - PVT(Г) от 25.02.2021</h3>
-                    <a class="btn btn-info" href="{% url 'create_oks_p6'%}">Добавить</a>
+                    <a class="btn btn-info" href="{% url 'create_oks_p6'%}"><img src="{% static 'journal/images/plus.png' %}" alt="Добавить" title="Добавить" height="32" width="32"></a>
                 </div>
 
                 <div class="tableDivOKS">
@@ -365,12 +365,12 @@
                             <tr>
                                 <td><a href="{% url 'update_oks_p6' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_oks_p6' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.name}}</span></td>
-                                <td><span>{{item.molar_components}}</span></td>
-                                <td><span>{{item.molar_mass_of_the_component}}</span></td>
-                                <td><span>{{item.total_molar_mass}}</span></td>
-                                <td><span>{{item.chromatograph_mass}}</span></td>
-                                <td><span>{{item.calculated_mass}}</span></td>
+                                <td><span>{{item.name|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.molar_components|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.molar_mass_of_the_component|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.total_molar_mass|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.chromatograph_mass|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.calculated_mass|default_if_none:"-"}}</span></td>
 
                             </tr>
                             {% endfor %}
@@ -421,12 +421,12 @@
                             <tr>
                                 <td><a href="{% url 'update_oks_p7' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_oks_p7' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.name}}</span></td>
-                                <td><span>{{item.molar_components}}</span></td>
-                                <td><span>{{item.molar_mass_of_the_component}}</span></td>
-                                <td><span>{{item.total_molar_mass}}</span></td>
-                                <td><span>{{item.chromatograph_mass}}</span></td>
-                                <td><span>{{item.calculated_mass}}</span></td>
+                                <td><span>{{item.name|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.molar_components|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.molar_mass_of_the_component|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.total_molar_mass|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.chromatograph_mass|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.calculated_mass|default_if_none:"-"}}</span></td>
 
                             </tr>
                             {% endfor %}
@@ -476,10 +476,10 @@
                             <tr>
                                 <td><a href="{% url 'update_oks_p8' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_oks_p8' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.name}}</span></td>
-                                <td><span>{{item.cylinder_1506}}</span></td>
-                                <td><span>{{item.cylinder_1641}}</span></td>
-                                <td><span>{{item.average_value}}</span></td>
+                                <td><span>{{item.name|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.cylinder_1506|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.cylinder_1641|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.average_value|default_if_none:"-"}}</span></td>
                             </tr>
                         {% endfor %}
                         </tbody>
@@ -528,12 +528,12 @@
                             <tr>
                                 <td><a href="{% url 'update_oks_p9' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_oks_p9' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.name}}</span></td>
-                                <td><span>{{item.molar_components}}</span></td>
-                                <td><span>{{item.molar_mass_of_the_component}}</span></td>
-                                <td><span>{{item.total_molar_mass}}</span></td>
-                                <td><span>{{item.chromatograph_mass}}</span></td>
-                                <td><span>{{item.calculated_mass}}</span></td>
+                                <td><span>{{item.name|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.molar_components|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.molar_mass_of_the_component|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.total_molar_mass|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.chromatograph_mass|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.calculated_mass|default_if_none:"-"}}</span></td>
 
                             </tr>
                         {% endfor %}
@@ -583,11 +583,11 @@
                             <tr>
                                 <td><a href="{% url 'update_oks_p10' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_oks_p10' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.name}}</span></td>
-                                <td><span>{{item.соmposition}}</span></td>
-                                <td><span>{{item.molar_mass_of_the_component}}</span></td>
-                                <td><span>{{item.chromatograph_mass}}</span></td>
-                                <td><span>{{item.proportion}}</span></td>
+                                <td><span>{{item.name|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.соmposition|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.molar_mass_of_the_component|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.chromatograph_mass|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.proportion|default_if_none:"-"}}</span></td>
 
 
 

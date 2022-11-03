@@ -116,11 +116,11 @@
                             <tr>
                                 <td><a href="{% url 'update_rmo_md' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_rmo_md' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.update_date}}</span></td>
-                                <td><span>{{item.v_20e_1_1}}</span></td>
-                                <td><span>{{item.v_20e_1_2}}</span></td>
-                                <td><span>{{item.v_20e_1_3}}</span></td>
-                                <td><span>{{item.itog}}</span></td>
+                                <td><span>{{item.update_date|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.v_20e_1_1|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.v_20e_1_2|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.v_20e_1_3|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.itog|default_if_none:"-"}}</span></td>
 
 
 

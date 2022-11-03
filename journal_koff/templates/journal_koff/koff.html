@@ -67,29 +67,30 @@
                         </thead>
                         <tbody>
                             {% for item in coef %}
+
                             <tr>
 
                                 <td><span>{{item.temperature}}</span></td>
-                                <td><span>{{item.less_20}}</span></td>
-                                <td><span>{{item.t_20_52}}</span></td>
-                                <td><span>{{item.t_53_84}}</span></td>
-                                <td><span>{{item.t_85_112}}</span></td>
-                                <td><span>{{item.t_113_138}}</span></td>
-                                <td><span>{{item.t_139_162}}</span></td>
-                                <td><span>{{item.t_163_185}}</span></td>
-                                <td><span>{{item.t_186_206}}</span></td>
-                                <td><span>{{item.t_207_226}}</span></td>
-                                <td><span>{{item.t_227_244}}</span></td>
-                                <td><span>{{item.t_245_262}}</span></td>
-                                <td><span>{{item.t_263_278}}</span></td>
-                                <td><span>{{item.t_279_294}}</span></td>
-                                <td><span>{{item.t_295_310}}</span></td>
-                                <td><span>{{item.t_311_324}}</span></td>
-                                <td><span>{{item.t_325_350}}</span></td>
-                                <td><span>{{item.more_than_350}}</span></td>
+                                <td><span>{{item.less_20|default_if_none:"-" }}</span></td>
+                                <td><span>{{item.t_20_52|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t_53_84|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t_85_112|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t_113_138|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t_139_162|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t_163_185|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t_186_206|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t_207_226|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t_227_244|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t_245_262|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t_263_278|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t_279_294|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t_295_310|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t_311_324|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t_325_350|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.more_than_350|default_if_none:"-"}}</span></td>
 
                             </tr>
-                            {% endfor %}
+                            {% endfor %}|default_if_none:"-"
 
                         </tbody>
                     </table>
@@ -130,10 +131,10 @@
                         <tbody>
                             {% for item in losses%}
                             <tr>
-                                <td><span>{{item.name_of_device}}</span></td>
-                                <td><span>{{item.gas_gasoline}}</span></td>
-                                <td><span>{{item.kerosene_diesel}}</span></td>
-                                <td><span>{{item.oil_masut}}</span></td>
+                                <td><span>{{item.name_of_device|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.gas_gasoline|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.kerosene_diesel|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.oil_masut|default_if_none:"-"}}</span></td>
 
                             </tr>
                             {% endfor %}
@@ -184,18 +185,18 @@
                         <tbody>
                             {% for item in mol_mass %}
                             <tr>
-                                <td><span>{{item.t_10_43}}</span></td>
-                                <td><span>{{item.m_50_70}}</span></td>
-                                <td><span>{{item.t_44_77}}</span></td>
-                                <td><span>{{item.m_71_91}}</span></td>
-                                <td><span>{{item.t_78_132}}</span></td>
-                                <td><span>{{item.m_92_118}}</span></td>
-                                <td><span>{{item.t_134_200}}</span></td>
-                                <td><span>{{item.m_119_159}}</span></td>
-                                <td><span>{{item.t_202_350}}</span></td>
-                                <td><span>{{item.m_160_290}}</span></td>
-                                <td><span>{{item.t_355_500}}</span></td>
-                                <td><span>{{item.m_285_510}}</span></td>
+                                <td><span>{{item.t_10_43|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.m_50_70|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t_44_77|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.m_71_91|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t_78_132|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.m_92_118|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t_134_200|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.m_119_159|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t_202_350|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.m_160_290|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t_355_500|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.m_285_510|default_if_none:"-"}}</span></td>
 
                             </tr>
                             {% endfor %}

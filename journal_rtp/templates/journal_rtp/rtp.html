@@ -143,22 +143,22 @@
                             <tr>
                                 <td><a href="{% url 'update_rtp_1' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_rtp_1' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.data}}</span></td>
-                                <td><span>{{item.name}}</span></td>
-                                <td><span>{{item.v}}</span></td>
-                                <td><span>{{item.pn}}</span></td>
-                                <td><span>{{item.tn}}</span></td>
-                                <td><span>{{item.zn}}</span></td>
-                                <td><span>{{item.press_pk}}</span></td>
-                                <td><span>{{item.tk}}</span></td>
-                                <td><span>{{item.zk}}</span></td>
-                                <td><span>{{item.v_op}}</span></td>
-                                <td><span>{{item.ng_prod}}</span></td>
-                                <td><span>{{item.ng_nl}}</span></td>
-                                <td><span>{{item.xg_prod}}</span></td>
-                                <td><span>{{item.n}}</span></td>
-                                <td><span>{{item.pn_op}}</span></td>
-                                <td><span>{{item.mol}}</span></td>
+                                <td><span>{{item.data|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.name|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.v|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pn|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.tn|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.zn|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.press_pk|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.tk|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.zk|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.v_op|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.ng_prod|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.ng_nl|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.xg_prod|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.n|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pn_op|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.mol|default_if_none:"-"}}</span></td>
 
                             </tr>
                             {% endfor %}
@@ -194,12 +194,12 @@
                             <tr>
                                 <td><a href="{% url 'update_rtp_2' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_rtp_2' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.name}}</span></td>
-                                <td><span>{{item.qgr_sh}}</span></td>
-                                <td><span>{{item.ng_prod}}</span></td>
-                                <td><span>{{item.ng_pl}}</span></td>
-                                <td><span>{{item.xg_prod}}</span></td>
-                                <td><span>{{item.pgr_sh}}</span></td>
+                                <td><span>{{item.name|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.qgr_sh|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.ng_prod|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.ng_pl|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.xg_prod|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pgr_sh|default_if_none:"-"}}</span></td>
                             </tr>
                             {% endfor %}
                         </tbody>
@@ -242,22 +242,22 @@
                             <tr>
                                 <td><a href="{% url 'update_rtp_3' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_rtp_3' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.name}}</span></td>
-                                <td><span>{{item.v_pr}}</span></td>
-                                <td><span>{{item.p_pr}}</span></td>
-                                <td><span>{{item.t_pr}}</span></td>
-                                <td><span>{{item.z_pr}}</span></td>
-                                <td><span>{{item.b}}</span></td>
-                                <td><span>{{item.ni}}</span></td>
-                                <td><span>{{item.xr_prod}}</span></td>
-                                <td><span>{{item.pr_op}}</span></td>
-                                <td><span>{{item.device}}</span></td>
-                                <td><span>{{item.v_p}}</span></td>
-                                <td><span>{{item.tau}}</span></td>
-                                <td><span>{{item.xrr_prod}}</span></td>
-                                <td><span>{{item.n}}</span></td>
-                                <td><span>{{item.pr_pot}}</span></td>
-                                <td><span>{{item.pr_pr}}</span></td>
+                                <td><span>{{item.name|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.v_pr|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.p_pr|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t_pr|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.z_pr|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.b|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.ni|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.xr_prod|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pr_op|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.device|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.v_p|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.tau|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.xrr_prod|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.n|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pr_pot|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pr_pr|default_if_none:"-"}}</span></td>
                                                  </tr>
                             {% endfor %}
                         </tbody>
@@ -300,20 +300,20 @@
                             <tr>
                                 <td><a href="{% url 'update_rppp_1' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_rppp_1' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.type}}</span></td>
-                                <td><span>{{item.aij}}</span></td>
-                                <td><span>{{item.bij}}</span></td>
-                                <td><span>{{item.tauij}}</span></td>
-                                <td><span>{{item.a_ij}}</span></td>
-                                <td><span>{{item.mi}}</span></td>
-                                <td><span>{{item.q_yp}}</span></td>
-                                <td><span>{{item.t_type}}</span></td>
-                                <td><span>{{item.t_aij}}</span></td>
-                                <td><span>{{item.t_bij}}</span></td>
-                                <td><span>{{item.t_tauij}}</span></td>
-                                <td><span>{{item.t_a_ij}}</span></td>
-                                <td><span>{{item.t_mi}}</span></td>
-                                <td><span>{{item.t_q_yp}}</span></td>
+                                <td><span>{{item.type|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.aij|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.bij|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.tauij|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.a_ij|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.mi|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.q_yp|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t_type|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t_aij|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t_bij|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t_tauij|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t_a_ij|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t_mi|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t_q_yp|default_if_none:"-"}}</span></td>
 
                             </tr>
                             {% endfor %}
@@ -348,13 +348,13 @@
                             <tr>
                                 <td><a href="{% url 'update_rppp_2' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_rppp_2' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.name}}</span></td>
-                                <td><span>{{item.m_p}}</span></td>
-                                <td><span>{{item.p_p}}</span></td>
-                                <td><span>{{item.q_ed}}</span></td>
-                                <td><span>{{item.nt_o}}</span></td>
-                                <td><span>{{item.tau_p}}</span></td>
-                                <td><span>{{item.p_t_o}}</span></td>
+                                <td><span>{{item.name|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.m_p|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.p_p|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.q_ed|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.nt_o|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.tau_p|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.p_t_o|default_if_none:"-"}}</span></td>
 
                             </tr>
                             {% endfor %}
@@ -396,19 +396,19 @@
                             <tr>
                                 <td><a href="{% url 'update_rppp_3' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_rppp_3' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.name}}</span></td>
-                                <td><span>{{item.vp_o_i}}</span></td>
-                                <td><span>{{item.pp_o_i}}</span></td>
-                                <td><span>{{item.tp_o_i}}</span></td>
-                                <td><span>{{item.zp_o_i}}</span></td>
-                                <td><span>{{item.bi}}</span></td>
-                                <td><span>{{item.nan_i}}</span></td>
-                                <td><span>{{item.qo_p_i}}</span></td>
-                                <td><span>{{item.device}}</span></td>
-                                <td><span>{{item.vp_p_i}}</span></td>
-                                <td><span>{{item.tau_p_i}}</span></td>
-                                <td><span>{{item.qpot_i}}</span></td>
-                                <td><span>{{item.qyp}}</span></td>
+                                <td><span>{{item.name|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.vp_o_i|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pp_o_i|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.tp_o_i|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.zp_o_i|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.bi|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.nan_i|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.qo_p_i|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.device|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.vp_p_i|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.tau_p_i|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.qpot_i|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.qyp|default_if_none:"-"}}</span></td>
 
                             </tr>
                             {% endfor %}
@@ -443,11 +443,11 @@
                             <tr>
                                 <td><a href="{% url 'update_rppp_4' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_rppp_4' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.test}}</span></td>
-                                <td><span>{{item.v_isp}}</span></td>
-                                <td><span>{{item.tau_isp}}</span></td>
-                                <td><span>{{item.q_isp}}</span></td>
-                                <td><span>{{item.time}}</span></td>
+                                <td><span>{{item.test|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.v_isp|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.tau_isp|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.q_isp|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.time|default_if_none:"-"}}</span></td>
 
                             </tr>
                             {% endfor %}
@@ -493,17 +493,17 @@
                             <tr>
                                 <td><a href="{% url 'update_rppp_51' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_rppp_51' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.date}}</span></td>
-                                <td><span>{{item.device}}</span></td>
-                                <td><span>{{item.v}}</span></td>
-                                <td><span>{{item.pn}}</span></td>
-                                <td><span>{{item.tn}}</span></td>
-                                <td><span>{{item.zn}}</span></td>
-                                <td><span>{{item.press_pk}}</span></td>
-                                <td><span>{{item.tk}}</span></td>
-                                <td><span>{{item.zk}}</span></td>
-                                <td><span>{{item.n}}</span></td>
-                                <td><span>{{item.pb_d}}</span></td>
+                                <td><span>{{item.date|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.device|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.v|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pn|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.tn|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.zn|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.press_pk|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.tk|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.zk|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.n|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pb_d|default_if_none:"-"}}</span></td>
 
                             </tr>
                             {% endfor %}
@@ -542,19 +542,19 @@
                             <tr>
                                 <td><a href="{% url 'update_rppp_52' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_rppp_52' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.date}}</span></td>
-                                <td><span>{{item.device}}</span></td>
-                                <td><span>{{item.v}}</span></td>
-                                <td><span>{{item.pn}}</span></td>
-                                <td><span>{{item.tn}}</span></td>
-                                <td><span>{{item.zn}}</span></td>
-                                <td><span>{{item.press_pk}}</span></td>
-                                <td><span>{{item.tk}}</span></td>
-                                <td><span>{{item.zk}}</span></td>
-                                <td><span>{{item.n}}</span></td>
-                                <td><span>{{item.pb_d}}</span></td>
-                                <td><span>{{item.p_act}}</span></td>
-                                <td><span>{{item.m}}</span></td>
+                                <td><span>{{item.date|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.device|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.v|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pn|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.tn|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.zn|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.press_pk|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.tk|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.zk|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.n|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pb_d|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.p_act|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.m|default_if_none:"-"}}</span></td>
 
 
                             </tr>
@@ -595,14 +595,14 @@
 
                                 <td><a href="{% url 'update_rppp_6' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_rppp_6' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.device}}</span></td>
-                                <td><span>{{item.v}}</span></td>
-                                <td><span>{{item.p}}</span></td>
-                                <td><span>{{item.t}}</span></td>
-                                <td><span>{{item.z}}</span></td>
-                                <td><span>{{item.b}}</span></td>
-                                <td><span>{{item.nv}}</span></td>
-                                <td><span>{{item.q_op}}</span></td>
+                                <td><span>{{item.device|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.v|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.p|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.z|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.b|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.nv|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.q_op|default_if_none:"-"}}</span></td>
 
                             </tr>
                             {% endfor %}
@@ -648,18 +648,18 @@
                             <tr>
                                 <td><a href="{% url 'update_nrtp_1' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_nrtp_1' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.data}}</span></td>
-                                <td><span>{{item.type}}</span></td>
-                                <td><span>{{item.v_op}}</span></td>
-                                <td><span>{{item.mk_ic5}}</span></td>
-                                <td><span>{{item.xkprod_ic5}}</span></td>
-                                <td><span>{{item.mk_nc5}}</span></td>
-                                <td><span>{{item.xkprod_nc5}}</span></td>
-                                <td><span>{{item.mk_c6}}</span></td>
-                                <td><span>{{item.xkprod_c6}}</span></td>
-                                <td><span>{{item.vk_st_y}}</span></td>
-                                <td><span>{{item.pk_op}}</span></td>
-                                <td><span>{{item.application}}</span></td>
+                                <td><span>{{item.data|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.type|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.v_op|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.mk_ic5|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.xkprod_ic5|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.mk_nc5|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.xkprod_nc5|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.mk_c6|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.xkprod_c6|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.vk_st_y|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pk_op|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.application|default_if_none:"-"}}</span></td>
 
                             </tr>
                             {% endfor %}
@@ -700,14 +700,14 @@
                             <tr>
                                 <td><a href="{% url 'update_nrtp_2' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_nrtp_2' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.time}}</span></td>
-                                <td><span>{{item.trial}}</span></td>
-                                <td><span>{{item.v_pr}}</span></td>
-                                <td><span>{{item.p}}</span></td>
-                                <td><span>{{item.n}}</span></td>
-                                <td><span>{{item.b_pr}}</span></td>
-                                <td><span>{{item.xk_prod}}</span></td>
-                                <td><span>{{item.p_opk}}</span></td>
+                                <td><span>{{item.time|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.trial|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.v_pr|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.p|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.n|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.b_pr|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.xk_prod|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.p_opk|default_if_none:"-"}}</span></td>
 
                             </tr>
                             {% endfor %}
@@ -747,12 +747,12 @@
                             <tr>
                                 <td><a href="{% url 'update_nrtp_31' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_nrtp_31' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.time}}</span></td>
-                                <td><span>{{item.name}}</span></td>
-                                <td><span>{{item.device}}</span></td>
-                                <td><span>{{item.month}}</span></td>
-                                <td><span>{{item.day}}</span></td>
-                                <td><span>{{item.hour}}</span></td>
+                                <td><span>{{item.time|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.name|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.device|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.month|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.day|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.hour|default_if_none:"-"}}</span></td>
 
 
 
@@ -790,12 +790,12 @@
 
                                 <td><a href="{% url 'update_nrtp_32' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_nrtp_32' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.time}}</span></td>
-                                <td><span>{{item.type}}</span></td>
-                                <td><span>{{item.q_sh}}</span></td>
-                                <td><span>{{item.gk}}</span></td>
-                                <td><span>{{item.tau}}</span></td>
-                                <td><span>{{item.p_opk}}</span></td>
+                                <td><span>{{item.time|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.type|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.q_sh|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.gk|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.tau|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.p_opk|default_if_none:"-"}}</span></td>
 
                             </tr>
                             {% endfor %}
@@ -836,14 +836,14 @@
                             <tr>
                                 <td><a href="{% url 'update_nrppp_1' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_nrppp_1' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.time}}</span></td>
-                                <td><span>{{item.test}}</span></td>
-                                <td><span>{{item.gr_o}}</span></td>
-                                <td><span>{{item.nst_v}}</span></td>
-                                <td><span>{{item.tau}}</span></td>
-                                <td><span>{{item.vs_p}}</span></td>
-                                <td><span>{{item.ss_p}}</span></td>
-                                <td><span>{{item.ps_p}}</span></td>
+                                <td><span>{{item.time|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.test|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.gr_o|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.nst_v|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.tau|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.vs_p|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.ss_p|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.ps_p|default_if_none:"-"}}</span></td>
 
                             </tr>
                             {% endfor %}
@@ -887,19 +887,19 @@
                             <tr>
                                 <td><a href="{% url 'update_nrppp_2' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_nrppp_2' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.time}}</span></td>
-                                <td><span>{{item.name}}</span></td>
-                                <td><span>{{item.batch_num}}</span></td>
-                                <td><span>{{item.hr}}</span></td>
-                                <td><span>{{item.ppj}}</span></td>
-                                <td><span>{{item.py_s}}</span></td>
-                                <td><span>{{item.d}}</span></td>
-                                <td><span>{{item.kn}}</span></td>
-                                <td><span>{{item.ko}}</span></td>
-                                <td><span>{{item.p}}</span></td>
-                                <td><span>{{item.tau}}</span></td>
-                                <td><span>{{item.tau_g}}</span></td>
-                                <td><span>{{item.pm_d}}</span></td>
+                                <td><span>{{item.time|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.name|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.batch_num|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.hr|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.ppj|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.py_s|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.d|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.kn|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.ko|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.p|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.tau|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.tau_g|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pm_d|default_if_none:"-"}}</span></td>
 
                             </tr>
                             {% endfor %}
@@ -949,23 +949,23 @@
                             <tr>
                                 <td><a href="{% url 'update_nrppp_3' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_nrppp_3' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                 <td><span>{{item.time}}</span></td>
-                                <td><span>{{item.date_begin}}</span></td>
-                                <td><span>{{item.date_end}}</span></td>
-                                <td><span>{{item.batch_num}}</span></td>
-                                <td><span>{{item.pg_p}}</span></td>
-                                <td><span>{{item.mp}}</span></td>
-                                <td><span>{{item.r}}</span></td>
-                                <td><span>{{item.tg_p}}</span></td>
-                                <td><span>{{item.ppj}}</span></td>
-                                <td><span>{{item.v_o}}</span></td>
-                                <td><span>{{item.v_pol}}</span></td>
-                                <td><span>{{item.n}}</span></td>
-                                <td><span>{{item.kf}}</span></td>
-                                <td><span>{{item.v}}</span></td>
-                                <td><span>{{item.py_s}}</span></td>
-                                <td><span>{{item.pa}}</span></td>
-                                <td><span>{{item.pb_d}}</span></td>
+                                 <td><span>{{item.time|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.date_begin|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.date_end|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.batch_num|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pg_p|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.mp|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.r|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.tg_p|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.ppj|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.v_o|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.v_pol|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.n|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.kf|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.v|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.py_s|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pa|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pb_d|default_if_none:"-"}}</span></td>
 
 
                             </tr>
@@ -1007,13 +1007,13 @@
                             <tr>
                                 <td><a href="{% url 'update_nrppp_4' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_nrppp_4' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.time}}</span></td>
-                                <td><span>{{item.test}}</span></td>
-                                <td><span>{{item.v_pr}}</span></td>
-                                <td><span>{{item.p}}</span></td>
-                                <td><span>{{item.n}}</span></td>
-                                <td><span>{{item.b_pn}}</span></td>
-                                <td><span>{{item.p_opk}}</span></td>
+                                <td><span>{{item.time|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.test|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.v_pr|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.p|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.n|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.b_pn|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.p_opk|default_if_none:"-"}}</span></td>
 
                             </tr>
                             {% endfor %}
@@ -1053,13 +1053,13 @@
                             <tr>
                                 <td><a href="{% url 'update_nrppp_5' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_nrppp_5' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.time}}</span></td>
-                                <td><span>{{item.type}}</span></td>
-                                <td><span>{{item.a_ij}}</span></td>
-                                <td><span>{{item.b_ij}}</span></td>
-                                <td><span>{{item.tau_ij}}</span></td>
-                                <td><span>{{item.aa_ij}}</span></td>
-                                <td><span>{{item.p_yp}}</span></td>
+                                <td><span>{{item.time|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.type|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.a_ij|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.b_ij|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.tau_ij|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.aa_ij|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.p_yp|default_if_none:"-"}}</span></td>
 
                             </tr>
                             {% endfor %}
@@ -1100,14 +1100,14 @@
                             <tr>
                                 <td><a href="{% url 'update_nrppp_6' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_nrppp_6' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.time}}</span></td>
-                                <td><span>{{item.device}}</span></td>
-                                <td><span>{{item.p_ap}}</span></td>
-                                <td><span>{{item.v_ap}}</span></td>
-                                <td><span>{{item.tau_p}}</span></td>
-                                <td><span>{{item.k_d}}</span></td>
-                                <td><span>{{item.n_ap}}</span></td>
-                                <td><span>{{item.pa_sh}}</span></td>
+                                <td><span>{{item.time|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.device|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.p_ap|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.v_ap|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.tau_p|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.k_d|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.n_ap|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pa_sh|default_if_none:"-"}}</span></td>
 
                             </tr>
                             {% endfor %}
@@ -1147,12 +1147,12 @@
                             <tr>
                                 <td><a href="{% url 'update_nrppp_7' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_nrppp_7' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.time}}</span></td>
-                                <td><span>{{item.heat_con}}</span></td>
-                                <td><span>{{item.p_ed}}</span></td>
-                                <td><span>{{item.nt_o}}</span></td>
-                                <td><span>{{item.tau_p}}</span></td>
-                                <td><span>{{item.p_t_o}}</span></td>
+                                <td><span>{{item.time|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.heat_con|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.p_ed|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.nt_o|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.tau_p|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.p_t_o|default_if_none:"-"}}</span></td>
 
 
                             </tr>
@@ -1201,21 +1201,21 @@
                             <tr>
                                 <td><a href="{% url 'update_nrppp_8' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_nrppp_8' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.time}}</span></td>
-                                <td><span>{{item.region}}</span></td>
-                                <td><span>{{item.pt_p}}</span></td>
-                                <td><span>{{item.mp}}</span></td>
-                                <td><span>{{item.r}}</span></td>
-                                <td><span>{{item.tr_p}}</span></td>
-                                <td><span>{{item.pnj}}</span></td>
-                                <td><span>{{item.v_ychij}}</span></td>
-                                <td><span>{{item.pr_z_ij}}</span></td>pkj
-                                <td><span>{{item.v_ych_ij}}</span></td>
-                                <td><span>{{item.pkj}}</span></td>
-                                <td><span>{{item.days}}</span></td>
-                                <td><span>{{item.pr_op_ij}}</span></td>
-                                <td><span>{{item.np_t_ij}}</span></td>
-                                <td><span>{{item.pyp}}</span></td>
+                                <td><span>{{item.time|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.region|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pt_p|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.mp|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.r|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.tr_p|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pnj|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.v_ychij|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pr_z_ij|default_if_none:"-"}}</span></td>pkj
+                                <td><span>{{item.v_ych_ij|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pkj|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.days|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pr_op_ij|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.np_t_ij|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pyp|default_if_none:"-"}}</span></td>
 
 
                             </tr>
@@ -1254,12 +1254,12 @@
                             <tr>
                                 <td><a href="{% url 'update_nrppp_9' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_nrppp_9' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.time}}</span></td>
-                                <td><span>{{item.device}}</span></td>
-                                <td><span>{{item.gm_o}}</span></td>
-                                <td><span>{{item.nt}}</span></td>
-                                <td><span>{{item.nk}}</span></td>
-                                <td><span>{{item.pr_a}}</span></td>
+                                <td><span>{{item.time|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.device|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.gm_o|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.nt|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.nk|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pr_a|default_if_none:"-"}}</span></td>
 
 
                             </tr>
@@ -1310,21 +1310,21 @@
                             <tr>
                                 <td><a href="{% url 'update_nrppp_10' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_nrppp_10' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.time}}</span></td>
-                                <td><span>{{item.region}}</span></td>
-                                <td><span>{{item.pt_p}}</span></td>
-                                <td><span>{{item.mp}}</span></td>
-                                <td><span>{{item.r}}</span></td>
-                                <td><span>{{item.tr_p}}</span></td>
-                                <td><span>{{item.pnj}}</span></td>
-                                <td><span>{{item.v_ychij}}</span></td>
-                                <td><span>{{item.pr_z_ij}}</span></td>
-                                <td><span>{{item.v_ych_ij}}</span></td>
-                                <td><span>{{item.pkj}}</span></td>
-                                <td><span>{{item.days}}</span></td>
-                                <td><span>{{item.pr_op_ij}}</span></td>
-                                <td><span>{{item.np_t_ij}}</span></td>
-                                <td><span>{{item.pyp}}</span></td>
+                                <td><span>{{item.time|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.region|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pt_p|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.mp|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.r|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.tr_p|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pnj|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.v_ychij|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pr_z_ij|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.v_ych_ij|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pkj|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.days|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pr_op_ij|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.np_t_ij|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.pyp|default_if_none:"-"}}</span></td>
 
                             </tr>
                             {% endfor %}

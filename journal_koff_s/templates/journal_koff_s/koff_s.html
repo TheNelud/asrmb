@@ -73,13 +73,13 @@
                             <tr>
                                 <td><a href="{% url 'update_koff_s_2pcalc' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_koff_s_2pcalc' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.name}}</span></td>
-                                <td><span>{{item.time}}</span></td>
-                                <td><span>{{item.d_e}}</span></td>
-                                <td><span>{{item.molar}}</span></td>
-                                <td><span>{{item.p}}</span></td>
-                                <td><span>{{item.t}}</span></td>
-                                <td><span>{{item.m}}</span></td>
+                                <td><span>{{item.name|default_if_none:"-"|default_if_none:"-"|default_if_none:"-"|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.time|default_if_none:"-"|default_if_none:"-"|default_if_none:"-"|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.d_e|default_if_none:"-"|default_if_none:"-"|default_if_none:"-"|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.molar|default_if_none:"-"|default_if_none:"-"|default_if_none:"-"|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.p|default_if_none:"-"|default_if_none:"-"|default_if_none:"-"|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t|default_if_none:"-"|default_if_none:"-"|default_if_none:"-"|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.m|default_if_none:"-"|default_if_none:"-"|default_if_none:"-"|default_if_none:"-"}}</span></td>
 
 
                             </tr>
@@ -134,13 +134,13 @@
                             <tr>
                                 <td><a href="{% url 'update_koff_s_3pcalc' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_koff_s_3pcalc' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.name}}</span></td>
-                                <td><span>{{item.time}}</span></td>
-                                <td><span>{{item.d_e}}</span></td>
-                                <td><span>{{item.molar}}</span></td>
-                                <td><span>{{item.p}}</span></td>
-                                <td><span>{{item.t}}</span></td>
-                                <td><span>{{item.m}}</span></td>
+                                <td><span>{{item.name|default_if_none:"-"|default_if_none:"-"|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.time|default_if_none:"-"|default_if_none:"-"|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.d_e|default_if_none:"-"|default_if_none:"-"|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.molar|default_if_none:"-"|default_if_none:"-"|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.p|default_if_none:"-"|default_if_none:"-"|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t|default_if_none:"-"|default_if_none:"-"|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.m|default_if_none:"-"|default_if_none:"-"|default_if_none:"-"}}</span></td>
 
 
                             </tr>
@@ -196,13 +196,13 @@
                             <tr>
                                 <td><a href="{% url 'update_koff_s_4pcalc' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_koff_s_4pcalc' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.name}}</span></td>
-                                <td><span>{{item.time}}</span></td>
-                                <td><span>{{item.d_e}}</span></td>
-                                <td><span>{{item.molar}}</span></td>
-                                <td><span>{{item.p}}</span></td>
-                                <td><span>{{item.t}}</span></td>
-                                <td><span>{{item.m}}</span></td>
+                                <td><span>{{item.name|default_if_none:"-"|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.time|default_if_none:"-"|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.d_e|default_if_none:"-"|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.molar|default_if_none:"-"|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.p|default_if_none:"-"|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t|default_if_none:"-"|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.m|default_if_none:"-"|default_if_none:"-"}}</span></td>
 
 
                             </tr>
@@ -259,13 +259,13 @@
                             <tr>
                                 <td><a href="{% url 'update_koff_s_5pcalc' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_koff_s_5pcalc' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.name}}</span></td>
-                                <td><span>{{item.time}}</span></td>
-                                <td><span>{{item.d_e}}</span></td>
-                                <td><span>{{item.molar}}</span></td>
-                                <td><span>{{item.p}}</span></td>
-                                <td><span>{{item.t}}</span></td>
-                                <td><span>{{item.m}}</span></td>
+                                <td><span>{{item.name|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.time|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.d_e|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.molar|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.p|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.m|default_if_none:"-"}}</span></td>
 
 
                             </tr>
@@ -321,13 +321,13 @@
                             <tr>
                                 <td><a href="{% url 'update_koff_s_6pcalc' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_koff_s_6pcalc' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.name}}</span></td>
-                                <td><span>{{item.time}}</span></td>
-                                <td><span>{{item.d_e}}</span></td>
-                                <td><span>{{item.molar}}</span></td>
-                                <td><span>{{item.p}}</span></td>
-                                <td><span>{{item.t}}</span></td>
-                                <td><span>{{item.m}}</span></td>
+                                <td><span>{{item.name|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.time|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.d_e|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.molar|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.p|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.m|default_if_none:"-"}}</span></td>
 
 
                             </tr>
@@ -383,13 +383,13 @@
                             <tr>
                                 <td><a href="{% url 'update_koff_s_7pcalc' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                                 <td><a href="{% url 'delete_koff_s_7pcalc' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.name}}</span></td>
-                                <td><span>{{item.time}}</span></td>
-                                <td><span>{{item.d_e}}</span></td>
-                                <td><span>{{item.molar}}</span></td>
-                                <td><span>{{item.p}}</span></td>
-                                <td><span>{{item.t}}</span></td>
-                                <td><span>{{item.m}}</span></td>
+                                <td><span>{{item.name|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.time|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.d_e|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.molar|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.p|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.t|default_if_none:"-"}}</span></td>
+                                <td><span>{{item.m|default_if_none:"-"}}</span></td>
 
 
                             </tr>
