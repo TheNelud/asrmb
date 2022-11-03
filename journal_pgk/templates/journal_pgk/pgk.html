@@ -48,15 +48,15 @@
                     <tr>
                         <td><a href="{% url 'update_pgk' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
                         <td><a href="{% url 'delete_pgk' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                        <td><span>{{item.date}}</span></td>
-                        <td><span>{{item.device}}</span></td>
-                        <td><span>{{item.p_ap}}</span></td>
-                        <td><span>{{item.t_ap}}</span></td>
-                        <td><span>{{item.v_ap}}</span></td>
-                        <td><span>{{item.tay_ap}}</span></td>
-                        <td><span>{{item.k_d}}</span></td>
-                        <td><span>{{item.n_ap}}</span></td>
-                        <td><span>{{item.pa_sh}}</span></td>
+                        <td><span>{{item.date|default_if_none:"-"}}</span></td>
+                        <td><span>{{item.device|default_if_none:"-"}}</span></td>
+                        <td><span>{{item.p_ap|default_if_none:"-"}}</span></td>
+                        <td><span>{{item.t_ap|default_if_none:"-"}}</span></td>
+                        <td><span>{{item.v_ap|default_if_none:"-"}}</span></td>
+                        <td><span>{{item.tay_ap|default_if_none:"-"}}</span></td>
+                        <td><span>{{item.k_d|default_if_none:"-"}}</span></td>
+                        <td><span>{{item.n_ap|default_if_none:"-"}}</span></td>
+                        <td><span>{{item.pa_sh|default_if_none:"-"}}</span></td>
 
 
                     </tr>
