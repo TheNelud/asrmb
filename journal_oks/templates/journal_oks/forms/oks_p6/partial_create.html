@@ -1,11 +1,11 @@
-<form method="post" action="{% url 'oks_p1_create' %}" class="js-product-create-form">
+<form method="post" action="{% url 'oks_p6_create' %}" class="js-product-create-form">
     {% csrf_token %}
     <div class="modal-header">
       
       <h4 class="modal-title">Create a new product</h4>
     </div>
     <div class="modal-body">
-      {% include 'journal_oks/forms/oks_p1/partial_form.html' %}
+      {% include 'journal_oks/forms/oks_p6/partial_form.html' %}
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-default" data-bs-dismiss="modal">Закрыть</button>

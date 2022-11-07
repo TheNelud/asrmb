@@ -1,10 +1,10 @@
-<form method="post" action="{% url 'oks_p1_update' form.instance.pk %}" class="js-product-update-form">
+<form method="post" action="{% url 'oks_p2_update' form.instance.pk %}" class="js-product-update-form">
 {% csrf_token %}
 <div class="modal-header">
     <h4 class="modal-title">Update product</h4>
 </div>
 <div class="modal-body">
-    {% include 'journal_oks/forms/oks_p1/partial_form.html' %}
+    {% include 'journal_oks/forms/oks_p2/partial_form.html' %}
 </div>
 <div class="modal-footer">
     <button type="button" class="btn btn-default" data-bs-dismiss="modal">Закрыть</button>

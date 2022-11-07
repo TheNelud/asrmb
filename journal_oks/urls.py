@@ -1,6 +1,16 @@
 from django.urls import path
 from . import views
+# from journal_oks.oks_views import oks_p1_view
 from journal_oks.oks_views.oks_p1_view import *
+from journal_oks.oks_views.oks_p2_view import *
+from journal_oks.oks_views.oks_p3_view import *
+from journal_oks.oks_views.oks_p4_view import *
+from journal_oks.oks_views.oks_p5_view import *
+from journal_oks.oks_views.oks_p6_view import *
+from journal_oks.oks_views.oks_p7_view import *
+from journal_oks.oks_views.oks_p8_view import *
+from journal_oks.oks_views.oks_p9_view import *
+from journal_oks.oks_views.oks_p10_view import *
 from django.conf.urls import url
 
 urlpatterns = [
@@ -11,45 +21,64 @@ urlpatterns = [
     url(r'^oks_p1_create/$', oks_p1_create, name='oks_p1_create'),
     url(r'^oks_p1_products/(?P<pk>\d+)/update/$', oks_p1_update, name='oks_p1_update'),
     url(r'^oks_p1_products/(?P<pk>\d+)/delete/$', oks_p1_delete, name='oks_p1_delete'),
-    url(r'^hist_1.png/$', GraphsViewBar, name='plot_pic'),
+    # url(r'^hist_1.png/$', GraphsViewBar_p1, name='plot_pic'),
 
-    # path('create_oks_p1/', views.create_oks_p1, name='create_oks_p1'),
-    # path('update_oks_p1/<str:pk>', views.update_oks_p1, name='update_oks_p1'),
-    # path('delete_oks_p1/<str:pk>', views.delete_oks_p1, name='delete_oks_p1'),
 
-    path('create_oks_p2/', views.create_oks_p2, name='create_oks_p2'),
-    path('update_oks_p2/<str:pk>', views.update_oks_p2, name='update_oks_p2'),
-    path('delete_oks_p2/<str:pk>', views.delete_oks_p2, name='delete_oks_p2'),
+    url(r'^oks_p2/$', oks_p2_list, name='oks_p2_list'),
+    url(r'^oks_p2_create/$', oks_p2_create, name='oks_p2_create'),
+    url(r'^oks_p2_products/(?P<pk>\d+)/update/$', oks_p2_update, name='oks_p2_update'),
+    url(r'^oks_p2_products/(?P<pk>\d+)/delete/$', oks_p2_delete, name='oks_p2_delete'),
+    # url(r'^hist_2.png/$', GraphsViewBar_p2, name='plot_pic'),
 
-    path('create_oks_p3/', views.create_oks_p3, name='create_oks_p3'),
-    path('update_oks_p3/<str:pk>', views.update_oks_p3, name='update_oks_p3'),
-    path('delete_oks_p3/<str:pk>', views.delete_oks_p3, name='delete_oks_p3'),
 
-    path('create_oks_p4/', views.create_oks_p4, name='create_oks_p4'),
-    path('update_oks_p4/<str:pk>', views.update_oks_p4, name='update_oks_p4'),
-    path('delete_oks_p4/<str:pk>', views.delete_oks_p4, name='delete_oks_p4'),
+    url(r'^oks_p3/$', oks_p3_list, name='oks_p3_list'),
+    url(r'^oks_p3_create/$', oks_p3_create, name='oks_p3_create'),
+    url(r'^oks_p3_products/(?P<pk>\d+)/update/$', oks_p3_update, name='oks_p3_update'),
+    url(r'^oks_p3_products/(?P<pk>\d+)/delete/$', oks_p3_delete, name='oks_p3_delete'),
+    # url(r'^hist_2.png/$', GraphsViewBar_p2, name='plot_pic'),
 
-    path('create_oks_p5/', views.create_oks_p5, name='create_oks_p5'),
-    path('update_oks_p5/<str:pk>', views.update_oks_p5, name='update_oks_p5'),
-    path('delete_oks_p5/<str:pk>', views.delete_oks_p5, name='delete_oks_p5'),
+    url(r'^oks_p4/$', oks_p4_list, name='oks_p4_list'),
+    url(r'^oks_p4_create/$', oks_p4_create, name='oks_p4_create'),
+    url(r'^oks_p4_products/(?P<pk>\d+)/update/$', oks_p4_update, name='oks_p4_update'),
+    url(r'^oks_p4_products/(?P<pk>\d+)/delete/$', oks_p4_delete, name='oks_p4_delete'),
+    # url(r'^hist_2.png/$', GraphsViewBar_p2, name='plot_pic'),
 
-    path('create_oks_p6/', views.create_oks_p6, name='create_oks_p6'),
-    path('update_oks_p6/<str:pk>', views.update_oks_p6, name='update_oks_p6'),
-    path('delete_oks_p6/<str:pk>', views.delete_oks_p6, name='delete_oks_p6'),
+    url(r'^oks_p5/$', oks_p5_list, name='oks_p5_list'),
+    url(r'^oks_p5_create/$', oks_p5_create, name='oks_p5_create'),
+    url(r'^oks_p5_products/(?P<pk>\d+)/update/$', oks_p5_update, name='oks_p5_update'),
+    url(r'^oks_p5_products/(?P<pk>\d+)/delete/$', oks_p5_delete, name='oks_p5_delete'),
+    # url(r'^hist_2.png/$', GraphsViewBar_p2, name='plot_pic'),
 
-    path('create_oks_p7/', views.create_oks_p7, name='create_oks_p7'),
-    path('update_oks_p7/<str:pk>', views.update_oks_p7, name='update_oks_p7'),
-    path('delete_oks_p7/<str:pk>', views.delete_oks_p7, name='delete_oks_p7'),
+    url(r'^oks_p6/$', oks_p6_list, name='oks_p6_list'),
+    url(r'^oks_p6_create/$', oks_p6_create, name='oks_p6_create'),
+    url(r'^oks_p6_products/(?P<pk>\d+)/update/$', oks_p6_update, name='oks_p6_update'),
+    url(r'^oks_p6_products/(?P<pk>\d+)/delete/$', oks_p6_delete, name='oks_p6_delete'),
+    # url(r'^hist_2.png/$', GraphsViewBar_p2, name='plot_pic'),
 
-    path('create_oks_p8/', views.create_oks_p8, name='create_oks_p8'),
-    path('update_oks_p8/<str:pk>', views.update_oks_p8, name='update_oks_p8'),
-    path('delete_oks_p8/<str:pk>', views.delete_oks_p8, name='delete_oks_p8'),
+    url(r'^oks_p7/$', oks_p7_list, name='oks_p7_list'),
+    url(r'^oks_p7_create/$', oks_p7_create, name='oks_p7_create'),
+    url(r'^oks_p7_products/(?P<pk>\d+)/update/$', oks_p7_update, name='oks_p7_update'),
+    url(r'^oks_p7_products/(?P<pk>\d+)/delete/$', oks_p7_delete, name='oks_p7_delete'),
+    # url(r'^hist_2.png/$', GraphsViewBar_p2, name='plot_pic'),
 
-    path('create_oks_p9/', views.create_oks_p9, name='create_oks_p9'),
-    path('update_oks_p9/<str:pk>', views.update_oks_p9, name='update_oks_p9'),
-    path('delete_oks_p9/<str:pk>', views.delete_oks_p9, name='delete_oks_p9'),
+    url(r'^oks_p8/$', oks_p8_list, name='oks_p8_list'),
+    url(r'^oks_p8_create/$', oks_p8_create, name='oks_p8_create'),
+    url(r'^oks_p8_products/(?P<pk>\d+)/update/$', oks_p8_update, name='oks_p8_update'),
+    url(r'^oks_p8_products/(?P<pk>\d+)/delete/$', oks_p8_delete, name='oks_p8_delete'),
+    # url(r'^hist_2.png/$', GraphsViewBar_p2, name='plot_pic'),
 
-    path('create_oks_p10/', views.create_oks_p10, name='create_oks_p10'),
-    path('update_oks_p10/<str:pk>', views.update_oks_p10, name='update_oks_p10'),
-    path('delete_oks_p10/<str:pk>', views.delete_oks_p10, name='delete_oks_p10'),
+    url(r'^oks_p9/$', oks_p9_list, name='oks_p9_list'),
+    url(r'^oks_p9_create/$', oks_p9_create, name='oks_p9_create'),
+    url(r'^oks_p9_products/(?P<pk>\d+)/update/$', oks_p9_update, name='oks_p9_update'),
+    url(r'^oks_p9_products/(?P<pk>\d+)/delete/$', oks_p9_delete, name='oks_p9_delete'),
+    # url(r'^hist_2.png/$', GraphsViewBar_p2, name='plot_pic'),
+
+    url(r'^oks_p10/$', oks_p10_list, name='oks_p10_list'),
+    url(r'^oks_p10_create/$', oks_p10_create, name='oks_p10_create'),
+    url(r'^oks_p10_products/(?P<pk>\d+)/update/$', oks_p10_update, name='oks_p10_update'),
+    url(r'^oks_p10_products/(?P<pk>\d+)/delete/$', oks_p10_delete, name='oks_p10_delete'),
+    # url(r'^hist_2.png/$', GraphsViewBar_p2, name='plot_pic'),
+
+
+    
 ]

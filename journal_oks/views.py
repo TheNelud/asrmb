@@ -14,7 +14,7 @@ import io
 
 def oks(request):
     # data_p1 = P1ComponentCompositionOfUnstableCondensate.objects.all()
-    data_p2 = P2ComponentCompositionOfGas.objects.all()
+    # data_p2 = P2ComponentCompositionOfGas.objects.all()
     data_p3 = P3DeterminationOfTheComponentOfGas.objects.all()
     data_p4 = P4GasCompositionToTheProtocol.objects.all()
     data_p5 = P5DeterminationOfTheComponentComposition.objects.all()
@@ -31,7 +31,7 @@ def oks(request):
     data_p10_calc = P10Calc.objects.all()
     context = {
         # 'oks_p1': data_p1,
-        'oks_p2': data_p2,
+        # 'oks_p2': data_p2,
         'oks_p3': data_p3,
         'oks_p4': data_p4,
         'oks_p5': data_p5,
@@ -51,38 +51,7 @@ def oks(request):
     return render(request, 'journal_oks/oks.html', context)
 
 
-def create_oks_p2(request):
-    form = P2ComponentCompositionOfGasForm()
-    if request.method == 'POST':
-        # print('Печать сообщения: ', request.POST)
-        form = P2ComponentCompositionOfGasForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('/')
-
-    context = {'form': form}
-    return render(request, 'journal_oks/forms/oks_p2/table_form.html', context)
-
-
-def update_oks_p2(request, pk):
-    oks_p2 = P2ComponentCompositionOfGas.objects.get(id=pk)
-    form = P2ComponentCompositionOfGasForm(instance=oks_p2)
-    if request.method == 'POST':
-        form = P2ComponentCompositionOfGasForm(request.POST, instance=oks_p2)
-        if form.is_valid():
-            form.save()
-            return redirect('/')
-    context = {'form': form}
-    return render(request, 'journal_oks/forms/oks_p2/table_form.html', context)
-
-
-def delete_oks_p2(request, pk):
-    oks_p2 = P2ComponentCompositionOfGas.objects.get(id=pk)
-    if request.method == 'POST':
-        oks_p2.delete()
-        return redirect('/')
-    context = {'item': oks_p2}
-    return render(request, 'journal_oks/forms/oks_p2/delete.html', context)
+# 
 
 
 def create_oks_p3(request):

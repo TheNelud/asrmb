@@ -5,47 +5,14 @@
   <script src="{% static 'journal/js/cruds/oks/oks_p1/scripts.js' %}"></script>
 {% endblock %}
 
-{% block content %}
-<section class="sidebar">
-    <div class="side_tree">
-        <div class="sidebar-of-text" id="oks_sidebar" style="display:block;">
-        <ul>
-            <li>
-                <a class="tableItem choiced" href="{% url 'oks_p1_list' %}" >Приложение №1</a>
-            </li>
-            <li>
-                <a class="tableItem choiced" href="#"onclick="updateDivContent('#id_oks_content_p2')" >Приложение №2</a>
-            </li>
-            <li>
-                <a class="tableItem choiced" href="#" onclick="updateDivContent('#id_oks_content_p3')">Приложение №3</a>
-            </li>
-            <li>
-                <a class="tableItem choiced" href="#" onclick="updateDivContent('#id_oks_content_p4')">Приложение №4</a>
-            </li>
-            <li>
-                <a class="tableItem choiced" href="#" onclick="updateDivContent('#id_oks_content_p5')">Приложение №5</a>
-            </li>
-            <li>
-                <a class="tableItem choiced" href="#" onclick="updateDivContent('#id_oks_content_p6')">Приложение №6</a>
-            </li>
-            <li>
-                <a class="tableItem choiced" href="#" onclick="updateDivContent('#id_oks_content_p7')">Приложение №7</a>
-            </li>
-            <li>
-                <a class="tableItem choiced" href="#" onclick="updateDivContent('#id_oks_content_p8')">Приложение №8</a>
-            </li>
-            <li>
-                <a class="tableItem choiced" href="#" onclick="updateDivContent('#id_oks_content_p9')">Приложение №9</a>
-            </li>
-            <li>
-                <a class="tableItem choiced" href="#" onclick="updateDivContent('#id_oks_content_p10')">Приложение №10</a>
-            </li>
-        </ul>
-    </div>
-    </div>
-</section>
 
-<section class="content">
+
+{% block content %}
+{% include 'journal_oks/sidebar.html'%}
+
+
+
+{% comment %} <section class="content">
     <div class="oks_content">
             <div class="content_text" id="id_oks_content_p1" style="display: block">
                 <div style="display: inline-flex; width: 100%">
@@ -99,14 +66,10 @@
                           </div>
                         </div>
                       </div>
-
-
+                    </div>
                 </div>
-                <img src="{% url 'plot_pic' %}" style="margin: 0; padding:0; align-items:center; justify-content: center; display:block;"/>
-
-                
-                </div>
-            <div class="content_text" id="id_oks_content_p2" style="display: none">
+            </div>
+            <div class="content_text" id="id_oks_content_p2" style="display: block">
 
                 <div style="display: inline-flex; width: 100%">
                     <div class="date_div">
@@ -126,11 +89,17 @@
 
                 <div class="content-header">
                     <h4>Определение компонентного состава газа по ГОСТ 31371<br>10С-1№2  протокол № 05 - PVT(Г) от 25.02.2021</h4>
-                    <a class="btn btn-info" href="{% url 'create_oks_p2'%}"><img src="{% static 'journal/images/plus.png' %}" alt="Добавить" title="Добавить" height="32" width="32"></a>
+                    <div class="content-header">
+                        <h4>Определение компонентного состава конденсата нестабильного<br>10Р-2№2 Протокол анализа №09-2021 PVT(К) от 25.02.2021</h4>
+                        <button type="button" class="btn btn-primary js-create-product" data-url="{% url 'oks_p2_create' %}">
+                            <span class="glyphicon glyphicon-plus"></span>
+                            Добавить
+                        </button>
+                    </div>
                 </div>
 
                 <div class="tableDivOKS">
-                    <table id="table" class="itemInfoTableOKS"  style="width:100%; float:left">
+                    <table id="table" class="table itemInfoTableOKS"  style="width:100%; float:left">
                         <thead>
                             <tr>
                                 <th class="objCellOKS"style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
@@ -144,23 +113,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% for item in oks_p2%}
-                            <tr>
-                                <td><a href="{% url 'update_oks_p2' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
-                                <td><a href="{% url 'delete_oks_p2' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td>
-                                <td><span>{{item.name|default_if_none:"-"}}</span></td>
-                                <td><span>{{item.molar_components|default_if_none:"-"}}</span></td>
-                                <td><span>{{item.molar_mass_of_the_component|default_if_none:"-"}}</span></td>
-                                <td><span>{{item.total_molar_mass|default_if_none:"-"}}</span></td>
-                                <td><span>{{item.chromatograph_mass|default_if_none:"-"}}</span></td>
-                                <td><span>{{item.calculated_mass|default_if_none:"-"}}</span></td>
-
-                            </tr>
-                            {% endfor %}
+                            {% include 'journal_oks/forms/oks_p2/partial_list.html'%}
 
                         </tbody>
                     </table>
+                    <div class="modal fade" id="modal-product">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                     
+                          </div>
+                        </div>
+                      </div>
+
+
                 </div>
+                
 
             </div>
             <div class="content_text" id="id_oks_content_p3" style="display: none">
@@ -607,5 +574,5 @@
                 <a></a>
             </div>
     </div>
-</section>
+</section> {% endcomment %}
 {% endblock %}

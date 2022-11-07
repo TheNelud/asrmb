@@ -11,7 +11,7 @@ import io
 
 def oks_p1_list(request):
     oks_p1 = P1ComponentCompositionOfUnstableCondensate.objects.all()
-    return render(request, 'journal_oks/oks.html', {'oks_p1': oks_p1})
+    return render(request, 'journal_oks/forms/oks_p1/content.html', {'oks_p1': oks_p1})
  
  
 def save_oks_p1_form(request, form, template_name):
@@ -65,7 +65,7 @@ def oks_p1_delete(request, pk):
     return JsonResponse(data)
 
 
-def GraphsViewBar(request):
+def GraphsViewBar_p1(request):
     f = plt.figure()
     # x = np.arange(10)
     # h = [0, 1, 2, 3, 5, 6, 4, 2, 1, 0]

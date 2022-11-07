@@ -1,0 +1,61 @@
+{%extends 'journal/main.html' %}
+
+{% block content %}
+{% include 'journal_oks/sidebar.html'%}
+<section class="content">
+    <div class="oks_content">
+        <div class="content_text" id="id_oks_content_p10" style="display: block">
+            <div style="display: inline-flex; width: 100%">
+                <div class="date_div">
+                    <div class="date-input-group">
+                        <input type="date" id="table_date_start" class="date_input" required="" onkeydown="return false" max="2022-10-15">
+                        <label for="table_date_start" class="table_date_label">Дата</label>
+                    </div>
+
+                    <div class="date-input-group" id="stop-date-div" style="display: none;">
+                        <input type="date" id="table_date_stop" class="date_input" required="" onkeydown="return false" max="2022-10-15" min="2022-10-15">
+                        <label for="table_date_stop" class="table_date_label">Конец</label>
+                    </div>
+
+                    <input type="hidden" value="date" id="date-type">
+                </div>
+            </div>
+
+            <div class="content-header">
+                <h4>10Р-2№2 КГН  Протокол 09-2021 PVT (К) от 25.02.2021</h4>
+                    <button type="button" class="btn btn-primary js-create-product" data-url="{% url 'oks_p10_create' %}">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    Добавить
+                </button>
+            </div>
+
+            <div class="tableDivOKS">
+                <table id="product-table" class="table itemInfoTableOKS"  style="width:100%; float:left">
+                    <thead>
+                        <tr>
+                            <th class="objCellOKS"style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
+                            <th class="objCellOKS"style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
+                            <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
+                            <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Состав</th>
+                            <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Молярная масса компо-нента</th>
+                            <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">масс, % (хрома-тограф)</th>
+                            <th class="objCellOKS" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% include 'journal_oks/forms/oks_p10/partial_list.html'%}
+                    </tbody>
+                </table>
+                <div class="modal fade" id="modal-product">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                    
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
