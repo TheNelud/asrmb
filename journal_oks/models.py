@@ -11,7 +11,7 @@ class P1ComponentCompositionOfUnstableCondensate(models.Model):
     total_molar_mass = models.FloatField()
     chromatograph_mass = models.FloatField()
     calculated_mass = models.FloatField()
-    time = models.DateTimeField()
+    time = models.DateField(null=True)
 
     # def __str__(self):
     #     return self.name

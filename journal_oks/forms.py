@@ -1,12 +1,19 @@
 from django.forms import ModelForm
 from .models import *
+from django.contrib.admin.widgets import AdminSplitDateTime, AdminDateWidget
+from django.contrib.admin import widgets
+# from django.forms.fields import DateTimeField
 
 
 # for schema public -------------------------------------------------------------------------->
 class P1ComponentCompositionOfUnstableCondensateForm(ModelForm):
+    # time = DateTimeField(widget=AdminDateWidget)
     class Meta:
         model = P1ComponentCompositionOfUnstableCondensate
         fields = '__all__'
+        widgets = {
+            "time" :  AdminDateWidget()
+        }
 
 class P2ComponentCompositionOfGasForm(ModelForm):
     class Meta:

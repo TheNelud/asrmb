@@ -2,8 +2,12 @@
  
 {% for field in form %}
   <div class="form-group{% if field.errors %} has-error{% endif %}">
+    {%if field.id_for_label == "id_time"  %}
+    {{ field.label }}<br><input type="date" class='form-control' name='time' required id='id_time'>
+    {%else%}
     <label for="{{ field.id_for_label }}">{{ field.label }}</label>
     {% render_field field class="form-control" %}
+    {%endif%}
     {% for error in field.errors %}
       <p class="help-block">{{ error }}</p>
     {% endfor %}

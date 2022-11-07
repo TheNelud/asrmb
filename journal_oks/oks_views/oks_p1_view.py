@@ -9,8 +9,12 @@ import numpy as np
 from matplotlib.backends.backend_agg import FigureCanvasAgg
 import io
 
+
+
+
 def oks_p1_list(request):
     oks_p1 = P1ComponentCompositionOfUnstableCondensate.objects.all()
+
     return render(request, 'journal_oks/forms/oks_p1/content.html', {'oks_p1': oks_p1})
  
  
