@@ -25,17 +25,29 @@ def pgk(request):
     return render(request, 'journal_pgk/pgk.html', context)
 
 
+
+def insert(request):
+    member = Losses_gas_apparatus(date=request.POST['date'])
+    member.save()
+    return redirect('/')
+    # if request.method == 'POST':
+    #     form = Losses_gas_apparatus(request.POST)
+    #     form.save()
+    #     return redirect('/')
+
+
+
+
 def create_pgk(request):
     form = Losses_gas_apparatusForm()
     if request.method == 'POST':
-        # print('Печать сообщения: ', request.POST)
         form = Losses_gas_apparatusForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('/')
 
-    context = {'form': form}
-    return render(request, 'journal_pgk/forms/pgk/table_form.html', context)
+    # context = {'form': form}
+    # return render(request, 'journal_pgk/forms/pgk/table_form.html', context)
 
 
 def update_pgk(request, pk):

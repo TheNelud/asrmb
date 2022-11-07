@@ -1,13 +1,19 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from .forms import *
+from django.template.loader import render_to_string
+from django.http import JsonResponse, HttpResponse
 
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.backends.backend_agg import FigureCanvasAgg
+import io
 
 # Create your views here.
 
 
 def oks(request):
-    data_p1 = P1ComponentCompositionOfUnstableCondensate.objects.all()
+    # data_p1 = P1ComponentCompositionOfUnstableCondensate.objects.all()
     data_p2 = P2ComponentCompositionOfGas.objects.all()
     data_p3 = P3DeterminationOfTheComponentOfGas.objects.all()
     data_p4 = P4GasCompositionToTheProtocol.objects.all()
@@ -24,7 +30,7 @@ def oks(request):
     data_p6_sum_table = P6SumTable.objects.all()
     data_p10_calc = P10Calc.objects.all()
     context = {
-        'oks_p1': data_p1,
+        # 'oks_p1': data_p1,
         'oks_p2': data_p2,
         'oks_p3': data_p3,
         'oks_p4': data_p4,
@@ -43,40 +49,6 @@ def oks(request):
 
     }
     return render(request, 'journal_oks/oks.html', context)
-
-
-def create_oks_p1(request):
-    form = P1ComponentCompositionOfUnstableCondensateForm()
-    if request.method == 'POST':
-        # print('Печать сообщения: ', request.POST)
-        form = P1ComponentCompositionOfUnstableCondensateForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('/')
-
-    context = {'form': form}
-    return render(request, 'journal_oks/forms/oks_p1/table_form.html', context)
-
-
-def update_oks_p1(request, pk):
-    oks_p1 = P1ComponentCompositionOfUnstableCondensate.objects.get(id=pk)
-    form = P1ComponentCompositionOfUnstableCondensateForm(instance=oks_p1)
-    if request.method == 'POST':
-        form = P1ComponentCompositionOfUnstableCondensateForm(request.POST, instance=oks_p1)
-        if form.is_valid():
-            form.save()
-            return redirect('/')
-    context = {'form': form}
-    return render(request, 'journal_oks/forms/oks_p1/table_form.html', context)
-
-
-def delete_oks_p1(request, pk):
-    oks_p1 = P1ComponentCompositionOfUnstableCondensate.objects.get(id=pk)
-    if request.method == 'POST':
-        oks_p1.delete()
-        return redirect('/')
-    context = {'item': oks_p1}
-    return render(request, 'journal_oks/forms/oks_p1/delete.html', context)
 
 
 def create_oks_p2(request):

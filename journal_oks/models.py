@@ -13,8 +13,8 @@ class P1ComponentCompositionOfUnstableCondensate(models.Model):
     calculated_mass = models.FloatField()
     time = models.DateTimeField()
 
-    def __str__(self):
-        return self.name
+    # def __str__(self):
+    #     return self.name
 
     class Meta:
         ordering = ['id']

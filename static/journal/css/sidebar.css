@@ -1,7 +1,7 @@
 .sidebar
 {
     background:#d1d1d1;
-    height:calc(100vh - 55px);
+    height:calc(100vh - 50px);
     z-index: 997;
     margin-top:55px;
     min-width: 200px;

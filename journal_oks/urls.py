@@ -1,12 +1,21 @@
 from django.urls import path
 from . import views
+from journal_oks.oks_views.oks_p1_view import *
+from django.conf.urls import url
 
 urlpatterns = [
-    path('oks/', views.oks, name='oks'),
+    path('', views.oks, name='oks'),
 
-    path('create_oks_p1/', views.create_oks_p1, name='create_oks_p1'),
-    path('update_oks_p1/<str:pk>', views.update_oks_p1, name='update_oks_p1'),
-    path('delete_oks_p1/<str:pk>', views.delete_oks_p1, name='delete_oks_p1'),
+
+    url(r'^oks_p1/$', oks_p1_list, name='oks_p1_list'),
+    url(r'^oks_p1_create/$', oks_p1_create, name='oks_p1_create'),
+    url(r'^oks_p1_products/(?P<pk>\d+)/update/$', oks_p1_update, name='oks_p1_update'),
+    url(r'^oks_p1_products/(?P<pk>\d+)/delete/$', oks_p1_delete, name='oks_p1_delete'),
+    url(r'^hist_1.png/$', GraphsViewBar, name='plot_pic'),
+
+    # path('create_oks_p1/', views.create_oks_p1, name='create_oks_p1'),
+    # path('update_oks_p1/<str:pk>', views.update_oks_p1, name='update_oks_p1'),
+    # path('delete_oks_p1/<str:pk>', views.delete_oks_p1, name='delete_oks_p1'),
 
     path('create_oks_p2/', views.create_oks_p2, name='create_oks_p2'),
     path('update_oks_p2/<str:pk>', views.update_oks_p2, name='update_oks_p2'),
