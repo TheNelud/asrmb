@@ -1,0 +1,112 @@
+{%extends 'journal/main.html' %}
+
+{% block content %}
+{% include 'journal_rtp/sidebar.html'%}
+<section class="content">
+    <div class="rtp_content">
+        <div class="content_text" id="id_rtp_content" style="display: block">
+            <div style="display: inline-flex; width: 100%">
+                <div class="date_div">
+                    <div class="date-input-group">
+                        <input type="date" id="table_date_start" class="date_input" required="" onkeydown="return false" max="2022-10-15">
+                        <label for="table_date_start" class="table_date_label">Дата</label>
+                    </div>
+
+                    <div class="date-input-group" id="stop-date-div" style="display: none;">
+                        <input type="date" id="table_date_stop" class="date_input" required="" onkeydown="return false" max="2022-10-15" min="2022-10-15">
+                        <label for="table_date_stop" class="table_date_label">Конец</label>
+                    </div>
+
+                    <input type="hidden" value="date" id="date-type">
+                </div>
+            </div>
+
+            <div class="content-header">
+                <h4>5. Потери природного газа при опорожнении технологического оборудования перед проведением ремонтных работ на расчетный период Qоп, м3. (п.5.2.3)</h4><br>
+                <h4>Участок от УИТ ГС до точки его смешения ГГПиГС, подлежит учету в составе технологических потерь ГС при переработке'</h4>
+                <button type="button" class="btn btn-primary js-create-product" data-url="{% url 'rppp5_1_create' %}">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    Добавить
+                </button>
+            </div>
+
+            <div class="tableDiv">
+                <table id="product-table" class="table itemInfoTable"  style="width:100%; float:left">
+                    <thead>
+                        <tr>
+                            
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"> Дата </th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"> Оборуд </th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">V</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Рн</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Тн</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Zн</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Рк</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Тк</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Zк</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">n</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Пб.д.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% include 'journal_rtp/forms/rppp5_1/partial_list.html'%}
+                    </tbody>
+                </table>
+                <div class="modal fade" id="modal-product">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                    
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <h4>Участок от УИТ ГС до точки его смешения ГГПиГС, подлежит учету в составе технологических потерь ГС при переработке'</h4>
+            <button type="button" class="btn btn-primary js-create-product" data-url="{% url 'rppp5_2_create' %}">
+                <span class="glyphicon glyphicon-plus"></span>
+                Добавить
+            </button>
+
+
+            <div class="tableDiv">
+                <table id="product-table" class="table itemInfoTable"  style="width:100%; float:left">
+                    <thead>
+                        <tr>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"> Дата </th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"> Оборуд </th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">V</th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Рн</th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Тн</th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Zн</th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Рк</th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Тк</th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Zк</th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">n</th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Пб.д.</th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">p согласно акта</th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">m</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% include 'journal_rtp/forms/rppp5_2/partial_list.html'%}
+                    </tbody>
+                </table>
+                <div class="modal fade" id="modal-product">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                    
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+                            
+        </div>
+    </div>
+</section>
+{% endblock %}

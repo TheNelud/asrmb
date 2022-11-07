@@ -1,0 +1,23 @@
+{% load static%}
+{% for item in nrtp3_1%}
+<tr>
+    <td><button type="button"
+              class="btn  js-update-product"
+              data-url="{% url 'nrtp3_1_update' item.id %}">
+              <img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16">
+      </button></td>
+      <td><button type="button"
+              class="btn js-delete-product"
+              data-url="{% url 'nrtp3_1_delete' item.id %}">
+              <img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16">
+      </button></td>
+    {% comment %} <td><a href="{% url 'update_rtp_p1' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
+    <td><a href="{% url 'delete_rtp_p1' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td> {% endcomment %}
+        <td><span>{{item.time|default_if_none:"-"}}</span></td>
+        <td><span>{{item.name|default_if_none:"-"}}</span></td>
+        <td><span>{{item.device|default_if_none:"-"}}</span></td>
+        <td><span>{{item.month|default_if_none:"-"}}</span></td>
+        <td><span>{{item.day|default_if_none:"-"}}</span></td>
+        <td><span>{{item.hour|default_if_none:"-"}}</span></td>
+</tr>
+{% endfor %}

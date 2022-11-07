@@ -1,3 +1,4 @@
+
 .content {
     padding: 75px 20px 20px;
     overflow-y: auto;
@@ -108,5 +109,51 @@ input[type=date]::-webkit-clear-button {
     top: calc(50% - 8px);
 }
 
+
+
+
+/* Table */
+
+
+
+
+.btn{
+    display: inline-block;
+    font-weight: normal;
+    line-height: 0.75;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 1rem 1rem;
+    font-size: 1rem;
+    border-radius: 50%;
+    float: left;
+
+    
+}
+
+.btn-info{
+
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #5bc0de;
+
+    /* position: fixed;
+    bottom: 50px;
+    right: 50px; */
+
+}
+
+.btn-danger{
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d9534f;
+}
 
 

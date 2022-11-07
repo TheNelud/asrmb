@@ -1,0 +1,31 @@
+{% load static%}
+{% for item in rppp_1%}
+<tr>
+    <td><button type="button"
+              class="btn  js-update-product"
+              data-url="{% url 'rppp_1_update' item.id %}">
+              <img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16">
+      </button></td>
+      <td><button type="button"
+              class="btn js-delete-product"
+              data-url="{% url 'rppp_1_delete' item.id %}">
+              <img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16">
+      </button></td>
+    {% comment %} <td><a href="{% url 'update_rtp_p1' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
+    <td><a href="{% url 'delete_rtp_p1' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td> {% endcomment %}
+    <td><span>{{item.type|default_if_none:"-"}}</span></td>
+    <td><span>{{item.aij|default_if_none:"-"}}</span></td>
+    <td><span>{{item.bij|default_if_none:"-"}}</span></td>
+    <td><span>{{item.tauij|default_if_none:"-"}}</span></td>
+    <td><span>{{item.a_ij|default_if_none:"-"}}</span></td>
+    <td><span>{{item.mi|default_if_none:"-"}}</span></td>
+    <td><span>{{item.q_yp|default_if_none:"-"}}</span></td>
+    <td><span>{{item.t_type|default_if_none:"-"}}</span></td>
+    <td><span>{{item.t_aij|default_if_none:"-"}}</span></td>
+    <td><span>{{item.t_bij|default_if_none:"-"}}</span></td>
+    <td><span>{{item.t_tauij|default_if_none:"-"}}</span></td>
+    <td><span>{{item.t_a_ij|default_if_none:"-"}}</span></td>
+    <td><span>{{item.t_mi|default_if_none:"-"}}</span></td>
+    <td><span>{{item.t_q_yp|default_if_none:"-"}}</span></td>
+</tr>
+{% endfor %}

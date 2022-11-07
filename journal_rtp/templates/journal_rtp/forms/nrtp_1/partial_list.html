@@ -1,0 +1,29 @@
+{% load static%}
+{% for item in nrtp_1%}
+<tr>
+    <td><button type="button"
+              class="btn  js-update-product"
+              data-url="{% url 'nrtp_1_update' item.id %}">
+              <img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16">
+      </button></td>
+      <td><button type="button"
+              class="btn js-delete-product"
+              data-url="{% url 'nrtp_1_delete' item.id %}">
+              <img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16">
+      </button></td>
+    {% comment %} <td><a href="{% url 'update_rtp_p1' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
+    <td><a href="{% url 'delete_rtp_p1' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td> {% endcomment %}
+        <td><span>{{item.data|default_if_none:"-"}}</span></td>
+        <td><span>{{item.type|default_if_none:"-"}}</span></td>
+        <td><span>{{item.v_op|default_if_none:"-"}}</span></td>
+        <td><span>{{item.mk_ic5|default_if_none:"-"}}</span></td>
+        <td><span>{{item.xkprod_ic5|default_if_none:"-"}}</span></td>
+        <td><span>{{item.mk_nc5|default_if_none:"-"}}</span></td>
+        <td><span>{{item.xkprod_nc5|default_if_none:"-"}}</span></td>
+        <td><span>{{item.mk_c6|default_if_none:"-"}}</span></td>
+        <td><span>{{item.xkprod_c6|default_if_none:"-"}}</span></td>
+        <td><span>{{item.vk_st_y|default_if_none:"-"}}</span></td>
+        <td><span>{{item.pk_op|default_if_none:"-"}}</span></td>
+        <td><span>{{item.application|default_if_none:"-"}}</span></td>
+</tr>
+{% endfor %}

@@ -1,0 +1,71 @@
+{%extends 'journal/main.html' %}
+
+{% block content %}
+{% include 'journal_rtp/sidebar.html'%}
+<section class="content">
+    <div class="rtp_content">
+        <div class="content_text" id="id_rtp_content" style="display: block">
+            <div style="display: inline-flex; width: 100%">
+                <div class="date_div">
+                    <div class="date-input-group">
+                        <input type="date" id="table_date_start" class="date_input" required="" onkeydown="return false" max="2022-10-15">
+                        <label for="table_date_start" class="table_date_label">Дата</label>
+                    </div>
+
+                    <div class="date-input-group" id="stop-date-div" style="display: none;">
+                        <input type="date" id="table_date_stop" class="date_input" required="" onkeydown="return false" max="2022-10-15" min="2022-10-15">
+                        <label for="table_date_stop" class="table_date_label">Конец</label>
+                    </div>
+
+                    <input type="hidden" value="date" id="date-type">
+                </div>
+            </div>
+
+            <div class="content-header">
+                <h4>8. Потери газового конденсата при ремонте трубопроводов, т (п.6.5.3)</h4>
+                <button type="button" class="btn btn-primary js-create-product" data-url="{% url 'nrppp_8_create' %}">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    Добавить
+                </button>
+            </d
+
+            <div class="tableDiv">
+                <table id="product-table" class="table itemInfoTable"  style="width:100%; float:left">
+                    <thead>
+                        <tr>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"> Дата </th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"> участок </th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Рг.п.</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Мп</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Ṝ</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">tг.п.</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">рпj</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Vучij</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Пр.з.ij</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Vуч.ij</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">pkj</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Cут</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Пр.оп.ij</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">nр.т.ij</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Пуп</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% include 'journal_rtp/forms/nrppp_8/partial_list.html'%}
+                    </tbody>
+                </table>
+                <div class="modal fade" id="modal-product">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                    
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

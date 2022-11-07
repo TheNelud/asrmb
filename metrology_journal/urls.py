@@ -19,7 +19,7 @@ from django.urls import path, include
 urlpatterns = [
     path('', include('journal.urls')),
     path('oks/', include('journal_oks.urls')),
-    path('', include('journal_rtp.urls')),
+    path('rtp/', include('journal_rtp.urls')),
     path('', include('journal_rmo.urls')),
     path('', include('journal_koff.urls')),
     path('', include('journal_koff_s.urls')),

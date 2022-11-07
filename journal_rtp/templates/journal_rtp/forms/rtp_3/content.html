@@ -1,0 +1,72 @@
+{%extends 'journal/main.html' %}
+
+{% block content %}
+{% include 'journal_rtp/sidebar.html'%}
+<section class="content">
+    <div class="rtp_content">
+        <div class="content_text" id="id_rtp_content" style="display: block">
+            <div style="display: inline-flex; width: 100%">
+                <div class="date_div">
+                    <div class="date-input-group">
+                        <input type="date" id="table_date_start" class="date_input" required="" onkeydown="return false" max="2022-10-15">
+                        <label for="table_date_start" class="table_date_label">Дата</label>
+                    </div>
+
+                    <div class="date-input-group" id="stop-date-div" style="display: none;">
+                        <input type="date" id="table_date_stop" class="date_input" required="" onkeydown="return false" max="2022-10-15" min="2022-10-15">
+                        <label for="table_date_stop" class="table_date_label">Конец</label>
+                    </div>
+
+                    <input type="hidden" value="date" id="date-type">
+                </div>
+            </div>
+
+            <div class="content-header">
+                <h4>3. Технологические потери природного газа при отборе проб, м3 (п. 4.5)</h4>
+                <button type="button" class="btn btn-primary js-create-product" data-url="{% url 'rtp_3_create' %}">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    Добавить
+                </button>
+            </d
+
+            <div class="tableDiv">
+                <table id="product-table" class="table itemInfoTable"  style="width:100%; float:left">
+                    <thead>
+                        <tr>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">вид анализа </th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Vпр</th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Рпр</th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Tпр</th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Zпр</th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">b</th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">ni</th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Xг.прод</th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Пг.оп</th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Прибор</th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Vр</th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">τ</th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Xг.прод</th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">N</th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Пг.пот</th>
+                            <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Пг.пр</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% include 'journal_rtp/forms/rtp_3/partial_list.html'%}
+                    </tbody>
+                </table>
+                <div class="modal fade" id="modal-product">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                    
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
