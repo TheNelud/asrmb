@@ -1,0 +1,13 @@
+<form method="post" action="{% url 'rmo_ps_delete' rmo_ps.id %}" class="js-product-delete-form">
+    {% csrf_token %}
+    <div class="modal-header">
+      <h4 class="modal-title">Confirm product deletion</h4>
+    </div>
+    <div class="modal-body">
+      <p class="lead">Вы уверены что хотите удалить элемент <strong>{{ item.name }}</strong>?</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-bs-dismiss="modal">Закрыть</button>
+      <button type="submit" class="btn btn-danger">Удалить</button>
+    </div>
+  </form>

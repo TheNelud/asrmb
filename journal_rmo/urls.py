@@ -1,27 +1,30 @@
 from django.urls import path
 from . import views
 
+from journal_rmo.rmo_views.rmo_lg_view import *
+from journal_rmo.rmo_views.rmo_md_view import *
+from journal_rmo.rmo_views.rmo_ps_view import *
+from django.conf.urls import url
+
 urlpatterns = [
-    path('rmo/', views.rmo, name='rmo'),
+    path('', views.rmo, name='rmo'),
 
-    # path('create_rmo_p5/', views.create_rmo_p5, name='create_rmo_p5'),
-    # path('update_rmo_p5/<str:pk>', views.update_rmo_p5, name='update_rmo_p5'),
-    # path('delete_rmo_p5/<str:pk>', views.delete_rmo_p5, name='delete_rmo_p5'),
-    #
-    # path('create_rmo_p6/', views.create_rmo_p6, name='create_rmo_p6'),
-    # path('update_rmo_p6/<str:pk>', views.update_rmo_p6, name='update_rmo_p6'),
-    # path('delete_rmo_p6/<str:pk>', views.delete_rmo_p6, name='delete_rmo_p6'),
+    url(r'^rmo_lg/$', rmo_lg_list, name='rmo_lg_list'),
+    url(r'^rmo_lg_create/$', rmo_lg_create, name='rmo_lg_create'),
+    url(r'^rmo_lg_products/(?P<pk>\d+)/update/$', rmo_lg_update, name='rmo_lg_update'),
+    url(r'^rmo_lg_products/(?P<pk>\d+)/delete/$', rmo_lg_delete, name='rmo_lg_delete'),
+    # url(r'^hist_1.png/$', GraphsViewBar_p1, name='plot_pic'),
 
-    path('create_rmo_lg/', views.create_rmo_lg, name='create_rmo_lg'),
-    path('update_rmo_lg/<str:pk>', views.update_rmo_lg, name='update_rmo_lg'),
-    path('delete_rmo_lg/<str:pk>', views.delete_rmo_lg, name='delete_rmo_lg'),
+    url(r'^rmo_md/$', rmo_md_list, name='rmo_md_list'),
+    url(r'^rmo_md_create/$', rmo_md_create, name='rmo_md_create'),
+    url(r'^rmo_md_products/(?P<pk>\d+)/update/$', rmo_md_update, name='rmo_md_update'),
+    url(r'^rmo_md_products/(?P<pk>\d+)/delete/$', rmo_md_delete, name='rmo_md_delete'),
+    # url(r'^hist_1.png/$', GraphsViewBar_p1, name='plot_pic'),
 
-    path('create_rmo_md/', views.create_rmo_md, name='create_rmo_md'),
-    path('update_rmo_md/<str:pk>', views.update_rmo_md, name='update_rmo_md'),
-    path('delete_rmo_md/<str:pk>', views.delete_rmo_md, name='delete_rmo_md'),
-
-    path('create_rmo_ps/', views.create_rmo_ps, name='create_rmo_ps'),
-    path('update_rmo_ps/<str:pk>', views.update_rmo_ps, name='update_rmo_ps'),
-    path('delete_rmo_ps/<str:pk>', views.delete_rmo_ps, name='delete_rmo_ps'),
+    url(r'^rmo_ps/$', rmo_ps_list, name='rmo_ps_list'),
+    url(r'^rmo_ps_create/$', rmo_ps_create, name='rmo_ps_create'),
+    url(r'^rmo_ps_products/(?P<pk>\d+)/update/$', rmo_ps_update, name='rmo_ps_update'),
+    url(r'^rmo_ps_products/(?P<pk>\d+)/delete/$', rmo_ps_delete, name='rmo_ps_delete'),
+    # url(r'^hist_1.png/$', GraphsViewBar_p1, name='plot_pic'),
 
 ]

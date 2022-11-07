@@ -1,0 +1,20 @@
+{% load static%}
+{% for item in rmo_lg%}
+<tr>
+    <td><button type="button"
+              class="btn  js-update-product"
+              data-url="{% url 'rmo_lg_update' item.id %}">
+              <img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16">
+      </button></td>
+      <td><button type="button"
+              class="btn js-delete-product"
+              data-url="{% url 'rmo_lg_delete' item.id %}">
+              <img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16">
+      </button></td>
+    {% comment %} <td><a href="{% url 'update_rmo_lg' item.id%}" ><img src="{% static 'journal/images/update.png' %}" alt="Обновить" title="Обновить" height="16" width="16"></a></td>
+    <td><a href="{% url 'delete_rmo_lg' item.id%}"><img src="{% static 'journal/images/delete.png' %}" alt="Удалить" title="Удалить" height="16" width="16"></a></td> {% endcomment %}
+        <td><span>{{item.update_date}}</span></td>
+        <td><span>{{item.fakel}}</span></td>
+        <td><span>{{item.recicling}}</span></td>
+</tr>
+{% endfor %}
