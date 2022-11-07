@@ -41,28 +41,28 @@
                     <h3>Значение коэффициента Ка в зависимости от средней температуры кипения жидкого продукта tср.кип, C и средней температуры в аппрате tср.ап, C</h3>
                 </div>
 
-                <div class="tableDivCoef">
-                    <table id="itemInfoTableCoef" class="itemInfoTableCoef" style="width:100%; float:left">
+                <div class="tableDiv">
+                    <table id="table" class="itemInfoTable" style="width:100%; float:left">
                         <thead>
                             <tr>
-                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>tср.ап ,°С</h4></th>
-                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>менее 20</h4></th>
-                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>20 - 52</h4></th>
-                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>53 - 84</h4></th>
-                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>85 - 112</h4></th>
-                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>113 - 138</h4></th>
-                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>139 - 162</h4></th>
-                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>163 - 185</h4></th>
-                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>186 - 206</h4></th>
-                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>207 - 226</h4></th>
-                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>227 - 244</h4></th>
-                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>245 - 262</h4></th>
-                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>263 - 278</h4></th>
-                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>279 - 294</h4></th>
-                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>295 - 310</h4></th>
-                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>311 - 324</h4></th>
-                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>325 - 350</h4></th>
-                                <th class="objCellCoef" style=" padding-left: 0px; padding-right: 0px; text-align: center"><h4>более 350</h4></th>
+                                <th class="objCell" style=" padding-left: 0px; padding-right: 0px; text-align: center">tср.ап ,°С</th>
+                                <th class="objCell" style=" padding-left: 0px; padding-right: 0px; text-align: center">менее 20</th>
+                                <th class="objCell" style=" padding-left: 0px; padding-right: 0px; text-align: center">20 - 52</th>
+                                <th class="objCell" style=" padding-left: 0px; padding-right: 0px; text-align: center">53 - 84</th>
+                                <th class="objCell" style=" padding-left: 0px; padding-right: 0px; text-align: center">85 - 112</th>
+                                <th class="objCell" style=" padding-left: 0px; padding-right: 0px; text-align: center">113 - 138</th>
+                                <th class="objCell" style=" padding-left: 0px; padding-right: 0px; text-align: center">139 - 162</th>
+                                <th class="objCell" style=" padding-left: 0px; padding-right: 0px; text-align: center">163 - 185</th>
+                                <th class="objCell" style=" padding-left: 0px; padding-right: 0px; text-align: center">186 - 206</th>
+                                <th class="objCell" style=" padding-left: 0px; padding-right: 0px; text-align: center">207 - 226</th>
+                                <th class="objCell" style=" padding-left: 0px; padding-right: 0px; text-align: center">227 - 244</th>
+                                <th class="objCell" style=" padding-left: 0px; padding-right: 0px; text-align: center">245 - 262</th>
+                                <th class="objCell" style=" padding-left: 0px; padding-right: 0px; text-align: center">263 - 278</th>
+                                <th class="objCell" style=" padding-left: 0px; padding-right: 0px; text-align: center">279 - 294</th>
+                                <th class="objCell" style=" padding-left: 0px; padding-right: 0px; text-align: center">295 - 310</th>
+                                <th class="objCell" style=" padding-left: 0px; padding-right: 0px; text-align: center">311 - 324</th>
+                                <th class="objCell" style=" padding-left: 0px; padding-right: 0px; text-align: center">325 - 350</th>
+                                <th class="objCell" style=" padding-left: 0px; padding-right: 0px; text-align: center">более 350</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -71,7 +71,7 @@
                             <tr>
 
                                 <td><span>{{item.temperature}}</span></td>
-                                <td><span>{{item.less_20|default_if_none:"-" }}</span></td>
+                                <td><span>{{item.less_20|default_if_none:"-"}}</span></td>
                                 <td><span>{{item.t_20_52|default_if_none:"-"}}</span></td>
                                 <td><span>{{item.t_53_84|default_if_none:"-"}}</span></td>
                                 <td><span>{{item.t_85_112|default_if_none:"-"}}</span></td>
@@ -90,8 +90,8 @@
                                 <td><span>{{item.more_than_350|default_if_none:"-"}}</span></td>
 
                             </tr>
-                            {% endfor %}|default_if_none:"-"
-
+                            
+                            {%endfor%}
                         </tbody>
                     </table>
                 </div>
@@ -118,14 +118,14 @@
                     <h3>Потери от единицы теплообменной аппратуры П() кг/ч, в зависимости от типа аппаратуры и вида продукта или средней темпиратуры кипения жидкости tср, C</h3>
                 </div>
 
-                <div class="tableDivLosses">
-                    <table id="itemInfoTableLosses"  class="itemInfoTableLosses" style="width:100%; float:left">
+                <div class="tableDiv">
+                    <table id="table"  class="itemInfoTable" style="width:100%; float:left">
                         <thead>
                             <tr>
-                                <th class="objCellLosses" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Наименование<br> аппаратуры</h4></th>
-                                <th class="objCellLosses" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Газы, бензины и жидкости<br> с tср < 120 C</h4></th>
-                                <th class="objCellLosses" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Керосины, дизельное<br> топливо и жидкости <br>с tср = 120 % 300 C </h4></th>
-                                <th class="objCellLosses" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>Нефть, мазуты и жидкости с с tср > 300 C</h4></th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Наименование<br> аппаратуры</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Газы, бензины и жидкости<br> с tср < 120 C</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Керосины, дизельное<br> топливо и жидкости <br>с tср = 120 % 300 C </th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Нефть, мазуты и жидкости с с tср > 300 C</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -164,22 +164,22 @@
                     <h3>Значение молярной массы паров углеводородов в зависимости от температуры начала кипения</h3>
                 </div>
 
-                <div class="tableDivMollMass">
-                    <table id="itemInfoTableMolMass"  class="itemInfoTableMolMass" style="width:100%; float:left">
+                <div class="tableDiv">
+                    <table id="table"  class="itemInfoTable" style="width:100%; float:left">
                         <thead>
                             <tr>
-                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>t н.п/н.кд, C</h4></th>
-                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>М н.п, кг/кмоль</h4></th>
-                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>t н.п/н.кд, C</h4></th>
-                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>М н.п, кг/кмоль</h4></th>
-                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>t н.п/н.кд, C</h4></th>
-                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>М н.п, кг/кмоль</h4></th>
-                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>t н.п/н.кд, C</h4></th>
-                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>М н.п, кг/кмоль</h4></th>
-                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>t н.п/н.кд, C</h4></th>
-                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>М н.п, кг/кмоль</h4></th>
-                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>t н.п/н.кд, C</h4></th>
-                                <th class="objCellMolmass" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"><h4>М н.п, кг/кмоль</h4></th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">t н.п/н.кд, C</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">М н.п, кг/кмоль</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">t н.п/н.кд, C</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">М н.п, кг/кмоль</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">t н.п/н.кд, C</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">М н.п, кг/кмоль</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">t н.п/н.кд, C</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">М н.п, кг/кмоль</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">t н.п/н.кд, C</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">М н.п, кг/кмоль</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">t н.п/н.кд, C</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">М н.п, кг/кмоль</th>
                             </tr>
                         </thead>
                         <tbody>
