@@ -1,0 +1,64 @@
+{%extends 'journal/main.html' %}
+
+{% block content %}
+{% include 'journal_koff_s/sidebar.html'%}
+<section class="content">
+    <div class="koff_s_content">
+        <div class="content_text" id="id_koff_s_content_p1" style="display: block">
+            <div style="display: inline-flex; width: 100%">
+                <div class="date_div">
+                    <div class="date-input-group">
+                        <input type="date" id="table_date_start" class="date_input" required="" onkeydown="return false" max="2022-10-15">
+                        <label for="table_date_start" class="table_date_label">Дата</label>
+                    </div>
+
+                    <div class="date-input-group" id="stop-date-div" style="display: none;">
+                        <input type="date" id="table_date_stop" class="date_input" required="" onkeydown="return false" max="2022-10-15" min="2022-10-15">
+                        <label for="table_date_stop" class="table_date_label">Конец</label>
+                    </div>
+
+                    <input type="hidden" value="date" id="date-type">
+                </div>
+            </div>
+
+            <div class="content-header">
+                <h4>10С-4<br>10С-4№2 </h4>
+                <button type="button" class="btn btn-primary js-create-product" data-url="{% url 'p7calc_create' %}">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    Добавить
+                </button>
+            </div>
+
+            <div class="tableDiv">
+                <table id="product-table" class="table itemInfoTable"  style="width:100%; float:left">
+                    <thead>
+                        <tr>
+                            <th class="objCell"style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
+                                <th class="objCell"style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"> </th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Дата</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">мольное содержание компонентов, %</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Молярная масса компонента</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Молярная масса общая, гр/моль</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">масс, % (хрома-тограф)</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">масс, % (расчетная)</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% include 'journal_koff_s/forms/p7calc/partial_list.html'%}
+                    </tbody>
+                </table>
+                <div class="modal fade" id="modal-product">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                    
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

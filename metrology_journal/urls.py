@@ -21,8 +21,8 @@ urlpatterns = [
     path('oks/', include('journal_oks.urls')),
     path('rtp/', include('journal_rtp.urls')),
     path('rmo/', include('journal_rmo.urls')),
-    path('', include('journal_koff.urls')),
-    path('', include('journal_koff_s.urls')),
+    path('koff/', include('journal_koff.urls')),
+    path('koff_s/', include('journal_koff_s.urls')),
     path('pgk/', include('journal_pgk.urls')),
     # path('admin/', admin.site.urls),
 ]

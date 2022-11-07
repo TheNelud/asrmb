@@ -15,7 +15,7 @@
     
     <link rel="stylesheet" href="{% static 'journal/css/bootstrap.min.css'  %}" type="text/css">
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="{% static 'journal/css/datatables.css'  %}">
 
     
 </head>
@@ -36,8 +36,13 @@
     <script type="text/javascript" src="{% static 'journal/js/crud.js' %}"></script>
     <script type="text/javascript" src="{% static 'journal/js/bootstrap.min.js'%}"></script>
 
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="{% static 'journal/js/datatables.js'%}"></script>
     
+    {% comment %} <script type="text/javascript">
+    $('#table').DataTable( {
+        ajax: 'json'
+    } );
+    </script> {% endcomment %}
     
 
 

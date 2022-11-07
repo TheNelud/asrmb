@@ -3,5 +3,5 @@ from . import views
 
 
 urlpatterns = [
-    path('koff/', views.koff, name='koff'),
+    path('', views.koff, name='koff'),
     ]
