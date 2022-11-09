@@ -1,6 +1,11 @@
+{% load static%}
 <section class="header">
+    
+    
     <div class="header_container">
+        <img class='logo' src="{% static 'journal/images/logo.png' %}" style="top:0;"/>
         <ul class="header_menu">
+
             <li>
                 <a href="{% url 'oks_p1_list'%}">Определение компонентного состава</a>
             </li>

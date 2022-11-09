@@ -12,7 +12,7 @@
 .header_container {
     margin-right: 10px;
     margin-left: 10px;
-    width: 90%;
+    width: 100%;
 }
 
 .header_container:after {
@@ -29,8 +29,8 @@
     float:left;
     list-style: none; /*убираем маркеры списка*/
     margin: 0; /*убираем отступы*/
-    padding-left: 0; /*убираем отступы*/
-    margin-top:10px; /*делаем отступ сверху*/
+    padding-left: 10; /*убираем отступы*/
+    margin-top: 7px; /*делаем отступ сверху*/
     height: 35px; /*задаем высоту*/
 }
 
@@ -67,4 +67,14 @@ ul {
 
 .header .header_logo{
     text-align:center;width:75px;float: left; margin-top: -5px
+}
+
+
+.logo{
+    position: fixed;
+    height: 48px;
+    width: 48px;
+    margin-bottom: 20px;
+    top:10px;
+    filter: brightness(0) invert(1);
 }
