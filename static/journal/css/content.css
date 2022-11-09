@@ -5,8 +5,8 @@
     position: absolute;
     /* transition: all 0.5s ease; */
 
-    top: 82px; /* Расстояние от верхнего края */
-    left: 300px; /* Расстояние от левого края */ 
+    top: 55px; /* Расстояние от верхнего края */
+    left: 270px; /* Расстояние от левого края */ 
     bottom: 0; 
     right: 0;
 
@@ -159,6 +159,10 @@ input[type=date]::-webkit-clear-button {
     color: #fff;
     background-color: #d9534f;
     border-color: #d9534f;
+}
+
+h4 .title{
+    text-align: center;
 }
 
 

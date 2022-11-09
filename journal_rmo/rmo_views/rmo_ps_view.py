@@ -10,9 +10,8 @@ from matplotlib.backends.backend_agg import FigureCanvasAgg
 import io
 
 import plotly.graph_objs as go
-
 import plotly.express as px
-
+import pandas as pd
 
 
 
@@ -20,32 +19,37 @@ import plotly.express as px
 
 def rmo_ps_list(request):
     rmo_ps = Perehod_stabilizacii.objects.all()
-    figure = graphs_ps_2()
+    figure = graphs_ps()
     context = {'rmo_ps': rmo_ps,
-                'figure': figure 
+                'figure_ps_perehod_per': figure[0],
+                'figure_ps_perehod_t': figure[1],
                 }
 
     return render(request, 'journal_rmo/forms/rmo_ps/content.html', context=context  )
 
 
-def graphs_ps_2():
-    data_rmo_ps = Perehod_stabilizacii.objects.all()
-    x_data = [item.update_time for item in data_rmo_ps]
-    y_data = [item.perehod_t for item in data_rmo_ps]
-
-    print(x_data)
-    print(y_data)
-   
-    layout =go.Layout(
-        title=f'Визуализация данных журнала ...',
-        width=400,
-        height=400,
-        # legend_bgcolor= '#000000'
-    )
-
-    figure = go.Figure(px.line(x=x_data, y=y_data ),layout=layout).to_html()
-   
-    return figure
+def graphs_ps():
+    data = Perehod_stabilizacii.objects.all()
+    
+    df = pd.DataFrame({
+                        'name':[item.name for item in data],
+                        'perehod_per': [item.perehod_per for item in data],
+                        'perehod_t' : [item.perehod_t for item in data],
+                        'update_time' : [item.update_time for item in data]
+                        })
+    print(df)
+    figure_perehod_per = go.Figure(px.pie(df ,values='perehod_per', 
+                                            names='name', 
+                                            title="Перешло из газа стабилизации в КГН, % массовые"
+                                            ),
+                                            layout=go.Layout(width=400)).to_html(config= {'displaylogo': False})
+    figure_perehod_t = go.Figure(px.pie(df ,values='perehod_t',
+                                            names='name', 
+                                            title="Перешло из газа стабилизации в КГН"
+                                            ),
+                                            layout=go.Layout(width=400)).to_html(config= {'displaylogo': False})
+    
+    return [figure_perehod_per, figure_perehod_t]
  
  
 def save_rmo_ps_form(request, form, template_name):

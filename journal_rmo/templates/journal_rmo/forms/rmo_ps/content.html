@@ -22,7 +22,7 @@
             </div>
 
             <div class="content-header">
-                <h4>Газ стабилизации из 20Е-1 в УКЦ<br>Газ стабилизации из  УКЦ в МГ<br>КГН из  УКЦ в 10Е-1</h4>
+                <h4 class="title">Газ стабилизации из 20Е-1 в УКЦ<br>Газ стабилизации из  УКЦ в МГ<br>КГН из  УКЦ в 10Е-1</h4>
                 <button type="button" class="btn btn-primary js-create-product" data-url="{% url 'rmo_ps_create' %}">
                     <span class="glyphicon glyphicon-plus"></span>
                     Добавить
@@ -37,7 +37,7 @@
                                 <th class="objCell"style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"></th>
                                 <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center"> </th>
                                 <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Дата</th>
-                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">"Перешло из газа стабилизации в КГН, % массовые"</th>
+                                <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Перешло из газа стабилизации в КГН, % массовые</th>
                                 <th class="objCell" style="width: 2%; padding-left: 0px; padding-right: 0px; text-align: center">Перешло из газа стабилизации в КГН,</th>
 
                         </tr>
@@ -64,7 +64,11 @@
     </div>
 
     <div class='graphs'>
-        {{ figure|safe }}
+        {{ figure_ps_perehod_per|safe }}
+    </div>
+
+    <div class='graphs'>
+        {{ figure_ps_perehod_t|safe }}
     </div>
 </section>
 
