@@ -69,7 +69,7 @@ def rmo_md_delete(request, pk):
     return JsonResponse(data)
 
 
-def GraphsViewBar_p1(request):
+def GraphsViewBar_md(request):
     f = plt.figure()
     # x = np.arange(10)
     # h = [0, 1, 2, 3, 5, 6, 4, 2, 1, 0]

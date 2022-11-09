@@ -28,7 +28,7 @@ urlpatterns = [
     url(r'^oks_p2_create/$', oks_p2_create, name='oks_p2_create'),
     url(r'^oks_p2_products/(?P<pk>\d+)/update/$', oks_p2_update, name='oks_p2_update'),
     url(r'^oks_p2_products/(?P<pk>\d+)/delete/$', oks_p2_delete, name='oks_p2_delete'),
-    # url(r'^hist_2.png/$', GraphsViewBar_p2, name='plot_pic'),
+    # url(r'^hist_p2.png/$', GraphsViewBar_p2, name='plot_pic_p2'),
 
 
     url(r'^oks_p3/$', oks_p3_list, name='oks_p3_list'),

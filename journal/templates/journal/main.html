@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static 'journal/css/header.css'  %}" type="text/css">
     <link rel="stylesheet" href="{% static 'journal/css/sidebar.css'  %}" type="text/css">
     <link rel="stylesheet" href="{% static 'journal/css/content.css'  %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'journal/css/graphs.css'  %}" type="text/css">
 
     <link rel="stylesheet" href="{% static 'journal/css/table.css'  %}" type="text/css">
     
@@ -36,12 +37,12 @@
     <script type="text/javascript" src="{% static 'journal/js/crud.js' %}"></script>
     <script type="text/javascript" src="{% static 'journal/js/bootstrap.min.js'%}"></script>
 
-    <script type="text/javascript" src="{% static 'journal/js/datatables.js'%}"></script>
+    {% comment %} <script type="text/javascript" src="{% static 'journal/js/datatables.js'%}"></script>
     
-    {% comment %} <script type="text/javascript">
-    $('#table').DataTable( {
-        ajax: 'json'
-    } );
+    <script type="text/javascript">
+        $(document).ready( function () {
+            $('#table').DataTable();
+        } );
     </script> {% endcomment %}
     
 

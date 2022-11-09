@@ -46,6 +46,10 @@
                         {% include 'journal_rmo/forms/rmo_ps/partial_list.html'%}
                     </tbody>
                 </table>
+
+
+
+                
                 <div class="modal fade" id="modal-product">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -55,7 +59,14 @@
                     </div>
                 </div>
             </div>
+ 
         </div>
     </div>
+
+    <div class='graphs'>
+        {{ figure|safe }}
+    </div>
 </section>
+
+
 {% endblock %}
