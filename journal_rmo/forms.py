@@ -1,16 +1,7 @@
 from django.forms import ModelForm
 from .models import *
 
-# class P5_appForm(ModelForm):
-#     class Meta:
-#         model = P5_app
-#         fields = '__all__'
-#
-# class P6_appForm(ModelForm):
-#     class Meta:
-#         model = P6_app
-#         fields = '__all__'
-
+ 
 
 class Losses_gasForm(ModelForm):
     class Meta:

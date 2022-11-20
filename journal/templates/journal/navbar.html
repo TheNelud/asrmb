@@ -24,6 +24,31 @@
             <li>
                 <a href="{% url 'pgk'%}" >Потери газового конденсата через неплотности</a>
             </li>
+            <li>
+                <div class="ioch-link">
+                    <a href="#">
+                        <span class="link_name">Отчеты</span>
+                    </a>
+                <img class='arrow' src="{% static 'journal/images/arrow.png' %}"></i>
+                </div>
+                <ul class='sub-menu'>
+                    <li><a href="#">Суточный рапорт УКПГ</a></li>
+                    <li><a href="#">Ежемесячный эксплатационный рапорт</a></li>
+                    <li><a href="#">Суточный рапорт Киринского ГКМ</a></li>
+                </ul>  
+            </li>
         </ul>
     </div>
 </section>
+
+<script>
+    let arrow = document.querySelectorAll(".arrow");
+        
+    for(var i=0; i<arrow.length; i++){
+        arrow[i].addEventListener("click", (e)=>{
+            let arrowParent = e.target.parentElement.parentElement;
+            console.log(arrowParent);
+            arrowParent.classList.toggle("showMenu");
+        });
+    }
+</script>
