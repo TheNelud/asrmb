@@ -1,7 +1,7 @@
 <form method="post" action="{% url 'oks_p1_update' form.instance.pk %}" class="js-product-update-form">
 {% csrf_token %}
 <div class="modal-header">
-    <h4 class="modal-title">Update product</h4>
+    <h4 class="modal-title">Обновить элемент</h4>
 </div>
 <div class="modal-body">
     {% include 'journal_oks/forms/oks_p1/partial_form.html' %}

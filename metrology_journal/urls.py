@@ -24,5 +24,9 @@ urlpatterns = [
     path('koff/', include('journal_koff.urls')),
     path('koff_s/', include('journal_koff_s.urls')),
     path('pgk/', include('journal_pgk.urls')),
-    # path('admin/', admin.site.urls),
+    
+    #raports
+    path('raports/', include('raports.urls')),
+
+    path('admin/', admin.site.urls),
 ]

@@ -9,13 +9,10 @@
     <link rel="stylesheet" href="{% static 'journal/css/sidebar.css'  %}" type="text/css">
     <link rel="stylesheet" href="{% static 'journal/css/content.css'  %}" type="text/css">
     <link rel="stylesheet" href="{% static 'journal/css/graphs.css'  %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'journal/css/raports.css'  %}" type="text/css">
 
-    <link rel="stylesheet" href="{% static 'journal/css/table.css'  %}" type="text/css">
-    
-
-    
+    <link rel="stylesheet" href="{% static 'journal/css/table.css'  %}" type="text/css">    
     <link rel="stylesheet" href="{% static 'journal/css/bootstrap.min.css'  %}" type="text/css">
-
     <link rel="stylesheet" type="{% static 'journal/css/datatables.css'  %}">
 
     
@@ -25,12 +22,8 @@
     {% include "journal/navbar.html" %}
     {% include "journal/sidebar.html" %}
 
-
-
     {% block content %}
     {% endblock %}
-
-
 
     <script type="text/javascript" src="{% static 'journal/js/jquery-3.6.1.min.js'%}"></script>
     <script type="text/javascript" src="{% static 'journal/js/update_content.js'%}"></script>
@@ -38,17 +31,5 @@
     <script type="text/javascript" src="{% static 'journal/js/crud.js' %}"></script>
     <script type="text/javascript" src="{% static 'journal/js/bootstrap.min.js'%}"></script>
 
-    {% comment %} <script type="text/javascript" src="{% static 'journal/js/datatables.js'%}"></script>
-    
-    <script type="text/javascript">
-        $(document).ready( function () {
-            $('#table').DataTable();
-        } );
-    </script> {% endcomment %}
-    
-
-
-    
-    
 </body>
 </html>

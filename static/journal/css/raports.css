@@ -1,0 +1,16 @@
+.schema_mag{
+    width: 1000px;
+    height: 500px;
+    position: absolute;
+    left: 0px;
+}
+
+.tableSchemaMag{
+    position: absolute;
+    left: 1000px;
+}
+
+.objCellmag{
+    border: 1px solid grey;
+}
+

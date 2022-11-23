@@ -1,0 +1,39 @@
+{%extends 'journal/main.html' %}
+
+{% load static%}
+{% block content %}
+<section class="content">
+
+    <img  class="schema_mag" src="{% static 'journal/images/schema_mag.png' %}">
+
+    <div class="tableSchemaMag">
+        <table id="product-table">
+            <thead>
+                <tr class='title'><th>Датчиковое оборудование на схеме</th></tr>
+                <tr>
+                    <th class="objCellmag">№</th>
+                    <th class="objCellmag">Тип датчика</th>
+                    <th class="objCellmag">Размерность</th>
+                    <th class="objCellmag ">Значение</th>
+                </tr>
+            </thead>
+
+            <tbody>    
+            </tbody>
+
+        </table>
+
+        <div class="modal fade" id="modal-product">
+            <div class="modal-dialog">
+                <div class="modal-content">
+            
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+</section>
+
+{% endblock %}

@@ -30,16 +30,17 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    #Django defualt modules
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    # Django modules installer
     'django_filters',
     'widget_tweaks',
-
+    #My apps
     'journal.apps.JournalConfig',
     'journal_oks.apps.JournalOksConfig',
     'journal_rtp.apps.JournalRtpConfig',
@@ -47,6 +48,7 @@ INSTALLED_APPS = [
     'journal_koff.apps.JournalKoffConfig',
     'journal_koff_s.apps.JournalKoffSConfig',
     'journal_pgk.apps.JournalPgkConfig',
+    'raports.apps.RaportsConfig',
 ]
 
 MIDDLEWARE = [
