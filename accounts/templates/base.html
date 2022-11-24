@@ -1,0 +1,29 @@
+{% load static%}
+<html>
+  <head>
+    <title>Авторизация в АСРМБ</title>
+    <link rel="stylesheet" href="{% static 'journal/css/registration/accounts.css'  %}" type="text/css">
+  </head>
+  <body>
+    <div class="form">
+      <h1>Приветствую, {{ user.username|default:'гость' }}</h1>
+        {% if user.is_authenticated %}
+          <div class="main-form">
+
+            <a href="{%url 'oks'%}">На главную страницу</a>
+            <br>
+            <a href="{% url 'logout' %}">Выйти</a>
+            
+          </div>
+        {% else %}
+          <div class="main-form">
+            <a href="{% url 'login' %}">Войти</a>
+            <br> 
+             {% comment %} <a href="{% url 'signup' %}">Зарегистрироваться</a>  {% endcomment %}
+           </div>
+        {% endif %}
+  </div>
+  </body>
+</html> 
+
+  

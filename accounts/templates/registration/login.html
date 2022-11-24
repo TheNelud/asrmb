@@ -1,0 +1,32 @@
+{% load static %}
+
+ <head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{% static 'journal/css/registration/login.css'  %}" type="text/css">
+  <title>Авторизация</title>
+</head>
+
+{% block content %}
+  <body>
+      <form class="form" method="post">
+        <h1>Вход</h1>
+        <input type="hidden" name="csrfmiddlewaretoken" value="tZF3a0dOccjCz0wXKNKDhQ3bET9jdOeTssCDBNRKr2Ili7XzHubpA1NchvwiYNV9">{% csrf_token %}
+        <p class="input-form">
+          <input type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username"
+          placeholder="Логин">
+        </p>
+        <p class="input-form">
+          <input type="password" placeholder="Пароль" name="password" autocomplete="current-password" required="" id="id_password">
+        </p>
+        <p class="input-form">
+          <input type="submit" value="Войти">
+        </p> 
+
+         {% comment %} <p class="input-form"> 
+           <a href="{% url 'signup' %}">Зарегистрироваться</a> 
+         </p>  {% endcomment %}
+
+       </form>
+      
+    </body> 
+{% endblock %}

@@ -17,7 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('', include('journal.urls')),
+    #Calculation of losses
+    path('', include('accounts.urls')),
     path('oks/', include('journal_oks.urls')),
     path('rtp/', include('journal_rtp.urls')),
     path('rmo/', include('journal_rmo.urls')),
@@ -28,5 +29,10 @@ urlpatterns = [
     #raports
     path('raports/', include('raports.urls')),
 
+    #autorization
     path('admin/', admin.site.urls),
+    # path('login/', include('accounts.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+
+
 ]

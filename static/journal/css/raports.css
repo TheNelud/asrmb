@@ -8,9 +8,39 @@
 .tableSchemaMag{
     position: absolute;
     left: 1000px;
+    max-width: 600px;
+}
+
+.objCellmagId{
+    border: 1px solid grey;
+    max-width: 15px;
 }
 
 .objCellmag{
     border: 1px solid grey;
+    /* width: 2%; */
 }
+
+.tableSchemaMagOut{
+    top: 520px;
+    position: absolute;
+    border: 1px solid grey;
+}
+
+
+
+
+.tableSchemaSar{
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    width: 900px;
+}
+
+.objCellsar{
+    border: 1px solid grey;
+    text-align: center;
+}
+
+
 

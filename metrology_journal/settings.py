@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # Django modules installer
     'django_filters',
     'widget_tweaks',
+    'crispy_forms',
     #My apps
     'journal.apps.JournalConfig',
     'journal_oks.apps.JournalOksConfig',
@@ -49,6 +50,7 @@ INSTALLED_APPS = [
     'journal_koff_s.apps.JournalKoffSConfig',
     'journal_pgk.apps.JournalPgkConfig',
     'raports.apps.RaportsConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
@@ -90,7 +92,7 @@ DATABASES = {
         'OPTIONS': {
             'options': '-c search_path=django,public'
         },
-        'NAME': 'metrological_2',
+        'NAME': 'metrological',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
@@ -101,7 +103,7 @@ DATABASES = {
         'OPTIONS': {
             'options': '-c search_path=coefficients,public'
         },
-        'NAME': 'metrological_2',
+        'NAME': 'metrological',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
@@ -112,7 +114,7 @@ DATABASES = {
         'OPTIONS': {
             'options': '-c search_path=compress,public'
         },
-        'NAME': 'metrological_2',
+        'NAME': 'metrological',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
@@ -123,7 +125,7 @@ DATABASES = {
         'OPTIONS': {
             'options': '-c search_path=condensatecalc,public'
         },
-        'NAME': 'metrological_2',
+        'NAME': 'metrological',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
@@ -134,7 +136,7 @@ DATABASES = {
         'OPTIONS': {
             'options': '-c search_path=gascalc,public'
         },
-        'NAME': 'metrological_2',
+        'NAME': 'metrological',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
@@ -156,7 +158,7 @@ DATABASES = {
         'OPTIONS': {
             'options': '-c search_path=period,public'
         },
-        'NAME': 'metrological_2',
+        'NAME': 'metrological',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
@@ -167,7 +169,7 @@ DATABASES = {
         'OPTIONS': {
             'options': '-c search_path=public,public'
         },
-        'NAME': 'metrological_2',
+        'NAME': 'metrological',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
@@ -179,7 +181,7 @@ DATABASES = {
         'OPTIONS': {
             'options': '-c search_path=gas_massa,public'
         },
-        'NAME': 'metrological_2',
+        'NAME': 'metrological',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
@@ -244,5 +246,10 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Пользователи будут перенаправлены на главную страницу после входа в систему
-LOGIN_REDIRECT_URL = "index"
-LOGOUT_REDIRECT_URL = "index"
+LOGIN_REDIRECT_URL = "oks/"
+LOGOUT_REDIRECT_URL = "/"
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# LOGIN_REDIRECT_URL =  '/'

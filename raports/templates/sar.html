@@ -1,5 +1,64 @@
 {%extends 'journal/main.html' %}
 {% block content %}
+<section class="content">
+    <div class="tableSchemaSar">
+        <table id="product-table" style="width:100%">
+            <thead>
+                <tr>
+                    <th class="objCellsar" style="text-align: center" >№п/п</th>
+                    <th class="objCellsar" colspan=4 style="text-align: right"> Форма №1</th>
+                </tr>
+                <tr>
+                    <th class="objCellsar" ></th>
+                    <th class="objCellsar" colspan=4 style="text-align: center">Cуточной рапорт УКПГ Киринского ГКМ</th>
+                </tr>
+                <tr>
+                    <th class="objCellsar"></th>
+                    <th class="objCellsar">Дата ДД:ММ:ГГГГ</th>
+                    <th class="objCellsar">Ед.изм</th>
+                    <th class="objCellsar">за сутки</th>
+                    <th class="objCellsar">за месяц</th>
+                </tr>
+                
+            </thead>
 
+            <tbody> 
+
+
+                <tr>
+                    <th class="objCellsar"></th>
+                    <th class="objCellsar" colspan=4>Газ горючий природный</th>
+                </tr>
+                <tr>
+                    <td class="objCellsar">1</td>
+                    <td class="objCellsar">Добыча ГГП</td>
+                    <td class="objCellsar">тыс.м3</td>
+                    <td class="objCellsar">1000</td>
+                    <td class="objCellsar">2000</td>
+                </tr>
+
+
+
+                <tr>
+                    <th class="objCellsar" ></th>
+                    <th class="objCellsar" colspan=4>Конденсат газовый</th>
+                </tr>
+
+                <tr>
+                    <td class="objCellsar">1</td>
+                    <td class="objCellsar">Добыча КГН</td>
+                    <td class="objCellsar">тыс.м3</td>
+                    <td class="objCellsar">1000</td>
+                    <td class="objCellsar">2000</td>
+                </tr>
+
+            </tbody>
+
+            
+                
+            
+
+        </table>
+    </div>
 
 {% endblock %}

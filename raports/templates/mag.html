@@ -7,18 +7,61 @@
     <img  class="schema_mag" src="{% static 'journal/images/schema_mag.png' %}">
 
     <div class="tableSchemaMag">
-        <table id="product-table">
+        <table id="product-table" style="width:100%">
+            <h5>Датчиковое оборудование на схеме</h5>
             <thead>
-                <tr class='title'><th>Датчиковое оборудование на схеме</th></tr>
+                {% comment %} <tr class='title'><th>Датчиковое оборудование на схеме</th></tr> {% endcomment %}
                 <tr>
-                    <th class="objCellmag">№</th>
-                    <th class="objCellmag">Тип датчика</th>
-                    <th class="objCellmag">Размерность</th>
-                    <th class="objCellmag ">Значение</th>
+                    <th class="objCellmag" style="width: 2%">№</th>
+                    <th class="objCellmag" style="width: 48%">Тип датчика</th>
+                    <th class="objCellmag" style="width: 25%">Размерность</th>
+                    <th class="objCellmag" style="width: 25%">Значение</th>
                 </tr>
             </thead>
 
-            <tbody>    
+            <tbody> 
+                <tr>
+                    <th class="objCellmag">1</th>
+                    <td class="objCellmag">Расходомер</td>
+                    <td class="objCellmag">кг/ч</td>
+                    <td class="objCellmag">231</td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <div class="modal fade" id="modal-product">
+            <div class="modal-dialog">
+                <div class="modal-content">
+            
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="tableSchemaMagOut">
+        <table id="product-table" style="width:100%">
+            
+            <thead>
+                {% comment %} <tr class='title'><th>Датчиковое оборудование на схеме</th></tr> {% endcomment %}
+                <tr>
+                    <th class="objCellmag" style="width: 2%">№</th>
+                    <th class="objCellmag" style="width: 48%">Параметр баланса</th>
+                    <th class="objCellmag" style="width: 25%">Размерность</th>
+                    <th class="objCellmag" style="width: 25%">Значение</th>
+                </tr>
+            </thead>
+
+            <tbody> 
+                <tr>
+                    <th class="objCellmag">1</th>
+                    <td class="objCellmag">Наличие оборотного рМэг на начало смены</td>
+                    <td class="objCellmag">тонны</td>
+                    <td class="objCellmag">231</td>
+                </tr>
             </tbody>
 
         </table>
