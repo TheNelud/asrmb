@@ -1,3 +1,5 @@
+{% load static%}
+
 <section class="sidebar">
     <div class="side_tree">
             <div class="sidebar-of-text" id="rmo_sidebar" style="display: block;">
@@ -13,5 +15,17 @@
                 </li>
             </ul>
         </div>
+    </div>
+
+    <div class="profile-details">
+        <div class="profile-content">
+            <box-icon name='user'></box-icon>
+            {% comment %} <img src="image/profile.jpg" alt="profile" > {% endcomment %}
+        </div>
+        <div class="name-job">
+            <div class="profile_name">{{ user.username|default:'гость' }}</div>
+            {% comment %} <div class="job">Инженер-клац</div> {% endcomment %}
+        </div>
+        <a href="{% url 'logout' %}"><img class='logout' src="{% static 'journal/images/logout.png' %}" style="top:0;"/></a>
     </div>
 </section>

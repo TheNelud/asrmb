@@ -68,7 +68,7 @@ ROOT_URLCONF = 'metrology_journal.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -246,8 +246,8 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Пользователи будут перенаправлены на главную страницу после входа в систему
-LOGIN_REDIRECT_URL = "oks/"
-LOGOUT_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "/oks/oks_p1/"
+LOGOUT_REDIRECT_URL = "/login/"
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import url
 
 urlpatterns = [
     #Calculation of losses
@@ -32,7 +33,9 @@ urlpatterns = [
     #autorization
     path('admin/', admin.site.urls),
     # path('login/', include('accounts.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('', include('django.contrib.auth.urls')),
+    # url(r'^/login/$', 'django.contrib.auth.views.login'),
+    
 
 
 ]
