@@ -1,7 +1,7 @@
 {%extends 'journal/main.html' %}
 {% block content %}
-<section class="content">
-    <div class="tableSchemaSar">
+<section class="content ">
+    <div class="tableSchemaSar print">
         <table id="product-table" style="width:100%">
             <thead>
                 <tr>
@@ -53,12 +53,25 @@
                 </tr>
 
             </tbody>
-
-            
-                
-            
-
         </table>
+
+        <div class="context-p">
+            <p>* - в период эсплуатации УКПГ </p>
+            <p>** - в период останова УКПГ </p>
+            <p>*** - в период проведения ремонтный на ВТК и/или МГ </p>
+        </div>
+
+        <div class="signatures">
+
+
+            
+            <select class="choice">
+                <option value="first">First Value</option>
+                <option value="second" selected>Second Value</option>
+                <option value="third">Third Value</option>
+            </select>
+            
+        </div>
     </div>
 
 {% endblock %}

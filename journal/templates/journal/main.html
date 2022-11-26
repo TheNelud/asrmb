@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{% static 'journal/css/content.css'  %}" type="text/css">
     <link rel="stylesheet" href="{% static 'journal/css/graphs.css'  %}" type="text/css">
     <link rel="stylesheet" href="{% static 'journal/css/raports.css'  %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'journal/css/navmenu.css'  %}" type="text/css">
 
     <link rel="stylesheet" href="{% static 'journal/css/table.css'  %}" type="text/css">    
     <link rel="stylesheet" href="{% static 'journal/css/bootstrap.min.css'  %}" type="text/css">
@@ -20,16 +21,22 @@
 <body>
 
     {% include "journal/navbar.html" %}
+    
     {% comment %} {% include "journal/sidebar.html" %} {% endcomment %}
 
     {% block content %}
     {% endblock %}
+
+    {% include "journal/navmenu.html" %}
 
     <script type="text/javascript" src="{% static 'journal/js/jquery-3.6.1.min.js'%}"></script>
     <script type="text/javascript" src="{% static 'journal/js/update_content.js'%}"></script>
     <script type="text/javascript" src="{% static 'journal/js/include.js'%}"></script>
     <script type="text/javascript" src="{% static 'journal/js/crud.js' %}"></script>
     <script type="text/javascript" src="{% static 'journal/js/bootstrap.min.js'%}"></script>
+    <script type="text/javascript" src="{% static 'journal/js/navmenu.js'%}"></script>
+    <script type="text/javascript" src="{% static 'journal/js/printer.js'%}"></script>
+
 
 </body>
 </html>

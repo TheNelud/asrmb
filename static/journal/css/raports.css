@@ -44,3 +44,30 @@
 
 
 
+
+.select-sort-mobile {
+	/* for Firefox */
+	-moz-appearance: none;
+	/* for Chrome */
+	-webkit-appearance: none;
+}
+.select-sort-mobile::-ms-expand {
+	/* IE */
+	display: none;
+}
+
+
+.sort-form-mobile-wrap::after {
+	z-index: -1;
+	border-left: 1px solid #E9E9E9;
+	content: "";
+	position: absolute;
+	right: 0;
+	width: 36px;
+	height: 32px;
+	background: url(../images/arrow-down.png);
+	background-repeat: no-repeat;
+	top: 0%;
+	background-position-y: 52%;
+	background-position-x: 50%;
+}

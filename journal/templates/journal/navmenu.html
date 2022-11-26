@@ -1,0 +1,18 @@
+{% load static%}
+
+
+<nav>
+    <div class="nav-content">
+        <div class="toggle-btn">
+            <img src="{% static 'journal/images/plus.png' %}" style="width:32px; height:32px"/>
+        </div>
+        <span style="--i:1;">
+            <a href="{% url 'logout' %}"><img class='logout' src="{% static 'journal/images/logout.png' %}" style="width:32px; height:32px"/></a>
+        </span>
+        <span style="--i:2;">
+            {% comment %} <a onclick="javascript:window.print()"><img src="{% static 'journal/images/printer.png' %}" style="width:32px; height:32px"/></i></a> {% endcomment %}
+            <a onclick="printEl()"><img src="{% static 'journal/images/printer.png' %}" style="width:32px; height:32px"/></i></a>
+        </span>
+        
+    </div>
+</nav>

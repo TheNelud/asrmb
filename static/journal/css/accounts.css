@@ -1,6 +1,8 @@
 body{
-    background: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)), url(../images/russia.jpg) 90% 100% no-repeat;
-    -webkit-background-size: cover;
+    /* background: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)), url(../images/russia.jpg) 90% 100% no-repeat;
+    -webkit-background-size: cover; */
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 1%, rgba(0,212,255,1) 100%);
     background-size: cover;
     background-attachment: fixed;
     font-family: sans-serif;
