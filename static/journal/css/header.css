@@ -119,3 +119,12 @@ img.arrow{
     display: list-item;
     position: relative;
 }
+
+.hr-navbar-raport{
+    margin: 0;
+	padding: 0;
+	height: 0;
+	border: none;
+	border-top: 2px solid #ddd;
+	border-bottom: 2px solid #000;
+}

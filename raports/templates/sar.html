@@ -2,7 +2,8 @@
 {% block content %}
 <section class="content ">
     <div class="tableSchemaSar print">
-        <table id="product-table" style="width:100%">
+        {% comment %} style="width:100%" {% endcomment %}
+        <table id="product-table" style="width:95%">
             <thead>
                 <tr>
                     <th class="objCellsar" style="text-align: center" >№п/п</th>
@@ -29,49 +30,204 @@
                     <th class="objCellsar"></th>
                     <th class="objCellsar" colspan=4>Газ горючий природный</th>
                 </tr>
+                {% comment %} TEST  {% endcomment %}
                 <tr>
                     <td class="objCellsar">1</td>
-                    <td class="objCellsar">Добыча ГГП</td>
+                    <td class="objCellsar" style="text-align: left">Добыча ГГП</td>
                     <td class="objCellsar">тыс.м3</td>
                     <td class="objCellsar">1000</td>
                     <td class="objCellsar">2000</td>
                 </tr>
+                <tr>
+                    <td class="objCellsar">2</td>
+                    <td class="objCellsar" style="text-align: left">Газ горючий природный, магистральный<br>газопровод УКУГ</td>
+                    <td class="objCellsar">тыс.м3</td>
+                    <td class="objCellsar">1000</td>
+                    <td class="objCellsar">2000</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">3</td>
+                    <td class="objCellsar" style="text-align: left">Газ СН из добытых ресурсов *</td>
+                    <td class="objCellsar">тыс.м3</td>
+                    <td class="objCellsar">1000</td>
+                    <td class="objCellsar">2000</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">4</td>
+                    <td class="objCellsar" style="text-align: left">Газ СН из ресурсов, полученных обратным<br>ходом на УКУГ **</td>
+                    <td class="objCellsar">тыс.м3</td>
+                    <td class="objCellsar">1000</td>
+                    <td class="objCellsar">2000</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">5</td>
+                    <td class="objCellsar" style="text-align: left">Потери газа при добыче</td>
+                    <td class="objCellsar">тыс.м3</td>
+                    <td class="objCellsar">1000</td>
+                    <td class="objCellsar">2000</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">6</td>
+                    <td class="objCellsar" style="text-align: left">Газ стабилищации в МГ после КУ</td>
+                    <td class="objCellsar">тыс.м3</td>
+                    <td class="objCellsar">1000</td>
+                    <td class="objCellsar">2000</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">7</td>
+                    <td class="objCellsar" style="text-align: left">Потери газа стабилизации при переработке</td>
+                    <td class="objCellsar">тыс.м3</td>
+                    <td class="objCellsar">1000</td>
+                    <td class="objCellsar">2000</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">8</td>
+                    <td class="objCellsar" style="text-align: left">Газ стабилизации в факельную систему</td>
+                    <td class="objCellsar">тыс.м3</td>
+                    <td class="objCellsar">1000</td>
+                    <td class="objCellsar">2000</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">9</td>
+                    <td class="objCellsar" style="text-align: left">Потери газа при проведении ремонтных работ<br>на МГ ***</td>
+                    <td class="objCellsar">тыс.м3</td>
+                    <td class="objCellsar">1000</td>
+                    <td class="objCellsar">2000</td>
+                </tr>
+               
+                
 
 
-
+{% comment %} TEST {% endcomment %}
                 <tr>
                     <th class="objCellsar" ></th>
                     <th class="objCellsar" colspan=4>Конденсат газовый</th>
                 </tr>
 
                 <tr>
-                    <td class="objCellsar">1</td>
-                    <td class="objCellsar">Добыча КГН</td>
+                    <td class="objCellsar">10</td>
+                    <td class="objCellsar" style="text-align: left">Добыча КГН</td>
                     <td class="objCellsar">тыс.м3</td>
                     <td class="objCellsar">1000</td>
                     <td class="objCellsar">2000</td>
                 </tr>
 
+                <tr>
+                    <td class="objCellsar">11</td>
+                    <td class="objCellsar" style="text-align: left">Потери КГН при добыче</td>
+                    <td class="objCellsar">тыс.м3</td>
+                    <td class="objCellsar">1000</td>
+                    <td class="objCellsar">2000</td>
+                </tr>
+
+                <tr>
+                    <td class="objCellsar">12</td>
+                    <td class="objCellsar" style="text-align: left">Возврат КГН в переработку из 10Е3 в 10Р-2</td>
+                    <td class="objCellsar">тыс.м3</td>
+                    <td class="objCellsar">1000</td>
+                    <td class="objCellsar">2000</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">13</td>
+                    <td class="objCellsar" style="text-align: left">Производство КГС</td>
+                    <td class="objCellsar">тыс.м3</td>
+                    <td class="objCellsar">1000</td>
+                    <td class="objCellsar">2000</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">14</td>
+                    <td class="objCellsar" style="text-align: left">Потери КГН при переработке</td>
+                    <td class="objCellsar">тыс.м3</td>
+                    <td class="objCellsar">1000</td>
+                    <td class="objCellsar">2000</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">15</td>
+                    <td class="objCellsar" style="text-align: left">Переход КГН в другой вид продукции<br>(Газ стабилизации)</td>
+                    <td class="objCellsar">тыс.м3</td>
+                    <td class="objCellsar">1000</td>
+                    <td class="objCellsar">2000</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">16</td>
+                    <td class="objCellsar" style="text-align: left">КГС переданный в СЭИК</td>
+                    <td class="objCellsar">тыс.м3</td>
+                    <td class="objCellsar">1000</td>
+                    <td class="objCellsar">2000</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">17</td>
+                    <td class="objCellsar" style="text-align: left">КГС в 50Р-1 №1</td>
+                    <td class="objCellsar">тыс.м3</td>
+                    <td class="objCellsar">1000</td>
+                    <td class="objCellsar">2000</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">18</td>
+                    <td class="objCellsar" style="text-align: left">КГС в 50Р-1 №2</td>
+                    <td class="objCellsar">тыс.м3</td>
+                    <td class="objCellsar">1000</td>
+                    <td class="objCellsar">2000</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">19</td>
+                    <td class="objCellsar" style="text-align: left">Возврат КГС из ВТК в 10Р-2 ***</td>
+                    <td class="objCellsar">тыс.м3</td>
+                    <td class="objCellsar">1000</td>
+                    <td class="objCellsar">2000</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">20</td>
+                    <td class="objCellsar" style="text-align: left">Потери КГС при проведении ремонтных работ<br>на ВТК ***</td>
+                    <td class="objCellsar">тыс.м3</td>
+                    <td class="objCellsar">1000</td>
+                    <td class="objCellsar">2000</td>
+                </tr>
+
+
+
+                <tr>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td colspan=4 ><p>* - в период эсплуатации УКПГ </p></td>
+                </tr>
+                <tr>
+                    <td colspan=4 ><p>** - в период останова УКПГ </p></td>
+                </tr>
+                <tr>
+                    <td colspan=4 ><p>*** - в период проведения ремонтный на ВТК и/или МГ </p></td>    
+                </tr>
+
+                <tr>
+                    <td> <br></td>
+                </tr>
+                <tr>
+                    <td><br> </td>
+                </tr>
+                <tr>
+                    <td> <br></td>
+                </tr>
+                <tr>
+                    <td colspan=4 style="text-align: left"><p>Начальник УКПГ </td><td colspan=4 style="text-align: right">____________ Д.Ю Позднышев</p></td>
+                </tr>
+                <tr>
+                    <td colspan=4 style="text-align: left"><p>Мастер по ПГ СДГ и ГК</td><td colspan=4 style="text-align: right"> ____________ М.А. Ахмеров</p></td>
+                </tr>
+                <tr>
+                    <td colspan=4 style="text-align: left"><p>Мастер по КАиТ САТиМ</td><td colspan=4 style="text-align: right"> ____________ С.А. Мишунин</p></td>    
+                </tr>
+                
+
             </tbody>
         </table>
 
-        <div class="context-p">
-            <p>* - в период эсплуатации УКПГ </p>
-            <p>** - в период останова УКПГ </p>
-            <p>*** - в период проведения ремонтный на ВТК и/или МГ </p>
-        </div>
+        
 
-        <div class="signatures">
-
-
-            
-            <select class="choice">
-                <option value="first">First Value</option>
-                <option value="second" selected>Second Value</option>
-                <option value="third">Third Value</option>
-            </select>
-            
-        </div>
+        
     </div>
 </section>
 
