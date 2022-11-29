@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^mar/$', views.mar, name='mar'),
     url(r'^mag/$', views.mag, name='mag'),
     url(r'^sar/$', views.sar, name='sar'),
+    url(r'^sr_kgmk/$', views.sr_kgmk, name='sr_kgmk'),
     ]

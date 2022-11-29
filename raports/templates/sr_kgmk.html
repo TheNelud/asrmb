@@ -1,0 +1,302 @@
+{%extends 'journal/main.html' %}
+
+{% load static%}
+{% block content %}
+<section class="content">
+    <div class="tableSchemaSar print" style="width:90%; margin: 0 auto;" >
+        <div class="title-raport-sr">
+        
+            {% comment %} Таблица Метеоусловия {% endcomment %}
+
+            <table id="product-table" style="width:50%; font-size: 12px; margin: 0 auto;">
+                <thead>
+
+                    <tr>
+                        <th style="text-align:left" colspan="2">Суточный рапорт Киринского ГКМ</th>
+                        <th style="text-align:right" colspan="3">за 24.04.2022 г.</th>
+                    </tr>
+
+                    <tr>
+                        <th class="objCellsar" style="width: 25%"></th>
+                        <th class="objCellsar" style="width: 20%">Т н.воз.,ºС</th>
+                        <th class="objCellsar" style="width: 20%">Т моря, ºС</th>
+                        <th class="objCellsar" style="width: 20%">Скорость ветра м/с</th>
+                        <th class="objCellsar" style="width: 20%">Осадки</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="objCellsar">Метеоусловия</th>
+                        <td class="objCellsar">-2,0</td>
+                        <td class="objCellsar">-1,5</td>
+                        <td class="objCellsar">5,0</td>
+                        <td class="objCellsar">снег</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <br>
+        {% comment %} Добыча газа природного горючего (тыс.м3){% endcomment %}
+
+        <div class="dgpr-sr">
+            <table id="product-table" style="width:95%; font-size: 12px;">
+                <tr>
+                    <td colspan="9" class="objCellsar">Добыча газа природного горючего (тыс.м3)</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar" colspan="2" rowspan="2"></td>
+                    <td class="objCellsar" colspan="3">СУТКИ</td>
+                    <td class="objCellsar" colspan="4">МЕСЯЦ</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">План</td>
+                    <td class="objCellsar">Факт</td>
+                    <td class="objCellsar">Отклонение</td>
+                    <td class="objCellsar">План</td>
+                    <td class="objCellsar">Факт</td>
+                    <td class="objCellsar">Отклонение</td>
+                    <td class="objCellsar">%</td>
+                </tr>
+                <tr>
+                    <td rowspan="2" class="objCellsar">Добыча газа горючего природного</td>
+                    <td class="objCellsar">На текущую дату</td>
+                    <td rowspan="2" class="objCellsar">4 500,0</td>
+                    <td rowspan="2" class="objCellsar">4 590,3</td>
+                    <td rowspan="2" class="objCellsar">90,3</td>
+                    <td class="objCellsar">108 000,000</td>
+                    <td class="objCellsar">108 711,024</td>
+                    <td class="objCellsar">711,0</td>
+                    <td class="objCellsar">100,7</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">Ожидаемое</td>
+                    <td class="objCellsar">135 000,000</td>
+                    <td class="objCellsar">136 252,728</td>
+                    <td class="objCellsar">1 252,7</td>
+                    <td class="objCellsar">100,9</td>
+                </tr>
+                <tr>
+                    <td rowspan="2" class="objCellsar">Газ на СТН</td>
+                    <td class="objCellsar">На текущую дату</td>
+                    <td rowspan="2" class="objCellsar">76,7</td>
+                    <td rowspan="2" class="objCellsar">63,0</td>
+                    <td rowspan="2" class="objCellsar">-13,7</td>
+                    <td class="objCellsar">1 840,000</td>
+                    <td class="objCellsar">1 444,410</td>
+                    <td class="objCellsar">-395,6</td>
+                    <td class="objCellsar">78,5</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">Ожидаемое</td>
+                    <td class="objCellsar">2 300,000</td>
+                    <td class="objCellsar">1 822,242</td>
+                    <td class="objCellsar">-477,8</td>
+                    <td class="objCellsar">79,2</td>
+                </tr>
+            </table>
+        </dir>
+        {% comment %} Добыча/Переработка конденсата газового (тыс. тонн) {% endcomment %}
+        <div class="dpcg-sr">
+            <table id="product-table" style="width:95%; font-size: 12px;">
+                <tr>
+                    <td colspan="9" class="objCellsar">Добыча/Переработка конденсата газового (тыс. тонн)</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar" colspan="2" rowspan="2"></td>
+                    <td class="objCellsar" colspan="3">СУТКИ</td>
+                    <td class="objCellsar" colspan="4">МЕСЯЦ</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">План</td>
+                    <td class="objCellsar">Факт</td>
+                    <td class="objCellsar">Отклонение</td>
+                    <td class="objCellsar">План</td>
+                    <td class="objCellsar">Факт</td>
+                    <td class="objCellsar">Отклонение</td>
+                    <td class="objCellsar">%</td>
+                </tr>
+                <tr>
+                    <td rowspan="2" class="objCellsar">Конденсат газовый нестабильный</td>
+                    <td class="objCellsar">На текущую дату</td>
+                    <td rowspan="2" class="objCellsar">0,477</td>
+                    <td rowspan="2" class="objCellsar">0,877</td>
+                    <td rowspan="2" class="objCellsar">0,400</td>
+                    <td class="objCellsar">11,440</td>
+                    <td class="objCellsar">19,767</td>
+                    <td class="objCellsar">8,327</td>
+                    <td class="objCellsar">172,8</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">Ожидаемое</td>
+                    <td class="objCellsar">14,300</td>
+                    <td class="objCellsar">25,028</td>
+                    <td class="objCellsar">10,728</td>
+                    <td class="objCellsar">175,0</td>
+                </tr>
+                <tr>
+                    <td rowspan="2" class="objCellsar">Отгрузка конденсата газового стабильного (УКУ КГС)*</td>
+                    <td class="objCellsar">На текущую дату</td>
+                    <td rowspan="2" class="objCellsar">0,440</td>
+                    <td rowspan="2" class="objCellsar">0,000</td>
+                    <td rowspan="2" class="objCellsar">-0,440</td>
+                    <td class="objCellsar">10,560</td>
+                    <td class="objCellsar">16,813</td>
+                    <td class="objCellsar">6,3</td>
+                    <td class="objCellsar">159,2</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">Ожидаемое</td>
+                    <td class="objCellsar">13,200</td>
+                    <td class="objCellsar">23,500</td>
+                    <td class="objCellsar">10,300</td>
+                    <td class="objCellsar">178,0</td>
+                </tr>
+            </table>
+        </dir>
+
+        <br>
+
+        {% comment %} Параметры скважин {% endcomment %}
+        <div class='param_skv'>
+            <table id="product-table" style="width:50%; font-size: 12px;">
+                <tr>
+                    <td class="objCellsar" colspan="8">Параметры скважин</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar" rowspan="2"></td>
+                    <td class="objCellsar" colspan="2">До рабочей задвижки (PWV)</td>
+                    <td class="objCellsar" colspan="2">После штуцера</td>
+                    <td class="objCellsar">Добыча газа факт</td>
+                    <td class="objCellsar">Q газа оптим.</td>
+                    <td class="objCellsar">Q газадопуск.</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">Р (МПа)</td>
+                    <td class="objCellsar">Т, ºС</td>
+                    <td class="objCellsar">Р (МПа)</td>
+                    <td class="objCellsar">Т, ºС</td>
+                    <td class="objCellsar">(тыс.м3/сут)</td>
+                    <td class="objCellsar">(тыс.м3/сут)</td>
+                    <td class="objCellsar">(тыс.м3/сут)</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">скв.Р7</td>
+                    <td class="objCellsar">20,20</td>
+                    <td class="objCellsar">-1,7</td>
+                    <td class="objCellsar">9,26</td>
+                    <td class="objCellsar">-1,6</td>
+                    <td class="objCellsar">0</td>
+                    <td class="objCellsar">2700</td>
+                    <td class="objCellsar">2900</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">скв.Р5</td>
+                    <td class="objCellsar">20,86</td>
+                    <td class="objCellsar">-1,7</td>
+                    <td class="objCellsar">8,29</td>
+                    <td class="objCellsar">-1,8</td>
+                    <td class="objCellsar">0</td>
+                    <td class="objCellsar">1300</td>
+                    <td class="objCellsar">1500</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">скв.Р6</td>
+                    <td class="objCellsar">19,58</td>
+                    <td class="objCellsar">-1,8</td>
+                    <td class="objCellsar">10,88</td>
+                    <td class="objCellsar">-2,1</td>
+                    <td class="objCellsar">0</td>
+                    <td class="objCellsar">2300</td>
+                    <td class="objCellsar">2800</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">скв.Р3</td>
+                    <td class="objCellsar">19,23</td>
+                    <td class="objCellsar">94,4</td>
+                    <td class="objCellsar">11,21</td>
+                    <td class="objCellsar">79,4</td>
+                    <td class="objCellsar">2469</td>
+                    <td class="objCellsar">2700</td>
+                    <td class="objCellsar">2900</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">скв.Р4-бис</td>
+                    <td class="objCellsar">20,11</td>
+                    <td class="objCellsar">94,7</td>
+                    <td class="objCellsar">11,00</td>
+                    <td class="objCellsar">77,3</td>
+                    <td class="objCellsar">2122</td>
+                    <td class="objCellsar">2500</td>
+                    <td class="objCellsar">2800</td>
+                </tr>
+            </table>
+        </div>
+
+        <div style: "width:50%; margin: 0 auto;" >
+            тут будет график-----------------------------------
+        </div>
+
+        {% comment %} Параметры качества газа горючего природного, подаваемого в МГ {% endcomment %}
+        <div class="pkgg">
+            <table id="product-table" style="width:25%; font-size: 12px;">
+                <tr>
+                    <td class="objCellsar" colspan="3">Параметры качества газа горючего
+                        природного, подаваемого в МГ</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar"></td>
+                    <td class="objCellsar">Норма (не выше)</td>
+                    <td class="objCellsar">Факт</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">Т ºС точки росы H2O</td>
+                    <td class="objCellsar">-10,0</td>
+                    <td class="objCellsar">23,1</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">Т ºС точки росы УВ</td>
+                    <td class="objCellsar">-2,0</td>
+                    <td class="objCellsar">-14,0</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">Содержание CO₂, %</td>
+                    <td class="objCellsar">2,500</td>
+                    <td class="objCellsar">2,590</td>
+                </tr>
+            </table>
+        </div>
+        
+        {% comment %} Параметры качества КГС (ДНП) {% endcomment %}
+
+        <div class="pk_kgs">
+            <table>
+                <tr>
+                    <td colspan="4">Параметры качества КГС (ДНП)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Норма (не
+                        выше)</td>
+                    <td>Факт</td>
+                    <td>Состояние</td>
+                </tr>
+                <tr>
+                    <td>50Р-1 №1</td>
+                    <td>68,90</td>
+                    <td>-</td>
+                    <td>В резерве</td>
+                </tr>
+                <tr>
+                    <td>50Р-1 №2</td>
+                    <td>68,90</td>
+                    <td>64,80</td>
+                    <td>Заполнение</td>
+                </tr>
+            </table>
+        </div>
+
+
+    </div>
+</section>
+{%endblock%}

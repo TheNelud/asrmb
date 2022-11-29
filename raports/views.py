@@ -13,3 +13,6 @@ def mag(request):
 def sar(request):
        
     return render(request, 'sar.html')
+
+def sr_kgmk(request):
+    return render(request, 'sr_kgmk.html')

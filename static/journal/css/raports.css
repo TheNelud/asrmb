@@ -1,7 +1,7 @@
 .schema_mag{
-    width: 1000px;
+    width: 70%;
     height: 500px;
-    position: absolute;
+    position: inherit;
     left: 0px;
 }
 

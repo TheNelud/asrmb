@@ -2,80 +2,485 @@
 
 {% load static%}
 {% block content %}
-<section class="content print">
+<section class="content">
+    <div class="tableSchemaSar print" style="width:90%">
 
-    <img  class="schema_mag" src="{% static 'journal/images/schema_mag.png' %}">
+        <img  class="schema_mag" src="{% static 'journal/images/schema_mag.png' %}">
 
-    <div class="tableSchemaMag">
-        <table id="product-table" style="width:100%">
-            <h5>Датчиковое оборудование на схеме</h5>
-            <thead>
-                {% comment %} <tr class='title'><th>Датчиковое оборудование на схеме</th></tr> {% endcomment %}
-                <tr>
-                    <th class="objCellmag" style="width: 2%">№</th>
-                    <th class="objCellmag" style="width: 48%">Тип датчика</th>
-                    <th class="objCellmag" style="width: 25%">Размерность</th>
-                    <th class="objCellmag" style="width: 25%">Значение</th>
-                </tr>
-            </thead>
+        <div class="tableSchemaMag">
+            <table id="product-table" style="width:100%; height:90% ; font-size: 10px;">
+                <h5>Датчиковое оборудование на схеме</h5>
+                <thead >
+                    {% comment %} <tr class='title'><th>Датчиковое оборудование на схеме</th></tr> {% endcomment %}
+                    <tr>
+                        <th class="objCellmag" style="width: 4%">№</th>
+                        <th class="objCellmag" style="width: 46%">Тип датчика</th>
+                        <th class="objCellmag" style="width: 25%">Размерность</th>
+                        <th class="objCellmag" style="width: 25%">Значение</th>
+                    </tr>
+                </thead>
 
-            <tbody> 
-                <tr>
-                    <th class="objCellmag">1</th>
-                    <td class="objCellmag">Расходомер</td>
-                    <td class="objCellmag">кг/ч</td>
-                    <td class="objCellmag">231</td>
-                </tr>
-            </tbody>
+                <tbody> 
+                    <tr>
+                        <th class="objCellmag">1</th>
+                        <td class="objCellmag">Расходомер</td>
+                        <td class="objCellmag">кг/ч</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">2</th>
+                        <td class="objCellmag">Расходомер</td>
+                        <td class="objCellmag">кг/ч</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">3</th>
+                        <td class="objCellmag">Расходомер</td>
+                        <td class="objCellmag">кг/ч</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">4</th>
+                        <td class="objCellmag">Расходомер</td>
+                        <td class="objCellmag">кг/ч</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">5</th>
+                        <td class="objCellmag">Расходомер</td>
+                        <td class="objCellmag">кг/ч</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">6</th>
+                        <td class="objCellmag">Расходомер</td>
+                        <td class="objCellmag">кг/ч</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">7</th>
+                        <td class="objCellmag">Расходомер</td>
+                        <td class="objCellmag">кг/ч</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">8</th>
+                        <td class="objCellmag">Расходомер</td>
+                        <td class="objCellmag">кг/ч</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">9</th>
+                        <td class="objCellmag">Расходомер</td>
+                        <td class="objCellmag">кг/ч</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">10</th>
+                        <td class="objCellmag">Расходомер</td>
+                        <td class="objCellmag">кг/ч</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">11</th>
+                        <td class="objCellmag">Расходомер</td>
+                        <td class="objCellmag">кг/ч</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">12</th>
+                        <td class="objCellmag">Расходомер</td>
+                        <td class="objCellmag">кг/ч</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag" rowspan="2">13</th>
+                        <td class="objCellmag">Датчик уровня</td>
+                        <td class="objCellmag">мм</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <td class="objCellmag">Расчетный тег</td>
+                        <td class="objCellmag">м3</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag" rowspan="2">14</th>
+                        <td class="objCellmag">Датчик уровня</td>
+                        <td class="objCellmag">мм</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <td class="objCellmag">Расчетный тег</td>
+                        <td class="objCellmag">м3</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag" rowspan="2">15</th>
+                        <td class="objCellmag">Датчик уровня</td>
+                        <td class="objCellmag">мм</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        
+                        <td class="objCellmag">Расчетный тег</td>
+                        <td class="objCellmag">м3</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag" rowspan="2">16</th>
+                        <td class="objCellmag">Датчик уровня</td>
+                        <td class="objCellmag">мм</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <td class="objCellmag">Расчетный тег</td>
+                        <td class="objCellmag">м3</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">17</th>
+                        <td class="objCellmag">Расходомер</td>
+                        <td class="objCellmag">кг/ч</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">18</th>
+                        <td class="objCellmag">Расходомер</td>
+                        <td class="objCellmag">кг/ч</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">19</th>
+                        <td class="objCellmag">Расходомер</td>
+                        <td class="objCellmag">кг/ч</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">20</th>
+                        <td class="objCellmag">Расходомер</td>
+                        <td class="objCellmag">кг/ч</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">21</th>
+                        <td class="objCellmag">Расходомер</td>
+                        <td class="objCellmag">кг/ч</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">22</th>
+                        <td class="objCellmag">Расходомер</td>
+                        <td class="objCellmag">кг/ч</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">23</th>
+                        <td class="objCellmag">Расходомер</td>
+                        <td class="objCellmag">кг/ч</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">24</th>
+                        <td class="objCellmag">Расходомер</td>
+                        <td class="objCellmag">кг/ч</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">25</th>
+                        <td class="objCellmag">Расходомер</td>
+                        <td class="objCellmag">кг/ч</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">26</th>
+                        <td class="objCellmag">Расходомер</td>
+                        <td class="objCellmag">кг/ч</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">27</th>
+                        <td class="objCellmag">Расходомер</td>
+                        <td class="objCellmag">кг/ч</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    
+                </tbody>
 
-        </table>
+            </table>
 
-        <div class="modal fade" id="modal-product">
-            <div class="modal-dialog">
-                <div class="modal-content">
-            
+            <div class="modal fade" id="modal-product">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+ 
+
+        <div class="tableSchemaMagOut" style="width:70%">
+            <table id="product-table" style="width:100%">
+                
+                <thead>
+                    {% comment %} <tr class='title'><th>Датчиковое оборудование на схеме</th></tr> {% endcomment %}
+                    <tr>
+                        <th class="objCellmag" style="width: 2%">№</th>
+                        <th class="objCellmag" style="width: 48%">Параметр баланса</th>
+                        <th class="objCellmag" style="width: 25%">Размерность</th>
+                        <th class="objCellmag" style="width: 25%">Значение</th>
+                    </tr>
+                </thead>
+
+                <tbody> 
+                    <tr>
+                        <th class="objCellmag">1</th>
+                        <td class="objCellmag">Наличие оборотного рМэг на начало смены</td>
+                        <td class="objCellmag">тонны</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">2</th>
+                        <td class="objCellmag">Наличие факт. товарного МЭГ 100% на складе (поз.20)</td>
+                        <td class="objCellmag">тонны</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">3</th>
+                        <td class="objCellmag">Наличие на начало суток на складе ПБ</td>
+                        <td class="objCellmag">тонны</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">4</th>
+                        <td class="objCellmag">Приход товарного МЭГ (100% мас.) на склад фКГДУ (поз.6)</td>
+                        <td class="objCellmag">тонны</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">5</th>
+                        <td class="objCellmag">Приход товарного МЭГ 100% со склада ПБ на склад УКПГ (поз.20)</td>
+                        <td class="objCellmag">тонны</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag" >6</th>
+                        <td class="objCellmag">Вовлечение товарного МЭГ со склада УКПГ (поз.20)</td>
+                        <td class="objCellmag">тонны</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    
+                    <tr>
+                        <th class="objCellmag" >7</th>
+                        <td class="objCellmag" >Концентрация МЭГ</td>
+                        <td class="objCellmag">% (масс.)</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+
+                    {% comment %} <tr>
+                        <td class="objCellmag">нМЭГ</tb>
+                        <td class="objCellmag">тонны</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <td class="objCellmag">рМЭГ 30И-1</tb>
+                        <td class="objCellmag">тонны</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <td class="objCellmag">рМЭГ 60Е-1</tb>
+                        <td class="objCellmag">тонны</td>
+                        <td class="objCellmag">231</td>
+                    </tr> {% endcomment %}
+
+                    <tr>
+                        <th class="objCellmag">8</th>
+                        <td class="objCellmag">Плотность рМЭГ</td>
+                        {% comment %} <td class="objCellmag">рМЭГ 60Е-1</td> {% endcomment %}
+                        <td class="objCellmag">т/м3</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag" >9</th>
+                        <td class="objCellmag" >Приход нМЭГ (30И-1)</td>
+                        <td class="objCellmag">т/сут.</td>
+                        <td class="objCellmag">231</td>
+                        
+                    </tr>
+
+                    {% comment %} <tr>
+                        <td class="objCellmag" >30PM-1(a)</tb>
+                        <td class="objCellmag">тонны</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <td class="objCellmag" >30PM-1(б)</tb>
+                        <td class="objCellmag">тонны</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <td class="objCellmag" >30PM-1(в)</tb>
+                        <td class="objCellmag">тонны</td>
+                        <td class="objCellmag">231</td>
+                    </tr> {% endcomment %}
+
+                    <tr>
+                        <th class="objCellmag" >10</th>
+                        <td class="objCellmag" >Регенерация рМЭГа из УРМ</td>
+                        <td class="objCellmag">т/сут.</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+
+                    {% comment %} <tr>
+                        <td class="objCellmag" >30PM-1(a)</tb>
+                        <td class="objCellmag">тонны</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <td class="objCellmag" >30PM-1(б)</tb>
+                        <td class="objCellmag">тонны</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <td class="objCellmag" >30PM-1(в)</tb>
+                        <td class="objCellmag">тонны</td>
+                        <td class="objCellmag">231</td>
+                    </tr> {% endcomment %}
+
+                    <tr>
+                        <th class="objCellmag">11</th>
+                        <td class="objCellmag">Подача рМЭГ на ПДК (всего)</td>
+                        <td class="objCellmag">т/сут.</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">12</th>
+                        <td class="objCellmag">Подача рМЭГ на cкважину P1</td>
+                        <td class="objCellmag">т/сут.</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">13</th>
+                        <td class="objCellmag">Подача рМЭГ на скважину P2</td>
+                        <td class="objCellmag">т/сут.</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">14</th>
+                        <td class="objCellmag">Подача рМЭГ на скважину P3</td>
+                        <td class="objCellmag">т/сут.</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">15</th>
+                        <td class="objCellmag">Подача рМЭГ на скважину P4-бис</td>
+                        <td class="objCellmag">т/сут.</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">16</th>
+                        <td class="objCellmag">Подача рМЭГ на скважину P5</td>
+                        <td class="objCellmag">т/сут.</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">17</th>
+                        <td class="objCellmag">Подача рМЭГ на скважину P6</td>
+                        <td class="objCellmag">т/сут.</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">18</th>
+                        <td class="objCellmag">Подача рМЭГ на скважину P7</td>
+                        <td class="objCellmag">тонны</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">19</th>
+                        <td class="objCellmag">Подача рМЭГ на манифольд</td>
+                        <td class="objCellmag">т/сут.</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">20</th>
+                        <td class="objCellmag">Подача рМЭГ на площадку факельных сепараторов</td>
+                        <td class="objCellmag">т/сут.</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">21</th>
+                        <td class="objCellmag">Потери МЭГ на РЭН</td>
+                        <td class="objCellmag">т/сут.</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">22</th>
+                        <td class="objCellmag">КГС после УСК</td>
+                        <td class="objCellmag">т/сут.</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">23</th>
+                        <td class="objCellmag">Унос МЭГ с КГС (норма расхода 0.9495 кг/тонн)</td>
+                        <td class="objCellmag">т/сут.</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag" >24</th>
+                        <td class="objCellmag" >Остаток оборотного рМЭГ на конец суток</td>
+                        <td class="objCellmag">тонны</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+
+                    {% comment %} <tr>
+                        <td class="objCellmag" >60E-1 №1</tb>
+                        <td class="objCellmag">тонны</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <td class="objCellmag" >60E-1 №2</tb>
+                        <td class="objCellmag">тонны</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <td class="objCellmag" >60E-1 №3</tb>
+                        <td class="objCellmag">тонны</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <td class="objCellmag" >60E-3</tb>
+                        <td class="objCellmag">тонны</td>
+                        <td class="objCellmag">231</td>
+                    </tr> {% endcomment %}
+
+                    <tr>
+                        <th class="objCellmag">25</th>
+                        <td class="objCellmag">Остаток товарного МЭГ на поз.20 (100% мас.)</td>
+                        <td class="objCellmag">тонны</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag">26</th>
+                        <td class="objCellmag">Остаток на конец суток на складе ПБ (100% мас.)</td>
+                        <td class="objCellmag">тонны</td>
+                        <td class="objCellmag">231</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+            <div class="modal fade" id="modal-product">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
-    <div class="tableSchemaMagOut">
-        <table id="product-table" style="width:100%">
-            
-            <thead>
-                {% comment %} <tr class='title'><th>Датчиковое оборудование на схеме</th></tr> {% endcomment %}
-                <tr>
-                    <th class="objCellmag" style="width: 2%">№</th>
-                    <th class="objCellmag" style="width: 48%">Параметр баланса</th>
-                    <th class="objCellmag" style="width: 25%">Размерность</th>
-                    <th class="objCellmag" style="width: 25%">Значение</th>
-                </tr>
-            </thead>
-
-            <tbody> 
-                <tr>
-                    <th class="objCellmag">1</th>
-                    <td class="objCellmag">Наличие оборотного рМэг на начало смены</td>
-                    <td class="objCellmag">тонны</td>
-                    <td class="objCellmag">231</td>
-                </tr>
-            </tbody>
-
-        </table>
-
-        <div class="modal fade" id="modal-product">
-            <div class="modal-dialog">
-                <div class="modal-content">
-            
-                </div>
-            </div>
-        </div>
-    </div>
-    
-
 
 </section>
 

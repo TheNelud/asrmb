@@ -1,9 +1,9 @@
 {% load static%}
 <section class="header">
     
-    
+    <img class='logo' src="{% static 'journal/images/logo.png' %}" style="top:0;"/>
     <div class="header_container">
-        <img class='logo' src="{% static 'journal/images/logo.png' %}" style="top:0;"/>
+        
         <ul class="header_menu">
 
             <li>
@@ -31,6 +31,7 @@
                     <li><a href="{% url 'sar'%}">Суточный рапорт УКПГ</a></li><hr class='hr-navbar-raport'>
                     <li><a href="{% url 'mar'%}">Ежемесячный эксплуатационный рапорт</a></li><hr class='hr-navbar-raport'>
                     <li><a href="{% url 'mag'%}">Материальный баланс МЭГ</a></li><hr class='hr-navbar-raport'>
+                    <li><a href="{% url 'sr_kgmk'%}">Суточный рапорт Киринского ГКМ</a></li>
                 </ul>
 
             </li>
