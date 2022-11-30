@@ -1,0 +1,38 @@
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    height: 100%;
+    overflow: hidden;
+
+}
+body {
+    width: 100%;
+    /* overflow-x: hidden; */
+    overflow: hidden;
+    background: #f2f2f2;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    box-sizing: border-box;
+    position: static;
+}
+
+section {
+    display: block;
+
+
+}
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body{
+    height: 100vh;
+    background: #17a2b8;
+    overflow: hidden;
+} */

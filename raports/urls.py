@@ -2,6 +2,8 @@ from django.urls import path
 from . import views
 from django.conf.urls import url
 
+# from raports.raports_views.sr_kgmk_views import *
+
 
 urlpatterns = [
     # path('', views.mar, name='raports'),

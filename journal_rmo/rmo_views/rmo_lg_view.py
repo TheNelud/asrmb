@@ -23,7 +23,6 @@ def graphs_ls():
     print(y_data)
    
     
-
     figure = go.Figure(px.line(x=x_data, y=y_data, title="Потери газа")).to_html()
    
     return figure

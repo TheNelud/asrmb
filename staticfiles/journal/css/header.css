@@ -1,0 +1,130 @@
+.header {
+    width: 100%;
+    top: 0;
+    height: 55px;
+    background: #0079c2;
+    color: #fff;
+    padding: 10px 10px 10px 10px;
+    position: fixed;
+    z-index: 999;
+}
+
+.header_container {
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 100%;
+}
+
+.header_container:after {
+    clear: both;
+}
+
+.header_container:before, .header_container:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+
+.header .header_menu{
+    float:left;
+    list-style: none; /*убираем маркеры списка*/
+    margin: 0; /*убираем отступы*/
+    padding-left: 10; /*убираем отступы*/
+    margin-top: 7px; /*делаем отступ сверху*/
+    height: 35px; /*задаем высоту*/
+}
+
+.header .header_menu > li {
+    float:left; /*Размещаем список горизонтально для реализации меню*/
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+
+
+.header .header_menu a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0px 15px;
+    display: block;
+    /*padding-left: 40px;*/
+    -moz-transition: all 0.3s 0.01s ease;
+    -o-transition: all 0.3s 0.01s ease;
+    -webkit-transition: all 0.3s 0.01s ease;
+}
+
+.header .header_menu a:hover{
+    color: lightgray;
+}
+
+.header .header_logo{
+    text-align:center;width:75px;float: left; margin-top: -5px
+}
+
+
+.logo{
+    position: fixed;
+    height: 48px;
+    width: 48px;
+    margin-bottom: 20px;
+    top:10px;
+    filter: brightness(0) invert(1);
+}
+
+img.arrow{
+    filter: brightness(0) invert(1);
+}
+
+
+
+
+.header_container ul li a{
+    display:block;
+    padding:0 10px;
+    color:#FFF;
+    background-color: #0079c2;
+    /* font-size:20px; */
+    line-height: 35px;
+    text-decoration:none;
+} 
+
+/* .header_container ul li a:hover{
+    background-color: #000000;
+} */
+
+
+.header_container ul ul{
+    display: none;
+    position: absolute;
+    top:100%;
+    margin: -5px 0px 0px -32px;
+    list-style: none;
+}
+
+.header_container ul li:hover > ul{
+    display: inherit;
+}
+
+.header_container ul ul li{
+    min-width:170px;
+    float:none;
+    display: list-item;
+    position: relative;
+}
+
+.hr-navbar-raport{
+    margin: 0;
+	padding: 0;
+	height: 0;
+	border: none;
+	border-top: 2px solid #ddd;
+	border-bottom: 2px solid #000;
+}

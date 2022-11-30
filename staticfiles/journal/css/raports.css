@@ -1,0 +1,79 @@
+.schema_mag{
+    width: 70%;
+    height: 500px;
+    position: inherit;
+    left: 0px;
+}
+
+.tableSchemaMag{
+    position: absolute;
+    left: 1000px;
+    max-width: 600px;
+}
+
+.objCellmagId{
+    border: 1px solid grey;
+    max-width: 15px;
+}
+
+.objCellmag{
+    border: 1px solid grey;
+    /* width: 2%; */
+}
+
+.tableSchemaMagOut{
+    top: 520px;
+    position: absolute;
+    border: 1px solid grey;
+}
+
+
+
+
+.tableSchemaSar{
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    width: 900px;
+}
+
+.objCellsar{
+    border: 1px solid grey;
+    text-align: center;
+}
+
+
+
+
+.select-sort-mobile {
+	/* for Firefox */
+	-moz-appearance: none;
+	/* for Chrome */
+	-webkit-appearance: none;
+}
+.select-sort-mobile::-ms-expand {
+	/* IE */
+	display: none;
+}
+
+
+.sort-form-mobile-wrap::after {
+	z-index: -1;
+	border-left: 1px solid #E9E9E9;
+	content: "";
+	position: absolute;
+	right: 0;
+	width: 36px;
+	height: 32px;
+	background: url(../images/arrow-down.png);
+	background-repeat: no-repeat;
+	top: 0%;
+	background-position-y: 52%;
+	background-position-x: 50%;
+}
+
+
+
+.front-rap{
+    font-size: 12px;
+}
