@@ -17,7 +17,7 @@
         <td><span>{{item.v_pr|default_if_none:"-"}}</span></td>
         <td><span>{{item.p_pr|default_if_none:"-"}}</span></td>
         <td><span>{{item.t_pr|default_if_none:"-"}}</span></td>
-        <td><span>{{item.z_pr|default_if_none:"-"}}</span></td>
+        <td><span>{{item.z_pr|floatformat:4|default_if_none:"-"}}</span></td>
         <td><span>{{item.b|default_if_none:"-"}}</span></td>
         <td><span>{{item.ni|default_if_none:"-"}}</span></td>
         <td><span>{{item.xr_prod|default_if_none:"-"}}</span></td>

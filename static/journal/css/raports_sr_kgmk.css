@@ -1,4 +1,17 @@
-.graphs_P_pcv{
-    
-    left: 50%
+
+#block_container
+{
+    display: flex;
+    justify-content: left;
+}
+#block1, #block2, #block3
+{
+    display:inline;
+}
+
+.schema_manifold{
+    display: flex;
+    justify-content: left;
+    width: 600px;
+    height:600px
 }

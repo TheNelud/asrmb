@@ -5,6 +5,15 @@
     left: 0px;
 }
 
+.schema_mag_sett{
+    width: 300px;
+    left: 1000px; 
+    top:550px;
+    height: 650px;
+    position: inherit;
+    float: right;
+}
+
 .tableSchemaMag{
     position: absolute;
     left: 1000px;
@@ -26,9 +35,6 @@
     position: absolute;
     border: 1px solid grey;
 }
-
-
-
 
 .tableSchemaSar{
     position: absolute;
