@@ -5,12 +5,14 @@
 <section class="content">
     <div class="tableSchemaSar print" style="width:90%">
 
-        <img  class="schema_mag" src="{% static 'journal/images/schema_mag.png' %}">
+        
+        <h5 style="margin: 0 auto; text-align: center;">Датчиковое оборудование на схеме</h5>
+        <div id="block_container_mag"  >
 
-        <div class="tableSchemaMag">
-            <table id="product-table" style="width:100%; height:90% ; font-size: 10px;">
-                <h5>Датчиковое оборудование на схеме</h5>
-                <thead >
+            <img  class="schema_mag" src="{% static 'journal/images/schema_mag.png' %}">
+
+            <table  style="width:100%; height:90% ; font-size: 10px;">
+                 <thead >
                     {% comment %} <tr class='title'><th>Датчиковое оборудование на схеме</th></tr> {% endcomment %}
                     <tr>
                         <th class="objCellmag" style="width: 4%">№</th>
@@ -220,8 +222,8 @@
 
 
  
-
-        <div class="tableSchemaMagOut" style="width:70%">
+        
+        <div id="block_container_mag">
             <table id="product-table" style="width:100%">
                 
                 <thead>
@@ -479,9 +481,9 @@
                     </div>
                 </div>
             </div>
-            
+            <img  class="schema_mag_sett" src="{% static 'journal/images/sett.png' %}">
         </div>
-        <img  class="schema_mag_sett" src="{% static 'journal/images/sett.png' %}">
+        
     </div>
     
 </section>

@@ -1,7 +1,7 @@
 .schema_mag{
     width: 70%;
     height: 500px;
-    position: inherit;
+    /* position: inherit; */
     left: 0px;
 }
 
@@ -10,8 +10,8 @@
     left: 1000px; 
     top:550px;
     height: 650px;
-    position: inherit;
-    float: right;
+    /* position: inherit; */
+    /* float: right; */
 }
 
 .tableSchemaMag{
@@ -78,6 +78,9 @@
 	background-position-x: 50%;
 }
 
+#block_container_mag{
+    display: flex;
+}
 
 
 .front-rap{

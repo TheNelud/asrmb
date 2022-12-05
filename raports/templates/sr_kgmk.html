@@ -2,13 +2,13 @@
 
 {% load static%}
 {% block content %}
-<section class="content">
+<section class="content" style="margin: 0 0 0 20px">
     <div class="tableSchemaSar print" style="width:90%; margin: 0 auto;" >
         <div class="title-raport-sr">
         
             {% comment %} Таблица Метеоусловия {% endcomment %}
 
-            <table id="product-table" style="width:50%; font-size: 12px; margin: 0 auto;">
+            <table id="product-table" style="width:50%; font-size: 16px; margin: 0 auto;">
                 <thead>
 
                     <tr>
@@ -40,7 +40,7 @@
         {% comment %} Добыча газа природного горючего (тыс.м3){% endcomment %}
 
         <div class="dgpr-sr">
-            <table id="product-table" style="width:95%; font-size: 12px;">
+            <table id="product-table" style="width:100%; font-size: 16px;">
                 <tr>
                     <td colspan="9" class="objCellsar">Добыча газа природного горючего (тыс.м3)</td>
                 </tr>
@@ -99,7 +99,7 @@
         {% comment %} Добыча/Переработка конденсата газового (тыс. тонн) {% endcomment %}
         
         <div class="dpcg-sr">
-            <table id="product-table" style="width:95%; font-size: 12px;">
+            <table id="product-table" style="width:100%; font-size: 16px;">
                 <tr>
                     <td colspan="9" class="objCellsar">Добыча/Переработка конденсата газового (тыс. тонн)</td>
                 </tr>
@@ -157,91 +157,92 @@
         </div>
 
         <br>
-        <div id="block_container">
+        <div id="block_container" style="width:100%">
             {% comment %} Параметры скважин {% endcomment %}
-            <div>
-                <table id="product-table" style="float: left; width:50%; font-size: 12px;">
-                    <tr>
-                        <td class="objCellsar" colspan="8">Параметры скважин</td>
-                    </tr>
-                    <tr>
-                        <td class="objCellsar" rowspan="2"></td>
-                        <td class="objCellsar" colspan="2">До рабочей задвижки (PWV)</td>
-                        <td class="objCellsar" colspan="2">После штуцера</td>
-                        <td class="objCellsar">Добыча газа факт</td>
-                        <td class="objCellsar">Q газа оптим.</td>
-                        <td class="objCellsar">Q газадопуск.</td>
-                    </tr>
-                    <tr>
-                        <td class="objCellsar">Р (МПа)</td>
-                        <td class="objCellsar">Т, ºС</td>
-                        <td class="objCellsar">Р (МПа)</td>
-                        <td class="objCellsar">Т, ºС</td>
-                        <td class="objCellsar">(тыс.м3/сут)</td>
-                        <td class="objCellsar">(тыс.м3/сут)</td>
-                        <td class="objCellsar">(тыс.м3/сут)</td>
-                    </tr>
-                    <tr>
-                        <td class="objCellsar">скв.Р7</td>
-                        <td class="objCellsar">20,20</td>
-                        <td class="objCellsar">-1,7</td>
-                        <td class="objCellsar">9,26</td>
-                        <td class="objCellsar">-1,6</td>
-                        <td class="objCellsar">0</td>
-                        <td class="objCellsar">2700</td>
-                        <td class="objCellsar">2900</td>
-                    </tr>
-                    <tr>
-                        <td class="objCellsar">скв.Р5</td>
-                        <td class="objCellsar">20,86</td>
-                        <td class="objCellsar">-1,7</td>
-                        <td class="objCellsar">8,29</td>
-                        <td class="objCellsar">-1,8</td>
-                        <td class="objCellsar">0</td>
-                        <td class="objCellsar">1300</td>
-                        <td class="objCellsar">1500</td>
-                    </tr>
-                    <tr>
-                        <td class="objCellsar">скв.Р6</td>
-                        <td class="objCellsar">19,58</td>
-                        <td class="objCellsar">-1,8</td>
-                        <td class="objCellsar">10,88</td>
-                        <td class="objCellsar">-2,1</td>
-                        <td class="objCellsar">0</td>
-                        <td class="objCellsar">2300</td>
-                        <td class="objCellsar">2800</td>
-                    </tr>
-                    <tr>
-                        <td class="objCellsar">скв.Р3</td>
-                        <td class="objCellsar">19,23</td>
-                        <td class="objCellsar">94,4</td>
-                        <td class="objCellsar">11,21</td>
-                        <td class="objCellsar">79,4</td>
-                        <td class="objCellsar">2469</td>
-                        <td class="objCellsar">2700</td>
-                        <td class="objCellsar">2900</td>
-                    </tr>
-                    <tr>
-                        <td class="objCellsar">скв.Р4-бис</td>
-                        <td class="objCellsar">20,11</td>
-                        <td class="objCellsar">94,7</td>
-                        <td class="objCellsar">11,00</td>
-                        <td class="objCellsar">77,3</td>
-                        <td class="objCellsar">2122</td>
-                        <td class="objCellsar">2500</td>
-                        <td class="objCellsar">2800</td>
-                    </tr>
-                </table>
-
-                <div id="product-table" class='graphs_P_pcv' style="float: right;  width: 50%" >
+                <div id="block1">
+                    <table id="id="product-table"" style="font-size: 16px; height: 300px">
+                        <tr>
+                            <td class="objCellsar" colspan="8">Параметры скважин</td>
+                        </tr>
+                        <tr>
+                            <td class="objCellsar" rowspan="2"></td>
+                            <td class="objCellsar" colspan="2">До рабочей задвижки<br> (PWV)</td>
+                            <td class="objCellsar" colspan="2">После штуцера</td>
+                            <td class="objCellsar">Добыча газа факт</td>
+                            <td class="objCellsar">Q газа оптим.</td>
+                            <td class="objCellsar">Q газадопуск.</td>
+                        </tr>
+                        <tr>
+                            <td class="objCellsar">Р (МПа)</td>
+                            <td class="objCellsar">Т, ºС</td>
+                            <td class="objCellsar">Р (МПа)</td>
+                            <td class="objCellsar">Т, ºС</td>
+                            <td class="objCellsar">(тыс.м3/сут)</td>
+                            <td class="objCellsar">(тыс.м3/сут)</td>
+                            <td class="objCellsar">(тыс.м3/сут)</td>
+                        </tr>
+                        <tr>
+                            <td class="objCellsar">скв.Р7</td>
+                            <td class="objCellsar">20,20</td>
+                            <td class="objCellsar">-1,7</td>
+                            <td class="objCellsar">9,26</td>
+                            <td class="objCellsar">-1,6</td>
+                            <td class="objCellsar">0</td>
+                            <td class="objCellsar">2700</td>
+                            <td class="objCellsar">2900</td>
+                        </tr>
+                        <tr>
+                            <td class="objCellsar">скв.Р5</td>
+                            <td class="objCellsar">20,86</td>
+                            <td class="objCellsar">-1,7</td>
+                            <td class="objCellsar">8,29</td>
+                            <td class="objCellsar">-1,8</td>
+                            <td class="objCellsar">0</td>
+                            <td class="objCellsar">1300</td>
+                            <td class="objCellsar">1500</td>
+                        </tr>
+                        <tr>
+                            <td class="objCellsar">скв.Р6</td>
+                            <td class="objCellsar">19,58</td>
+                            <td class="objCellsar">-1,8</td>
+                            <td class="objCellsar">10,88</td>
+                            <td class="objCellsar">-2,1</td>
+                            <td class="objCellsar">0</td>
+                            <td class="objCellsar">2300</td>
+                            <td class="objCellsar">2800</td>
+                        </tr>
+                        <tr>
+                            <td class="objCellsar">скв.Р3</td>
+                            <td class="objCellsar">19,23</td>
+                            <td class="objCellsar">94,4</td>
+                            <td class="objCellsar">11,21</td>
+                            <td class="objCellsar">79,4</td>
+                            <td class="objCellsar">2469</td>
+                            <td class="objCellsar">2700</td>
+                            <td class="objCellsar">2900</td>
+                        </tr>
+                        <tr>
+                            <td class="objCellsar">скв.Р4-бис</td>
+                            <td class="objCellsar">20,11</td>
+                            <td class="objCellsar">94,7</td>
+                            <td class="objCellsar">11,00</td>
+                            <td class="objCellsar">77,3</td>
+                            <td class="objCellsar">2122</td>
+                            <td class="objCellsar">2500</td>
+                            <td class="objCellsar">2800</td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="block2" class='graphs_P_pcv' style="float: right; " >
                     {{ graphs_P_pcv | safe }}
                 </div>
-            </div> .
         </div>
+
+        <br>
         {% comment %} Параметры качества газа горючего природного, подаваемого в МГ {% endcomment %}
         <div id="block_container">
             <div id="block1">
-                <table style="width:250px; font-size: 12px;">
+                <table style="width:300px; font-size: 16px; height: 300px;">
                     <tr>
                         <td class="objCellsar" colspan="3">Параметры качества газа горючего
                             природного, подаваемого в МГ</td>
@@ -277,7 +278,7 @@
         {% comment %} Параметры качества КГС (ДНП) {% endcomment %}
 
             <div id="block3">
-                <table style="width:250px; font-size: 12px;">
+                <table style="width:320px; font-size: 16px; height: 250px;">
                     <tr>
                         <td class="objCellsar" colspan="4">Параметры качества КГС (ДНП)</td>
                     </tr>
@@ -311,7 +312,7 @@
         {% comment %} ПДК {% endcomment %}
         <div id="block_container">
             <div class="pdk" >
-                <table id="product-table" style="width: 400px; font-size: 12px;">
+                <table id="product-table" style="width: 400px; font-size: 16px;">
                     <tr>
                         <td class="objCellsar" colspan="4">ПДК</td>
                     </tr>
@@ -422,8 +423,8 @@
             </div>
 
             {% comment %} РВС 50Р-1 №1 {% endcomment %}
-            <div class="rvs" style=" margin: 0 0 0 auto; width: 400px">
-                <table id="product-table" style="width:30%; font-size: 12px;">
+            <div class="rvs" style=" margin: 0 0 0 auto; ">
+                <table id="product-table" style="width: 400px font-size: 16px; float: right;">
                     <tr>
                         <td class="objCellsar" colspan="3">РВС 50Р-1 №1</td>
                         <td class="objCellsar" colspan="3">РВС 50Р-1 №2</td>
@@ -445,132 +446,143 @@
                         <td class="objCellsar">81%</td>
                     </tr>
                 </table>
+
+                <div class='schema_manifold_div'>
+                    <img class='schema_manifold' src="{% static 'journal/images/schema_manifold.png' %}">
+                </div>
             </div>
+
+
+            
+
         </div>
 
-        <div>
-            <img class='schema_manifold' src="{% static 'journal/images/schema_manifold.png' %}">
-        </div>
+        
 
         {% comment %} ЭСН {% endcomment %}
-        <div id="block_container">
-            <div class="asn">
-                <table id="product-table" style="width:30%; font-size: 12px;">
+        
+        <div class="asn" style=" transform:translate(0px,-110px)">
+            <table id="product-table" style="width:30%; font-size: 16px;">
+                <tr>
+                    <td class="objCellsar">ЭСН</td>
+                    <td class="objCellsar"> </td>
+                    <td class="objCellsar"> </td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">в работе №</td>
+                    <td class="objCellsar">в ремонте,ТО №</td>
+                    <td class="objCellsar">в резерве №</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">1, 3, 7</td>
+                    <td class="objCellsar">2, 5</td>
+                    <td class="objCellsar">4, 6, 8</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">рДЭС</td>
+                    <td class="objCellsar"> </td>
+                    <td class="objCellsar"> </td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">в работе №</td>
+                    <td class="objCellsar">в ремонте,ТО №</td>
+                    <td class="objCellsar">в резерве №</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">-</td>
+                    <td class="objCellsar">-</td>
+                    <td class="objCellsar">1, 2</td>
+                </tr>
+                <tr>
+                    <td class="objCellsar">Запас ДТ</td>
+                    <td class="objCellsar">248 т.</td>
+                    <td class="objCellsar"> 248 т.</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="block_container" style="transform: translate(0px,-100px); width: 100%; ">    
+            <div class="mbhr">
+                <table id="product-table" style="font-size: 16px;">
                     <tr>
-                        <td class="objCellsar">ЭСН</td>
+                        <td class="objCellsar" colspan="6">Материальный баланс хим. реагентов Киринского ГКМ, тонн</td>
+                    </tr>
+                    <tr>
                         <td class="objCellsar"> </td>
-                        <td class="objCellsar"> </td>
+                        <td class="objCellsar">Расход</td>
+                        <td class="objCellsar">Остаток</td>
+                        <td class="objCellsar">Неснижаемый остаток</td>
+                        <td class="objCellsar">Дата окончания запасов</td>
+                        <td class="objCellsar">Поставка</td>
                     </tr>
                     <tr>
-                        <td class="objCellsar">в работе №</td>
-                        <td class="objCellsar">в ремонте,ТО №</td>
-                        <td class="objCellsar">в резерве №</td>
-                    </tr>
-                    <tr>
-                        <td class="objCellsar">1, 3, 7</td>
-                        <td class="objCellsar">2, 5</td>
-                        <td class="objCellsar">4, 6, 8</td>
-                    </tr>
-                    <tr>
-                        <td class="objCellsar">рДЭС</td>
-                        <td class="objCellsar"> </td>
-                        <td class="objCellsar"> </td>
-                    </tr>
-                    <tr>
-                        <td class="objCellsar">в работе №</td>
-                        <td class="objCellsar">в ремонте,ТО №</td>
-                        <td class="objCellsar">в резерве №</td>
-                    </tr>
-                    <tr>
+                        <td class="objCellsar">МЭГ</td>
+                        <td class="objCellsar">0,723</td>
+                        <td class="objCellsar">330,664</td>
                         <td class="objCellsar">-</td>
+                        <td class="objCellsar">25.07.2023</td>
                         <td class="objCellsar">-</td>
-                        <td class="objCellsar">1, 2</td>
                     </tr>
                     <tr>
-                        <td class="objCellsar">Запас ДТ</td>
-                        <td class="objCellsar">248 т.</td>
-                        <td class="objCellsar"> 248 т.</td>
+                        <td class="objCellsar">Метанол</td>
+                        <td class="objCellsar">2,261</td>
+                        <td class="objCellsar">220,582</td>
+                        <td class="objCellsar">64</td>
+                        <td class="objCellsar">20.09.2022<br>09.10.2022</td>
+                        <td class="objCellsar">-</td>
+                    </tr>
+                    <tr>
+                        <td class="objCellsar">Ингибитор коррозии</td>
+                        <td class="objCellsar">0,395</td>
+                        <td class="objCellsar">83,680</td>
+                        <td class="objCellsar">23</td>
+                        <td class="objCellsar">28.11.2022<br>04.01.2023</td>
+                        <td class="objCellsar">-</td>
                     </tr>
                 </table>
             </div>
+    
+            {% comment %} Стоки на КОС, м3 {% endcomment %}
             
+            <div class="stoke_kos">
+                <table id="product-table" style="width:70%; font-size: 16px; margin: 0 auto;">
+                    <tr>
+                        <td class="objCellsar">Стоки на КОС, м3</td>
+                        <td class="objCellsar">За сутки</td>
+                        <td class="objCellsar">За месяц</td>
+                    </tr>
+                    <tr>
+                        <td class="objCellsar">Поступило</td>
+                        <td class="objCellsar">144</td>
+                        <td class="objCellsar">3246</td>
+                    </tr>
+                    <tr>
+                        <td class="objCellsar">Утилизировано</td>
+                        <td class="objCellsar">174</td>
+                        <td class="objCellsar">3869</td>
+                    </tr>
+                </table>
+            </div>
+
             
+        </div> 
+
+        <br><br>
+        <br><br>
+        <br><br>        
+
+        <div id="block_conteiner_graphs" style="width:90%;height:100">
+            {{graphs_1 | safe}}
+            {{graphs_2 | safe}}
+            {{graphs_3 | safe}}
+            {{graphs_4 | safe}}
+            {{graphs_5 | safe}}
+            {{graphs_6 | safe}}
+            {{graphs_7 | safe}}
         </div>
 
 
-        {% comment %} Материальный баланс хим. реагентов Киринского ГКМ, тонн {% endcomment %}
-        <div class="mbhr">
-            <table id="product-table" style="width:30%; font-size: 12px;">
-                <tr>
-                    <td class="objCellsar" colspan="6">Материальный баланс хим. реагентов Киринского ГКМ, тонн</td>
-                </tr>
-                <tr>
-                    <td class="objCellsar"> </td>
-                    <td class="objCellsar">Расход</td>
-                    <td class="objCellsar">Остаток</td>
-                    <td class="objCellsar">Неснижаемый остаток</td>
-                    <td class="objCellsar">Дата окончания запасов</td>
-                    <td class="objCellsar">Поставка</td>
-                </tr>
-                <tr>
-                    <td class="objCellsar">МЭГ</td>
-                    <td class="objCellsar">0,723</td>
-                    <td class="objCellsar">330,664</td>
-                    <td class="objCellsar">-</td>
-                    <td class="objCellsar">25.07.2023</td>
-                    <td class="objCellsar">-</td>
-                </tr>
-                <tr>
-                    <td class="objCellsar">Метанол</td>
-                    <td class="objCellsar">2,261</td>
-                    <td class="objCellsar">220,582</td>
-                    <td class="objCellsar">64</td>
-                    <td class="objCellsar">20.09.2022<br>09.10.2022</td>
-                    <td class="objCellsar">-</td>
-                </tr>
-                <tr>
-                    <td class="objCellsar">Ингибитор коррозии</td>
-                    <td class="objCellsar">0,395</td>
-                    <td class="objCellsar">83,680</td>
-                    <td class="objCellsar">23</td>
-                    <td class="objCellsar">28.11.2022<br>04.01.2023</td>
-                    <td class="objCellsar">-</td>
-                </tr>
-            </table>
-        </dir>
-
-        {% comment %} Стоки на КОС, м3 {% endcomment %}
-        <div class="stoke_kos">
-            <table id="product-table" style="width:30%; font-size: 12px; margin: 0 auto;">
-                <tr>
-                    <td class="objCellsar">Стоки на КОС, м3</td>
-                    <td class="objCellsar">За сутки</td>
-                    <td class="objCellsar">За месяц</td>
-                </tr>
-                <tr>
-                    <td class="objCellsar">Поступило</td>
-                    <td class="objCellsar">144</td>
-                    <td class="objCellsar">3246</td>
-                </tr>
-                <tr>
-                    <td class="objCellsar">Утилизировано</td>
-                    <td class="objCellsar">174</td>
-                    <td class="objCellsar">3869</td>
-                </tr>
-            </table>
-        </div>
-        <br><br><br>
+    </div>
         
-    </div>
-
-    <div style="width:1000;height:100">
-        {{graphs_1 | safe}}
-        {{graphs_2 | safe}}
-        {{graphs_3 | safe}}
-        {{graphs_4 | safe}}
-        {{graphs_5 | safe}}
-        {{graphs_6 | safe}}
-        {{graphs_7 | safe}}
-    </div>
 </section>
 {%endblock%}

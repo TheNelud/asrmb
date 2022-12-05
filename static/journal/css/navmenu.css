@@ -97,5 +97,9 @@ nav.open .nav-content span{
         /* width: 970px; */
 
     } 
+
+    #block_conteiner_graphs{
+        margin-top: 300px;
+    }
     
 }

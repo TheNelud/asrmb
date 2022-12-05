@@ -4,14 +4,24 @@
     display: flex;
     justify-content: left;
 }
-#block1, #block2, #block3
+#block1, #block2, #block3, #block4
 {
     display:inline;
+}
+
+/* #block_conteiner_graphs{
+    margin-top: 1100px;
+} */
+
+.schema_manifold_div{
+    margin: 10px 0px 0px 0px;
+
 }
 
 .schema_manifold{
     display: flex;
     justify-content: left;
-    width: 600px;
-    height:600px
-}
+    width: 1000px;
+    height:600px;
+    
+} 

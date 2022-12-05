@@ -5,6 +5,8 @@ import plotly.express as px
 import pandas as pd
 import numpy as np
 
+import random
+
 
 from plotly.offline import plot
 
@@ -19,9 +21,10 @@ def graphs_P_pcv():
     layout = go.Layout(
         # title_text='States_Name',
         yaxis2=dict(overlaying='y'),
-        width=800,
+        width=900,
         height=300,
-        margin=dict(l=0,r=0,b=0,t=0)
+        margin=dict(l=0,r=0,b=0,t=0),
+        legend=dict(orientation="h")
     )
 
     figure = go.Figure([go.Scatter(x = random_x,y = random_y0,name='P4 после PCV'),
@@ -40,11 +43,12 @@ def graphs_T_c():
     random_y0 = np.random.randn(N) + 5
    
     layout = go.Layout(
-        # title_text='States_Name',
+        
         yaxis2=dict(overlaying='y'),
-        width=800,
-        height=300,
-        margin=dict(l=0,r=0,b=0,t=0)
+        width=600,
+        height=270,
+        margin=dict(l=0,r=0,b=0,t=30),
+        legend=dict(orientation="h")
     )
 
     figure = go.Figure([go.Scatter(x = random_x,y = random_y0,name='Температура точки росы'),
@@ -59,17 +63,27 @@ def graphs_T_c():
 
 def graphs_V(): 
     
-    data = {'50Р-1№1':np.linspace(1, 100, 1),
-            '50Р-1№2':np.linspace(1, 100, 1)}
+    data = {'50Р-1№1':random.randint(1,100),
+            '50Р-1№2':random.randint(1,100)}
+
     courses = list(data.keys())
-    print(courses)
+    print(courses[0])
     values = list(data.values())
     print(values)
 
-    figure = go.Figure(px.bar(data,
-                                width=500,
-                                height=240,
-                                )).to_html(config= {'displaylogo': False})
+
+    layout = go.Layout(
+        title_text='Резервуарный парк',
+        yaxis2=dict(overlaying='y'),
+        width=200,
+        height=300,
+        margin=dict(l=0,r=0,b=0,t=30),
+        legend=dict(orientation="h")
+    )
+
+    figure = go.Figure(go.Bar(x = courses, y = values , text= values),
+        # go.Bar(data,x = courses[1], y = values[1], name = courses[1])],
+        layout=layout).to_html(config= {'displaylogo': False})
 
     
     return figure
@@ -86,7 +100,8 @@ def graphs_1():
         yaxis2=dict(overlaying='y'),
         # width=800,
         height=300,
-        margin=dict(l=0,r=0,b=0,t=30)
+        margin=dict(l=0,r=0,b=0,t=30),
+        legend=dict(orientation="h")
     )
 
     figure = go.Figure([go.Scatter(x = random_x,y = random_y0,name='Добыча газа план'),
@@ -111,7 +126,8 @@ def graphs_2():
         yaxis2=dict(overlaying='y'),
         # width=800,
         height=300,
-        margin=dict(l=0,r=0,b=0,t=30)
+        margin=dict(l=0,r=0,b=0,t=30),
+        legend=dict(orientation="h")
     )
 
     figure = go.Figure([go.Scatter(x = random_x,y = random_y0,name='Добыча КГН, тыс. тонн'),
@@ -131,7 +147,8 @@ def graphs_3():
         yaxis2=dict(overlaying='y'),
         # width=800,
         height=300,
-        margin=dict(l=0,r=0,b=0,t=30)
+        margin=dict(l=0,r=0,b=0,t=30),
+        legend=dict(orientation="h")
     )
 
     figure = go.Figure([go.Bar(x = random_x,y = random_y0,name='Добыча КГН, тыс. тонн'),
@@ -151,7 +168,8 @@ def graphs_4():
         yaxis2=dict(overlaying='y'),
         # width=800,
         height=300,
-        margin=dict(l=0,r=0,b=0,t=30)
+        margin=dict(l=0,r=0,b=0,t=30),
+        legend=dict(orientation="h")
     )
 
     figure = go.Figure([go.Bar(x = random_x,y = random_y0,name='Потребление газа на г.Владивосток'),
@@ -169,7 +187,8 @@ def graphs_5():
         yaxis2=dict(overlaying='y'),
         # width=800,
         height=300,
-        margin=dict(l=0,r=0,b=0,t=30)
+        margin=dict(l=0,r=0,b=0,t=30),
+        legend=dict(orientation="h")
     )
 
     figure = go.Figure([go.Bar(x = random_x,y = random_y0,name='Рефлюксная вода с УРМ'),
@@ -188,7 +207,8 @@ def graphs_6():
         yaxis2=dict(overlaying='y'),
         # width=800,
         height=300,
-        margin=dict(l=0,r=0,b=0,t=30)
+        margin=dict(l=0,r=0,b=0,t=30),
+        legend=dict(orientation="h")
     )
 
     figure = go.Figure([go.Scatter(x = random_x,y = random_y0 + 0.5, name='Собственные тех. нужды'),
@@ -206,7 +226,8 @@ def graphs_7():
         yaxis2=dict(overlaying='y'),
         # width=800,
         height=300,
-        margin=dict(l=0,r=0,b=0,t=30)
+        margin=dict(l=0,r=0,b=0,t=30),
+        legend=dict(orientation="h")
     )
 
     figure = go.Figure([go.Bar(x = random_x,y = random_y0,name='Концентрация нМЭГ'),
