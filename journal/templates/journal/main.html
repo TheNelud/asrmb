@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="{% static 'journal/css/raports.css'  %}" type="text/css">
     <link rel="stylesheet" href="{% static 'journal/css/navmenu.css'  %}" type="text/css">
     <link rel="stylesheet" href="{% static 'journal/css/raports_sr_kgmk.css'  %}" type="text/css">
-
     <link rel="stylesheet" href="{% static 'journal/css/table.css'  %}" type="text/css">    
     <link rel="stylesheet" href="{% static 'journal/css/bootstrap.min.css'  %}" type="text/css">
     <link rel="stylesheet" type="{% static 'journal/css/datatables.css'  %}">
+    <link rel="stylesheet" type="{% static 'journal/css/datepicker.min.css'  %}">
 
     
 </head>
@@ -37,7 +37,14 @@
     <script type="text/javascript" src="{% static 'journal/js/bootstrap.min.js'%}"></script>
     <script type="text/javascript" src="{% static 'journal/js/navmenu.js'%}"></script>
     <script type="text/javascript" src="{% static 'journal/js/printer.js'%}"></script>
+    <script type="text/javascript" src="{% static 'journal/js/datepicker.min.js'%}"></script>
 
+
+    <script>
+        $(function () {
+          $("#datepicker").datepicker();
+        });
+    </script>
 
 </body>
 </html>

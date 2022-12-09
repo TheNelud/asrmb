@@ -1,16 +1,12 @@
 from django.shortcuts import render
-
 import plotly.graph_objs as go
 import plotly.express as px
 import pandas as pd
 import numpy as np
-
 import random
-
-
 from plotly.offline import plot
 
-
+from .models import *
 
 def graphs_P_pcv():
 
@@ -249,8 +245,15 @@ def mag(request):
     return render(request, 'mag.html')
 
 def sar(request):
+
+    ser_per_day = Ser_per_day.objects.all()
        
-    return render(request, 'sar.html')
+    return render(request, 'sar.html', context={'ser_per_day' : ser_per_day})
+
+
+
+
+
 
 def sr_kgmk(request):
 

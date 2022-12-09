@@ -1,5 +1,9 @@
 {%extends 'journal/main.html' %}
 {% block content %}
+
+<section class="sidebar">
+    {{form.date}}
+</section>
 <section class="content ">
     <div class="tableSchemaSar print">
         {% comment %} style="width:100%" {% endcomment %}
@@ -230,5 +234,14 @@
         
     </div>
 </section>
+
+
+<script>
+    $(function () {
+      $("#id_date").datepicker({
+        format:'dd/mm/yyyy',
+      });
+    });
+</script>
 
 {% endblock %}

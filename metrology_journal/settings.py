@@ -92,7 +92,7 @@ DATABASES = {
         'OPTIONS': {
             'options': '-c search_path=django,public'
         },
-        'NAME': 'metrological',
+        'NAME': 'asrmb',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
@@ -103,7 +103,7 @@ DATABASES = {
         'OPTIONS': {
             'options': '-c search_path=coefficients,public'
         },
-        'NAME': 'metrological',
+        'NAME': 'asrmb',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
@@ -114,7 +114,7 @@ DATABASES = {
         'OPTIONS': {
             'options': '-c search_path=compress,public'
         },
-        'NAME': 'metrological',
+        'NAME': 'asrmb',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
@@ -125,7 +125,7 @@ DATABASES = {
         'OPTIONS': {
             'options': '-c search_path=condensatecalc,public'
         },
-        'NAME': 'metrological',
+        'NAME': 'asrmb',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
@@ -136,7 +136,7 @@ DATABASES = {
         'OPTIONS': {
             'options': '-c search_path=gascalc,public'
         },
-        'NAME': 'metrological',
+        'NAME': 'asrmb',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
@@ -147,7 +147,7 @@ DATABASES = {
     #     'OPTIONS': {
     #         'options': '-c search_path=information_schema,public'
     #     },
-    #     'NAME': 'metrological',
+    #     'NAME': 'asrmb',
     #     'USER': 'postgres',
     #     'PASSWORD': 'postgres',
     #     'HOST': 'localhost',
@@ -158,7 +158,7 @@ DATABASES = {
         'OPTIONS': {
             'options': '-c search_path=period,public'
         },
-        'NAME': 'metrological',
+        'NAME': 'asrmb',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
@@ -169,7 +169,7 @@ DATABASES = {
         'OPTIONS': {
             'options': '-c search_path=public,public'
         },
-        'NAME': 'metrological',
+        'NAME': 'asrmb',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
@@ -181,7 +181,19 @@ DATABASES = {
         'OPTIONS': {
             'options': '-c search_path=gas_massa,public'
         },
-        'NAME': 'metrological',
+        'NAME': 'asrmb',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    },
+
+    'raport': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'OPTIONS': {
+            'options': '-c search_path=raport,public'
+        },
+        'NAME': 'asrmb',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
@@ -197,6 +209,7 @@ DATABASE_ROUTERS = ('journal_koff.db_router.Coefficients_db_router',
                     'journal_koff_s.db_router.Compress_db_router',
                     'journal_rmo.db_router.Gas_massa_db_router',
                     'journal_pgk.db_router.Period_db_router',
+                    'raports.db_router.Raport_db_router'
                     )
 
 # Password validation
