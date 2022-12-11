@@ -1,12 +1,18 @@
 from django.shortcuts import render
+from django.template.loader import render_to_string
+from django.http import JsonResponse
+
 import plotly.graph_objs as go
-import plotly.express as px
-import pandas as pd
+
 import numpy as np
 import random
 from plotly.offline import plot
+import datetime
 
 from .models import *
+
+
+
 
 def graphs_P_pcv():
 
@@ -236,24 +242,71 @@ def graphs_7():
 #___________________________________________#
 # Create your views here.
 def mar(request):
-   
-    return render(request, 'mar.html')
+    items_month = Mer_per_month.objects.all().order_by('date_update').last()
+    return render(request, 'mar.html', context = {"items_month":items_month})
 
 
 def mag(request):
-       
-    return render(request, 'mag.html')
+    items_tech = Sen_equip.objects.all().order_by('update_time').last()
+    items_balance = Balance.objects.all().order_by('update_time').last()
+    return render(request, 'mag.html', context = {"items_tech":items_tech,
+                                                    "items_balance":items_balance})
+
+def save_mag_form(request, form, template_name):
+    data = dict()
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            data['form_is_valid'] = True
+            items_balance = Balance.objects.all().order_by('update_time').last()
+            data['html_product_list'] = render_to_string('raport/mag.html', {
+                'items_balance': items_balance
+            })
+        else:
+            data['form_is_valid'] = False
+    context = {'form': form}
+    data['html_form'] = render_to_string(template_name, context, request=request)
+    return JsonResponse(data)
+
+
+def mag_create(request):
+    if request.method == 'POST':
+        form = Balance(request.POST)
+    else:
+        form = Balance()
+    return save_mag_form(request, form, 'raports/forms/mag/partial_create.html')
 
 def sar(request):
+    
+    # items_day = Ser_per_day.objects.values().order_by('-date_update')
+    # print(items_day)
+    
+    items_day = Ser_per_day.objects.order_by('-date_update')[:1]
+    
+    
+    
 
-    ser_per_day = Ser_per_day.objects.all()
-       
-    return render(request, 'sar.html', context={'ser_per_day' : ser_per_day})
+    # i = 0
+    # for i in range(len(items_day)):
+    #     # print(items_day[i])
+    #     print(items_day[i]["date_update"])
+    #     for key, value in items_day[i].items():
+    #         if items_day[i]["date_update"] < datetime.datetime.date(2022, 12, 9):
+    #             print(key, value)
+        # for item_list[i] in items_day:
+        #     print(item_list)
+
+    
+    # print(Ser_per_day.objects.all()[1].post())
+    
 
 
-
-
-
+    items_month =Ser_per_month.objects.all().order_by('-date_update')[:1]
+    print(items_month.values())
+    return render(request, 'sar.html', context={'items_day' : items_day,
+                                                'items_month' : items_month,
+                                               
+                                                })
 
 def sr_kgmk(request):
 

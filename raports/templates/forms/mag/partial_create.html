@@ -1,0 +1,14 @@
+<form method="post" action="{% url 'mag_create' %}" class="js-product-create-form">
+    {% csrf_token %}
+  <div class="modal-header">
+      
+    <h4 class="modal-title">Добавить</h4>
+  </div>
+  <div class="modal-body">
+    {% include 'raports/forms/mag/partial_form.html' %}
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Закрыть</button>
+    <button type="submit" class="btn btn-primary">Создать</button>
+  </div>
+</form>

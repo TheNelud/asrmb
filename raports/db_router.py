@@ -1,7 +1,9 @@
 from .models import *
 
 
-ROUTED_MODELS_RAPORTS= []
+ROUTED_MODELS_RAPORTS= [Ser_per_day,Ser_per_month,
+                        Mer_per_month,
+                        Sen_equip,Balance]
 
 
 class Raport_db_router(object):
