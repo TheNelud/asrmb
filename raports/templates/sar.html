@@ -2,17 +2,11 @@
 {% block content %}
 
 <section class="sidebar">
- 
-    <form method="post" action='' class="js-product-update-form">
-        
-        <input type="date" class='form-control' name='time' required id='id_time' max={%for item_day in items_day%}{{item_day.date_update|date:"Y-m-d" }}{%endfor%} style='margin:0 auto;'>
-    {%for item_day in items_day %}
-        {%if id_time == item_day.date_update  %}
-
-            {%for item_day in items_day%}{{item_day.date_update|date:"d-m-Y"|default:'-'}}{%endfor%}
-
-        {%endif%}
-    {%endfor%}
+    
+    <form method="post" action="{% url 'filter_date_sar' %}" class="js-product-update-form">
+        {% csrf_token %}
+        <input type="date" class='form-control'  name='date_update' value={%for item_day in items_day%}{{item_day.date_update|date:"Y-m-d" }}{%endfor%} max={{max_date_now}} >
+        <input type="submit" value='Выбрать'>
     
     </form>
 </section>

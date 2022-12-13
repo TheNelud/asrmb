@@ -4,14 +4,17 @@ from django.forms import ModelForm, TextInput
 
 
 class DateForm(forms.Form):
-    date_update = forms.DateTimeField(widget=forms.TextInput(attrs=
+    date_sar = forms.DateTimeField( input_formats=['%Y.%m.%d'],
+        
+                                    widget=forms.DateTimeInput(attrs=
                                 {
-                                    'class':'form-control'
+                                    'type':'date',
+                                    'id':'id_date'
                                 })) 
 
-    class Meta:
-        model = Ser_per_day
-        fields = ['date_update']
+    # class Meta:
+    #     model = Ser_per_day
+        # fields = ['date_update']
 
 
 """МЭГ добавление значений для расчетов"""

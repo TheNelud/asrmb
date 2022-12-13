@@ -271,27 +271,30 @@ def mag_create(request):
     return render(request,'partial_create.html', data)
 
 def sar(request):
-    
-    # items_day = Ser_per_day.objects.values().order_by('-date_update')
-    # print(items_day)
-    # i = 0
-    # for i in range(len(items_day)):
-    #     # print(items_day[i])
-    #     print(items_day[i]["date_update"])
-    #     for key, value in items_day[i].items():
-    #         if items_day[i]["date_update"] < datetime.datetime.date(2022, 12, 9):
-    #             print(key, value)
-        # for item_list[i] in items_day:
-        #     print(item_list)
 
-    items_day = Ser_per_day.objects.all().order_by('-date_update')[:1]
-    items_month =Ser_per_month.objects.all().order_by('-date_update')[:1]
-    print(items_month.values())
-    # print(id_time)
+    max_date_now = datetime.datetime.now().strftime("%Y-%m-%d")
+    
+    items_day = Ser_per_day.objects.all().order_by('-date_update').last()
+    items_month =Ser_per_month.objects.all().order_by('-date_update').last()
+    
+    
 
     return render(request, 'sar.html', context={'items_day' : items_day,
                                                 'items_month' : items_month,
+                                                'max_date_now':max_date_now
                                                 })
+
+def filter_date_sar(request):
+    print(request.POST.get('date_update',''))
+    print("!!!!!!!!!!!!!!!!!!!!!POST REQUEST!!!!!!!!!!!!!!!!!!!!!")
+    items_day = Ser_per_day.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-date_update')[:1]
+    items_month =Ser_per_month.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-date_update')[:1]
+    return render(request, 'sar.html', context={'items_day' : items_day,
+                                                'items_month' : items_month,
+                                                
+                                                }) 
+
+
 
 def sr_kgmk(request):
 
