@@ -3,6 +3,7 @@
 
 <section class="content ">
     <div class="tableSchemaSar print">
+        {%for items_month in itemss_month  %}
     <table id="product-table" style="width: 95%">
         <thead>
             <tr>
@@ -15,7 +16,7 @@
             </tr>
             <tr> 
                 <th >ООО "Газпром добыча шельф Южно-Сахалинск"</th>
-                <th style="text-align: right" >_______________ А.В. Суетинов<br>"___"_____________________ 2022г</th>
+                <th colspan="2" style="text-align: right" >_______________ А.В. Суетинов<br>"___"_____________________ 2022г</th>
             </tr>
             <tr><th><br></th></tr>
             <tr>
@@ -232,6 +233,7 @@
             
         </tbody>
     </table>
+    {%endfor%}
 </div>
 </section>
 

@@ -15,7 +15,7 @@
         <div id="block_container_mag"  >
 
             <img  class="schema_mag" src="{% static 'journal/images/schema_mag.png' %}">
-
+            {%for items_tech in itemss_tech%}
             <table  style="width:300px; height:500px ; font-size: 10px;">
                  <thead >
                     {% comment %} <tr class='title'><th>Датчиковое оборудование на схеме</th></tr> {% endcomment %}
@@ -221,7 +221,7 @@
                 </tbody>
 
             </table>
-
+            {%endfor%}
             <div class="modal fade" id="modal-product">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -235,6 +235,7 @@
  
         
         <div id="block_container_mag">
+            {%for items_balance in itemss_balance%}
             <table id="product-table" style="width:1250px">
                 
                 <thead>
@@ -490,6 +491,7 @@
                 </tbody>
 
             </table>
+            {%endfor%}
 
             <div class="modal fade" id="modal-product">
                 <div class="modal-dialog">

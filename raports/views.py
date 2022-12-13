@@ -243,17 +243,16 @@ def graphs_7():
 #___________________________________________#
 # Create your views here.
 def mar(request):
-    items_month = Mer_per_month.objects.all().order_by('date_update').last()
-    return render(request, 'mar.html', context = {"items_month":items_month})
+    items_month = Mer_per_month.objects.all().order_by('-date_update')[:1]
+    return render(request, 'mar.html', context = {"itemss_month":items_month})
 
 
 def mag(request):
-    items_tech = Sen_equip.objects.all().order_by('update_time').last()
-    items_balance = Balance.objects.order_by('-update_time')[:1]
+    items_tech = Sen_equip.objects.all().order_by('-update_time')[:1]
+    items_balance = Balance.objects.all().order_by('-update_time')[:1]
 
-    # items_balance = Balance.objects.all().order_by('update_time').last()
-    return render(request, 'mag.html', context = {"items_tech":items_tech,
-                                                    "items_balance":items_balance})
+    return render(request, 'mag.html', context = {"itemss_tech":items_tech,
+                                                    "itemss_balance":items_balance})
 
 
 def mag_create(request):
@@ -275,9 +274,6 @@ def sar(request):
     
     # items_day = Ser_per_day.objects.values().order_by('-date_update')
     # print(items_day)
-    
-    items_day = Ser_per_day.objects.order_by('-date_update')[:1]
-
     # i = 0
     # for i in range(len(items_day)):
     #     # print(items_day[i])
@@ -288,12 +284,13 @@ def sar(request):
         # for item_list[i] in items_day:
         #     print(item_list)
 
-    
+    items_day = Ser_per_day.objects.all().order_by('-date_update')[:1]
     items_month =Ser_per_month.objects.all().order_by('-date_update')[:1]
     print(items_month.values())
+    # print(id_time)
+
     return render(request, 'sar.html', context={'items_day' : items_day,
                                                 'items_month' : items_month,
-                                               
                                                 })
 
 def sr_kgmk(request):
