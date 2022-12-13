@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
 from django.http import JsonResponse
 
@@ -10,6 +10,7 @@ from plotly.offline import plot
 import datetime
 
 from .models import *
+from .forms import *
 
 
 
@@ -248,33 +249,27 @@ def mar(request):
 
 def mag(request):
     items_tech = Sen_equip.objects.all().order_by('update_time').last()
-    items_balance = Balance.objects.all().order_by('update_time').last()
+    items_balance = Balance.objects.order_by('-update_time')[:1]
+
+    # items_balance = Balance.objects.all().order_by('update_time').last()
     return render(request, 'mag.html', context = {"items_tech":items_tech,
                                                     "items_balance":items_balance})
 
-def save_mag_form(request, form, template_name):
-    data = dict()
-    if request.method == 'POST':
-        if form.is_valid():
-            form.save()
-            data['form_is_valid'] = True
-            items_balance = Balance.objects.all().order_by('update_time').last()
-            data['html_product_list'] = render_to_string('raport/mag.html', {
-                'items_balance': items_balance
-            })
-        else:
-            data['form_is_valid'] = False
-    context = {'form': form}
-    data['html_form'] = render_to_string(template_name, context, request=request)
-    return JsonResponse(data)
-
 
 def mag_create(request):
+ 
     if request.method == 'POST':
-        form = Balance(request.POST)
-    else:
-        form = Balance()
-    return save_mag_form(request, form, 'raports/forms/mag/partial_create.html')
+        form = BalanceForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('mag.html')
+        
+    form = BalanceForm()
+    data ={
+        'form' : form,
+    }
+
+    return render(request,'partial_create.html', data)
 
 def sar(request):
     
@@ -282,9 +277,6 @@ def sar(request):
     # print(items_day)
     
     items_day = Ser_per_day.objects.order_by('-date_update')[:1]
-    
-    
-    
 
     # i = 0
     # for i in range(len(items_day)):
@@ -297,10 +289,6 @@ def sar(request):
         #     print(item_list)
 
     
-    # print(Ser_per_day.objects.all()[1].post())
-    
-
-
     items_month =Ser_per_month.objects.all().order_by('-date_update')[:1]
     print(items_month.values())
     return render(request, 'sar.html', context={'items_day' : items_day,

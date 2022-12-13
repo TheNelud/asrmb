@@ -16,5 +16,5 @@ urlpatterns = [
     url(r'^sr_kgmk/$', views.sr_kgmk, name='sr_kgmk'),
 
 
-    url(r'^mag/mag_create/$', mag_create, name='mag_create'),
+    url(r'^mag/mag_create/$', views.mag_create, name='mag_create'),
     ]

@@ -1,6 +1,6 @@
 from django import forms
 from .models import *
-from django.forms import ModelForm
+from django.forms import ModelForm, TextInput
 
 
 class DateForm(forms.Form):
@@ -26,6 +26,8 @@ class BalanceForm(ModelForm):
     par_w = forms.FloatField(label="КГС после УСК") 
     
     class Meta:
-        mobel = Balance
-        fields = ["par_d","par_e","par_f","par_g",
+        model = Balance
+        fields = ["update_time","par_d","par_e","par_f","par_g",
                   "par_h","par_v","par_w"]
+    
+    
