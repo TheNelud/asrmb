@@ -29,14 +29,14 @@ class P2ComponentCompositionOfGasForm(ModelForm):
     name = forms.CharField(label="Компонент",max_length=255)
     molar_components = forms.FloatField(label="Мольное содержание компонентов, %")
     molar_mass_of_the_component = forms.FloatField(label='Молярная масса компонента')
-    # total_molar_mass = forms.FloatField(label='Молярная масса общая, гр/моль')
-    # chromatograph_mass = forms.FloatField(label='Молярная масса, % (хроматограф)')
-    # calculated_mass = forms.FloatField(label='Масс, % (расчетная)')
-    # time = forms.DateTimeField(label='Дата')
+    total_molar_mass = forms.FloatField(label='Молярная масса общая, гр/моль')
+    chromatograph_mass = forms.FloatField(label='Молярная масса, % (хроматограф)')
+    calculated_mass = forms.FloatField(label='Масс, % (расчетная)')
+    time = forms.DateTimeField(label='Дата')
     class Meta:
         model = P2ComponentCompositionOfGas
-        # fields = '__all__'
-        fields = ['name','molar_components', 'molar_mass_of_the_component']
+        fields = '__all__'
+        # fields = ['name','molar_components', 'molar_mass_of_the_component']
 
 class P3DeterminationOfTheComponentOfGasForm(ModelForm):
     name = forms.CharField(label="Компонент",max_length=255)

@@ -5,8 +5,8 @@
     
     <form method="post" action="{% url 'filter_date_sar' %}" class="js-product-update-form">
         {% csrf_token %}
-        <input type="date" class='form-control'  name='date_update' value={%for item_day in items_day%}{{item_day.date_update|date:"Y-m-d" }}{%endfor%} max={{max_date_now}} >
-        <input type="submit" value='Выбрать'>
+        <input type="date" class='form-control'  name='date_update' max={{max_date_now}} >
+        <input class="btn btn-primary" type="submit" value='Выбрать'>
     
     </form>
 </section>

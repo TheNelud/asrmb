@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
 from django.http import JsonResponse
+import datetime
 
 import plotly.graph_objs as go
 
@@ -243,55 +244,65 @@ def graphs_7():
 #___________________________________________#
 # Create your views here.
 def mar(request):
+    max_date_now = datetime.datetime.now().strftime("%Y-%m-%d")
     items_month = Mer_per_month.objects.all().order_by('-date_update')[:1]
-    return render(request, 'mar.html', context = {"itemss_month":items_month})
+    return render(request, 'mar.html', context = {
+                                                    "itemss_month":items_month,
+                                                    'max_date_now':max_date_now     
+                                                    })
 
+def filter_date_mar(request):
+    max_date_now = datetime.datetime.now().strftime("%Y-%m-%d")
+    items_month =Mer_per_month.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-date_update')[:1]
+    return render(request, 'mar.html', context={
+                                                'itemss_month' : items_month,
+                                                'max_date_now':max_date_now
+                                                })
+ 
 
 def mag(request):
-    items_tech = Sen_equip.objects.all().order_by('-update_time')[:1]
-    items_balance = Balance.objects.all().order_by('-update_time')[:1]
+    items_tech = Sen_equip.objects.all().order_by('-date_update')[:1]
+    items_balance = Balance.objects.all().order_by('-date_update')[:1]
 
-    return render(request, 'mag.html', context = {"itemss_tech":items_tech,
-                                                    "itemss_balance":items_balance})
+    return render(request, 'mag.html', context = {
+                                                    "itemss_tech":items_tech,
+                                                    "itemss_balance":items_balance
+                                                    })
 
+def filter_date_mag(request):
+    max_date_now = datetime.datetime.now().strftime("%Y-%m-%d")
+    items_tech = Sen_equip.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-date_update')[:1] 
+    items_balance =Balance.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-date_update')[:1]
+    return render(request, 'mag.html', context={
+                                               "itemss_tech":items_tech,
+                                                "itemss_balance":items_balance,
+                                                'max_date_now':max_date_now
+                                                })
 
-def mag_create(request):
- 
-    if request.method == 'POST':
-        form = BalanceForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('mag.html')
-        
+def add_calculate_mag_balance(request):
+    items_tech = Sen_equip.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-date_update')[:1] 
     form = BalanceForm()
-    data ={
-        'form' : form,
-    }
+    return render(request, 'add_calculate_balance.html',context={"form": form})
+    
 
-    return render(request,'partial_create.html', data)
 
 def sar(request):
 
     max_date_now = datetime.datetime.now().strftime("%Y-%m-%d")
-    
-    items_day = Ser_per_day.objects.all().order_by('-date_update').last()
-    items_month =Ser_per_month.objects.all().order_by('-date_update').last()
-    
-    
-
+    items_day = Ser_per_day.objects.all().order_by('-date_update')[:1]
+    items_month =Ser_per_month.objects.all().order_by('-date_update')[:1] 
     return render(request, 'sar.html', context={'items_day' : items_day,
                                                 'items_month' : items_month,
                                                 'max_date_now':max_date_now
                                                 })
 
 def filter_date_sar(request):
-    print(request.POST.get('date_update',''))
-    print("!!!!!!!!!!!!!!!!!!!!!POST REQUEST!!!!!!!!!!!!!!!!!!!!!")
+    max_date_now = datetime.datetime.now().strftime("%Y-%m-%d")
     items_day = Ser_per_day.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-date_update')[:1]
     items_month =Ser_per_month.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-date_update')[:1]
     return render(request, 'sar.html', context={'items_day' : items_day,
                                                 'items_month' : items_month,
-                                                
+                                                'max_date_now':max_date_now
                                                 }) 
 
 

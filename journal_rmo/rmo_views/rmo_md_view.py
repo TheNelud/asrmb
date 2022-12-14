@@ -73,9 +73,12 @@ def GraphsViewBar_md(request):
     f = plt.figure()
     # x = np.arange(10)
     # h = [0, 1, 2, 3, 5, 6, 4, 2, 1, 0]
-    data_rmo_md = Meters_data_20e_1.objects.all()
-    x = [item.name for item in data_rmo_md]
-    h = [item.chromatograph_mass for item in data_rmo_md]
+    # data_rmo_md = Meters_data_20e_1.objects.all()
+    # x = [item.name for item in data_rmo_md]
+    # h = [item.chromatograph_mass for item in data_rmo_md]
+    N =30
+    x = np.linspace(0, 1, N)
+    h = np.random.randn(N) + 5
     data= dict(zip(x,h))
     data = {k: v for k, v in sorted(data.items(), key=lambda item: item[1],reverse=True)}
     # print(data_rmo_md.get(pk=1))

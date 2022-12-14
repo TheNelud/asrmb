@@ -15,15 +15,18 @@ import plotly.express as px
 
 
 def graphs_ls():
-    data_rmo_ps = Losses_gas.objects.all()
-    x_data = [item.update_date for item in data_rmo_ps]
-    y_data = [item.fakel for item in data_rmo_ps]
+    # data_rmo_ps = Losses_gas.objects.all()
+    # x_data = [item.update_date for item in data_rmo_ps]
+    # y_data = [item.fakel for item in data_rmo_ps]
+    N =30
+    random_x = np.linspace(0, 1, N)
+    random_y0 = np.random.randn(N) + 5
 
-    print(x_data)
-    print(y_data)
+    print(random_x)
+    print(random_y0)
    
     
-    figure = go.Figure(px.line(x=x_data, y=y_data, title="Потери газа")).to_html()
+    figure = go.Figure(px.line(x=random_x, y=random_y0, title="Потери газа")).to_html()
    
     return figure
 

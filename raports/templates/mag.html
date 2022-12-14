@@ -1,11 +1,23 @@
 {%extends 'journal/main.html' %}
 {% load static%}
+{% load widget_tweaks %}
 {% block content %}
 <section class="sidebar">
-    <button type="button" class="btn btn-primary js-create-product" data-url="{% url 'mag_create' %}">
-        <span class="glyphicon glyphicon-plus"></span>
-        Добавить
-    </button>
+    
+    <form method="post" action="{% url 'filter_date_mag' %}" class="js-product-update-form">
+        {% csrf_token %}
+        <input type="date" class='form-control'  name='date_update' max={{max_date_now}} >
+        <input class="btn btn-primary" type="submit" value='Выбрать'>
+    
+    </form>
+
+    <a href = {% url 'add_calculate_mag_balance' %}>
+        <button type="button" class="btn btn-primary js-create-product">
+            <span class="glyphicon glyphicon-plus"></span>
+            Расчет баланса
+        </button>
+    </a>
+    
 </section>
 <section class="content">
     <div class="tableSchemaSar print" style="width:90%">
@@ -18,13 +30,7 @@
             {%for items_tech in itemss_tech%}
             <table  style="width:300px; height:500px ; font-size: 10px;">
                  <thead >
-                    {% comment %} <tr class='title'><th>Датчиковое оборудование на схеме</th></tr> {% endcomment %}
-                    {% comment %} <tr>
-                        <th class="objCellmag" style="width: 4%">№</th>
-                        <th class="objCellmag" style="width: 46%">Тип датчика</th>
-                        <th class="objCellmag" style="width: 25%">Размерность</th>
-                        <th class="objCellmag" style="width: 25%">Значение</th>
-                    </tr> {% endcomment %}
+                    
                     <tr>
                         <th class="objCellmag" >№</th>
                         <th class="objCellmag" >Тип датчика</th>

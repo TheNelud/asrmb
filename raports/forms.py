@@ -19,7 +19,7 @@ class DateForm(forms.Form):
 
 """МЭГ добавление значений для расчетов"""
 class BalanceForm(ModelForm):
-    update_time = forms.DateTimeField(label='Дата')
+    date_update = forms.DateTimeField(label='Дата')
     par_d = forms.FloatField(label="Приход товарного МЭГ (100% мас.) на склад фКГДУ (поз.6) ")      
     par_e = forms.FloatField(label="Приход товарного МЭГ 100% со склада ПБ на склад УКПГ (поз.20)")      
     par_f = forms.FloatField(label="Вовлечение товарного МЭГ со склада УКПГ (поз.20)")      
@@ -30,7 +30,7 @@ class BalanceForm(ModelForm):
     
     class Meta:
         model = Balance
-        fields = ["update_time","par_d","par_e","par_f","par_g",
+        fields = ["date_update","par_d","par_e","par_f","par_g",
                   "par_h","par_v","par_w"]
     
     

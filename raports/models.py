@@ -143,11 +143,11 @@ class Sen_equip(models.Model):
     r25 = models.FloatField() 
     r26 = models.FloatField() 
     r27 = models.FloatField()
-    update_time = models.DateTimeField()
+    date_update = models.DateTimeField()
  
 
     class Meta:
-        ordering = ['update_time']
+        ordering = ['date_update']
         managed = False
         db_table = 'sen_equip'
 
@@ -182,9 +182,9 @@ class Balance(models.Model):
     par_aa = models.FloatField()     
     par_bb = models.FloatField()     
     par_cc = models.FloatField()     
-    update_time = models.DateTimeField()
+    date_update = models.DateTimeField()
 
     class Meta:
-        ordering = ['update_time']
+        ordering = ['date_update']
         managed = False
         db_table = 'balance'

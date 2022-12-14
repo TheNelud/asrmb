@@ -1,0 +1,26 @@
+{% load widget_tweaks %}
+<form method='post' action="" class="js-product-create-form">
+    {% csrf_token %}
+    <div class="modal-header">
+        <h4 class="modal-title">Добавить</h4>
+    </div>
+    <div class="modal-body">
+        {{form}}
+        {%for item in form %}
+            {{item.par_d}}
+            {{item.par_e}}
+            {{item.par_f}}
+            {{item.par_g}}
+            {{item.par_h}}
+            {{item.par_v}}
+            {{item.par_w}}
+            {{item.date_update}}
+        {%endfor%}
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Закрыть</button>
+        <button type="submit" class="btn btn-primary">Создать</button>
+    </div>
+
+    
+</form>
