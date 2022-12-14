@@ -1,21 +1,23 @@
 {% load widget_tweaks %}
-<form method='post' action="" class="js-product-create-form">
+<form method='post' action="{% url 'add_calculate_mag_balance' %}" class="js-product-create-form">
     {% csrf_token %}
     <div class="modal-header">
         <h4 class="modal-title">Добавить</h4>
     </div>
     <div class="modal-body">
-        {{form}}
-        {%for item in form %}
-            {{item.par_d}}
-            {{item.par_e}}
-            {{item.par_f}}
-            {{item.par_g}}
-            {{item.par_h}}
-            {{item.par_v}}
-            {{item.par_w}}
-            {{item.date_update}}
-        {%endfor%}
+        {% for field in form %}
+        <div class="form-group{% if field.errors %} has-error{% endif %}">
+          {%if field.id_for_label == "id_time"  %}
+          {{ field.label }}<br><input type="date" class='form-control' name='time' required id='id_time'>
+          {%else%}
+          <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+          {% render_field field class="form-control" %}
+          {%endif%}
+          {% for error in field.errors %}
+            <p class="help-block">{{ error }}</p>
+          {% endfor %}
+        </div>
+      {% endfor %}
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-bs-dismiss="modal">Закрыть</button>

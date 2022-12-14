@@ -11,12 +11,12 @@
     
     </form>
 
-    <a href = {% url 'add_calculate_mag_balance' %}>
-        <button type="button" class="btn btn-primary js-create-product">
+    {% comment %} <a href = {% url 'add_calculate_mag_balance' %}> {% endcomment %}
+        <button type="button" class="btn btn-primary js-create-product" data-url="{% url 'add_calculate_mag_balance' %}">
             <span class="glyphicon glyphicon-plus"></span>
             Расчет баланса
         </button>
-    </a>
+    {% comment %} </a> {% endcomment %}
     
 </section>
 <section class="content">
