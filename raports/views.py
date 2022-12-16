@@ -287,15 +287,15 @@ def filter_date_mag(request):
 
 def save_mag_balance(request, form,template_name):
     max_date_now = datetime.datetime.now().strftime("%Y-%m-%d")
-    items_tech = Sen_equip.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-date_update')[:1] 
+    # items_tech = Sen_equip.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-date_update')[:1] 
     
     data = dict()
     if request.method == "POST":
         if form.is_valid:
             form.save()
-            calculate_balance()
+            calculate_balance(request)
             data['form_is_valid'] = True
-            items_balance = Balance.objects.all().order_by('-date_update')[:1]
+            items_balance = Balance.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-date_update')[:1]
             data['html_product_list'] = render_to_string('mag.html', context={
                 "itemss_balance":items_balance,
             })

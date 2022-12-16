@@ -7,13 +7,13 @@
     <div class="modal-body">
         {% for field in form %}
         <div class="form-group{% if field.errors %} has-error{% endif %}">
-           {%if field.id_for_label == "id_date_update"  %}
+          {% comment %} {%if field.id_for_label == "id_date_update"  %}
           {{ field.label }}<br>
-          <input type="date" class='form-control' value={{max_date_now}} max={{max_date_now}} name='date_update' required id='id_date_update'>
-          {%else%} 
+          <input type="date" class='form-control'  max={{max_date_now}} name='date_update' required id='id_date_update'>
+          {%else%} {% endcomment %}
           <label for="{{ field.id_for_label }}">{{ field.label }}</label>
           {% render_field field class="form-control" %}
-          {%endif%}
+          {% comment %} {%endif%} {% endcomment %}
           {% for error in field.errors %}
             <p class="help-block">{{ error }}</p>
           {% endfor %}

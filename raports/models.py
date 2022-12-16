@@ -159,7 +159,10 @@ class Balance(models.Model):
     par_d = models.FloatField()      
     par_e = models.FloatField()      
     par_f = models.FloatField()      
-    par_g = models.FloatField()
+    
+    par_g_nmag = models.FloatField()
+    par_g_rmag_30i_1 = models.FloatField()
+    par_g_rmag_60e_1 = models.FloatField()
 
     par_h = models.FloatField()      
     par_i = models.FloatField()      

@@ -2,16 +2,25 @@ from .models import Sen_equip, Balance
 from .forms import BalanceForm
 
 from datetime import datetime,timedelta, date
+from django.utils import timezone
 
-def calculate_balance():
-    items_tech = Sen_equip.objects.all().order_by('-date_update')[:1]
-    items_balance = Balance.objects.all().order_by('-date_update')[:1]
+
+def qq(num):
+    if type(num) == 'NoneType' or 'None':
+        return format(num)
+
+def calculate_balance(request):
+    items_tech = Sen_equip.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-date_update')[:1]
+    items_balance = Balance.objects.all().order_by('-id')[:1]
     values_tech = items_tech.values()
     values_balans = items_balance.values()
+    print(items_tech.values())
+    print(values_balans.values())
     yestarday = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d")
     print(yestarday)
 
-    items_balance_yesterday =  Balance.objects.filter(date_update__contains= yestarday).order_by('-date_update')[:1]
+    items_balance_yesterday =  Balance.objects.filter(date_update__contains= yestarday).order_by('-id')[:1]
+    print(items_balance_yesterday.values()) 
     values_balans_yesterday = items_balance_yesterday.values()
     
     tag_a = float(values_balans_yesterday[0]['par_aa'])
@@ -25,11 +34,15 @@ def calculate_balance():
     tag_e = float(values_balans[0]['par_e'])
     """Вовлечение тованого МЭГ со склада УКПГ(поз.20)"""
     tag_f = float(values_balans[0]['par_f'])
+
     """Концентрация МЭГ"""
-    tag_g = float(values_balans[0]['par_g'])
+    tag_g_nmag = float(values_balans[0]['par_g_nmag'])
+    tag_g_rmag_30i_1 = float(values_balans[0]['par_g_rmag_30i_1'])
+    tag_g_rmag_60e_1 = float(values_balans[0]['par_g_rmag_60e_1'])
+
     """Плотность рМЭГ"""
     tag_h = float(values_balans[0]['par_h'])
-    print("D: ", tag_d,"E: ", tag_e,"F: ", tag_f,"G: ", tag_g,"H: ", tag_h)
+    # print("D: ", tag_d,"E: ", tag_e,"F: ", tag_f,"G: ", par_g_nmag,"H: ", tag_h)
 
     """Приход рМЭГ"""
     tag_i = (float(values_tech[0]["r7"])+float(values_tech[0]["r8"])+float(values_tech[0]["r9"])) * 0.024
@@ -40,7 +53,7 @@ def calculate_balance():
     """Подача рМэг на ПДК"""
     tag_k = float(values_tech[0]["r18"]) * tag_h * 1.44
 
-    delta_epta = (float(values_tech[0]["r20"]) + float(values_tech[0]["r21"]) + float(values_tech[0]["r22"]) + float(values_tech[0]["r23"]) + float(values_tech[0]["r24"]) + float(values_tech[0]["r25"]) + float(values_tech[0]["r26"]) + float(values_tech[0]["r27"]))
+    delta_epta = float(values_tech[0]["r20"]) + float(values_tech[0]["r21"]) + float(values_tech[0]["r22"]) + float(values_tech[0]["r23"]) + float(values_tech[0]["r24"]) + float(values_tech[0]["r25"]) + float(values_tech[0]["r26"]) + float(values_tech[0]["r27"])
 
     """Подача рМЭГ на скважину Р1"""
     tag_l = (float(values_tech[0]["r20"]) + tag_k) / delta_epta
@@ -89,7 +102,9 @@ def calculate_balance():
     par_d = tag_d ,    
     par_e = tag_e ,    
     par_f = tag_f ,    
-    par_g = tag_g ,    
+    par_g_nmag = tag_g_nmag ,
+    par_g_rmag_30i_1 = tag_g_rmag_30i_1 ,
+    par_g_rmag_60e_1 = tag_g_rmag_60e_1 ,    
     par_h = tag_h ,     
     par_i = tag_i ,     
     par_j  = tag_j ,    
@@ -110,5 +125,5 @@ def calculate_balance():
     par_aa = tag_aa ,     
     par_bb = tag_bb ,    
     par_cc  = tag_cc ,    
-    date_update = datetime.now())
+    date_update = timezone.now())
     save_Balance.save()

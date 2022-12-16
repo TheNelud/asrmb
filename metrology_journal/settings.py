@@ -96,7 +96,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '5433',
     },
     'coefficients': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -107,7 +107,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '5433',
     },
     'compress': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -118,7 +118,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '5433',
     },
     'condensatecalc': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -129,7 +129,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '5433',
     },
     'gascalc': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -140,7 +140,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '5433',
     },
     # 'information_schema': {
     #     'ENGINE': 'django.db.backends.postgresql',
@@ -151,7 +151,7 @@ DATABASES = {
     #     'USER': 'postgres',
     #     'PASSWORD': 'postgres',
     #     'HOST': 'localhost',
-    #     'PORT': '5432',
+    #     'PORT': '5433',
     # },
     'period': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -162,7 +162,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '5433',
     },
     'public': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -173,7 +173,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '5433',
     },
 
     'gas_massa': {
@@ -185,7 +185,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '5433',
     },
 
     'raport': {
@@ -197,7 +197,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '5433',
     }
 
 }

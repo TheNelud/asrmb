@@ -292,28 +292,31 @@
                         <td class="objCellmag">{{items_balance.par_f|floatformat:3|default:"-"}}</td>
                     </tr>
                     
-                    <tr>
+                    {% comment %} <tr>
                         <th class="objCellmag" >G</th>
                         <td class="objCellmag" >Концентрация МЭГ</td>
                         <td class="objCellmag">% (масс.)</td>
                         <td class="objCellmag">{{items_balance.par_g|floatformat:3|default:"-"}}</td>
-                    </tr>
-
-                    {% comment %} <tr>
-                        <td class="objCellmag">нМЭГ</tb>
-                        <td class="objCellmag">тонны</td>
-                        <td class="objCellmag">231</td>
-                    </tr>
-                    <tr>
-                        <td class="objCellmag">рМЭГ 30И-1</tb>
-                        <td class="objCellmag">тонны</td>
-                        <td class="objCellmag">231</td>
-                    </tr>
-                    <tr>
-                        <td class="objCellmag">рМЭГ 60Е-1</tb>
-                        <td class="objCellmag">тонны</td>
-                        <td class="objCellmag">231</td>
                     </tr> {% endcomment %}
+
+                    <tr>
+                        <th class="objCellmag" >G</th>
+                        <td class="objCellmag"> Концентрациян МЭГ</tb>
+                        <td class="objCellmag">тонны</td>
+                        <td class="objCellmag">{{items_balance.par_g_nmag|floatformat:3|default:"-"}}</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag" >G</th>
+                        <td class="objCellmag"> Концентрация рМЭГ 30И-1</tb>
+                        <td class="objCellmag">тонны</td>
+                        <td class="objCellmag">{{items_balance.par_g_rmag_30i_1|floatformat:3|default:"-"}}</td>
+                    </tr>
+                    <tr>
+                        <th class="objCellmag" >G</th>
+                        <td class="objCellmag"> Концентрация рМЭГ 60Е-1</tb>
+                        <td class="objCellmag">тонны</td>
+                        <td class="objCellmag">{{items_balance.par_g_rmag_60e_1|floatformat:3|default:"-"}}</td>
+                    </tr> 
 
                     <tr>
                         <th class="objCellmag">H</th>
