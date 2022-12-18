@@ -1,29 +1,29 @@
 {% load widget_tweaks %}
+
 <form method='post' action="{% url 'add_calculate_mag_balance' %}" class="js-product-create-form">
-    {% csrf_token %}
+{% csrf_token %}
+
     <div class="modal-header">
         <h4 class="modal-title">Добавить</h4>
     </div>
+
     <div class="modal-body">
         {% for field in form %}
         <div class="form-group{% if field.errors %} has-error{% endif %}">
-          {% comment %} {%if field.id_for_label == "id_date_update"  %}
-          {{ field.label }}<br>
-          <input type="date" class='form-control'  max={{max_date_now}} name='date_update' required id='id_date_update'>
-          {%else%} {% endcomment %}
+          
           <label for="{{ field.id_for_label }}">{{ field.label }}</label>
           {% render_field field class="form-control" %}
-          {% comment %} {%endif%} {% endcomment %}
+          
           {% for error in field.errors %}
             <p class="help-block">{{ error }}</p>
           {% endfor %}
         </div>
       {% endfor %}
     </div>
+
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-bs-dismiss="modal">Закрыть</button>
         <button type="submit" class="btn btn-primary">Создать</button>
     </div>
 
-    
 </form>

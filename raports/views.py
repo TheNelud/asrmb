@@ -1,8 +1,11 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.template.loader import render_to_string
 from django.http import JsonResponse
 from .calculate_balance import calculate_balance
 import datetime
+
+
+from django.views.generic.edit import UpdateView
 
 
 import plotly.graph_objs as go
@@ -260,6 +263,24 @@ def filter_date_mar(request):
                                                 'itemss_month' : items_month,
                                                 'max_date_now':max_date_now
                                                 })
+
+def mar_edit(request):
+    items_month =Mer_per_month.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-date_update')[:1]
+     
+    if request.method == "POST":
+        form_month = Mer_per_month_form(request.POST)
+        print(form_month)
+        if form_month.is_valid():
+            form_month.save()
+            print('SAVE')
+            # return render(request, 'sar.html', context={'items_ser_day':items_ser_day})
+    else:
+        form_month = Mer_per_month_form()
+    context = { 
+                'form_month':form_month,
+                'itemss_month':items_month
+                }
+    return render(request,'mar_edit.html', context)
  
 
 
@@ -314,11 +335,10 @@ def add_calculate_mag_balance(request):
         form = BalanceForm(request.POST)
     else:
         form = BalanceForm()
-        
     return save_mag_balance(request, form, 'add_calculate_balance.html')
     
 
-
+"""Для СЭР"""
 def sar(request):
 
     max_date_now = datetime.datetime.now().strftime("%Y-%m-%d")
@@ -337,6 +357,36 @@ def filter_date_sar(request):
                                                 'items_month' : items_month,
                                                 'max_date_now':max_date_now
                                                 }) 
+
+
+
+def sar_edit(request):
+    items_ser_day = Ser_per_day.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-date_update')[:1]
+    items_ser_month =Ser_per_month.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-date_update')[:1]
+    
+    if request.method == "POST":
+        form_day = Ser_per_day_form(request.POST)
+        form_month = Ser_per_month_form(request.POST)
+        print(form_day,'________', form_month)
+        if form_day.is_valid() and form_month.is_valid():
+            form_day.save()
+            form_month.save()
+            print('SAVE')
+            # return render(request, 'sar.html', context={'items_ser_day':items_ser_day})
+    else:
+        form_day = Ser_per_day_form()
+        form_month = Ser_per_month_form()
+    context = { 'form_day': form_day,
+                'form_month':form_month,
+                'items_ser_day':items_ser_day,
+                'items_ser_month':items_ser_month
+                }
+    return render(request,'sar_edit.html', context)
+
+
+
+
+
 
 
 

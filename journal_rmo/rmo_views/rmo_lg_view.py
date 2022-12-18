@@ -86,3 +86,4 @@ def rmo_lg_delete(request, pk):
         context = {'rmo_lg': rmo_lg}
         data['html_form'] = render_to_string('journal_rmo/forms/rmo_lg/partial_delete.html', context, request=request)
     return JsonResponse(data)
+

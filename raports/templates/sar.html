@@ -1,5 +1,8 @@
- {%extends 'journal/main.html' %}
+{%extends 'journal/main.html' %}
+{% load widget_tweaks %}
+{% load static%}
 {% block content %}
+
 
 <section class="sidebar">
     
@@ -9,6 +12,10 @@
         <input class="btn btn-primary" type="submit" value='Выбрать'>
     
     </form>
+   
+    <a type='button' href="{% url 'sar_edit' %}"><button type="button" class="btn btn-primary js-update-product">+ Edit Blog Post</button></a>
+   
+
 </section>
 <section class="content ">
     <div class="tableSchemaSar print">
@@ -36,7 +43,6 @@
 
             <tbody> 
 
-                
                 <tr>
                     <th class="objCellsar"></th>
                     <th class="objCellsar" colspan=4>Газ горючий природный</th>

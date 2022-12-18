@@ -9,6 +9,9 @@
         <input class="btn btn-primary" type="submit" value='Выбрать'>
     
     </form>
+
+    <a type='button' href="{% url 'mar_edit' %}"><button type="button" class="btn btn-primary js-update-product">+ Edit Blog Post</button></a>
+   
 </section>
 
 <section class="content ">
@@ -16,23 +19,11 @@
         {%for items_month in itemss_month  %}
     <table id="product-table" style="width: 95%">
         <thead>
-            {% comment %} <tr>
-                <th >"Утверждаю"</th>
-                <th colspan="2" style="text-align: right">Форма №12</th>
-            </tr>
-            <tr>
-                <th >Главный инженер-перывый заместитель генерального директора</th>
-                <th colspan="2"></th>
-            </tr>
-            <tr> 
-                <th >ООО "Газпром добыча шельф Южно-Сахалинск"</th>
-                <th colspan="2" style="text-align: right" >_______________ А.В. Суетинов<br>"___"_____________________ 2022г</th>
-            </tr>
-            <tr><th><br></th></tr> {% endcomment %}
+           
             <tr>
                 <th colspan="3" style="text-align: center">Ежемесячный эксплутационный рапорт по добыче, переработке газа и газового конденсата<br>
                     по Киринскому газоконденсатному месторождению<br>
-                    за {{items_month.date_update|date:"01.m.Y"|default:"-"}}
+                    за {{items_month.date_update|date:"d.m.Y"|default:"-"}}
                 </th>
             </tr>
         </thead>

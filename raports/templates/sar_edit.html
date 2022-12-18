@@ -1,0 +1,210 @@
+{%extends 'journal/main.html' %}
+ 
+{% block content %}
+   
+<form action="" method="post">{% csrf_token %}
+    <section class='sidebar'>
+        <input type="submit" value="Обновить" class='btn-primary' />
+    </section>
+
+
+    <section class='content'>
+        <div class="tableSchemaSar print">
+            {% comment %} style="width:100%" {% endcomment %}
+                    
+            <table id="product-table" style="width:95%">
+                <thead>
+                    <tr>
+                        <th class="objCellsar" style="text-align: center" >№п/п</th>
+                        <th class="objCellsar" colspan=4 style="text-align: right"> Форма №1</th>
+                    </tr>
+                    <tr>
+                        <th class="objCellsar" ></th>
+                        <th class="objCellsar" colspan=4 style="text-align: center">Cуточной рапорт УКПГ Киринского ГКМ</th>
+                    </tr>
+                    <tr>
+                        <th class="objCellsar"></th>
+                        <th class="objCellsar">Дата<input type="date" name="date_update" required id="id_date_update" value={{form.}}></th>
+                        <th class="objCellsar">Ед.изм</th>
+                        <th class="objCellsar">за сутки</th>
+                        <th class="objCellsar">за месяц</th>
+                    </tr>
+                    
+                </thead>
+    
+                <tbody> 
+    
+                    <tr>
+                        <th class="objCellsar"></th>
+                        <th class="objCellsar" colspan=4>Газ горючий природный</th>
+                    </tr>
+                    {% comment %} TEST  {% endcomment %}
+                    <tr>
+                        <td class="objCellsar">1</td>
+                        <td class="objCellsar" style="text-align: left">Добыча ГГП</td>
+                        <td class="objCellsar">тыс.м3</td>
+                        <td class="objCellsar"><input type="text" name="ser_1" maxlength="255" required id="id_ser_1" value={%for item_day in items_ser_day%}{{item_day.ser_1|floatformat:3|default:'-'}}{%endfor%}></td>
+                        <td class="objCellsar"><input type="text" name="ser_101" maxlength="255" required id="id_ser_101" value={%for item_month in items_ser_month%}{{item_month.ser_101|floatformat:3|default:'-'}}{%endfor%}></td>
+                    </tr>
+                    <tr>
+                        <td class="objCellsar">2</td>
+                        <td class="objCellsar" style="text-align: left">Газ горючий природный, магистральный<br>газопровод УКУГ</td>
+                        <td class="objCellsar">тыс.м3</td>
+                        <td class="objCellsar"><input type="text" name="ser_2" maxlength="255" required id="id_ser_2" value={%for item_day in items_ser_day%}{{item_day.ser_2|floatformat:3|default:'-'}}{%endfor%}></td>
+                        <td class="objCellsar"><input type="text" name="ser_102" maxlength="255" required id="id_ser_102" value={%for item_month in items_ser_month%}{{item_month.ser_102|floatformat:3|default:'-'}}{%endfor%}></td>
+                    </tr>
+                    <tr>
+                        <td class="objCellsar">3</td>
+                        <td class="objCellsar" style="text-align: left">Газ СН из добытых ресурсов *</td>
+                        <td class="objCellsar">тыс.м3</td>
+                        <td class="objCellsar"><input type="text" name="ser_3" maxlength="255" required id="id_ser_3" value={%for item_day in items_ser_day%}{{item_day.ser_3|floatformat:3|default:'-'}}{%endfor%}></td>
+                        <td class="objCellsar"><input type="text" name="ser_103" maxlength="255" required id="id_ser_103" value={%for item_month in items_ser_month%}{{item_month.ser_103|floatformat:3|default:'-'}}{%endfor%}></td>
+                    </tr>
+                    <tr>
+                        <td class="objCellsar">4</td>
+                        <td class="objCellsar" style="text-align: left">Газ СН из ресурсов, полученных обратным<br>ходом на УКУГ **</td>
+                        <td class="objCellsar">тыс.м3</td>
+                        <td class="objCellsar"><input type="text" name="ser_4" maxlength="255" required id="id_ser_4" value={%for item_day in items_ser_day%}{{item_day.ser_4|floatformat:3|default:'-'}}{%endfor%}></td>
+                        <td class="objCellsar"><input type="text" name="ser_104" maxlength="255" required id="id_ser_104" value={%for item_month in items_ser_month%}{{item_month.ser_104|floatformat:3|default:'-'}}{%endfor%}></td>
+                    </tr>
+                    <tr>
+                        <td class="objCellsar">5</td>
+                        <td class="objCellsar" style="text-align: left">Потери газа при добыче</td>
+                        <td class="objCellsar">тыс.м3</td>
+                        <td class="objCellsar"><input type="text" name="ser_5" maxlength="255" required id="id_ser_5" value={%for item_day in items_ser_day%}{{item_day.ser_5|floatformat:3|default:'-'}}{%endfor%}></td>
+                        <td class="objCellsar"><input type="text" name="ser_105" maxlength="255" required id="id_ser_105" value={%for item_month in items_ser_month%}{{item_month.ser_105|floatformat:3|default:'-'}}{%endfor%}></td>
+                    </tr>
+                    <tr>
+                        <td class="objCellsar">6</td>
+                        <td class="objCellsar" style="text-align: left">Газ стабилищации в МГ после КУ</td>
+                        <td class="objCellsar">тыс.м3</td>
+                        <td class="objCellsar"><input type="text" name="ser_6" maxlength="255" required id="id_ser_6" value={%for item_day in items_ser_day%}{{item_day.ser_6|floatformat:3|default:'-'}}{%endfor%}></td>
+                        <td class="objCellsar"><input type="text" name="ser_106" maxlength="255" required id="id_ser_106" value={%for item_month in items_ser_month%}{{item_month.ser_106|floatformat:3|default:'-'}}{%endfor%}></td>
+                    </tr>
+                    <tr>
+                        <td class="objCellsar">7</td>
+                        <td class="objCellsar" style="text-align: left">Потери газа стабилизации при переработке</td>
+                        <td class="objCellsar">тыс.м3</td>
+                        <td class="objCellsar"><input type="text" name="ser_7" maxlength="255" required id="id_ser_7" value={%for item_day in items_ser_day%}{{item_day.ser_7|floatformat:3|default:'-'}}{%endfor%}></td>
+                        <td class="objCellsar"><input type="text" name="ser_107" maxlength="255" required id="id_ser_107" value={%for item_month in items_ser_month%}{{item_month.ser_107|floatformat:3|default:'-'}}{%endfor%}></td>
+                    </tr>
+                    <tr>
+                        <td class="objCellsar">8</td>
+                        <td class="objCellsar" style="text-align: left">Газ стабилизации в факельную систему</td>
+                        <td class="objCellsar">тыс.м3</td>
+                        <td class="objCellsar"><input type="text" name="ser_8" maxlength="255" required id="id_ser_8" value={%for item_day in items_ser_day%}{{item_day.ser_8|floatformat:3|default:'-'}}{%endfor%}></td>
+                        <td class="objCellsar"><input type="text" name="ser_108" maxlength="255" required id="id_ser_108" value={%for item_month in items_ser_month%}{{item_month.ser_108|floatformat:3|default:'-'}}{%endfor%}></td>
+                    </tr>
+                    <tr>
+                        <td class="objCellsar">9</td>
+                        <td class="objCellsar" style="text-align: left">Потери газа при проведении ремонтных работ<br>на МГ ***</td>
+                        <td class="objCellsar">тыс.м3</td>
+                        <td class="objCellsar"><input type="text" name="ser_9" maxlength="255" required id="id_ser_9" value={%for item_day in items_ser_day%}{{item_day.ser_9|floatformat:3|default:'-'}}{%endfor%}></td>
+                        <td class="objCellsar"><input type="text" name="ser_109" maxlength="255" required id="id_ser_109" value={%for item_month in items_ser_month%}{{item_month.ser_109|floatformat:3|default:'-'}}{%endfor%}></td>
+                    </tr>
+                   
+                    
+    
+    
+    {% comment %} TEST {% endcomment %}
+                    <tr>
+                        <th class="objCellsar" ></th>
+                        <th class="objCellsar" colspan=4>Конденсат газовый</th>
+                    </tr>
+    
+                    <tr>
+                        <td class="objCellsar">10</td>
+                        <td class="objCellsar" style="text-align: left">Добыча КГН</td>
+                        <td class="objCellsar">тыс.м3</td>
+                        <td class="objCellsar"><input type="text" name="ser_10" maxlength="255" required id="id_ser_10" value={%for item_day in items_ser_day%}{{item_day.ser_10|floatformat:3|default:'-'}}{%endfor%}></td>
+                        <td class="objCellsar"><input type="text" name="ser_110" maxlength="255" required id="id_ser_110" value={%for item_month in items_ser_month%}{{item_month.ser_110|floatformat:3|default:'-'}}{%endfor%}></td>
+                    </tr>
+    
+                    <tr>
+                        <td class="objCellsar">11</td>
+                        <td class="objCellsar" style="text-align: left">Потери КГН при добыче</td>
+                        <td class="objCellsar">тыс.м3</td>
+                        <td class="objCellsar"><input type="text" name="ser_11" maxlength="255" required id="id_ser_11" value={%for item_day in items_ser_day%}{{item_day.ser_11|floatformat:3|default:'-'}}{%endfor%}></td>
+                        <td class="objCellsar"><input type="text" name="ser_111" maxlength="255" required id="id_ser_111" value={%for item_month in items_ser_month%}{{item_month.ser_111|floatformat:3|default:'-'}}{%endfor%}></td>
+                    </tr>
+    
+                    <tr>
+                        <td class="objCellsar">12</td>
+                        <td class="objCellsar" style="text-align: left">Возврат КГН в переработку из 10Е3 в 10Р-2</td>
+                        <td class="objCellsar">тыс.м3</td>
+                        <td class="objCellsar"><input type="text" name="ser_12" maxlength="255" required id="id_ser_12" value={%for item_day in items_ser_day%}{{item_day.ser_12|floatformat:3|default:'-'}}{%endfor%}></td>
+                        <td class="objCellsar"><input type="text" name="ser_112" maxlength="255" required id="id_ser_112" value={%for item_month in items_ser_month%}{{item_month.ser_112|floatformat:3|default:'-'}}{%endfor%}></td>
+                    </tr>
+                    <tr>
+                        <td class="objCellsar">13</td>
+                        <td class="objCellsar" style="text-align: left">Производство КГС</td>
+                        <td class="objCellsar">тыс.м3</td>
+                        <td class="objCellsar"><input type="text" name="ser_13" maxlength="255" required id="id_ser_13" value={%for item_day in items_ser_day%}{{item_day.ser_13|floatformat:3|default:'-'}}{%endfor%}></td>
+                        <td class="objCellsar"><input type="text" name="ser_113" maxlength="255" required id="id_ser_113" value={%for item_month in items_ser_month%}{{item_month.ser_113|floatformat:3|default:'-'}}{%endfor%}></td>
+                    </tr>
+                    <tr>
+                        <td class="objCellsar">14</td>
+                        <td class="objCellsar" style="text-align: left">Потери КГН при переработке</td>
+                        <td class="objCellsar">тыс.м3</td>
+                        <td class="objCellsar"><input type="text" name="ser_14" maxlength="255" required id="id_ser_14" value={%for item_day in items_ser_day%}{{item_day.ser_14|floatformat:3|default:'-'}}{%endfor%}></td>
+                        <td class="objCellsar"><input type="text" name="ser_114" maxlength="255" required id="id_ser_114" value={%for item_month in items_ser_month%}{{item_month.ser_114|floatformat:3|default:'-'}}{%endfor%}></td>
+                    </tr>
+                    <tr>
+                        <td class="objCellsar">15</td>
+                        <td class="objCellsar" style="text-align: left">Переход КГН в другой вид продукции<br>(Газ стабилизации)</td>
+                        <td class="objCellsar">тыс.м3</td>
+                        <td class="objCellsar"><input type="text" name="ser_15" maxlength="255" required id="id_ser_15" value={%for item_day in items_ser_day%}{{item_day.ser_15|floatformat:3|default:'-'}}{%endfor%}></td>
+                        <td class="objCellsar"><input type="text" name="ser_115" maxlength="255" required id="id_ser_115" value={%for item_month in items_ser_month%}{{item_month.ser_115|floatformat:3|default:'-'}}{%endfor%}></td>
+                    </tr>
+                    <tr>
+                        <td class="objCellsar">16</td>
+                        <td class="objCellsar" style="text-align: left">КГС переданный в СЭИК</td>
+                        <td class="objCellsar">тыс.м3</td>
+                        <td class="objCellsar"><input type="text" name="ser_16" maxlength="255" required id="id_ser_16" value={%for item_day in items_ser_day%}{{item_day.ser_16|floatformat:3|default:'-'}}{%endfor%}></td>
+                        <td class="objCellsar"><input type="text" name="ser_116" maxlength="255" required id="id_ser_116" value={%for item_month in items_ser_month%}{{item_month.ser_116|floatformat:3|default:'-'}}{%endfor%}></td>
+                    </tr>
+                    <tr>
+                        <td class="objCellsar">17</td>
+                        <td class="objCellsar" style="text-align: left">КГС в 50Р-1 №1</td>
+                        <td class="objCellsar">тыс.м3</td>
+                        <td class="objCellsar"><input type="text" name="ser_17" maxlength="255" required id="id_ser_17" value={%for item_day in items_ser_day%}{{item_day.ser_17|floatformat:3|default:'-'}}{%endfor%}></td>
+                        <td class="objCellsar"><input type="text" name="ser_117" maxlength="255" required id="id_ser_117" value={%for item_month in items_ser_month%}{{item_month.ser_117|floatformat:3|default:'-'}}{%endfor%}></td>
+                    </tr>
+                    <tr>
+                        <td class="objCellsar">18</td>
+                        <td class="objCellsar" style="text-align: left">КГС в 50Р-1 №2</td>
+                        <td class="objCellsar">тыс.м3</td>
+                        <td class="objCellsar"><input type="text" name="ser_18" maxlength="255" required id="id_ser_18" value={%for item_day in items_ser_day%}{{item_day.ser_18|floatformat:3|default:'-'}}{%endfor%}></td>
+                        <td class="objCellsar"><input type="text" name="ser_118" maxlength="255" required id="id_ser_118" value={%for item_month in items_ser_month%}{{item_month.ser_118|floatformat:3|default:'-'}}{%endfor%}></td>
+                    </tr>
+                    <tr>
+                        <td class="objCellsar">19</td>
+                        <td class="objCellsar" style="text-align: left">Возврат КГС из ВТК в 10Р-2 ***</td>
+                        <td class="objCellsar">тыс.м3</td>
+                        <td class="objCellsar"><input type="text" name="ser_19" maxlength="255" required id="id_ser_19" value={%for item_day in items_ser_day%}{{item_day.ser_19|floatformat:3|default:'-'}}{%endfor%}></td>
+                        <td class="objCellsar"><input type="text" name="ser_119" maxlength="255" required id="id_ser_119" value={%for item_month in items_ser_month%}{{item_month.ser_119|floatformat:3|default:'-'}}{%endfor%}></td>
+                    </tr>
+                    <tr>
+                        <td class="objCellsar">20</td>
+                        <td class="objCellsar" style="text-align: left">Потери КГС при проведении ремонтных работ<br>на ВТК ***</td>
+                        <td class="objCellsar">тыс.м3</td>
+                        <td class="objCellsar"><input type="text" name="ser_20" maxlength="255" required id="id_ser_20" value={%for item_day in items_ser_day%}{{item_day.ser_20|floatformat:3|default:'-'}}{%endfor%}></td>
+                        <td class="objCellsar"><input type="text" name="ser_120" maxlength="255" required id="id_ser_120" value={%for item_month in items_ser_month%}{{item_month.ser_120|floatformat:3|default:'-'}}{%endfor%}></td>
+                    </tr>
+    
+                    
+    
+                </tbody>
+            </table>
+    
+            
+    
+            
+        </div>
+    </section>
+
+    
+      
+    
+</form>
+{% endblock content %}
