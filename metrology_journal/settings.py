@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django_filters',
     'widget_tweaks',
     'crispy_forms',
+    # 'floattags'
     #My apps
     'journal.apps.JournalConfig',
     'journal_oks.apps.JournalOksConfig',
