@@ -49,12 +49,15 @@ def calculate_balance(request):
     """Подача рМэг на ПДК"""
     tag_k = float(values_tech[0]["r18"]) * tag_h * 1.44
 
-    delta_epta = float(values_tech[0]["r20"]) + float(values_tech[0]["r21"]) + float(values_tech[0]["r22"]) + float(values_tech[0]["r23"]) + float(values_tech[0]["r24"]) + float(values_tech[0]["r25"]) + float(values_tech[0]["r26"]) + float(values_tech[0]["r27"])
+    # float(values_tech[0]["r20"]) = 0
+    # float(values_tech[0]["r21"]) =0
+    
+    delta_epta = 0 + 0 + float(values_tech[0]["r22"]) + float(values_tech[0]["r23"]) + float(values_tech[0]["r24"]) + float(values_tech[0]["r25"]) + float(values_tech[0]["r26"]) + float(values_tech[0]["r27"])
 
     """Подача рМЭГ на скважину Р1"""
-    tag_l = (float(values_tech[0]["r20"]) + tag_k) / delta_epta
+    tag_l = (0 + tag_k) / delta_epta
     """Подача рМЭГ на скважину Р2"""
-    tag_m = (float(values_tech[0]["r21"]) + tag_k) / delta_epta
+    tag_m = (0 + tag_k) / delta_epta
     """Подача рМЭГ на скважину Р3"""
     tag_n = (float(values_tech[0]["r22"]) + tag_k) / delta_epta
     """Подача рМЭГ на скважину Р4-бис"""

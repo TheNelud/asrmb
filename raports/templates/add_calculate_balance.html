@@ -4,11 +4,11 @@
 {% csrf_token %}
 
     <div class="modal-header">
-        <h4 class="modal-title">Добавить</h4>
+        <h4 class="modal-title">Расчет баланса</h4>
     </div>
 
     <div class="modal-body">
-        {% for field in form %}
+        {% comment %} {% for field in form %}
         <div class="form-group{% if field.errors %} has-error{% endif %}">
           
           <label for="{{ field.id_for_label }}">{{ field.label }}</label>
@@ -18,7 +18,45 @@
             <p class="help-block">{{ error }}</p>
           {% endfor %}
         </div>
-      {% endfor %}
+      {% endfor %} {% endcomment %}
+
+
+      <tr>
+        <th><label class="form-control" for="id_par_d">Приход товарного МЭГ (100% мас.) на склад фКГДУ (поз.6) :</label></th>
+        <td><input class="form-control" type="text" name="par_d" required id="id_par_d"></td>
+      </tr>
+      <tr>
+        <th><label class="form-control" for="id_par_e">Приход товарного МЭГ 100% со склада ПБ на склад УКПГ (поз.20):</label></th>
+        <td><input class="form-control" type="text" name="par_e" required id="id_par_e"></td>
+      </tr>
+      <tr>
+        <th><label class="form-control" for="id_par_f">Вовлечение товарного МЭГ со склада УКПГ (поз.20):</label></th>
+        <td><input class="form-control" type="text" name="par_f" required id="id_par_f"></td>
+      </tr>
+      <tr>
+        <th><label class="form-control" for="id_par_g_nmag">Концентрация нМЭГ:</label></th>
+        <td><input class="form-control" type="text" name="par_g_nmag" required id="id_par_g_nmag"></td></tr>
+      <tr>
+        <th><label class="form-control" for="id_par_g_rmag_30i_1">Концентрация рМЭГ 30И-1:</label></th>
+        <td><input class="form-control" type="text" name="par_g_rmag_30i_1" required id="id_par_g_rmag_30i_1"></td>
+      </tr>
+      <tr>
+        <th><label class="form-control" for="id_par_g_rmag_60e_1">Концентрация рМЭГ 60E-1:</label></th>
+        <td><input class="form-control" type="text" name="par_g_rmag_60e_1" required id="id_par_g_rmag_60e_1"></td>
+      </tr>
+      <tr>
+        <th><label class="form-control" for="id_par_h">Плотность рМЭГ:</label></th>
+        <td><input class="form-control" type="text" name="par_h" required id="id_par_h"></td>
+      </tr>
+      <tr>
+        <th><label class="form-control" for="id_par_v">Потери МЭГ на РЭН:</label></th>
+        <td><input class="form-control" type="text" name="par_v" required id="id_par_v"></td>
+      </tr>
+      <tr>
+        <th><label class="form-control" for="id_par_w">КГС после УСК:</label></th>
+        <td><input class="form-control" type="text" name="par_w" required id="id_par_w"></td>
+      </tr>
+
     </div>
 
     <div class="modal-footer">

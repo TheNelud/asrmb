@@ -32,6 +32,7 @@ class BalanceForm(ModelForm):
     
     class Meta:
         model = Balance
+        # fields = '__all__'
         fields = ["par_d","par_e","par_f","par_g_nmag",
                     "par_g_rmag_30i_1","par_g_rmag_60e_1",
                   "par_h","par_v","par_w"]

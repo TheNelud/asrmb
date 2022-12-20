@@ -312,10 +312,9 @@ def filter_date_mag(request):
 
 def save_mag_balance(request, form,template_name):
     max_date_now = datetime.datetime.now().strftime("%Y-%m-%d")
-    # items_tech = Sen_equip.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-date_update')[:1] 
-    
     data = dict()
     if request.method == "POST":
+        print(form)
         if form.is_valid:
             form.save()
             calculate_balance(request)
@@ -339,6 +338,8 @@ def add_calculate_mag_balance(request):
         form = BalanceForm(request.POST)
     else:
         form = BalanceForm()
+
+        print(form)
     return save_mag_balance(request, form, 'add_calculate_balance.html')
 
 
@@ -350,9 +351,9 @@ def mag_edit(request ):
         form_tech = Sen_equip_form(request.POST)
         form_balance = BalanceForm(request.POST)
         print(form_tech,'----------------------------------------')
-        if form_tech.is_valid():# and form_balance.is_valid():
+        if form_tech.is_valid() and form_balance.is_valid():
             form_tech.save()
-            # form_balance.save()
+            form_balance.save()
             print('SAVE')
             # return render(request, 'sar.html', context={'items_ser_day':items_ser_day})
     else:
