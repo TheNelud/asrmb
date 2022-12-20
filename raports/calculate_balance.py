@@ -5,10 +5,6 @@ from datetime import datetime,timedelta, date
 from django.utils import timezone
 
 
-def qq(num):
-    if type(num) == 'NoneType' or 'None':
-        return format(num)
-
 def calculate_balance(request):
     items_tech = Sen_equip.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-date_update')[:1]
     items_balance = Balance.objects.all().order_by('-id')[:1]

@@ -2,21 +2,14 @@
 {% load floattags %}
  
 {% block content %}
-   
+<section class='sidebar'>
+    <a href="{% url 'mar'%}"><button class='btn btn-primary'>Назад</button></a> 
+</section>   
+
+
 <form action="" method="post">{% csrf_token %}
-    <section class='sidebar'>
-        <form method="post" action="{% url 'filter_date_mar' %}" class="js-product-update-form">
-            {% csrf_token %}
-            <input type="date" class='form-control'  name='date_update'  max={{max_date_now}} >
-            <input class="btn btn-primary" type="submit" value='Выбрать'>
-        
-        </form>
-
-
-        <input type="submit" value="Обновить" class='btn-primary' />
-    </section>
-
     <section class='content'>
+        <input type="submit" value="Обновить" class='btn btn-primary' />
         <div class="tableSchemaSar print">
             {% comment %} {%for items_month in form_month  %} {% endcomment %}
         <table id="product-table" style="width: 95%">
@@ -25,7 +18,7 @@
                 <tr>
                     <th colspan="3" style="text-align: center">Ежемесячный эксплутационный рапорт по добыче, переработке газа и газового конденсата<br>
                         по Киринскому газоконденсатному месторождению<br>
-                        за <input type="date" name="date_update" maxlength="255" required id="id_date_update" value={%for items_month in itemss_month  %}{{items_month.date_update|date:"d.m.Y"|default:"-"}}{%endfor%} style="border: 0;">
+                        за <input type="date" name="date_update" maxlength="255" required id="id_date_update" style="border: 0;">
                     </th>
                 </tr>
             </thead>
@@ -44,72 +37,72 @@
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left; ">1. Добыча (извлечение) из недр Киринского ГКМ на земную поверхность</td>
                     <td class="objCellsar front-rap">тыс.м3</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_1" maxlength="255" required id="id_mer_1" value={%for items_month in itemss_month  %}{{items_month.mer_1|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_1" maxlength="255" required id="id_mer_1" value={%for items_month in itemss_month  %}{{items_month.mer_1|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">в т.ч. Технологические потери при Добыче Газа горючего природного</td>
                     <td class="objCellsar front-rap">тыс.м3</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_2" maxlength="255" required id="id_mer_2" value={%for items_month in itemss_month  %}{{items_month.mer_2|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_2" maxlength="255" required id="id_mer_2" value={%for items_month in itemss_month  %}{{items_month.mer_2|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">справочно: - нормотивные технологические потери (утверженный норматив тех.потерь на<br>2021г - 0,0608%)</td>
                     <td class="objCellsar front-rap">тыс.м3</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_3" maxlength="255" required id="id_mer_3" value={%for items_month in itemss_month  %}{{items_month.mer_3|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_3" maxlength="255" required id="id_mer_3" value={%for items_month in itemss_month  %}{{items_month.mer_3|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">2. Газ горючий природный, подаваемый в магистральный газопровод переданный ПАО
                         <br>"Газпром"
                     </td>
                     <td class="objCellsar front-rap">тыс.м3</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_4" maxlength="255" required id="id_mer_4" value={%for items_month in itemss_month  %}{{items_month.mer_4|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_4" maxlength="255" required id="id_mer_4" value={%for items_month in itemss_month  %}{{items_month.mer_4|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">в том числе: Газ горючий природный (Газ стабилизации) в составе Газа горючего природного,<br>
                         подаваемого в магистральный газопровод
                     </td>
                     <td class="objCellsar front-rap">тыс.м3</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_5" maxlength="255" required id="id_mer_5" value={%for items_month in itemss_month  %}{{items_month.mer_5|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_5" maxlength="255" required id="id_mer_5" value={%for items_month in itemss_month  %}{{items_month.mer_5|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">справочно: - технологические потери Газа горючего природного (Газа стабилизации) при<br>
                         Переработке
                     </td>
                     <td class="objCellsar front-rap">тыс.м3</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_6" maxlength="255" required id="id_mer_6" value={%for items_month in itemss_month  %}{{items_month.mer_6|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_6" maxlength="255" required id="id_mer_6" value={%for items_month in itemss_month  %}{{items_month.mer_6|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">2.1 замерено на Узле Коммерческого Учета газа на выходе с УКПГ БТК Киринского ГКМ</td>
                     <td class="objCellsar front-rap">тыс.м3</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_7" maxlength="255" required id="id_mer_7" value={%for items_month in itemss_month  %}{{items_month.mer_7|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_7" maxlength="255" required id="id_mer_7" value={%for items_month in itemss_month  %}{{items_month.mer_7|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">2.2 замерено на узле технологических измерений УПТИГ УКПГ БТК Киринского ГКМ</td>
                     <td class="objCellsar front-rap">тыс.м3</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_8" maxlength="255" required id="id_mer_8" value={%for items_month in itemss_month  %}{{items_month.mer_8|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_8" maxlength="255" required id="id_mer_8" value={%for items_month in itemss_month  %}{{items_month.mer_8|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">2.3 Технологические потери Газа горючего природного, подаваемого в магистральный<br>
                         гозопровод    
                     </td>
                     <td class="objCellsar front-rap">тыс.м3</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_9" maxlength="255" required id="id_mer_9" value={%for items_month in itemss_month  %}{{items_month.mer_9|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_9" maxlength="255" required id="id_mer_9" value={%for items_month in itemss_month  %}{{items_month.mer_9|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">3 Покупка Газа горючего природного, подаваемого в магистральный трубопровод у ПАО<br>
                         "Газпром" по договору от 23.07.2013 № ГДШсн-2012, в том числе:
                     </td>
                     <td class="objCellsar front-rap">тыс.м3</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_10" maxlength="255" required id="id_mer_10" value={%for items_month in itemss_month  %}{{items_month.mer_10|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_10" maxlength="255" required id="id_mer_10" value={%for items_month in itemss_month  %}{{items_month.mer_10|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">3.1 из ресурсов, добытых ООО "Газпром доча шельф Южно-Сахалинск" на Киринском <br> ГКМ</td>
                     <td class="objCellsar front-rap">тыс.м3</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_11" maxlength="255" required id="id_mer_11" value={%for items_month in itemss_month  %}{{items_month.mer_11|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_11" maxlength="255" required id="id_mer_11" value={%for items_month in itemss_month  %}{{items_month.mer_11|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">3.2 из ресурсов, полученных обратным ходом из МГ "БТК Киринского ГКМ - ГКС Сахалин"</td>
                     <td class="objCellsar front-rap">тыс.м3</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_12" maxlength="255" required id="id_mer_12" value={%for items_month in itemss_month  %}{{items_month.mer_12|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_12" maxlength="255" required id="id_mer_12" value={%for items_month in itemss_month  %}{{items_month.mer_12|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
     
     
@@ -120,102 +113,102 @@
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">1 Добыча (извлечение) из недр Киринского ГКМ</td>
                     <td class="objCellsar front-rap">тонн</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_13" maxlength="255" required id="id_mer_13" value={%for items_month in itemss_month  %}{{items_month.mer_13|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_13" maxlength="255" required id="id_mer_13" value={%for items_month in itemss_month  %}{{items_month.mer_13|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">в т.ч. Технологические при Добыче Конденсата газового нестабильного</td>
                     <td class="objCellsar front-rap">тонн</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_14" maxlength="255" required id="id_mer_14" value={%for items_month in itemss_month  %}{{items_month.mer_14|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_14" maxlength="255" required id="id_mer_14" value={%for items_month in itemss_month  %}{{items_month.mer_14|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">справочно: - нормотивные технологические потери (утверженный норматив тех.потерь на<br>2021г - 0,0608%)</td>
                     <td class="objCellsar front-rap">тонн</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_15" maxlength="255" required id="id_mer_15" value={%for items_month in itemss_month  %}{{items_month.mer_15|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_15" maxlength="255" required id="id_mer_15" value={%for items_month in itemss_month  %}{{items_month.mer_15|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">2. Конденсат газовый нестабильный, переданный в Переработку</td>
                     <td class="objCellsar front-rap">тонн</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_16" maxlength="255" required id="id_mer_16" value={%for items_month in itemss_month  %}{{items_month.mer_16|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_16" maxlength="255" required id="id_mer_16" value={%for items_month in itemss_month  %}{{items_month.mer_16|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">справочно: Возврат в Переработку Конденсата газового нестабильного</td>
                     <td class="objCellsar front-rap">тонн</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_17" maxlength="255" required id="id_mer_17" value={%for items_month in itemss_month  %}{{items_month.mer_17|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_17" maxlength="255" required id="id_mer_17" value={%for items_month in itemss_month  %}{{items_month.mer_17|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">3. Остаток Конденсата газового нестабильного, переданного в переработку на начало месяца,в<br> том числе: </td>
                     <td class="objCellsar front-rap">тонн</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_18" maxlength="255" required id="id_mer_18" value={%for items_month in itemss_month  %}{{items_month.mer_18|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_18" maxlength="255" required id="id_mer_18" value={%for items_month in itemss_month  %}{{items_month.mer_18|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">3.1 технологический</td>
                     <td class="objCellsar front-rap">тонн</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_19" maxlength="255" required id="id_mer_19" value={%for items_month in itemss_month  %}{{items_month.mer_19|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_19" maxlength="255" required id="id_mer_19" value={%for items_month in itemss_month  %}{{items_month.mer_19|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">3.2 товарный</td>
                     <td class="objCellsar front-rap">тонн</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_20" maxlength="255" required id="id_mer_20" value={%for items_month in itemss_month  %}{{items_month.mer_20|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_20" maxlength="255" required id="id_mer_20" value={%for items_month in itemss_month  %}{{items_month.mer_20|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">4. Переработано Конденсата газового нестабильного</td>
                     <td class="objCellsar front-rap">тонн</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_21" maxlength="255" required id="id_mer_21" value={%for items_month in itemss_month  %}{{items_month.mer_21|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_21" maxlength="255" required id="id_mer_21" value={%for items_month in itemss_month  %}{{items_month.mer_21|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">в т.ч. Технологические потери Конденсата газового нестабильного на этапе Переработки<br>(стабилицазии)</td>
                     <td class="objCellsar front-rap">тонн</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_22" maxlength="255" required id="id_mer_22" value={%for items_month in itemss_month  %}{{items_month.mer_22|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_22" maxlength="255" required id="id_mer_22" value={%for items_month in itemss_month  %}{{items_month.mer_22|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">в т.ч. Переход конденсата в другой вид продукции(Газ стабилизации в МГ)</td>
                     <td class="objCellsar front-rap">тонн</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_23" maxlength="255" required id="id_mer_23" value={%for items_month in itemss_month  %}{{items_month.mer_23|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_23" maxlength="255" required id="id_mer_23" value={%for items_month in itemss_month  %}{{items_month.mer_23|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">5. Конденсат газовый стабильный переданный ПАО "Газпром", масса нетто</td>
                     <td class="objCellsar front-rap">тонн</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_24" maxlength="255" required id="id_mer_24" value={%for items_month in itemss_month  %}{{items_month.mer_24|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_24" maxlength="255" required id="id_mer_24" value={%for items_month in itemss_month  %}{{items_month.mer_24|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">справочно: масса брутто</td>
                     <td class="objCellsar front-rap">тонн</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_25" maxlength="255" required id="id_mer_25" value={%for items_month in itemss_month  %}{{items_month.mer_25|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_25" maxlength="255" required id="id_mer_25" value={%for items_month in itemss_month  %}{{items_month.mer_25|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">5.1 Конденсат газовый стабильный, замеренный на Узле коммерческого учета конденсата<br> газового стабильного , масса нетто</td>
                     <td class="objCellsar front-rap">тонн</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_26" maxlength="255" required id="id_mer_26" value={%for items_month in itemss_month  %}{{items_month.mer_26|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_26" maxlength="255" required id="id_mer_26" value={%for items_month in itemss_month  %}{{items_month.mer_26|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">справочно: масса брутто</td>
                     <td class="objCellsar front-rap">тонн</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_27" maxlength="255" required id="id_mer_27" value={%for items_month in itemss_month  %}{{items_month.mer_27|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_27" maxlength="255" required id="id_mer_27" value={%for items_month in itemss_month  %}{{items_month.mer_27|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">5.2 Технологические потери Конденсата газового стабильного на этапе Переработки<br>(стабилизации)</td>
                     <td class="objCellsar front-rap">тонн</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_28" maxlength="255" required id="id_mer_28" value={%for items_month in itemss_month  %}{{items_month.mer_28|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_28" maxlength="255" required id="id_mer_28" value={%for items_month in itemss_month  %}{{items_month.mer_28|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">5.3 Возврат в Переработку Конденсата газового стабильного</td>
                     <td class="objCellsar front-rap">тонн</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_29" maxlength="255" required id="id_mer_29" value={%for items_month in itemss_month  %}{{items_month.mer_29|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_29" maxlength="255" required id="id_mer_29" value={%for items_month in itemss_month  %}{{items_month.mer_29|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">6. Остаток Конденсата газового нестабильного, переданного в переработку на конец месяц, в <br> том числе:</td>
                     <td class="objCellsar front-rap">тонн</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_30" maxlength="255" required id="id_mer_30" value={%for items_month in itemss_month  %}{{items_month.mer_30|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_30" maxlength="255" required id="id_mer_30" value={%for items_month in itemss_month  %}{{items_month.mer_30|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">6.1 технологический</td>
                     <td class="objCellsar front-rap">тонн</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_31" maxlength="255" required id="id_mer_31" value={%for items_month in itemss_month  %}{{items_month.mer_31|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_31" maxlength="255" required id="id_mer_31" value={%for items_month in itemss_month  %}{{items_month.mer_31|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                 <tr>
                     <td class="objCellsar front-rap" style="text-align: left">6.2 товарный</td>
                     <td class="objCellsar front-rap">тонн</td>
-                    <td class="objCellsar front-rap"><input type="text" name="mer_32" maxlength="255" required id="id_mer_32" value={%for items_month in itemss_month  %}{{items_month.mer_32|formatted_float|default:"-"}}{%endfor%} style="border: 0;"></td>
+                    <td class="objCellsar front-rap"><input type="text" style="border: 0;" name="mer_32" maxlength="255" required id="id_mer_32" value={%for items_month in itemss_month  %}{{items_month.mer_32|formatted_float|default:"-"}}{%endfor%} ></td>
                 </tr>
                
             

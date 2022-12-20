@@ -16,6 +16,8 @@ urlpatterns = [
     url(r'^mag/$', views.mag, name='mag'),
     url(r'^mag/filter/$', views.filter_date_mag, name="filter_date_mag"),
     url(r'^mag/calculate_balance/$', views.add_calculate_mag_balance, name='add_calculate_mag_balance'),
+    url(r'^mag/edit/$', views.mag_edit, name="mag_edit"),
+
     
     url(r'^sar/$', views.sar, name='sar'),
     url(r'^sar/filter/$', views.filter_date_sar, name="filter_date_sar"),

@@ -129,9 +129,90 @@ class Mer_per_month_form(ModelForm):
     # mer_35 = forms.CharField(max_length=255)
     # mer_36 = forms.CharField(max_length=255)
     # mer_37 = forms.CharField(max_length=255)
-    date_update = models.DateTimeField()
+    date_update = forms.DateTimeField()
 
 
     class Meta:
         model = Mer_per_month
         fields = '__all__'
+
+
+class Sen_equip_form(ModelForm):
+
+    r1 = forms.FloatField()  
+    r2 = forms.FloatField()  
+    r3 = forms.FloatField()  
+    r4 = forms.FloatField()  
+    r5 = forms.FloatField()  
+    r6 = forms.FloatField()  
+    r7 = forms.FloatField()  
+    r8 = forms.FloatField()  
+    r9 = forms.FloatField()  
+    r10 = forms.FloatField() 
+    r11 = forms.FloatField() 
+    r12 = forms.FloatField() 
+    dy13 = forms.FloatField()
+    rt13 = forms.FloatField()
+    dy14 = forms.FloatField()
+    rt14 = forms.FloatField()
+    dy15 = forms.FloatField()
+    rt15 = forms.FloatField()
+    dy16 = forms.FloatField()
+    rt16 = forms.FloatField()
+    r17 = forms.FloatField() 
+    r18 = forms.FloatField()
+    r19 = forms.FloatField() 
+    # r20 = forms.FloatField() 
+    # r21 = forms.FloatField() 
+    r22 = forms.FloatField() 
+    r23 = forms.FloatField() 
+    r24 = forms.FloatField() 
+    r25 = forms.FloatField() 
+    r26 = forms.FloatField() 
+    r27 = forms.FloatField()
+    date_update = forms.DateTimeField()
+ 
+
+    class Meta:
+        model = Sen_equip
+        fields = '__all__'
+ 
+# class Balance_form(models.Model):
+  
+#     par_a = forms.FloatField()   
+#     par_b = forms.FloatField()      
+#     par_c = forms.FloatField()      
+#     par_d = forms.FloatField()      
+#     par_e = forms.FloatField()      
+#     par_f = forms.FloatField()      
+    
+#     par_g_nmag = forms.FloatField()
+#     par_g_rmag_30i_1 = forms.FloatField()
+#     par_g_rmag_60e_1 = forms.FloatField()
+
+#     par_h = forms.FloatField()      
+#     par_i = forms.FloatField()      
+#     par_j = forms.FloatField()      
+#     par_k = forms.FloatField()      
+#     par_l = forms.FloatField()      
+#     par_m = forms.FloatField()      
+#     par_n = forms.FloatField()      
+#     par_o = forms.FloatField()      
+#     par_p = forms.FloatField()
+          
+#     par_q = forms.FloatField()      
+#     par_r = forms.FloatField()      
+#     par_s = forms.FloatField()      
+#     par_t = forms.FloatField()      
+#     par_u = forms.FloatField()      
+#     par_v = forms.FloatField()      
+#     par_w = forms.FloatField()      
+#     par_x = forms.FloatField()      
+#     par_aa = forms.FloatField()     
+#     par_bb = forms.FloatField()     
+#     par_cc = forms.FloatField()     
+#     date_update = forms.DateTimeField()
+
+#     class Meta:
+#         model = Balance
+#         fields = '__all__'

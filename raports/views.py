@@ -248,6 +248,8 @@ def graphs_7():
     return figure
 #___________________________________________#
 # Create your views here.
+
+"""Для МЭР"""
 def mar(request):
     max_date_now = datetime.datetime.now().strftime("%Y-%m-%d")
     items_month = Mer_per_month.objects.all().order_by('-date_update')[:1]
@@ -258,15 +260,16 @@ def mar(request):
 
 def filter_date_mar(request):
     max_date_now = datetime.datetime.now().strftime("%Y-%m-%d")
-    items_month =Mer_per_month.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-date_update')[:1]
+    items_month =Mer_per_month.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-id')[:1]
+
+    print(items_month.values())
     return render(request, 'mar.html', context={
                                                 'itemss_month' : items_month,
                                                 'max_date_now':max_date_now
                                                 })
 
 def mar_edit(request):
-    items_month =Mer_per_month.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-date_update')[:1]
-     
+    items_month =Mer_per_month.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-id')[:1]
     if request.method == "POST":
         form_month = Mer_per_month_form(request.POST)
         print(form_month)
@@ -276,6 +279,7 @@ def mar_edit(request):
             # return render(request, 'sar.html', context={'items_ser_day':items_ser_day})
     else:
         form_month = Mer_per_month_form()
+
     context = { 
                 'form_month':form_month,
                 'itemss_month':items_month
@@ -283,7 +287,7 @@ def mar_edit(request):
     return render(request,'mar_edit.html', context)
  
 
-
+"""Для МЭГ"""
 def mag(request):
     max_date_now = datetime.datetime.now().strftime("%Y-%m-%d")
     items_tech = Sen_equip.objects.all().order_by('-date_update')[:1]
@@ -336,6 +340,31 @@ def add_calculate_mag_balance(request):
     else:
         form = BalanceForm()
     return save_mag_balance(request, form, 'add_calculate_balance.html')
+
+
+def mag_edit(request ):
+    items_tech = Sen_equip.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-date_update')[:1] 
+    items_balance =Balance.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-date_update')[:1]
+
+    if request.method == "POST":
+        form_tech = Sen_equip_form(request.POST)
+        form_balance = BalanceForm(request.POST)
+        print(form_tech,'----------------------------------------')
+        if form_tech.is_valid():# and form_balance.is_valid():
+            form_tech.save()
+            # form_balance.save()
+            print('SAVE')
+            # return render(request, 'sar.html', context={'items_ser_day':items_ser_day})
+    else:
+        form_tech = Sen_equip_form()
+        form_balance = BalanceForm()
+        print(form_balance, form_tech)
+    context = { 'form_tech': form_tech,
+                'form_balance':form_balance,
+                'items_tech':items_tech,
+                'items_balance':items_balance
+                }
+    return render(request,'mag_edit.html', context)
     
 
 """Для СЭР"""
@@ -351,18 +380,18 @@ def sar(request):
 
 def filter_date_sar(request):
     max_date_now = datetime.datetime.now().strftime("%Y-%m-%d")
-    items_day = Ser_per_day.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-date_update')[:1]
-    items_month =Ser_per_month.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-date_update')[:1]
-    return render(request, 'sar.html', context={'items_day' : items_day,
-                                                'items_month' : items_month,
+    items_day = Ser_per_day.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-id')[:1]
+    items_month =Ser_per_month.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-id')[:1]
+    return render(request, 'sar.html', context={'items_ser_day' : items_day,
+                                                'items_ser_month' : items_month,
                                                 'max_date_now':max_date_now
                                                 }) 
 
 
 
 def sar_edit(request):
-    items_ser_day = Ser_per_day.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-date_update')[:1]
-    items_ser_month =Ser_per_month.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-date_update')[:1]
+    items_ser_day = Ser_per_day.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-id')[:1]
+    items_ser_month =Ser_per_month.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-id')[:1]
     
     if request.method == "POST":
         form_day = Ser_per_day_form(request.POST)
