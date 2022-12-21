@@ -5,7 +5,7 @@ from datetime import datetime,timedelta, date
 from django.utils import timezone
 
 
-def calculate_balance(request):
+def calculate_balance(request, form_balance):
     items_tech = Sen_equip.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-date_update')[:1]
     items_balance = Balance.objects.all().order_by('-id')[:1]
     values_tech = items_tech.values()
@@ -25,19 +25,26 @@ def calculate_balance(request):
     print("A: ", tag_a,"B: ", tag_b,"C: ", tag_c)
 
     """Приход товарного МЭГ (100% мас.) на склад фКГДУ(поз.6)"""
-    tag_d = float(values_balans[0]['par_d'])
+    # tag_d = float(values_balans[0]['par_d'])
+    tag_d = float(form_balance['par_d'].value())
     """Приход товарного МЭГ 100% со склада ПБ на склад УКПГ(поз.20)"""
-    tag_e = float(values_balans[0]['par_e'])
+    # tag_e = float(values_balans[0]['par_e'])
+    tag_e = float(form_balance['par_e'].value())
     """Вовлечение тованого МЭГ со склада УКПГ(поз.20)"""
-    tag_f = float(values_balans[0]['par_f'])
+    # tag_f = float(values_balans[0]['par_f'])
+    tag_f = float(form_balance['par_f'].value())
 
     """Концентрация МЭГ"""
-    tag_g_nmag = float(values_balans[0]['par_g_nmag'])
-    tag_g_rmag_30i_1 = float(values_balans[0]['par_g_rmag_30i_1'])
-    tag_g_rmag_60e_1 = float(values_balans[0]['par_g_rmag_60e_1'])
+    # tag_g_nmag = float(values_balans[0]['par_g_nmag'])
+    # tag_g_rmag_30i_1 = float(values_balans[0]['par_g_rmag_30i_1'])
+    # tag_g_rmag_60e_1 = float(values_balans[0]['par_g_rmag_60e_1'])
+    tag_g_nmag = float(form_balance['par_g_nmag'].value())
+    tag_g_rmag_30i_1 = float(form_balance['par_g_rmag_30i_1'].value())
+    tag_g_rmag_60e_1 = float(form_balance['par_g_rmag_60e_1'].value())
 
     """Плотность рМЭГ"""
-    tag_h = float(values_balans[0]['par_h'])
+    # tag_h = float(values_balans[0]['par_h'])
+    tag_h = float(form_balance['par_h'].value())
     # print("D: ", tag_d,"E: ", tag_e,"F: ", tag_f,"G: ", par_g_nmag,"H: ", tag_h)
 
     """Приход рМЭГ"""
@@ -78,10 +85,11 @@ def calculate_balance(request):
     tag_u = float(values_tech[0]["r17"]) * tag_h * 1.44
 
     """Потери МЭГ на РЭН"""
-    tag_v = float(values_balans[0]['par_v'])
-
+    # tag_v = float(values_balans[0]['par_v'])
+    tag_v = float(form_balance['par_v'].value())
     """КГС после УСК"""
-    tag_w = float(values_balans[0]['par_w']) 
+    # tag_w = float(values_balans[0]['par_w'])
+    tag_w = float(form_balance['par_w'].value()) 
 
     """Унос МЭГ с КГС (норма расхода 0.9495 кг/тонн)"""
     tag_x = (0.9495 * tag_w) / 1000

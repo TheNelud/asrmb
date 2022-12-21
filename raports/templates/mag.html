@@ -10,14 +10,14 @@
         <input class="btn btn-primary" type="submit" value='Выбрать'>
     
     </form>
-    <br>
+    
 
 
-    <button type="button" class="btn btn-primary js-create-product" data-url="{% url 'add_calculate_mag_balance' %}">
+    {% comment %} <button type="button" class="btn btn-primary js-create-product" data-url="{% url 'add_calculate_mag_balance' %}">
         <span class="glyphicon glyphicon-plus"></span>
         Расчет баланса
     </button>
-    <br>
+    <br> {% endcomment %}
 
     <a type='button' href="{% url 'mag_edit' %}"><button type="button" class="btn btn-primary js-update-product">Редактировать</button></a>
 
