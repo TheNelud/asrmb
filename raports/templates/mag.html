@@ -31,11 +31,11 @@
         <div id="block_container_mag"  >
 
             <img  class="schema_mag" src="{% static 'journal/images/schema_mag.png' %}">
-            
+            {% comment %} {%for item_tech in itemss_tech%}{{item_tech.date_update|date:"d.m.Y"|default:"-"}}{%endfor%} {% endcomment %}
             <table  style="width:300px; height:500px ; font-size: 10px;">
                  <thead >
                     <tr>
-                        <th class="objCellmag" colspan='4' style='text-align: center;' >Дата: {%for item_tech in itemss_tech%}{{item_tech.date_update|date:"d.m.Y"|default:"-"}}{%endfor%} </th>
+                        <th class="objCellmag" colspan='4' style='text-align: center;' >Дата: {{delta_day}} </th>
                     </tr>
                     <tr>
                         <th class="objCellmag" >№</th>

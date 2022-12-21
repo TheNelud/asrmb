@@ -20,11 +20,11 @@
         
     <table id="product-table" style="width: 95%">
         <thead>
-           
+            {% comment %} {%for items_month in itemss_month  %}{{items_month.date_update|date:"d.m.Y"|default:"-"}}{%endfor%} {% endcomment %}
             <tr>
                 <th colspan="3" style="text-align: center">Ежемесячный эксплутационный рапорт по добыче, переработке газа и газового конденсата<br>
                     по Киринскому газоконденсатному месторождению<br>
-                    за {%for items_month in itemss_month  %}{{items_month.date_update|date:"d.m.Y"|default:"-"}}{%endfor%}
+                    за {{delta_day}}
                 </th>
             </tr>
         </thead>
