@@ -31,9 +31,10 @@
                     <th class="objCellsar" ></th>
                     <th class="objCellsar" colspan=4 style="text-align: center">Cуточной рапорт УКПГ Киринского ГКМ</th>
                 </tr>
+                {% comment %} {%for item_day in items_ser_day%}{{item_day.date_update|date:"d.m.Y" }}{%endfor%} {% endcomment %}
                 <tr>
                     <th class="objCellsar"></th>
-                    <th class="objCellsar">Дата {%for item_day in items_ser_day%}{{item_day.date_update|date:"d.m.Y" }}{%endfor%}</th>
+                    <th class="objCellsar">Дата {{delta_day}} </th>
                     <th class="objCellsar">Ед.изм</th>
                     <th class="objCellsar">за сутки</th>
                     <th class="objCellsar">за месяц</th>
