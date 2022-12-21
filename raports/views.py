@@ -395,8 +395,10 @@ def sar(request):
 
 def filter_date_sar(request):
     max_date_now = datetime.datetime.now().strftime("%Y-%m-%d")
-    items_day = Ser_per_day.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-id')[:1]
-    items_month =Ser_per_month.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-id')[:1]
+    items_day = Ser_per_day.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-date_update')[:1]
+    items_month =Ser_per_month.objects.filter(date_update__contains=request.POST.get('date_update','')).order_by('-date_update')[:1]
+    print(items_day.values())
+    print(items_month.values())
     if items_day.values():
         just_day = items_day.values()[0]['date_update']
         delta_day = (just_day - timedelta(days=1)).strftime("%d.%m.%Y")
